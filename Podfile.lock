@@ -2,16 +2,16 @@ PODS:
   - Alamofire (5.2.1)
   - AlamofireLogger (0.3.0):
     - Alamofire (~> 5.0)
-  - UInt128 (0.8.0)
-  - Ursus (1.0.1):
+  - BigInt (5.0.0)
+  - Ursus (1.0.2):
     - Alamofire (~> 5.2)
-    - Ursus/EventSource (= 1.0.1)
-    - Ursus/Utilities (= 1.0.1)
-  - Ursus/EventSource (1.0.1):
+    - Ursus/EventSource (= 1.0.2)
+    - Ursus/Utilities (= 1.0.2)
+  - Ursus/EventSource (1.0.2):
     - Alamofire (~> 5.2)
-  - Ursus/Utilities (1.0.1):
+  - Ursus/Utilities (1.0.2):
     - Alamofire (~> 5.2)
-    - UInt128 (~> 0.8)
+    - BigInt (~> 5.0)
 
 DEPENDENCIES:
   - AlamofireLogger (~> 0.3)
@@ -22,14 +22,14 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireLogger
-    - UInt128
+    - BigInt
     - Ursus
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   AlamofireLogger: 8843aafdf632a7358ca347bc1811f2eaf04cf45a
-  UInt128: e9071ed709268d1ef273b6b6dd9c893d0560ba4a
-  Ursus: 47882cd4b97098b1535ab0df1a3ce806958c50a5
+  BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
+  Ursus: f2b63b36edf6a5c1389d789068aa27913a5db4c8
 
 PODFILE CHECKSUM: eabd1091e988d6daabc5ad7abad500b91ec0ebf1
 

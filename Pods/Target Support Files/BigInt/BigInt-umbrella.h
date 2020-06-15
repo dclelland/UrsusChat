@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double UInt128VersionNumber;
-FOUNDATION_EXPORT const unsigned char UInt128VersionString[];
+FOUNDATION_EXPORT double BigIntVersionNumber;
+FOUNDATION_EXPORT const unsigned char BigIntVersionString[];
 

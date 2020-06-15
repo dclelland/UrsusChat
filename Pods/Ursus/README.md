@@ -2,6 +2,8 @@
 
 An Urbit HTTP/`%eyre` client for iOS/macOS in Swift.
 
+See my [Urchat](https://github.com/dclelland/Urchat) repository for a demo project.
+
 ## Usage
 
 Ursus is very much a work in progress - better documentation and a demo app to come. Here's a quick sketch for now:
@@ -33,7 +35,6 @@ Things that would make this codebase nicer:
 - [ ] Test `AckRequest`, `UnsubscribeRequest`, `DeleteRequest` properly.
 - [ ] Add `kebab-case` instance for [`JSONDecoder.KeyDecodingStrategy`](https://developer.apple.com/documentation/foundation/jsondecoder/keydecodingstrategy) (there does exist a `snake_case` instance).
 - [ ] Write Combine publishers for pokes and subscribes (see the [donnywals writeup](https://www.donnywals.com/using-promises-and-futures-in-combine/)). Should be able to include type safe JSON decoding as part of this work.
-- [ ] Split off test chat client into its own repository and work on providing chat app coverage.
 - [ ] Better documentation/examples.
 
 ## Other clients
