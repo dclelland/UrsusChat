@@ -7,31 +7,72 @@
 //
 
 import UIKit
+import Ursus
+import AlamofireLogger
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let ursus = Ursus(url: URL(string: "http://192.168.1.65")!, code: "namwes-boster-dalryt-rosfeb")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        ursus.authenticationRequest().log(.verbose).response { response in
+            self.ursus.pokeRequest(
+                ship: "lapred-pandel-polnet-sorwed--bacbep-labmul-tolmes-marzod",
+                app: "chat-store",
+                mark: "json",
+                json: Message(
+                    path: "/~/~lapred-pandel-polnet-sorwed--bacbep-labmul-tolmes-marzod/mc",
+                    envelope: Envelope(
+                        uid: UUID().base32String,
+                        number: 1,
+                        author: "~lapred-pandel-polnet-sorwed--bacbep-labmul-tolmes-marzod",
+                        when: Int(Date().timeIntervalSince1970 * 1000),
+                        letter: [
+                            "text": "hello world!"
+                        ]
+                    )
+                ),
+                handler: { event in
+                    print("Poke:", event)
+                }
+            ).log(.verbose)
+//            self.ursus.subscribeRequest(
+//                ship: "lapred-pandel-polnet-sorwed--bacbep-labmul-tolmes-marzod",
+//                app: "chat-view",
+//                path: "/primary",
+//                handler: { event in
+//                    switch event {
+//                    case .success:
+//                        print("Subscribe success")
+//                    case .message(let data):
+//                        print("Subscribe message:", String(data: data, encoding: .utf8)!)
+//                    case .failure(let error):
+//                        print("Subscribe failed:", error)
+//                    case .quit:
+//                        print("Subscribe quit")
+//                    }
+//                }
+//            ).log(.verbose)
+        }
+        
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 
+struct Message: Encodable {
+    
+    var path: String
+    var envelope: Envelope
+    
+}
+
+struct Envelope: Encodable {
+    
+    var uid: String
+    var number: Int
+    var author: String
+    var when: Int
+    var letter: [String: String]
+    
+}
