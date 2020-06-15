@@ -8,6 +8,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Write chat client Ursus wrapper
 - [ ] Add app icon
+- [ ] Add splash screen
 - [ ] Add authentication screen
 - [ ] Add chat list screen
 - [ ] Add chat screen
