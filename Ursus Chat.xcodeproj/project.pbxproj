@@ -26,6 +26,7 @@
 		6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6520F61D24977D4800F3D56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6520F62124977D6500F3D56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6520F6222498227600F3D56C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 		6520F5F524977BFE00F3D56C = {
 			isa = PBXGroup;
 			children = (
+				6520F6222498227600F3D56C /* README.md */,
 				6520F60024977BFE00F3D56C /* Ursus Chat */,
 				6520F5FF24977BFE00F3D56C /* Products */,
 				F2AD118C4EB54D6C5C0488E9 /* Pods */,

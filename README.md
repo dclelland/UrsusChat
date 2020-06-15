@@ -11,3 +11,4 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 - [ ] Add authentication screen
 - [ ] Add chat list screen
 - [ ] Add chat screen
+- [ ] Better icon design
