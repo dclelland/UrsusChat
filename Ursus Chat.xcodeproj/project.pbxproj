@@ -10,9 +10,9 @@
 		4B146B7CAB70EFF1E379C0C8 /* Pods_Ursus_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4571111F4EDDD0C02EE20A62 /* Pods_Ursus_Chat.framework */; };
 		6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60124977BFE00F3D56C /* AppDelegate.swift */; };
 		6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60324977BFE00F3D56C /* SceneDelegate.swift */; };
-		6520F60624977BFE00F3D56C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60524977BFE00F3D56C /* ContentView.swift */; };
-		6520F60824977C0500F3D56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6520F60724977C0500F3D56C /* Assets.xcassets */; };
-		6520F60E24977C0500F3D56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F60C24977C0500F3D56C /* LaunchScreen.storyboard */; };
+		6520F61724977D1600F3D56C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F61624977D1600F3D56C /* ContentView.swift */; };
+		6520F61E24977D4800F3D56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */; };
+		6520F61F24977D4800F3D56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61D24977D4800F3D56C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +22,10 @@
 		6520F5FE24977BFE00F3D56C /* Ursus Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ursus Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6520F60124977BFE00F3D56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6520F60324977BFE00F3D56C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6520F60524977BFE00F3D56C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		6520F60724977C0500F3D56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6520F60D24977C0500F3D56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6520F60F24977C0500F3D56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6520F61624977D1600F3D56C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6520F61D24977D4800F3D56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6520F62124977D6500F3D56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +71,36 @@
 			children = (
 				6520F60124977BFE00F3D56C /* AppDelegate.swift */,
 				6520F60324977BFE00F3D56C /* SceneDelegate.swift */,
-				6520F60524977BFE00F3D56C /* ContentView.swift */,
-				6520F60724977C0500F3D56C /* Assets.xcassets */,
-				6520F60C24977C0500F3D56C /* LaunchScreen.storyboard */,
-				6520F60F24977C0500F3D56C /* Info.plist */,
+				6520F61524977D1600F3D56C /* Views */,
+				6520F61B24977D4800F3D56C /* Assets */,
+				6520F62024977D6500F3D56C /* Supporting Files */,
 			);
 			path = "Ursus Chat";
+			sourceTree = "<group>";
+		};
+		6520F61524977D1600F3D56C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6520F61624977D1600F3D56C /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6520F61B24977D4800F3D56C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6520F61D24977D4800F3D56C /* Assets.xcassets */,
+				6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6520F62024977D6500F3D56C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6520F62124977D6500F3D56C /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F2AD118C4EB54D6C5C0488E9 /* Pods */ = {
@@ -148,8 +172,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6520F60E24977C0500F3D56C /* LaunchScreen.storyboard in Resources */,
-				6520F60824977C0500F3D56C /* Assets.xcassets in Resources */,
+				6520F61F24977D4800F3D56C /* Assets.xcassets in Resources */,
+				6520F61E24977D4800F3D56C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,22 +228,11 @@
 			files = (
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
-				6520F60624977BFE00F3D56C /* ContentView.swift in Sources */,
+				6520F61724977D1600F3D56C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6520F60C24977C0500F3D56C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6520F60D24977C0500F3D56C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6520F61024977C0500F3D56C /* Debug */ = {
@@ -345,7 +358,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SP382Y6YUY;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Ursus Chat/Info.plist";
+				INFOPLIST_FILE = "Ursus Chat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +379,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SP382Y6YUY;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Ursus Chat/Info.plist";
+				INFOPLIST_FILE = "Ursus Chat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
