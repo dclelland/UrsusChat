@@ -3,6 +3,7 @@ PODS:
   - AlamofireLogger (0.3.0):
     - Alamofire (~> 5.0)
   - BigInt (5.0.0)
+  - KeychainAccess (4.2.0)
   - Ursus (1.0.2):
     - Alamofire (~> 5.2)
     - Ursus/EventSource (= 1.0.2)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireLogger (~> 0.3)
+  - KeychainAccess (~> 4.2)
   - Ursus (~> 1.0)
   - Ursus/Utilities (~> 1.0)
 
@@ -23,14 +25,16 @@ SPEC REPOS:
     - Alamofire
     - AlamofireLogger
     - BigInt
+    - KeychainAccess
     - Ursus
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   AlamofireLogger: 8843aafdf632a7358ca347bc1811f2eaf04cf45a
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
+  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   Ursus: f2b63b36edf6a5c1389d789068aa27913a5db4c8
 
-PODFILE CHECKSUM: f654caa373dff50bcb9c07a4a23e5e10d6298cee
+PODFILE CHECKSUM: 3a63cc75da8fe1b5d302418a5f1544ac54089436
 
 COCOAPODS: 1.8.3
