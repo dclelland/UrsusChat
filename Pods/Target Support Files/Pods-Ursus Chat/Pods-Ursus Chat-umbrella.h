@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_UrchatVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_UrchatVersionString[];
+FOUNDATION_EXPORT double Pods_Ursus_ChatVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Ursus_ChatVersionString[];
 

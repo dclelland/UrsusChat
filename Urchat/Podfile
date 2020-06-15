@@ -3,7 +3,7 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-target 'Ursus Chat' do
+target 'Urchat' do
     pod 'Ursus', '~> 1.0'
     pod 'Ursus/Utilities', '~> 1.0'
     pod 'AlamofireLogger', '~> 0.3'
