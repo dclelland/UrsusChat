@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2E15035BD211CA3F01515E03 /* Pods_Urchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818CDAA0D7BDD9F5A3EFFBE4 /* Pods_Urchat.framework */; };
+		6541FF58249720F500CEF0C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6541FF54249720F500CEF0C1 /* LaunchScreen.storyboard */; };
+		6541FF59249720F500CEF0C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6541FF55249720F500CEF0C1 /* Assets.xcassets */; };
+		6541FF5A249720F500CEF0C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541FF57249720F500CEF0C1 /* ContentView.swift */; };
 		65E5937E24971C74001352FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5937D24971C74001352FA /* AppDelegate.swift */; };
 		65E5938024971C74001352FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5937F24971C74001352FA /* SceneDelegate.swift */; };
-		65E5938224971C74001352FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5938124971C74001352FA /* ContentView.swift */; };
-		65E5938424971C76001352FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E5938324971C76001352FA /* Assets.xcassets */; };
 		65E5938724971C76001352FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E5938624971C76001352FA /* Preview Assets.xcassets */; };
-		65E5938A24971C76001352FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E5938824971C76001352FA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		057416FE36D0C5DF37CD63A0 /* Pods-Urchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Urchat.debug.xcconfig"; path = "Target Support Files/Pods-Urchat/Pods-Urchat.debug.xcconfig"; sourceTree = "<group>"; };
+		6541FF54249720F500CEF0C1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6541FF55249720F500CEF0C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6541FF57249720F500CEF0C1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65E5937A24971C74001352FA /* Urchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Urchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E5937D24971C74001352FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E5937F24971C74001352FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		65E5938124971C74001352FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		65E5938324971C76001352FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E5938624971C76001352FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		65E5938924971C76001352FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E5938B24971C76001352FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E5939124971CB6001352FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		818CDAA0D7BDD9F5A3EFFBE4 /* Pods_Urchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Urchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +60,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6541FF53249720F500CEF0C1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6541FF55249720F500CEF0C1 /* Assets.xcassets */,
+				6541FF54249720F500CEF0C1 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6541FF56249720F500CEF0C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6541FF57249720F500CEF0C1 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		65E5937124971C74001352FA = {
 			isa = PBXGroup;
 			children = (
@@ -84,9 +101,8 @@
 			children = (
 				65E5937D24971C74001352FA /* AppDelegate.swift */,
 				65E5937F24971C74001352FA /* SceneDelegate.swift */,
-				65E5938124971C74001352FA /* ContentView.swift */,
-				65E5938324971C76001352FA /* Assets.xcassets */,
-				65E5938824971C76001352FA /* LaunchScreen.storyboard */,
+				6541FF56249720F500CEF0C1 /* Views */,
+				6541FF53249720F500CEF0C1 /* Assets */,
 				65E5938B24971C76001352FA /* Info.plist */,
 				65E5938524971C76001352FA /* Preview Content */,
 			);
@@ -161,9 +177,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E5938A24971C76001352FA /* LaunchScreen.storyboard in Resources */,
 				65E5938724971C76001352FA /* Preview Assets.xcassets in Resources */,
-				65E5938424971C76001352FA /* Assets.xcassets in Resources */,
+				6541FF59249720F500CEF0C1 /* Assets.xcassets in Resources */,
+				6541FF58249720F500CEF0C1 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,22 +234,11 @@
 			files = (
 				65E5937E24971C74001352FA /* AppDelegate.swift in Sources */,
 				65E5938024971C74001352FA /* SceneDelegate.swift in Sources */,
-				65E5938224971C74001352FA /* ContentView.swift in Sources */,
+				6541FF5A249720F500CEF0C1 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		65E5938824971C76001352FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65E5938924971C76001352FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		65E5938C24971C76001352FA /* Debug */ = {
