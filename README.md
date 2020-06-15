@@ -1,4 +1,4 @@
-# Urchat
+# Ursus Chat
 
 An Urbit chat client for iOS.
 
