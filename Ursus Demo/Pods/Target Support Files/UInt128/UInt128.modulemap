@@ -1,6 +1,0 @@
-framework module UInt128 {
-  umbrella header "UInt128-umbrella.h"
-
-  export *
-  module * { export * }
-}
