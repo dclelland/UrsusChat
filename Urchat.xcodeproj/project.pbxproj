@@ -13,7 +13,6 @@
 		6541FF5A249720F500CEF0C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541FF57249720F500CEF0C1 /* ContentView.swift */; };
 		65E5937E24971C74001352FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5937D24971C74001352FA /* AppDelegate.swift */; };
 		65E5938024971C74001352FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5937F24971C74001352FA /* SceneDelegate.swift */; };
-		65E5938724971C76001352FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E5938624971C76001352FA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		65E5937A24971C74001352FA /* Urchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Urchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E5937D24971C74001352FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E5937F24971C74001352FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		65E5938624971C76001352FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65E5939124971CB6001352FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		818CDAA0D7BDD9F5A3EFFBE4 /* Pods_Urchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Urchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51A610224855D5B34D679AE /* Pods-Urchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Urchat.release.xcconfig"; path = "Target Support Files/Pods-Urchat/Pods-Urchat.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,17 +110,8 @@
 				6541FF56249720F500CEF0C1 /* Views */,
 				6541FF53249720F500CEF0C1 /* Assets */,
 				6541FF5B2497215D00CEF0C1 /* Supporting Files */,
-				65E5938524971C76001352FA /* Preview Content */,
 			);
 			path = Urchat;
-			sourceTree = "<group>";
-		};
-		65E5938524971C76001352FA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				65E5938624971C76001352FA /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +174,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E5938724971C76001352FA /* Preview Assets.xcassets in Resources */,
 				6541FF59249720F500CEF0C1 /* Assets.xcassets in Resources */,
 				6541FF58249720F500CEF0C1 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -369,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Urchat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SP382Y6YUY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Urchat/Supporting Files/Info.plist";
@@ -390,7 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Urchat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SP382Y6YUY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Urchat/Supporting Files/Info.plist";
