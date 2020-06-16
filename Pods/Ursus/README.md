@@ -2,7 +2,7 @@
 
 An Urbit HTTP/`%eyre` client for iOS/macOS in Swift.
 
-See my [Urchat](https://github.com/dclelland/Urchat) repository for a demo project.
+See my [Ursus Chat](https://github.com/dclelland/UrsusChat) repository for a demo project.
 
 ## Usage
 
@@ -51,5 +51,4 @@ Things that would make this codebase nicer:
 ## Dependencies
 
 - [Alamofire](https://github.com/Alamofire/Alamofire)
-- [IKEventSource](https://github.com/inaka/EventSource)
-- [UInt128](https://github.com/Jitsusama/UInt128)
+- [BigInt](https://github.com/attaswift/BigInt)

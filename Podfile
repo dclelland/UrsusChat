@@ -3,11 +3,11 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-local = true
+development_pods = false
 
 target 'Ursus Chat' do
   
-    if local
+    if development_pods
         pod 'Ursus', path: '../Ursus'
         pod 'Ursus/Utilities', path: '../Ursus'
     else

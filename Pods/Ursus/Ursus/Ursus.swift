@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public class Ursus {
+final public class Ursus {
     
     private var session: Session = .default
     private var eventSource: EventSource? = nil
@@ -45,6 +45,64 @@ public class Ursus {
 
 extension Ursus {
     
+    @discardableResult public func authenticationRequest() -> DataRequest {
+        return session.request(authenticationURL, method: .post, parameters: ["password": code], encoder: URLEncodedFormParameterEncoder.default).validate()
+    }
+    
+    @discardableResult public func channelRequest<Parameters: Encodable>(_ parameters: Parameters) -> DataRequest {
+        return session.request(channelURL, method: .put, parameters: [parameters], encoder: JSONParameterEncoder(encoder: encoder)).validate().response { [weak self] _ in
+            self?.connectEventSourceIfDisconnected()
+        }
+    }
+    
+}
+
+extension Ursus {
+    
+    @discardableResult public func ackRequest(eventID: Int) -> DataRequest {
+        let request = AckRequest(eventID: eventID)
+        return channelRequest(request)
+    }
+    
+    @discardableResult public func pokeRequest<JSON: Encodable>(ship: String, app: String, mark: String = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+        let id = nextRequestID
+        let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
+        pokeHandlers[id] = handler
+        return channelRequest(request).response { [weak self] response in
+            if let error = response.error {
+                self?.pokeHandlers[id]?(.failure(error))
+                self?.pokeHandlers[id] = nil
+            }
+        }
+    }
+    
+    @discardableResult public func subscribeRequest(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent) -> Void) -> DataRequest {
+        let id = nextRequestID
+        let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
+        subscribeHandlers[id] = handler
+        return channelRequest(request).response { [weak self] response in
+            if let error = response.error {
+                self?.subscribeHandlers[id]?(.failure(error))
+                self?.subscribeHandlers[id] = nil
+            }
+        }
+    }
+    
+    @discardableResult public func unsubscribeRequest(subscriptionID: Int) -> DataRequest {
+        let id = nextRequestID
+        let request = UnsubscribeRequest(id: id, subscriptionID: subscriptionID)
+        return channelRequest(request)
+    }
+    
+    @discardableResult public func deleteRequest() -> DataRequest {
+        let request = DeleteRequest()
+        return channelRequest(request)
+    }
+    
+}
+
+extension Ursus {
+    
     private static func uid() -> String {
         return "\(Int(Date().timeIntervalSince1970 * 1000))-\(String(Int.random(in: 0...0xFFFFFF), radix: 16))"
     }
@@ -59,20 +117,6 @@ extension Ursus {
     
     private var channelURL: URL {
         return url.appendingPathComponent("/~/channel/\(uid)")
-    }
-    
-}
-
-extension Ursus {
-    
-    @discardableResult public func authenticationRequest() -> DataRequest {
-        return session.request(authenticationURL, method: .post, parameters: ["password": code], encoder: URLEncodedFormParameterEncoder.default).validate()
-    }
-    
-    @discardableResult public func channelRequest<Parameters: Encodable>(_ parameters: Parameters) -> DataRequest {
-        return session.request(channelURL, method: .put, parameters: [parameters], encoder: JSONParameterEncoder(encoder: encoder)).validate().response { [weak self] _ in
-            self?.connectEventSourceIfDisconnected()
-        }
     }
     
 }
@@ -151,50 +195,6 @@ extension Ursus: EventSourceDelegate {
         subscribeHandlers.removeAll()
         
         resetEventSource()
-    }
-    
-}
-
-extension Ursus {
-    
-    @discardableResult public func ackRequest(eventID: Int) -> DataRequest {
-        let request = AckRequest(eventID: eventID)
-        return channelRequest(request)
-    }
-    
-    @discardableResult public func pokeRequest<JSON: Encodable>(ship: String, app: String, mark: String, json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
-        let id = nextRequestID
-        let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
-        pokeHandlers[id] = handler
-        return channelRequest(request).response { [weak self] response in
-            if let error = response.error {
-                self?.pokeHandlers[id]?(.failure(error))
-                self?.pokeHandlers[id] = nil
-            }
-        }
-    }
-    
-    @discardableResult public func subscribeRequest(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent) -> Void) -> DataRequest {
-        let id = nextRequestID
-        let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
-        subscribeHandlers[id] = handler
-        return channelRequest(request).response { [weak self] response in
-            if let error = response.error {
-                self?.subscribeHandlers[id]?(.failure(error))
-                self?.subscribeHandlers[id] = nil
-            }
-        }
-    }
-    
-    @discardableResult public func unsubscribeRequest(subscriptionID: Int) -> DataRequest {
-        let id = nextRequestID
-        let request = UnsubscribeRequest(id: id, subscriptionID: subscriptionID)
-        return channelRequest(request)
-    }
-    
-    @discardableResult public func deleteRequest() -> DataRequest {
-        let request = DeleteRequest()
-        return channelRequest(request)
     }
     
 }
