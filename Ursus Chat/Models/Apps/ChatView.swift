@@ -49,12 +49,14 @@ class ChatView: UrsusApp {
                     case text(String)
                     case url(URL)
                     case code(Code)
+                    case me(String)
                     
                     enum CodingKeys: String, CodingKey {
                         
                         case text
                         case url
                         case code
+                        case me
                         
                     }
                     
@@ -67,6 +69,8 @@ class ChatView: UrsusApp {
                             self = .url(try container.decode(URL.self, forKey: .url))
                         case [.code]:
                             self = .code(try container.decode(Code.self, forKey: .code))
+                        case [.me]:
+                            self = .me(try container.decode(String.self, forKey: .code))
                         default:
                             throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
                         }
