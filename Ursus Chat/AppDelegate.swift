@@ -22,7 +22,8 @@ import AlamofireLogger
                     case .success:
                         print("Subscribe success")
                     case .message(let data):
-                        print("Subscribe message:", try! JSONDecoder().decode(ChatView.Primary.self, from: data))
+                        print("Subscribe message:", String(data: data, encoding: .utf8) ?? "")
+//                        print("Subscribe message:", try! JSONDecoder().decode(ChatView.Primary.self, from: data))
                     case .failure(let error):
                         print("Subscribe failed:", error)
                     case .quit:
