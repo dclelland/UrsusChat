@@ -37,10 +37,10 @@ class ChatView: UrsusApp {
             
             struct Envelope: Decodable {
                 
-                #warning("TODO: Letters should be enums: `text`, `url`, and `code` {expression: String, output: [[String]]}")
                 struct Letter: Decodable {
-                    
-                    var text: String
+
+                    #warning("TODO: Letters should be enums: `text`, `url`, and `code` {expression: String, output: [[String]]}")
+//                    var text: String
                     
                 }
 
@@ -58,7 +58,6 @@ class ChatView: UrsusApp {
             
         }
         
-        #warning("TODO: Set up kebab-case mapping")
         var chatInitial: [String: ChatInitial]
         
     }
