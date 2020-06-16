@@ -24,4 +24,43 @@ class ChatView: UrsusApp {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
+    struct Primary: Decodable {
+        
+        struct ChatInitial: Decodable {
+            
+            struct Config: Decodable {
+                
+                var length: Int
+                var read: Int
+                
+            }
+            
+            struct Envelope: Decodable {
+                
+                #warning("TODO: Letters should be enums: `text`, `url`, and `code` {expression: String, output: [[String]]}")
+                struct Letter: Decodable {
+                    
+                    var text: String
+                    
+                }
+
+                #warning("TODO: Dates should decode from integers")
+                var when: Date
+                var author: String
+                var number: Int
+                var letter: Letter
+                var uid: String
+                
+            }
+            
+            var config: Config
+            var envelopes: [Envelope]
+            
+        }
+        
+        #warning("TODO: Set up kebab-case mapping")
+        var chatInitial: [String: ChatInitial]
+        
+    }
+    
 }
