@@ -8,23 +8,30 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Authentication
 
-- [ ] Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`.
+- [ ] Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`
 - [ ] Check cookie storage to see if we have a valid `urbauth` cookie stored for our planet, and authenticate automatically
 
 ### Data
 
 - [ ] Write chat client Ursus wrapper
+    - Think about how best to represent an "app" within Ursus
+
+### Architecture
+
+- [ ] Decide on design pattern
+    - Coordinator pattern?
+    - Generic view controller pattern?
+    - SwiftUI?
+    - Combine?
 
 ### Interface
 
-- [ ] Set up coordinator design pattern
-- [ ] Set up generic view controller design pattern
-- [ ] Add tab view controller
-- [ ] Add split view controller
-- [ ] Add authentication view controller
-- [ ] Add chat list view controller
-- [ ] Add chat view controller
-- [ ] Add settings view controller
+- [ ] Add tab view
+- [ ] Add split view
+- [ ] Add authentication view
+- [ ] Add chat list view
+- [ ] Add chat view
+- [ ] Add settings view
 
 ### Features
 
