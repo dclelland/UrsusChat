@@ -17,8 +17,8 @@ PODS:
 DEPENDENCIES:
   - AlamofireLogger (~> 0.3)
   - KeychainAccess (~> 4.2)
-  - Ursus (~> 1.0)
-  - Ursus/Utilities (~> 1.0)
+  - Ursus (from `../Ursus`)
+  - Ursus/Utilities (from `../Ursus`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -26,7 +26,10 @@ SPEC REPOS:
     - AlamofireLogger
     - BigInt
     - KeychainAccess
-    - Ursus
+
+EXTERNAL SOURCES:
+  Ursus:
+    :path: "../Ursus"
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -35,6 +38,6 @@ SPEC CHECKSUMS:
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   Ursus: f2b63b36edf6a5c1389d789068aa27913a5db4c8
 
-PODFILE CHECKSUM: 3a63cc75da8fe1b5d302418a5f1544ac54089436
+PODFILE CHECKSUM: 66a0faf664fe3878e541e64038d591dfc726bb78
 
 COCOAPODS: 1.8.3
