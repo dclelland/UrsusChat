@@ -12,9 +12,4 @@ internal struct AckRequest: Encodable {
     var action: String = "ack"
     var eventID: Int
     
-    enum CodingKeys: String, CodingKey {
-        case action
-        case eventID = "event-id"
-    }
-    
 }

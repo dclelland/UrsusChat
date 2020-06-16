@@ -32,9 +32,8 @@ I can probably help set up Carthage or Swift Package Manager support if you need
 
 Things that would make this codebase nicer:
 
-- [ ] Test `AckRequest`, `UnsubscribeRequest`, `DeleteRequest` properly.
-- [ ] Add `kebab-case` instance for [`JSONDecoder.KeyDecodingStrategy`](https://developer.apple.com/documentation/foundation/jsondecoder/keydecodingstrategy) (there does exist a `snake_case` instance).
 - [ ] Write Combine publishers for pokes and subscribes (see the [donnywals writeup](https://www.donnywals.com/using-promises-and-futures-in-combine/)). Should be able to include type safe JSON decoding as part of this work.
+- [ ] Test `AckRequest`, `UnsubscribeRequest`, `DeleteRequest` properly.
 - [ ] Better documentation/examples.
 
 ## Other clients

@@ -13,11 +13,11 @@ final public class Ursus {
     private var session: Session = .default
     private var eventSource: EventSource? = nil
     
-    private var encoder: JSONEncoder = .init()
-    private var decoder: JSONDecoder = .init()
+    private var encoder = UrsusEncoder()
+    private var decoder = UrsusDecoder()
     
-    private var pokeHandlers: [Int: (PokeEvent) -> Void] = [:]
-    private var subscribeHandlers: [Int: (SubscribeEvent) -> Void] = [:]
+    private var pokeHandlers = [Int: (PokeEvent) -> Void]()
+    private var subscribeHandlers = [Int: (SubscribeEvent) -> Void]()
     
     private var uid: String = Ursus.uid()
     
@@ -152,7 +152,7 @@ extension Ursus: EventSourceDelegate {
             return
         }
 
-        switch Result(catching: { try decoder.decodeJSON(Response.self, from: data) }) {
+        switch Result(catching: { try decoder.decode(Response.self, from: data) }) {
         case .success(let response):
             switch response {
             case .poke(let response):
