@@ -37,14 +37,43 @@ class ChatView: UrsusApp {
             
             struct Envelope: Decodable {
                 
-                struct Letter: Decodable {
-
-                    #warning("TODO: Letters should be enums: `text`, `url`, and `code` {expression: String, output: [[String]]}")
-//                    var text: String
+                enum Letter: Decodable {
+                    
+                    struct Code: Decodable {
+                        
+                        var expression: String
+                        var output: [[String]]
+                        
+                    }
+                    
+                    case text(String)
+                    case url(URL)
+                    case code(Code)
+                    
+                    enum CodingKeys: String, CodingKey {
+                        
+                        case text
+                        case url
+                        case code
+                        
+                    }
+                    
+                    init(from decoder: Decoder) throws {
+                        let container = try decoder.container(keyedBy: CodingKeys.self)
+                        switch Set(container.allKeys) {
+                        case [.text]:
+                            self = .text(try container.decode(String.self, forKey: .text))
+                        case [.url]:
+                            self = .url(try container.decode(URL.self, forKey: .url))
+                        case [.code]:
+                            self = .code(try container.decode(Code.self, forKey: .code))
+                        default:
+                            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+                        }
+                    }
                     
                 }
 
-                #warning("TODO: Dates should decode from integers")
                 var when: Date
                 var author: String
                 var number: Int
