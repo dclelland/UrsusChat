@@ -6,12 +6,14 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ## Todo list
 
-- [ ] Write chat client Ursus wrapper
-
 ### Authentication
 
 - [ ] Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`.
 - [ ] Check cookie storage to see if we have a valid `urbauth` cookie stored for our planet, and authenticate automatically
+
+### Data
+
+- [ ] Write chat client Ursus wrapper
 
 ### Interface
 
