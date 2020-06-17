@@ -24,7 +24,7 @@ class ChatView: UrsusApp {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
-    struct Primary: Decodable {
+    enum Primary: Decodable {
         
         struct ChatInitial: Decodable {
             
@@ -91,7 +91,33 @@ class ChatView: UrsusApp {
             
         }
         
-        var chatInitial: [String: ChatInitial]
+        struct ChatUpdate: Decodable {
+            
+            #warning("Finish me; create/delete/message/read")
+            
+        }
+        
+        case chatInitial([String: ChatInitial])
+        case chatUpdate(ChatUpdate)
+        
+        enum CodingKeys: String, CodingKey {
+            
+            case chatInitial
+            case chatUpdate
+            
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            switch Set(container.allKeys) {
+            case [.chatInitial]:
+                self = .chatInitial(try container.decode([String: ChatInitial].self, forKey: .chatInitial))
+            case [.chatUpdate]:
+                self = .chatUpdate(try container.decode(ChatUpdate.self, forKey: .chatUpdate))
+            default:
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+            }
+        }
         
     }
     
