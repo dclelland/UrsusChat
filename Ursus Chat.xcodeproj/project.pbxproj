@@ -21,6 +21,7 @@
 		655DB315249ACD7E00A591B9 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB314249ACD7E00A591B9 /* MetadataStore.swift */; };
 		655DB317249ACDF900A591B9 /* S3Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB316249ACDF900A591B9 /* S3Store.swift */; };
 		655DB319249ACE3600A591B9 /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB318249ACE3600A591B9 /* InviteView.swift */; };
+		655DB31B249ADDA800A591B9 /* InviteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31A249ADDA800A591B9 /* InviteStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		655DB314249ACD7E00A591B9 /* MetadataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataStore.swift; sourceTree = "<group>"; };
 		655DB316249ACDF900A591B9 /* S3Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3Store.swift; sourceTree = "<group>"; };
 		655DB318249ACE3600A591B9 /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
+		655DB31A249ADDA800A591B9 /* InviteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				655DB30C249A140B00A591B9 /* ChatStore.swift */,
 				655DB30E249ABF6A00A591B9 /* ChatHook.swift */,
 				655DB318249ACE3600A591B9 /* InviteView.swift */,
+				655DB31A249ADDA800A591B9 /* InviteStore.swift */,
 				655DB310249ACCDE00A591B9 /* PermissionStore.swift */,
 				655DB312249ACD2600A591B9 /* ContactView.swift */,
 				655DB314249ACD7E00A591B9 /* MetadataStore.swift */,
@@ -276,6 +279,7 @@
 				655DB30F249ABF6A00A591B9 /* ChatHook.swift in Sources */,
 				6520F62C2498558700F3D56C /* ChatView.swift in Sources */,
 				655DB319249ACE3600A591B9 /* InviteView.swift in Sources */,
+				655DB31B249ADDA800A591B9 /* InviteStore.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStore.swift in Sources */,
 				655DB30D249A140B00A591B9 /* ChatStore.swift in Sources */,
 				6520F61724977D1600F3D56C /* ContentView.swift in Sources */,

@@ -20,10 +20,34 @@ extension Ursus {
 
 class InviteView: UrsusApp {
     
-    #warning("Implement decoder for InviteView.Primary")
-    
-    @discardableResult func primary(handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
+    @discardableResult func primary(handler: @escaping (SubscribeEvent<Primary>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
+    }
+    
+    enum Primary: Decodable {
+        
+        case inviteInitial(InviteStore.Invites)
+        case inviteUpdate(InviteStore.InviteUpdate)
+        
+        enum CodingKeys: String, CodingKey {
+            
+            case inviteInitial
+            case inviteUpdate
+            
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            switch Set(container.allKeys) {
+            case [.inviteInitial]:
+                self = .inviteInitial(try container.decode(InviteStore.Invites.self, forKey: .inviteInitial))
+            case [.inviteUpdate]:
+                self = .inviteUpdate(try container.decode(InviteStore.InviteUpdate.self, forKey: .inviteUpdate))
+            default:
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+            }
+        }
+        
     }
     
 }
