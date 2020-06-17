@@ -41,6 +41,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Sign out function
 - [ ] Open Landscape function
+- [ ] Open support/discussion channel function
 
 ### Design
 
