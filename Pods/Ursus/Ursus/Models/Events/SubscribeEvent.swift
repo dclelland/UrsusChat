@@ -18,7 +18,7 @@ public enum SubscribeEvent<Value> {
 
 extension SubscribeEvent {
     
-    internal func map<T>(_ transform: (Value) throws -> T) -> SubscribeEvent<T> {
+    public func map<T>(_ transform: (Value) throws -> T) -> SubscribeEvent<T> {
         switch self {
         case .started:
             return .started

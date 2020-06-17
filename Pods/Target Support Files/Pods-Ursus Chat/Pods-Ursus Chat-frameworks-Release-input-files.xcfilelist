@@ -2,4 +2,5 @@ ${PODS_ROOT}/Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework
 ${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework
+${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework
 ${BUILT_PRODUCTS_DIR}/Ursus/Ursus.framework

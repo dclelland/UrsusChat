@@ -18,7 +18,10 @@ import Ursus
         
         ursus.authenticationRequest { ship in
             ursus.chatView(ship: ship).primary { event in
-                print("Primary event:", event)
+                print("[chat-view/primary]", event)
+            }
+            ursus.chatHook(ship: ship).synced { event in
+                print("[chat-hook/synced]", event)
             }
         }
         

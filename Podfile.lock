@@ -2,18 +2,20 @@ PODS:
   - Alamofire (5.2.1)
   - BigInt (5.0.0)
   - KeychainAccess (4.2.0)
-  - Ursus (1.0.6):
+  - ReSwift (5.0.0)
+  - Ursus (1.0.7):
     - Alamofire (~> 5.2)
-    - Ursus/EventSource (= 1.0.6)
-    - Ursus/Utilities (= 1.0.6)
-  - Ursus/EventSource (1.0.6):
+    - Ursus/EventSource (= 1.0.7)
+    - Ursus/Utilities (= 1.0.7)
+  - Ursus/EventSource (1.0.7):
     - Alamofire (~> 5.2)
-  - Ursus/Utilities (1.0.6):
+  - Ursus/Utilities (1.0.7):
     - Alamofire (~> 5.2)
     - BigInt (~> 5.0)
 
 DEPENDENCIES:
   - KeychainAccess (~> 4.2)
+  - ReSwift (~> 5.0)
   - Ursus (~> 1.0)
   - Ursus/Utilities (~> 1.0)
 
@@ -22,14 +24,16 @@ SPEC REPOS:
     - Alamofire
     - BigInt
     - KeychainAccess
+    - ReSwift
     - Ursus
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
-  Ursus: ea28b9ff73072abd86eadaaff90e84f1525e1017
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  Ursus: fecf0fbe6e1e51607782add9235386300686fc82
 
-PODFILE CHECKSUM: 5ed8e6e0afac91e316ccd8eafd51079a85b58a04
+PODFILE CHECKSUM: 62b409ee6248412c242804ece3537bea16aad92e
 
 COCOAPODS: 1.8.3

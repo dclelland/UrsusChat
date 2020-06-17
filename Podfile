@@ -16,5 +16,6 @@ target 'Ursus Chat' do
     end
   
     pod 'KeychainAccess', '~> 4.2'
+    pod 'ReSwift', '~> 5.0'
     
 end
