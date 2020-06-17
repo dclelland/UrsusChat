@@ -6,15 +6,17 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ## Todo list
 
+### Data
+
+- [ ] Write chat client Ursus wrapper
+    - Reference:
+        - Subscription: https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js
+        - Reducers: https://github.com/urbit/urbit/tree/master/pkg/interface/chat/src/js/reducers
+
 ### Authentication
 
 - [ ] Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`
 - [ ] Check cookie storage to see if we have a valid `urbauth` cookie stored for our planet, and authenticate automatically
-
-### Data
-
-- [ ] Write chat client Ursus wrapper
-    - Think about how best to represent an "app" within Ursus
 
 ### Architecture
 
