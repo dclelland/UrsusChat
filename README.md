@@ -12,6 +12,9 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
     - Reference:
         - Subscription: https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js
         - Reducers: https://github.com/urbit/urbit/tree/master/pkg/interface/chat/src/js/reducers
+    - Questions
+        - Why do the subscriptions [need to be sequential](https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js#L60)?
+        - Is [this](https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js#L68) for pagination?
 
 ### Authentication
 
