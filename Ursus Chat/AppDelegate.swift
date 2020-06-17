@@ -16,7 +16,15 @@ import AlamofireLogger
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ursus.authenticationRequest().log(.verbose).response { response in
-            self.ursus.chatView(ship: "lapred-pandel-polnet-sorwed--bacbep-labmul-tolmes-marzod").primary(
+            guard let urbauth = response.response?.value(forHTTPHeaderField: "Set-Cookie") else {
+                return
+            }
+            
+            guard let ship = urbauth.replacingOccurrences(of: "urbauth-~", with: "").split(separator: "=").map(String.init).first else {
+                return
+            }
+            
+            self.ursus.chatView(ship: ship).primary(
                 handler: { event in
                     switch event {
                     case .success:
