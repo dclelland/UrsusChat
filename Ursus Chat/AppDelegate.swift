@@ -23,12 +23,12 @@ import Ursus
 //            ursus.chatHook(ship: ship).synced { event in
 //                print("[chat-hook /synced]", event)
 //            }
-            ursus.inviteView(ship: ship).primary { event in
-                print("[invite-view /primary]", event)
-            }
-//            ursus.permissionStore(ship: ship).all { event in
-//                print("[permission-store /all]", event.map { String(data: $0, encoding: .utf8) })
+//            ursus.inviteView(ship: ship).primary { event in
+//                print("[invite-view /primary]", event)
 //            }
+            ursus.permissionStore(ship: ship).all { event in
+                print("[permission-store /all]", event)
+            }
 //            ursus.contactView(ship: ship).primary { event in
 //                print("[contact-view /primary]", event.map { String(data: $0, encoding: .utf8) })
 //            }

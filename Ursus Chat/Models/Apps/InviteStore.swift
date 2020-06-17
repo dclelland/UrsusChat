@@ -89,13 +89,13 @@ class InviteStore: UrsusApp {
     
     struct InviteAction: Decodable {
 
-        #warning("Finish InviteAction")
+        #warning("Implement decoder for InviteStore.InviteAction")
 
     }
     
     struct InviteUpdate: Decodable {
         
-        #warning("Finish InviteUpdate")
+        #warning("Implement decoder for InviteStore.InviteUpdate")
         
     }
 
