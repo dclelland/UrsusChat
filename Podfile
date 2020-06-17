@@ -15,7 +15,6 @@ target 'Ursus Chat' do
         pod 'Ursus/Utilities', '~> 1.0'
     end
   
-    pod 'AlamofireLogger', '~> 0.3'
     pod 'KeychainAccess', '~> 4.2'
     
 end

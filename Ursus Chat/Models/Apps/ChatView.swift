@@ -20,7 +20,7 @@ extension Ursus {
 
 class ChatView: UrsusApp {
     
-    @discardableResult func primary(handler: @escaping (SubscribeEvent) -> Void) -> DataRequest {
+    @discardableResult func primary(handler: @escaping (SubscribeEvent<Primary>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     

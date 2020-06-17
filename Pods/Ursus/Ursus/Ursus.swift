@@ -17,7 +17,7 @@ final public class Ursus {
     private var decoder = UrsusDecoder()
     
     private var pokeHandlers = [Int: (PokeEvent) -> Void]()
-    private var subscribeHandlers = [Int: (SubscribeEvent) -> Void]()
+    private var subscribeHandlers = [Int: (SubscribeEvent<Data>) -> Void]()
     
     private var uid: String = Ursus.uid()
     
@@ -87,7 +87,7 @@ extension Ursus {
         }
     }
     
-    @discardableResult public func subscribeRequest(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         let id = nextRequestID
         let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
         subscribeHandlers[id] = handler
@@ -95,6 +95,15 @@ extension Ursus {
             if response.error != nil {
                 self?.subscribeHandlers[id] = nil
             }
+        }
+    }
+    
+    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
+        let decoder = self.decoder
+        return subscribeRequest(ship: ship, app: app, path: path) { event in
+            handler(event.map { data in
+                return try decoder.decode(JSON.self, from: data)
+            })
         }
     }
     
@@ -111,22 +120,55 @@ extension Ursus {
     
 }
 
-extension Ursus {
+extension Ursus: EventSourceDelegate {
     
-    private static func uid() -> String {
-        return "\(Int(Date().timeIntervalSince1970 * 1000))-\(String(Int.random(in: 0...0xFFFFFF), radix: 16))"
-    }
-    
-}
+    public func eventSource(_ eventSource: EventSource, didReceiveMessage message: EventSourceMessage) {
+        self.lastEventID = message.id
+        
+        guard let data = message.data?.data(using: .utf8) else {
+            return
+        }
 
-extension Ursus {
-    
-    private var authenticationURL: URL {
-        return url.appendingPathComponent("/~/login")
+        switch Result(catching: { try decoder.decode(Response.self, from: data) }) {
+        case .success(.poke(let response)):
+            switch response.result {
+            case .okay:
+                pokeHandlers[response.id]?(.finished)
+                pokeHandlers[response.id] = nil
+            case .error(let message):
+                pokeHandlers[response.id]?(.failure(PokeError.pokeFailure(message)))
+                pokeHandlers[response.id] = nil
+            }
+        case .success(.subscribe(let response)):
+            switch response.result {
+            case .okay:
+                subscribeHandlers[response.id]?(.started)
+            case .error(let message):
+                subscribeHandlers[response.id]?(.failure(SubscribeError.subscribeFailure(message)))
+                subscribeHandlers[response.id] = nil
+            }
+        case .success(.diff(let response)):
+            subscribeHandlers[response.id]?(.update(response.json))
+        case .success(.quit(let response)):
+            subscribeHandlers[response.id]?(.finished)
+            subscribeHandlers[response.id] = nil
+        case .failure(let error):
+            print("[Ursus] Error decoding message:", message, error)
+        }
     }
     
-    private var channelURL: URL {
-        return url.appendingPathComponent("/~/channel/\(uid)")
+    public func eventSource(_ eventSource: EventSource, didCompleteWithError error: EventSourceError) {
+        pokeHandlers.values.forEach { handler in
+            handler(.failure(error))
+        }
+        pokeHandlers.removeAll()
+        
+        subscribeHandlers.values.forEach { handler in
+            handler(.failure(error))
+        }
+        subscribeHandlers.removeAll()
+        
+        resetEventSource()
     }
     
 }
@@ -153,68 +195,22 @@ extension Ursus {
     
 }
 
-extension Ursus: EventSourceDelegate {
+extension Ursus {
     
-    public func eventSource(_ eventSource: EventSource, didReceiveMessage message: EventSourceMessage) {
-        self.lastEventID = message.id
-        
-        guard let data = message.data?.data(using: .utf8) else {
-            return
-        }
-
-        switch Result(catching: { try decoder.decode(Response.self, from: data) }) {
-        case .success(let response):
-            switch response {
-            case .poke(let response):
-                switch response.result {
-                case .okay:
-                    pokeHandlers[response.id]?(.success)
-                    pokeHandlers[response.id] = nil
-                case .error(let message):
-                    pokeHandlers[response.id]?(.failure(.pokeError(message)))
-                    pokeHandlers[response.id] = nil
-                }
-            case .subscribe(let response):
-                switch response.result {
-                case .okay:
-                    subscribeHandlers[response.id]?(.success)
-                case .error(let message):
-                    subscribeHandlers[response.id]?(.failure(.subscribeError(message)))
-                    subscribeHandlers[response.id] = nil
-                }
-            case .diff(let response):
-                subscribeHandlers[response.id]?(.message(response.json))
-            case .quit(let response):
-                subscribeHandlers[response.id]?(.quit)
-                subscribeHandlers[response.id] = nil
-            }
-        case .failure(let error):
-            print("[Ursus] Error decoding message:", message, error)
-        }
+    private var authenticationURL: URL {
+        return url.appendingPathComponent("/~/login")
     }
     
-    public func eventSource(_ eventSource: EventSource, didCompleteWithError error: EventSourceError) {
-        switch error {
-        case .requestFailed(let error):
-            pokeHandlers.values.forEach { handler in
-                handler(.failure(.channelRequestFailed(error)))
-            }
-            subscribeHandlers.values.forEach { handler in
-                handler(.failure(.channelRequestFailed(error)))
-            }
-        case .requestFinished(let response):
-            pokeHandlers.values.forEach { handler in
-                handler(.failure(.channelRequestFinished(response)))
-            }
-            subscribeHandlers.values.forEach { handler in
-                handler(.failure(.channelRequestFinished(response)))
-            }
-        }
-        
-        pokeHandlers.removeAll()
-        subscribeHandlers.removeAll()
-        
-        resetEventSource()
+    private var channelURL: URL {
+        return url.appendingPathComponent("/~/channel/\(uid)")
+    }
+    
+}
+
+extension Ursus {
+    
+    private static func uid() -> String {
+        return "\(Int(Date().timeIntervalSince1970 * 1000))-\(String(Int.random(in: 0...0xFFFFFF), radix: 16))"
     }
     
 }

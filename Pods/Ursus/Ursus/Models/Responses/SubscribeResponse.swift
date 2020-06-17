@@ -9,7 +9,7 @@ import Foundation
 
 internal struct SubscribeResponse: Decodable {
     
-    internal enum Result {
+    enum Result {
         
         case okay
         case error(String)
