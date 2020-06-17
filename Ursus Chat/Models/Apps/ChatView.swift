@@ -91,9 +91,62 @@ class ChatView: UrsusApp {
             
         }
         
-        struct ChatUpdate: Decodable {
+        enum ChatUpdate: Decodable {
             
-            #warning("Finish me; create/delete/message/read")
+            struct Create: Decodable {
+                
+                var path: String
+                
+            }
+            
+            struct Delete: Decodable {
+                
+                var path: String
+                
+            }
+            
+            struct Message: Decodable {
+                
+                var path: String
+                var envelope: Primary.ChatInitial.Envelope
+                
+            }
+            
+            struct Read: Decodable {
+                
+                var path: String
+                
+            }
+            
+            case create(Create)
+            case delete(Delete)
+            case message(Message)
+            case read(Read)
+            
+            enum CodingKeys: String, CodingKey {
+                
+                case create
+                case delete
+                case message
+                case read
+                
+            }
+            
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+                switch Set(container.allKeys) {
+                case [.create]:
+                    self = .create(try container.decode(Create.self, forKey: .create))
+                case [.delete]:
+                    self = .delete(try container.decode(Delete.self, forKey: .delete))
+                case [.message]:
+                    self = .message(try container.decode(Message.self, forKey: .message))
+                case [.read]:
+                    self = .read(try container.decode(Read.self, forKey: .read))
+                default:
+                    throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+                }
+            }
             
         }
         
