@@ -10,15 +10,10 @@ Ursus is very much a work in progress - better documentation and a demo app to c
 
 ```swift
 let ursus = Ursus(url: URL(string: "http://localhost")!, code: "fipfes-fipfes-fipfes-fipfes")
-ursus.authenticationRequest().response { response in
-    ursus.subscribeRequest(
-        ship: "fipfes-fipfes-fipfes-fipfes--fipfes-fipfes-fipfes-fipfes",
-        app: "chat-view",
-        path: "/primary",
-        handler: { event in
-            print("On subscribe event:", event)
-        }
-    )
+ursus.authenticationRequest() { ship in
+    ursus.subscribeRequest(ship: ship, app: "chat-view", path: "/primary") { event in
+        print("On subscribe event:", event)
+    }
 }
 ```
 

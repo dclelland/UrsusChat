@@ -7,8 +7,10 @@
 
 import Foundation
 
-public struct SubscribeError: Error {
+public enum SubscribeError: Error {
     
-    var description: String
+    case channelRequestFailed(Error)
+    case channelRequestFinished(HTTPURLResponse)
+    case subscribeError(String)
     
 }

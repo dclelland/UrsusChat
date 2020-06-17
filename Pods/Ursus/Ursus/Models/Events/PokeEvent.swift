@@ -10,6 +10,6 @@ import Foundation
 public enum PokeEvent {
     
     case success
-    case failure(Error)
+    case failure(PokeError)
     
 }

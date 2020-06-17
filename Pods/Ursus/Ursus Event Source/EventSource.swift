@@ -61,9 +61,9 @@ extension EventSource: URLSessionDataDelegate {
             if let `self` = self {
                 switch (error, task.response as? HTTPURLResponse) {
                 case (.some(let error), .none):
-                    self.delegate?.eventSource(self, didCompleteWithError: .connectionFailed(error: error))
+                    self.delegate?.eventSource(self, didCompleteWithError: .requestFailed(error))
                 case (.none, .some(let response)):
-                    self.delegate?.eventSource(self, didCompleteWithError: .connectionDisconnected(response: response))
+                    self.delegate?.eventSource(self, didCompleteWithError: .requestFinished(response))
                 default:
                     break
                 }

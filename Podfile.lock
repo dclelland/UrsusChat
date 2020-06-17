@@ -4,13 +4,13 @@ PODS:
     - Alamofire (~> 5.0)
   - BigInt (5.0.0)
   - KeychainAccess (4.2.0)
-  - Ursus (1.0.4):
+  - Ursus (1.0.5):
     - Alamofire (~> 5.2)
-    - Ursus/EventSource (= 1.0.4)
-    - Ursus/Utilities (= 1.0.4)
-  - Ursus/EventSource (1.0.4):
+    - Ursus/EventSource (= 1.0.5)
+    - Ursus/Utilities (= 1.0.5)
+  - Ursus/EventSource (1.0.5):
     - Alamofire (~> 5.2)
-  - Ursus/Utilities (1.0.4):
+  - Ursus/Utilities (1.0.5):
     - Alamofire (~> 5.2)
     - BigInt (~> 5.0)
 
@@ -33,7 +33,7 @@ SPEC CHECKSUMS:
   AlamofireLogger: 8843aafdf632a7358ca347bc1811f2eaf04cf45a
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
-  Ursus: 838c35998818f24d6d1953691844e9516df1ca80
+  Ursus: 51c50ac03266bbcd6773237a329c14a3d2dd3de7
 
 PODFILE CHECKSUM: d23bafe9ac127f2eb3ed2d6d1a52893c1fb9e4f3
 

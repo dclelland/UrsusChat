@@ -7,8 +7,10 @@
 
 import Foundation
 
-public struct PokeError: Error {
+public enum PokeError: Error {
     
-    var description: String
+    case channelRequestFailed(Error)
+    case channelRequestFinished(HTTPURLResponse)
+    case pokeError(String)
     
 }

@@ -45,8 +45,20 @@ final public class Ursus {
 
 extension Ursus {
     
-    @discardableResult public func authenticationRequest() -> DataRequest {
-        return session.request(authenticationURL, method: .post, parameters: ["password": code], encoder: URLEncodedFormParameterEncoder.default).validate()
+    @discardableResult public func authenticationRequest(handler: @escaping (String) -> Void) -> DataRequest {
+        return session.request(authenticationURL, method: .post, parameters: ["password": code], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
+            guard let urbauth = response.response?.value(forHTTPHeaderField: "Set-Cookie") else {
+                print("[Ursus] Error retrieving urbauth")
+                return
+            }
+            
+            guard let ship = urbauth.split(separator: "=").first?.replacingOccurrences(of: "urbauth-~", with: "") else {
+                print("[Ursus] Error decoding urbauth:", urbauth)
+                return
+            }
+            
+            handler(ship)
+        }
     }
     
     @discardableResult public func channelRequest<Parameters: Encodable>(_ parameters: Parameters) -> DataRequest {
@@ -69,8 +81,7 @@ extension Ursus {
         let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
         pokeHandlers[id] = handler
         return channelRequest(request).response { [weak self] response in
-            if let error = response.error {
-                self?.pokeHandlers[id]?(.failure(error))
+            if response.error != nil {
                 self?.pokeHandlers[id] = nil
             }
         }
@@ -81,8 +92,7 @@ extension Ursus {
         let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
         subscribeHandlers[id] = handler
         return channelRequest(request).response { [weak self] response in
-            if let error = response.error {
-                self?.subscribeHandlers[id]?(.failure(error))
+            if response.error != nil {
                 self?.subscribeHandlers[id] = nil
             }
         }
@@ -157,19 +167,19 @@ extension Ursus: EventSourceDelegate {
             switch response {
             case .poke(let response):
                 switch response.result {
-                case .success:
+                case .okay:
                     pokeHandlers[response.id]?(.success)
                     pokeHandlers[response.id] = nil
-                case .failure(let error):
-                    pokeHandlers[response.id]?(.failure(error))
+                case .error(let message):
+                    pokeHandlers[response.id]?(.failure(.pokeError(message)))
                     pokeHandlers[response.id] = nil
                 }
             case .subscribe(let response):
                 switch response.result {
-                case .success:
+                case .okay:
                     subscribeHandlers[response.id]?(.success)
-                case .failure(let error):
-                    subscribeHandlers[response.id]?(.failure(error))
+                case .error(let message):
+                    subscribeHandlers[response.id]?(.failure(.subscribeError(message)))
                     subscribeHandlers[response.id] = nil
                 }
             case .diff(let response):
@@ -184,13 +194,23 @@ extension Ursus: EventSourceDelegate {
     }
     
     public func eventSource(_ eventSource: EventSource, didCompleteWithError error: EventSourceError) {
-        pokeHandlers.values.forEach { handler in
-            handler(.failure(error))
+        switch error {
+        case .requestFailed(let error):
+            pokeHandlers.values.forEach { handler in
+                handler(.failure(.channelRequestFailed(error)))
+            }
+            subscribeHandlers.values.forEach { handler in
+                handler(.failure(.channelRequestFailed(error)))
+            }
+        case .requestFinished(let response):
+            pokeHandlers.values.forEach { handler in
+                handler(.failure(.channelRequestFinished(response)))
+            }
+            subscribeHandlers.values.forEach { handler in
+                handler(.failure(.channelRequestFinished(response)))
+            }
         }
-        subscribeHandlers.values.forEach { handler in
-            handler(.failure(error))
-        }
-            
+        
         pokeHandlers.removeAll()
         subscribeHandlers.removeAll()
         

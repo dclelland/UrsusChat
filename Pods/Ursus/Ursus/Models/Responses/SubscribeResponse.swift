@@ -8,9 +8,16 @@
 import Foundation
 
 internal struct SubscribeResponse: Decodable {
+    
+    internal enum Result {
+        
+        case okay
+        case error(String)
+        
+    }
 
     var id: Int
-    var result: Result<Void, SubscribeError>
+    var result: Result
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,11 +30,11 @@ internal struct SubscribeResponse: Decodable {
         self.id = try container.decode(Int.self, forKey: .id)
         switch Set(container.allKeys) {
         case [.id, .okay]:
-            self.result = .success(())
+            self.result = .okay
         case [.id, .error]:
-            self.result = .failure(SubscribeError(description: try container.decode(String.self, forKey: .error)))
+            self.result = .error(try container.decode(String.self, forKey: .error))
         default:
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
         }
     }
     
