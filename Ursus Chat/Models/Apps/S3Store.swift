@@ -20,7 +20,7 @@ extension Ursus {
 
 class S3Store: UrsusApp {
     
-    #warning("Implement decoder for S3Store.All")
+    #warning("Implement decoder for S3Store.AllResponse")
     
     @discardableResult func all(handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)

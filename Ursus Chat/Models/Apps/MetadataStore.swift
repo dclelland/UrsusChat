@@ -20,7 +20,7 @@ extension Ursus {
 
 class MetadataStore: UrsusApp {
     
-    #warning("Implement decoder for MetadataStore.AppName")
+    #warning("Implement decoder for MetadataStore.AppNameResponse")
     
     @discardableResult func appName(app: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/app-name/\(app)", handler: handler)

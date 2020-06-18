@@ -20,10 +20,14 @@ extension Ursus {
 
 class ContactView: UrsusApp {
     
-    #warning("Implement decoder for ContactView.Primary")
+    #warning("Implement decoder for ContactView.PrimaryResponse")
     
     @discardableResult func primary(handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
     }
+    
+}
+
+extension ContactView {
     
 }

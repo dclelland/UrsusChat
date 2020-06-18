@@ -20,11 +20,15 @@ extension Ursus {
 
 class InviteView: UrsusApp {
     
-    @discardableResult func primary(handler: @escaping (SubscribeEvent<Primary>) -> Void) -> DataRequest {
+    @discardableResult func primary(handler: @escaping (SubscribeEvent<PrimaryResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
-    enum Primary: Decodable {
+}
+
+extension InviteView {
+    
+    enum PrimaryResponse: Decodable {
         
         case inviteInitial(InviteStore.Invites)
         case inviteUpdate(InviteStore.InviteUpdate)

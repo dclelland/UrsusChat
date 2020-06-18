@@ -20,7 +20,7 @@ extension Ursus {
 
 class ChatView: UrsusApp {
     
-    @discardableResult func primary(handler: @escaping (SubscribeEvent<Primary>) -> Void) -> DataRequest {
+    @discardableResult func primary(handler: @escaping (SubscribeEvent<PrimaryResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class ChatView: UrsusApp {
 
 extension ChatView {
     
-    enum Primary: Decodable {
+    enum PrimaryResponse: Decodable {
         
         case chatInitial(ChatStore.Inbox)
         case chatUpdate(ChatStore.Update)

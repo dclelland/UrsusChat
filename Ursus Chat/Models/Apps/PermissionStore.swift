@@ -20,7 +20,7 @@ extension Ursus {
 
 class PermissionStore: UrsusApp {
     
-    @discardableResult func all(handler: @escaping (SubscribeEvent<All>) -> Void) -> DataRequest {
+    @discardableResult func all(handler: @escaping (SubscribeEvent<AllResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class PermissionStore: UrsusApp {
 
 extension PermissionStore {
     
-    enum All: Decodable {
+    enum AllResponse: Decodable {
         
         case permissionInitial(PermissionStore.PermissionMap)
         case permissionUpdate(PermissionStore.PermissionUpdate)

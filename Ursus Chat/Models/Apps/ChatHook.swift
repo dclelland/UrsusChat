@@ -20,7 +20,7 @@ extension Ursus {
 
 class ChatHook: UrsusApp {
     
-    @discardableResult func synced(handler: @escaping (SubscribeEvent<Synced>) -> Void) -> DataRequest {
+    @discardableResult func synced(handler: @escaping (SubscribeEvent<SyncedResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class ChatHook: UrsusApp {
 
 extension ChatHook {
     
-    enum Synced: Decodable {
+    enum SyncedResponse: Decodable {
         
         case chatHookUpdate([String: String])
         
