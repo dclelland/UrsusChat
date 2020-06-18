@@ -30,8 +30,8 @@ extension PermissionStore {
     
     enum AllResponse: Decodable {
         
-        case permissionInitial(PermissionStore.PermissionMap)
-        case permissionUpdate(PermissionStore.PermissionUpdate)
+        case permissionInitial(PermissionMap)
+        case permissionUpdate(PermissionUpdate)
         
         enum CodingKeys: String, CodingKey {
             

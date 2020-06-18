@@ -20,14 +20,38 @@ extension Ursus {
 
 class ContactView: UrsusApp {
     
-    #warning("Implement decoder for ContactView.PrimaryResponse")
-    
-    @discardableResult func primary(handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
+    @discardableResult func primary(handler: @escaping (SubscribeEvent<PrimaryResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
 }
 
 extension ContactView {
+    
+    enum PrimaryResponse: Decodable {
+        
+        case contactInitial(ContactStore.Rolodex)
+        case contactUpdate(ContactStore.ContactUpdate)
+        
+        enum CodingKeys: String, CodingKey {
+            
+            case contactInitial
+            case contactUpdate
+            
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            switch Set(container.allKeys) {
+            case [.contactInitial]:
+                self = .contactInitial(try container.decode(ContactStore.Rolodex.self, forKey: .contactInitial))
+            case [.contactUpdate]:
+                self = .contactUpdate(try container.decode(ContactStore.ContactUpdate.self, forKey: .contactUpdate))
+            default:
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+            }
+        }
+        
+    }
     
 }
