@@ -17,27 +17,27 @@ import Ursus
         let ursus = self.ursus
         
         ursus.authenticationRequest { ship in
-//            ursus.chatView(ship: ship).primary { event in
-//                print("[chat-view /primary]", event)
-//            }
-//            ursus.chatHook(ship: ship).synced { event in
-//                print("[chat-hook /synced]", event)
-//            }
-//            ursus.inviteView(ship: ship).primary { event in
-//                print("[invite-view /primary]", event)
-//            }
-//            ursus.permissionStore(ship: ship).all { event in
-//                print("[permission-store /all]", event)
-//            }
-//            ursus.contactView(ship: ship).primary { event in
-//                print("[contact-view /primary]", event)
-//            }
-//            ursus.metadataStore(ship: ship).appName(app: "chat") { event in
-//                print("[metadata-store /app-name/chat]", event)
-//            }
-//            ursus.metadataStore(ship: ship).appName(app: "contacts") { event in
-//                print("[metadata-store /app-name/contacts]", event)
-//            }
+            ursus.chatView(ship: ship).primary { event in
+                print("[chat-view /primary]", event)
+            }
+            ursus.chatHook(ship: ship).synced { event in
+                print("[chat-hook /synced]", event)
+            }
+            ursus.inviteView(ship: ship).primary { event in
+                print("[invite-view /primary]", event)
+            }
+            ursus.permissionStore(ship: ship).all { event in
+                print("[permission-store /all]", event)
+            }
+            ursus.contactView(ship: ship).primary { event in
+                print("[contact-view /primary]", event)
+            }
+            ursus.metadataStore(ship: ship).appName(app: "chat") { event in
+                print("[metadata-store /app-name/chat]", event)
+            }
+            ursus.metadataStore(ship: ship).appName(app: "contacts") { event in
+                print("[metadata-store /app-name/contacts]", event)
+            }
             ursus.s3Store(ship: ship).all { event in
                 print("[s3-store /all]", event)
             }
