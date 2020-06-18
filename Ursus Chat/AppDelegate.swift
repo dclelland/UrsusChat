@@ -29,15 +29,15 @@ import Ursus
 //            ursus.permissionStore(ship: ship).all { event in
 //                print("[permission-store /all]", event)
 //            }
-            ursus.contactView(ship: ship).primary { event in
-                print("[contact-view /primary]", event)
+//            ursus.contactView(ship: ship).primary { event in
+//                print("[contact-view /primary]", event)
+//            }
+            ursus.metadataStore(ship: ship).appName(app: "chat") { event in
+                print("[metadata-store /app-name/chat]", event)
             }
-//            ursus.metadataStore(ship: ship).appName(app: "chat") { event in
-//                print("[metadata-store /app-name/chat]", event.map { String(data: $0, encoding: .utf8)! })
-//            }
-//            ursus.metadataStore(ship: ship).appName(app: "contacts") { event in
-//                print("[metadata-store /app-name/contacts]", event.map { String(data: $0, encoding: .utf8)! })
-//            }
+            ursus.metadataStore(ship: ship).appName(app: "contacts") { event in
+                print("[metadata-store /app-name/contacts]", event)
+            }
 //            ursus.s3Store(ship: ship).all { event in
 //                print("[s3-store /all]", event.map { String(data: $0, encoding: .utf8)! })
 //            }
