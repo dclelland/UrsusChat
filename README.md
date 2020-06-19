@@ -15,8 +15,9 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
             - Questions:
                 - Why do the subscriptions [need to be sequential](https://github.com/urbit/urbit/blob/master/pkg/interface/src/subscription/chat.js#L6)?
                 - Is [this](https://github.com/urbit/urbit/blob/master/pkg/interface/src/subscription/chat.js#L17) for pagination?
-        - Store: https://github.com/urbit/urbit/blob/master/pkg/interface/src/store/chat.js
         - Reducers: https://github.com/urbit/urbit/tree/master/pkg/interface/src/reducers
+        - Store: https://github.com/urbit/urbit/blob/master/pkg/interface/src/store/chat.js
+        - API: https://github.com/urbit/urbit/blob/master/pkg/interface/src/api/chat.js
 
 ### Authentication
 
