@@ -9,11 +9,6 @@
 import Foundation
 import ReSwift
 
-let chatStore = Store<ChatState>(
-    reducer: chatReducer,
-    state: nil
-)
-
 struct ChatState: StateType {
     
 }

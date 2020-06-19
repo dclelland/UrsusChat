@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import ReSwift
 import Ursus
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let ursus = Ursus(url: URL(string: "http://192.168.1.65")!, code: "namwes-boster-dalryt-rosfeb")
+
+    let store = Store<ChatState>(reducer: chatReducer, state: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let ursus = self.ursus
