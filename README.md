@@ -10,6 +10,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Write chat client Ursus wrapper
     - Reference:
+        - Note: The following has probable changes due to the Landscape rearchitecture being [merged](https://github.com/urbit/urbit/pull/3025)
         - Subscription: https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js
             - Questions:
                 - Why do the subscriptions [need to be sequential](https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js#L60)?
