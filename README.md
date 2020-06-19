@@ -10,12 +10,13 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Write chat client Ursus wrapper
     - Reference:
-        - Note: The following has probable changes due to the Landscape rearchitecture being [merged](https://github.com/urbit/urbit/pull/3025)
+        - Note: The following has probable changes due to the Landscape rearchitecture recently being [merged](https://github.com/urbit/urbit/pull/3025)
         - Subscription: https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js
             - Questions:
-                - Why do the subscriptions [need to be sequential](https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js#L60)?
-                - Is [this](https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/subscription.js#L68) for pagination?
-        - Reducers: https://github.com/urbit/urbit/tree/master/pkg/interface/chat/src/js/reducers
+                - Why do the subscriptions [need to be sequential](https://github.com/urbit/urbit/blob/master/pkg/interface/src/subscription/chat.js#L6)?
+                - Is [this](https://github.com/urbit/urbit/blob/master/pkg/interface/src/subscription/chat.js#L17) for pagination?
+        - Store: https://github.com/urbit/urbit/blob/master/pkg/interface/src/store/chat.js
+        - Reducers: https://github.com/urbit/urbit/tree/master/pkg/interface/src/reducers
 
 ### Authentication
 
