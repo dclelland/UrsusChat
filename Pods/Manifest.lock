@@ -16,8 +16,8 @@ PODS:
 DEPENDENCIES:
   - KeychainAccess (~> 4.2)
   - ReSwift (~> 5.0)
-  - Ursus (~> 1.0)
-  - Ursus/Utilities (~> 1.0)
+  - Ursus (from `../Ursus`)
+  - Ursus/Utilities (from `../Ursus`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -25,7 +25,10 @@ SPEC REPOS:
     - BigInt
     - KeychainAccess
     - ReSwift
-    - Ursus
+
+EXTERNAL SOURCES:
+  Ursus:
+    :path: "../Ursus"
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -34,6 +37,6 @@ SPEC CHECKSUMS:
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   Ursus: fecf0fbe6e1e51607782add9235386300686fc82
 
-PODFILE CHECKSUM: 62b409ee6248412c242804ece3537bea16aad92e
+PODFILE CHECKSUM: 487c95130c5ee3e1da3db1a6edcca57ab91e6c61
 
 COCOAPODS: 1.8.3
