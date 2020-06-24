@@ -11,6 +11,8 @@ import ReSwift
 
 struct ChatState: StateType {
     
+    var inbox: ChatStore.Inbox = [:]
+    
 //    initialState() {
 //      return {
 //        inbox: {},

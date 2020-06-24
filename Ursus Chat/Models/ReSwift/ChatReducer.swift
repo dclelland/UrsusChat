@@ -50,9 +50,18 @@ let chatReducer: Reducer<ChatState> = { action, state in
 private func chatViewReducer(response: ChatView.PrimaryResponse, state: inout ChatState) {
     switch response {
     case .chatInitial(let initial):
-        break
+        state.inbox = initial
     case .chatUpdate(let update):
-        break
+        switch update {
+        case .create(let create):
+            break
+        case .delete(let delete):
+            break
+        case .message(let message):
+            break
+        case .read(let read):
+            break
+        }
     }
 }
 
@@ -77,7 +86,16 @@ private func permissionStoreReducer(response: PermissionStore.AllResponse, state
     case .permissionInitial(let initial):
         break
     case .permissionUpdate(let update):
-        break
+        switch update {
+        case .create(let create):
+            break
+        case .delete(let delete):
+            break
+        case .add(let add):
+            break
+        case .remove(let remove):
+            break
+        }
     }
 }
 
@@ -93,6 +111,9 @@ private func contactViewReducer(response: ContactView.PrimaryResponse, state: in
 private func metadataStoreReducer(response: MetadataStore.AppNameResponse, state: inout ChatState) {
     switch response {
     case .metadataUpdate(let update):
-        break
+        switch update {
+        case .associations(let associations):
+            break
+        }
     }
 }
