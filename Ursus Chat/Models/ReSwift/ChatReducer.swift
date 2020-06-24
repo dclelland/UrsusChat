@@ -107,7 +107,7 @@ private func permissionStoreReducer(response: PermissionStore.AllResponse, state
 private func contactViewReducer(response: ContactView.PrimaryResponse, state: inout ChatState) {
     switch response {
     case .contactInitial(let initial):
-        break
+        state.contacts = initial
     case .contactUpdate(let update):
         break
     }

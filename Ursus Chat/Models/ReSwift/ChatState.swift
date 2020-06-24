@@ -15,6 +15,7 @@ struct ChatState: StateType {
     var chatSynced: [String: String]? = nil
     
     var invites: InviteStore.Invites = [:]
+    var contacts: ContactStore.Rolodex = [:]
     
 //    initialState() {
 //      return {
