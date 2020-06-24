@@ -73,7 +73,7 @@ private func chatViewReducer(response: ChatView.PrimaryResponse, state: inout Ch
 private func chatHookReducer(response: ChatHook.SyncedResponse, state: inout ChatState) {
     switch response {
     case .chatHookUpdate(let update):
-        break
+        state.chatSynced = update
     }
 }
 

@@ -12,6 +12,7 @@ import ReSwift
 struct ChatState: StateType {
     
     var inbox: ChatStore.Inbox = [:]
+    var chatSynced: [String: String]? = nil
     
 //    initialState() {
 //      return {
