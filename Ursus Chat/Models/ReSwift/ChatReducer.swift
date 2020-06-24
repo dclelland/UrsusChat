@@ -24,9 +24,7 @@ extension ContactView.PrimaryResponse: Action { }
 
 extension MetadataStore.AppNameResponse: Action { }
 
-extension Data: Action { }
-
-func chatReducer(action: Action, state: ChatState?) -> ChatState {
+let chatReducer: Reducer<ChatState> = { action, state in
     var state = state ?? ChatState()
     
     switch action {
@@ -49,26 +47,26 @@ func chatReducer(action: Action, state: ChatState?) -> ChatState {
     return state
 }
 
-func chatViewReducer(response: ChatView.PrimaryResponse, state: inout ChatState) {
+private func chatViewReducer(response: ChatView.PrimaryResponse, state: inout ChatState) {
     
 }
 
-func chatHookReducer(response: ChatHook.SyncedResponse, state: inout ChatState) {
+private func chatHookReducer(response: ChatHook.SyncedResponse, state: inout ChatState) {
     
 }
 
-func inviteStoreReducer(response: InviteStore.AllResponse, state: inout ChatState) {
+private func inviteStoreReducer(response: InviteStore.AllResponse, state: inout ChatState) {
     
 }
 
-func permissionStoreReducer(response: PermissionStore.AllResponse, state: inout ChatState) {
+private func permissionStoreReducer(response: PermissionStore.AllResponse, state: inout ChatState) {
     
 }
 
-func contactViewReducer(response: ContactView.PrimaryResponse, state: inout ChatState) {
+private func contactViewReducer(response: ContactView.PrimaryResponse, state: inout ChatState) {
     
 }
 
-func metadataStoreReducer(response: MetadataStore.AppNameResponse, state: inout ChatState) {
+private func metadataStoreReducer(response: MetadataStore.AppNameResponse, state: inout ChatState) {
     
 }

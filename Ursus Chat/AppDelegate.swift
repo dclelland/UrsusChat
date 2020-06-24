@@ -12,7 +12,7 @@ import Ursus
 
 let ursus = Ursus(url: URL(string: "http://192.168.1.65")!, code: "figlec-lagbex-torrun-savmun")
 
-let store = Store<ChatState>(reducer: chatReducer, state: nil, middleware: [chatMiddleware])
+let store = Store<ChatState>(reducer: chatReducer, state: nil, middleware: [chatLogger])
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
