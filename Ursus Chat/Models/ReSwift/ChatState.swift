@@ -11,4 +11,22 @@ import ReSwift
 
 struct ChatState: StateType {
     
+//    initialState() {
+//      return {
+//        inbox: {},
+//        chatSynced: null,
+//        contacts: {},
+//        permissions: {},
+//        invites: {},
+//        associations: {
+//          chat: {},
+//          contacts: {}
+//        },
+//        sidebarShown: true,
+//        pendingMessages: new Map([]),
+//        chatInitialized: false,
+//        s3: {}
+//      };
+//    }
+    
 }
