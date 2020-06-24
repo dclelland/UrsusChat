@@ -54,13 +54,18 @@ private func chatViewReducer(response: ChatView.PrimaryResponse, state: inout Ch
     case .chatUpdate(let update):
         switch update {
         case .create(let create):
-            break
+            state.inbox[create.path] = ChatStore.Mailbox(config: ChatStore.Config(length: 0, read: 0), envelopes: [])
         case .delete(let delete):
-            break
+            state.inbox[delete.path] = nil
         case .message(let message):
-            break
+            if let mailbox = state.inbox[message.path] {
+                state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
+                state.inbox[message.path]?.config.length = mailbox.config.length + 1
+            }
         case .read(let read):
-            break
+            if let mailbox = state.inbox[read.path] {
+                state.inbox[read.path]?.config.read = mailbox.config.length
+            }
         }
     }
 }
