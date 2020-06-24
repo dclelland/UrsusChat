@@ -14,6 +14,8 @@ struct ChatState: StateType {
     var inbox: ChatStore.Inbox = [:]
     var chatSynced: [String: String]? = nil
     
+    var invites: InviteStore.Invites = [:]
+    
 //    initialState() {
 //      return {
 //        inbox: {},

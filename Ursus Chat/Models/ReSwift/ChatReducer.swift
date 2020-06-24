@@ -80,7 +80,7 @@ private func chatHookReducer(response: ChatHook.SyncedResponse, state: inout Cha
 private func inviteStoreReducer(response: InviteStore.AllResponse, state: inout ChatState) {
     switch response {
     case .inviteInitial(let initial):
-        break
+        state.invites = initial
     case .inviteUpdate(let update):
         break
     }
