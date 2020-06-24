@@ -29,22 +29,19 @@ extension Data: Action { }
 func chatReducer(action: Action, state: ChatState?) -> ChatState {
     var state = state ?? ChatState()
     
-    #warning("Modify SubscribeEvent so there's more data here")
-    print(action)
-    
     switch action {
-    case SubscribeEvent<ChatView.PrimaryResponse>.update(let value):
-        break
-    case SubscribeEvent<ChatHook.SyncedResponse>.update(let value):
-        break
-    case SubscribeEvent<InviteStore.AllResponse>.update(let value):
-        break
-    case SubscribeEvent<PermissionStore.AllResponse>.update(let value):
-        break
-    case SubscribeEvent<ContactView.PrimaryResponse>.update(let value):
-        break
-    case SubscribeEvent<MetadataStore.AppNameResponse>.update(let value):
-        break
+    case SubscribeEvent<ChatView.PrimaryResponse>.update(let response):
+        chatViewReducer(response: response, state: state)
+    case SubscribeEvent<ChatHook.SyncedResponse>.update(let response):
+        chatHookReducer(response: response, state: state)
+    case SubscribeEvent<InviteStore.AllResponse>.update(let response):
+        inviteStoreReducer(response: response, state: state)
+    case SubscribeEvent<PermissionStore.AllResponse>.update(let response):
+        permissionStoreReducer(response: response, state: state)
+    case SubscribeEvent<ContactView.PrimaryResponse>.update(let response):
+        contactViewReducer(response: response, state: state)
+    case SubscribeEvent<MetadataStore.AppNameResponse>.update(let response):
+        metadataStoreReducer(response: response, state: state)
     default:
         break
     }
@@ -52,3 +49,26 @@ func chatReducer(action: Action, state: ChatState?) -> ChatState {
     return state
 }
 
+func chatViewReducer(response: ChatView.PrimaryResponse, state: ChatState) {
+    
+}
+
+func chatHookReducer(response: ChatHook.SyncedResponse, state: ChatState) {
+    
+}
+
+func inviteStoreReducer(response: InviteStore.AllResponse, state: ChatState) {
+    
+}
+
+func permissionStoreReducer(response: PermissionStore.AllResponse, state: ChatState) {
+    
+}
+
+func contactViewReducer(response: ContactView.PrimaryResponse, state: ChatState) {
+    
+}
+
+func metadataStoreReducer(response: MetadataStore.AppNameResponse, state: ChatState) {
+    
+}
