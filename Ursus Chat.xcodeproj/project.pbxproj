@@ -10,7 +10,6 @@
 		4B146B7CAB70EFF1E379C0C8 /* Pods_Ursus_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4571111F4EDDD0C02EE20A62 /* Pods_Ursus_Chat.framework */; };
 		6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60124977BFE00F3D56C /* AppDelegate.swift */; };
 		6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60324977BFE00F3D56C /* SceneDelegate.swift */; };
-		6520F61724977D1600F3D56C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F61624977D1600F3D56C /* ContentView.swift */; };
 		6520F61E24977D4800F3D56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */; };
 		6520F61F24977D4800F3D56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61D24977D4800F3D56C /* Assets.xcassets */; };
 		6520F62C2498558700F3D56C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F62B2498558700F3D56C /* ChatView.swift */; };
@@ -22,6 +21,7 @@
 		655DB31B249ADDA800A591B9 /* InviteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31A249ADDA800A591B9 /* InviteStore.swift */; };
 		655DB31D249B006800A591B9 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31C249B006800A591B9 /* ContactStore.swift */; };
 		6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */; };
+		6587EF9124A3207500969E92 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9024A3207500969E92 /* LoginView.swift */; };
 		65D95A4C249C541C0002AA4F /* ChatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4B249C541C0002AA4F /* ChatState.swift */; };
 		65D95A4F249C54480002AA4F /* ChatReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4E249C54480002AA4F /* ChatReducer.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,6 @@
 		6520F5FE24977BFE00F3D56C /* Ursus Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ursus Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6520F60124977BFE00F3D56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6520F60324977BFE00F3D56C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6520F61624977D1600F3D56C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6520F61D24977D4800F3D56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6520F62124977D6500F3D56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		655DB31A249ADDA800A591B9 /* InviteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteStore.swift; sourceTree = "<group>"; };
 		655DB31C249B006800A591B9 /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMiddleware.swift; sourceTree = "<group>"; };
+		6587EF9024A3207500969E92 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		65D95A4B249C541C0002AA4F /* ChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatState.swift; sourceTree = "<group>"; };
 		65D95A4E249C54480002AA4F /* ChatReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 		6520F61524977D1600F3D56C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6520F61624977D1600F3D56C /* ContentView.swift */,
+				6587EF9024A3207500969E92 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +288,7 @@
 				655DB311249ACCDE00A591B9 /* PermissionStore.swift in Sources */,
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
+				6587EF9124A3207500969E92 /* LoginView.swift in Sources */,
 				6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */,
 				655DB313249ACD2600A591B9 /* ContactView.swift in Sources */,
 				65D95A4F249C54480002AA4F /* ChatReducer.swift in Sources */,
@@ -298,7 +299,6 @@
 				655DB315249ACD7E00A591B9 /* MetadataStore.swift in Sources */,
 				655DB30D249A140B00A591B9 /* ChatStore.swift in Sources */,
 				65D95A4C249C541C0002AA4F /* ChatState.swift in Sources */,
-				6520F61724977D1600F3D56C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
