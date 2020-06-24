@@ -9,13 +9,24 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @State private var url: URL?
+    
+    @State private var code: String?
+    
     var body: some View {
-        Text("~")
+        VStack {
+            Text("Urbit URL")
+            TextField("URL", value: $url, formatter: URLFormatter())
+        }
     }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
+    
     static var previews: some View {
         LoginView()
     }
+    
 }

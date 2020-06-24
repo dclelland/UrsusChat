@@ -22,6 +22,7 @@
 		655DB31D249B006800A591B9 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31C249B006800A591B9 /* ContactStore.swift */; };
 		6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */; };
 		6587EF9124A3207500969E92 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9024A3207500969E92 /* LoginView.swift */; };
+		6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9224A3317300969E92 /* URLFormatter.swift */; };
 		65D95A4C249C541C0002AA4F /* ChatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4B249C541C0002AA4F /* ChatState.swift */; };
 		65D95A4F249C54480002AA4F /* ChatReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4E249C54480002AA4F /* ChatReducer.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		655DB31C249B006800A591B9 /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMiddleware.swift; sourceTree = "<group>"; };
 		6587EF9024A3207500969E92 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6587EF9224A3317300969E92 /* URLFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFormatter.swift; sourceTree = "<group>"; };
 		65D95A4B249C541C0002AA4F /* ChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatState.swift; sourceTree = "<group>"; };
 		65D95A4E249C54480002AA4F /* ChatReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				6520F60324977BFE00F3D56C /* SceneDelegate.swift */,
 				6520F623249850FE00F3D56C /* Models */,
 				6520F61524977D1600F3D56C /* Views */,
+				6587EF9424A3318100969E92 /* Formatters */,
 				6520F61B24977D4800F3D56C /* Assets */,
 				6520F62024977D6500F3D56C /* Supporting Files */,
 			);
@@ -150,6 +153,14 @@
 				655DB314249ACD7E00A591B9 /* MetadataStore.swift */,
 			);
 			path = Ursus;
+			sourceTree = "<group>";
+		};
+		6587EF9424A3318100969E92 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				6587EF9224A3317300969E92 /* URLFormatter.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		65D95A4D249C543D0002AA4F /* ReSwift */ = {
@@ -288,6 +299,7 @@
 				655DB311249ACCDE00A591B9 /* PermissionStore.swift in Sources */,
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
+				6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */,
 				6587EF9124A3207500969E92 /* LoginView.swift in Sources */,
 				6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */,
 				655DB313249ACD2600A591B9 /* ContactView.swift in Sources */,
