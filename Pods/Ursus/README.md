@@ -38,7 +38,7 @@ Things that would make this codebase nicer:
 
 ## Other utilities
 
-- [util.js](https://github.com/urbit/urbit/blob/master/pkg/interface/chat/src/js/lib/util.js)
+- [util.js](https://github.com/urbit/urbit/blob/master/pkg/interface/src/lib/util.js)
 - [urbit-ob](https://github.com/urbit/urbit-ob)
 - [urbit-hob](https://github.com/urbit/urbit-hob)
 

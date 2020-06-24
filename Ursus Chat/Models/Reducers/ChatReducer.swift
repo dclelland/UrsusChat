@@ -24,9 +24,12 @@ extension ContactView.PrimaryResponse: Action { }
 
 extension MetadataStore.AppNameResponse: Action { }
 
+extension Data: Action { }
+
 func chatReducer(action: Action, state: ChatState?) -> ChatState {
     var state = state ?? ChatState()
     
+    #warning("Modify SubscribeEvent so there's more data here")
     print(action)
     
     switch action {

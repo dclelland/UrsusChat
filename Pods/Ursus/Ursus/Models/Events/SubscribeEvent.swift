@@ -18,7 +18,27 @@ public enum SubscribeEvent<Value> {
 
 extension SubscribeEvent {
     
-    public func map<T>(_ transform: (Value) throws -> T) -> SubscribeEvent<T> {
+    public var value: Value? {
+        guard case .update(let value) = self else {
+            return nil
+        }
+        
+        return value
+    }
+    
+    public var error: Error? {
+        guard case .failure(let error) = self else {
+            return nil
+        }
+        
+        return error
+    }
+    
+}
+
+extension SubscribeEvent {
+    
+    public func map<NewValue>(_ transform: (Value) throws -> NewValue) -> SubscribeEvent<NewValue> {
         switch self {
         case .started:
             return .started

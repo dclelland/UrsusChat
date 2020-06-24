@@ -54,11 +54,11 @@ class ChatStore: UrsusApp {
     
     struct Envelope: Decodable {
 
-        var when: Date
-        var author: String
-        var number: Int
-        var letter: Letter
         var uid: String
+        var number: Int
+        var author: String
+        var when: Date
+        var letter: Letter
         
     }
     
