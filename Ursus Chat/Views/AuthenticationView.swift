@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  AuthenticationView.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 24/06/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct AuthenticationView: View {
     
     @State private var url: URL?
     
@@ -23,10 +23,10 @@ struct LoginView: View {
     
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct AuthenticationView_Previews: PreviewProvider {
     
     static var previews: some View {
-        LoginView()
+        AuthenticationView()
     }
     
 }
