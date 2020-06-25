@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.tintColor = .systemBlue
+        self.window?.tintColor = .systemIndigo
         self.window?.rootViewController = UIHostingController(rootView: AuthenticationView())
         self.window?.makeKeyAndVisible()
     }
