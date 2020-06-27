@@ -3,7 +3,7 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-development_pods = true
+development_pods = false
 
 target 'Ursus Chat' do
   
@@ -11,8 +11,8 @@ target 'Ursus Chat' do
         pod 'Ursus', path: '../Ursus'
         pod 'Ursus/Utilities', path: '../Ursus'
     else
-        pod 'Ursus', '~> 1.0'
-        pod 'Ursus/Utilities', '~> 1.0'
+        pod 'Ursus', '~> 1.1'
+        pod 'Ursus/Utilities', '~> 1.1'
     end
   
     pod 'KeychainAccess', '~> 4.2'
