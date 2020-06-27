@@ -33,7 +33,7 @@ internal struct PhoneticBaseObfuscator {
         case 33...64:
             let low = value & 0x00000000FFFFFFFF
             let high = value & 0xFFFFFFFF00000000
-            return high | obfuscate(low)
+            return high | deobfuscate(low)
         default:
             break
         }

@@ -4,13 +4,13 @@ PODS:
   - KeychainAccess (4.2.0)
   - Parity (2.3.0)
   - ReSwift (5.0.0)
-  - Ursus (1.1.0):
+  - Ursus (1.1.1):
     - Alamofire (~> 5.2)
-    - Ursus/EventSource (= 1.1.0)
-    - Ursus/Utilities (= 1.1.0)
-  - Ursus/EventSource (1.1.0):
+    - Ursus/EventSource (= 1.1.1)
+    - Ursus/Utilities (= 1.1.1)
+  - Ursus/EventSource (1.1.1):
     - Alamofire (~> 5.2)
-  - Ursus/Utilities (1.1.0):
+  - Ursus/Utilities (1.1.1):
     - Alamofire (~> 5.2)
     - BigInt (~> 5.0)
     - Parity (~> 2.3)
@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   Parity: d2a2617bf13b982f62a89a6864207dda83f5f0f2
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
-  Ursus: 0bdfafd304a7001cbbc0e35345d5291445a931e1
+  Ursus: d30b023795a4ae7e1c6a1f3ad98b87e6d9591857
 
 PODFILE CHECKSUM: d03c9f1e72d9ddf9ed2f51eb089bb7cc1acbe600
 
