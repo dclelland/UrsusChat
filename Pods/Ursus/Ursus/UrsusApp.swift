@@ -10,7 +10,7 @@ import Alamofire
 
 extension Ursus {
     
-    public func app<App: UrsusApp>(ship: String, app: String) -> App {
+    public func app<App: UrsusApp>(ship: Ship, app: String) -> App {
         return App(ursus: self, ship: ship, app: app)
     }
     
@@ -19,10 +19,10 @@ extension Ursus {
 open class UrsusApp {
     
     public var ursus: Ursus
-    public var ship: String
+    public var ship: Ship
     public var app: String
     
-    required public init(ursus: Ursus, ship: String, app: String) {
+    required public init(ursus: Ursus, ship: Ship, app: String) {
         self.ursus = ursus
         self.ship = ship
         self.app = app

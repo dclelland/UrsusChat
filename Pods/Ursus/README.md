@@ -19,7 +19,7 @@ ursus.authenticationRequest() { ship in
 
 ## Installation
 
-Ursus can be installed using Cocoapods by adding `pod 'Ursus', '~> 1.0'` to your `Podfile`.
+Ursus can be installed using Cocoapods by adding `pod 'Ursus', '~> 1.1'` to your `Podfile`.
 
 I can probably help set up Carthage or Swift Package Manager support if you need it.
 

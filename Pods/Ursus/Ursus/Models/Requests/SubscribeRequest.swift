@@ -11,7 +11,7 @@ internal struct SubscribeRequest: Encodable {
     
     var action: String = "subscribe"
     var id: Int
-    var ship: String
+    var ship: Ship
     var app: String
     var path: String
     

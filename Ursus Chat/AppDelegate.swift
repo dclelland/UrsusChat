@@ -28,9 +28,6 @@ let store = Store<ChatState>(reducer: chatReducer, state: nil, middleware: [chat
             }
         }
         
-        let testPatP: PatP = 65536 // ~dapnep-ronmyl
-        let testPatQ: PatQ = 65536 // ~nec-dozzod
-        
         return true
     }
     

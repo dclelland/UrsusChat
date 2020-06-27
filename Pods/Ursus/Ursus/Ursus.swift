@@ -8,7 +8,11 @@
 import Foundation
 import Alamofire
 
-final public class Ursus {
+public typealias Ship = PatP
+
+public typealias Code = PatP
+
+public class Ursus {
     
     private var session: Session = .default
     private var eventSource: EventSource? = nil
@@ -30,9 +34,9 @@ final public class Ursus {
     private var lastEventID: String? = nil
     
     public var url: URL
-    public var code: String
+    public var code: Code
     
-    public init(url: URL, code: String) {
+    public init(url: URL, code: Code) {
         self.url = url
         self.code = code
     }
@@ -45,14 +49,19 @@ final public class Ursus {
 
 extension Ursus {
     
-    @discardableResult public func authenticationRequest(handler: @escaping (String) -> Void) -> DataRequest {
-        return session.request(authenticationURL, method: .post, parameters: ["password": code], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
+    @discardableResult public func authenticationRequest(handler: @escaping (Ship) -> Void) -> DataRequest {
+        return session.request(authenticationURL, method: .post, parameters: ["password": code.description], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
             guard let urbauth = response.response?.value(forHTTPHeaderField: "Set-Cookie") else {
                 print("[Ursus] Error retrieving urbauth")
                 return
             }
             
-            guard let ship = urbauth.split(separator: "=").first?.replacingOccurrences(of: "urbauth-~", with: "") else {
+            guard let name = urbauth.split(separator: "=").first?.replacingOccurrences(of: "urbauth-", with: "") else {
+                print("[Ursus] Error decoding urbauth:", urbauth)
+                return
+            }
+            
+            guard let ship = try? Ship(string: name) else {
                 print("[Ursus] Error decoding urbauth:", urbauth)
                 return
             }
@@ -76,7 +85,7 @@ extension Ursus {
         return channelRequest(request)
     }
     
-    @discardableResult public func pokeRequest<JSON: Encodable>(ship: String, app: String, mark: String = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+    @discardableResult public func pokeRequest<JSON: Encodable>(ship: Ship, app: String, mark: String = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
         let id = nextRequestID
         let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
         pokeHandlers[id] = handler
@@ -87,7 +96,7 @@ extension Ursus {
         }
     }
     
-    @discardableResult public func subscribeRequest(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest(ship: Ship, app: String, path: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         let id = nextRequestID
         let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
         subscribeHandlers[id] = handler
@@ -98,7 +107,7 @@ extension Ursus {
         }
     }
     
-    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: String, app: String, path: String, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: Ship, app: String, path: String, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
         let decoder = self.decoder
         return subscribeRequest(ship: ship, app: app, path: path) { event in
             handler(event.map { data in
