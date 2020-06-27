@@ -12,7 +12,7 @@ import Ursus
 
 extension Ursus {
     
-    func metadataStore(ship: String) -> MetadataStore {
+    func metadataStore(ship: Ship) -> MetadataStore {
         return app(ship: ship, app: "metadata-store")
     }
     

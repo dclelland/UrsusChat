@@ -12,7 +12,7 @@ import Ursus
 
 extension Ursus {
     
-    func inviteStore(ship: String) -> InviteStore {
+    func inviteStore(ship: Ship) -> InviteStore {
         return app(ship: ship, app: "invite-store")
     }
     

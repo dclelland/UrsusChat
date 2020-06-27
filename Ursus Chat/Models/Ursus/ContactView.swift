@@ -12,7 +12,7 @@ import Ursus
 
 extension Ursus {
     
-    func contactView(ship: String) -> ContactView {
+    func contactView(ship: Ship) -> ContactView {
         return app(ship: ship, app: "contact-view")
     }
     

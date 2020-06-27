@@ -38,6 +38,9 @@
       "dependencies": {
         "BigInt": [
           "~> 5.0"
+        ],
+        "Parity": [
+          "~> 2.0"
         ]
       }
     }

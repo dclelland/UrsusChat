@@ -1,7 +1,10 @@
 PODS:
   - Alamofire (5.2.1)
+  - AlamofireLogger (0.3.0):
+    - Alamofire (~> 5.0)
   - BigInt (5.0.0)
   - KeychainAccess (4.2.0)
+  - Parity (2.2.0)
   - ReSwift (5.0.0)
   - Ursus (1.0.8):
     - Alamofire (~> 5.2)
@@ -12,28 +15,37 @@ PODS:
   - Ursus/Utilities (1.0.8):
     - Alamofire (~> 5.2)
     - BigInt (~> 5.0)
+    - Parity (~> 2.0)
 
 DEPENDENCIES:
+  - AlamofireLogger
   - KeychainAccess (~> 4.2)
   - ReSwift (~> 5.0)
-  - Ursus (~> 1.0)
-  - Ursus/Utilities (~> 1.0)
+  - Ursus (from `../Ursus`)
+  - Ursus/Utilities (from `../Ursus`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AlamofireLogger
     - BigInt
     - KeychainAccess
+    - Parity
     - ReSwift
-    - Ursus
+
+EXTERNAL SOURCES:
+  Ursus:
+    :path: "../Ursus"
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  AlamofireLogger: 8843aafdf632a7358ca347bc1811f2eaf04cf45a
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
+  Parity: df2a01e0eb3be3a4d4e9a5040122c011bb9e215a
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
-  Ursus: daf272ace01bd13e1eabf46fad117706c36c1651
+  Ursus: dd6e9aab49be426a6afd88cccea7b47f5a6e1eae
 
-PODFILE CHECKSUM: 62b409ee6248412c242804ece3537bea16aad92e
+PODFILE CHECKSUM: 3823a5e7778f281515240ba412da04075a8a8b70
 
 COCOAPODS: 1.8.3

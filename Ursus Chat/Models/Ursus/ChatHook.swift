@@ -12,7 +12,7 @@ import Ursus
 
 extension Ursus {
     
-    func chatHook(ship: String) -> ChatHook {
+    func chatHook(ship: Ship) -> ChatHook {
         return app(ship: ship, app: "chat-hook")
     }
     

@@ -12,7 +12,7 @@ import Ursus
 
 extension Ursus {
     
-    func permissionStore(ship: String) -> PermissionStore {
+    func permissionStore(ship: Ship) -> PermissionStore {
         return app(ship: ship, app: "permission-store")
     }
     
