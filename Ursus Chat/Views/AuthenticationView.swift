@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import Ursus
 
 struct AuthenticationView: View {
     
     @State private var url: URL?
     
-    @State private var code: String = ""
+    @State private var code: Code?
     
     var body: some View {
         NavigationView {
@@ -23,7 +24,8 @@ struct AuthenticationView: View {
                         .autocapitalization(.none)
                 }
                 Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
-                    SecureField("sampel-ticlyt-migfun-falmel", text: $code)
+                    TextField("sampel-ticlyt-migfun-falmel", value: $code, formatter: CodeFormatter())
+                        .autocapitalization(.none)
                 }
                 Section {
                     Button(action: continueButtonTapped) {
