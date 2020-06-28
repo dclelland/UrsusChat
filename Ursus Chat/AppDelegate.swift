@@ -10,7 +10,7 @@ import UIKit
 import ReSwift
 import Ursus
 
-let ursus = Ursus(url: URL(string: "http://192.168.1.65")!, code: "figlec-lagbex-torrun-savmun")
+let ursus = Ursus(url: URL(string: "http://192.168.1.78:8080")!, code: "lacnyd-morped-pilbel-pocnep")
 
 let store = Store<ChatState>(reducer: chatReducer, state: nil, middleware: [chatLogger])
 
