@@ -10,7 +10,6 @@ import UIKit
 import SwiftUI
 import Ursus
 
-//let ursus = Ursus(url: URL(string: "http://192.168.1.78:8080")!, code: "lacnyd-morped-pilbel-pocnep")
 //ursus.authenticationRequest { ship in
 //    ursus.chatView(ship: ship).primary(handler: store.dispatch(_:)).response { response in
 //        ursus.chatHook(ship: ship).synced(handler: store.dispatch(_:))
@@ -35,6 +34,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.tintColor = .systemIndigo
         self.window?.rootViewController = UIHostingController(
             rootView: AuthenticationView(
+                url: "http://192.168.1.78:8080",
+                code: "lacnyd-morped-pilbel-pocnep",
                 handler: { url, code in
                     let ursus = Ursus(url: url, code: code)
                     ursus.authenticationRequest { ship in

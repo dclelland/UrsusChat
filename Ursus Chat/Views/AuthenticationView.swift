@@ -11,11 +11,11 @@ import Ursus
 
 struct AuthenticationView: View {
     
-    @State private var url: String = ""
+    @State var url: String = ""
     
-    @State private var code: String = ""
+    @State var code: String = ""
     
-    var handler: (_ url: URL, _ code: Code) -> Void
+    var handler: (_ url: URL, _ code: Code) -> Void = { _, _ in }
     
     var body: some View {
         NavigationView {
@@ -69,9 +69,7 @@ extension AuthenticationView {
 struct AuthenticationView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AuthenticationView(
-            handler: { _, _ in }
-        )
+        AuthenticationView()
     }
     
 }
