@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.2.1)
+  - AlamofireLogger (1.0.1):
+    - Alamofire (~> 5.0)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
   - BigInt (5.0.0)
@@ -18,6 +20,7 @@ PODS:
     - Parity (~> 2.3)
 
 DEPENDENCIES:
+  - AlamofireLogger (~> 1.0)
   - AlamofireNetworkActivityIndicator (~> 3.1)
   - KeychainAccess (~> 4.2)
   - ReSwift (~> 5.0)
@@ -27,6 +30,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AlamofireLogger
     - AlamofireNetworkActivityIndicator
     - BigInt
     - KeychainAccess
@@ -36,6 +40,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  AlamofireLogger: 7f4bde032340dad1f6b50c97ef3e6a3acf24e708
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
@@ -43,6 +48,6 @@ SPEC CHECKSUMS:
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   Ursus: d30b023795a4ae7e1c6a1f3ad98b87e6d9591857
 
-PODFILE CHECKSUM: 5c59c96dc7f8260a510dd4e881077acda7e58ae7
+PODFILE CHECKSUM: 05c828b64a88d2cbb27d9a77fda61d4d67a3fd14
 
 COCOAPODS: 1.8.3

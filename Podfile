@@ -16,6 +16,7 @@ target 'Ursus Chat' do
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'
+    pod 'AlamofireLogger', '~> 1.0'
     pod 'KeychainAccess', '~> 4.2'
     pod 'ReSwift', '~> 5.0'
     
