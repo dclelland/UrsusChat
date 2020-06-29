@@ -1,6 +1,6 @@
 # Ursus Chat
 
-An Urbit chat client for iOS.
+An Urbit chat application for iOS.
 
 Work in progress; first project using my [Ursus](https://github.com/dclelland/Ursus) HTTP/`%eyre` client library.
 
