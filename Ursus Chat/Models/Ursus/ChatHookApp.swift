@@ -1,5 +1,5 @@
 //
-//  ChatHook.swift
+//  ChatHookApp.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 18/06/20.
@@ -12,13 +12,13 @@ import Ursus
 
 extension Ursus {
     
-    func chatHook(ship: Ship) -> ChatHook {
+    func chatHook(ship: Ship) -> ChatHookApp {
         return app(ship: ship, app: "chat-hook")
     }
     
 }
 
-class ChatHook: UrsusApp {
+class ChatHookApp: UrsusApp {
     
     @discardableResult func synced(handler: @escaping (SubscribeEvent<SyncedResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/synced", handler: handler)
@@ -26,7 +26,7 @@ class ChatHook: UrsusApp {
     
 }
 
-extension ChatHook {
+extension ChatHookApp {
     
     enum SyncedResponse: Decodable {
         

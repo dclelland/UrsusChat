@@ -1,8 +1,8 @@
 //
-//  ChatViewApp.swift
+//  ContactViewApp.swift
 //  Ursus Chat
 //
-//  Created by Daniel Clelland on 16/06/20.
+//  Created by Daniel Clelland on 18/06/20.
 //  Copyright © 2020 Protonome. All rights reserved.
 //
 
@@ -12,13 +12,13 @@ import Ursus
 
 extension Ursus {
     
-    func chatView(ship: Ship) -> ChatView {
-        return app(ship: ship, app: "chat-view")
+    func contactView(ship: Ship) -> ContactViewApp {
+        return app(ship: ship, app: "contact-view")
     }
     
 }
 
-class ChatView: UrsusApp {
+class ContactViewApp: UrsusApp {
     
     @discardableResult func primary(handler: @escaping (SubscribeEvent<PrimaryResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
@@ -26,27 +26,27 @@ class ChatView: UrsusApp {
     
 }
 
-extension ChatView {
+extension ContactViewApp {
     
     enum PrimaryResponse: Decodable {
         
-        case chatInitial(ChatStore.Inbox)
-        case chatUpdate(ChatStore.Update)
+        case contactInitial(ContactStoreApp.Rolodex)
+        case contactUpdate(ContactStoreApp.ContactUpdate)
         
         enum CodingKeys: String, CodingKey {
             
-            case chatInitial
-            case chatUpdate
+            case contactInitial
+            case contactUpdate
             
         }
         
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
-            case [.chatInitial]:
-                self = .chatInitial(try container.decode(ChatStore.Inbox.self, forKey: .chatInitial))
-            case [.chatUpdate]:
-                self = .chatUpdate(try container.decode(ChatStore.Update.self, forKey: .chatUpdate))
+            case [.contactInitial]:
+                self = .contactInitial(try container.decode(ContactStoreApp.Rolodex.self, forKey: .contactInitial))
+            case [.contactUpdate]:
+                self = .contactUpdate(try container.decode(ContactStoreApp.ContactUpdate.self, forKey: .contactUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }

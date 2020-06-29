@@ -11,11 +11,11 @@ import ReSwift
 
 struct ChatState: StateType {
     
-    var inbox: ChatStore.Inbox = [:]
+    var inbox: ChatStoreApp.Inbox = [:]
     var chatSynced: [String: String]? = nil
     
-    var invites: InviteStore.Invites = [:]
-    var contacts: ContactStore.Rolodex = [:]
+    var invites: InviteStoreApp.Invites = [:]
+    var contacts: ContactStoreApp.Rolodex = [:]
     
 //    initialState() {
 //      return {

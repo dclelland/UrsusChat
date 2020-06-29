@@ -1,5 +1,5 @@
 //
-//  ContactStore.swift
+//  ContactStoreApp.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 18/06/20.
@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import Ursus
 
-class ContactStore: UrsusApp {
+class ContactStoreApp: UrsusApp {
     
     typealias Rolodex = [String: Contacts]
     
@@ -30,7 +30,7 @@ class ContactStore: UrsusApp {
     
     struct ContactUpdate: Decodable {
         
-        #warning("Implement decoder for ContactStore.ContactUpdate")
+        #warning("Implement decoder for ContactStoreApp.ContactUpdate")
         
     }
     

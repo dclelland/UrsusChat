@@ -1,5 +1,5 @@
 //
-//  InviteStore.swift
+//  InviteStoreApp.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 18/06/20.
@@ -12,13 +12,13 @@ import Ursus
 
 extension Ursus {
     
-    func inviteStore(ship: Ship) -> InviteStore {
+    func inviteStore(ship: Ship) -> InviteStoreApp {
         return app(ship: ship, app: "invite-store")
     }
     
 }
 
-class InviteStore: UrsusApp {
+class InviteStoreApp: UrsusApp {
     
     @discardableResult func all(handler: @escaping (SubscribeEvent<AllResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)
@@ -26,12 +26,12 @@ class InviteStore: UrsusApp {
     
 }
 
-extension InviteStore {
+extension InviteStoreApp {
     
     enum AllResponse: Decodable {
         
-        case inviteInitial(InviteStore.Invites)
-        case inviteUpdate(InviteStore.InviteUpdate)
+        case inviteInitial(InviteStoreApp.Invites)
+        case inviteUpdate(InviteStoreApp.InviteUpdate)
         
         enum CodingKeys: String, CodingKey {
             
@@ -44,9 +44,9 @@ extension InviteStore {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
             case [.inviteInitial]:
-                self = .inviteInitial(try container.decode(InviteStore.Invites.self, forKey: .inviteInitial))
+                self = .inviteInitial(try container.decode(InviteStoreApp.Invites.self, forKey: .inviteInitial))
             case [.inviteUpdate]:
-                self = .inviteUpdate(try container.decode(InviteStore.InviteUpdate.self, forKey: .inviteUpdate))
+                self = .inviteUpdate(try container.decode(InviteStoreApp.InviteUpdate.self, forKey: .inviteUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }
@@ -56,7 +56,7 @@ extension InviteStore {
     
 }
 
-extension InviteStore {
+extension InviteStoreApp {
     
     struct Invite: Decodable {
         
@@ -90,7 +90,7 @@ extension InviteStore {
             
             var path: String
             var uid: String
-            var invite: InviteStore.Invite
+            var invite: InviteStoreApp.Invite
             
         }
         

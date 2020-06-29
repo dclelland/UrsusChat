@@ -1,50 +1,52 @@
 //
-//  ChatStore.swift
+//  PermissionStoreApp.swift
 //  Ursus Chat
 //
-//  Created by Daniel Clelland on 17/06/20.
+//  Created by Daniel Clelland on 18/06/20.
 //  Copyright © 2020 Protonome. All rights reserved.
 //
 
 import Foundation
+import Alamofire
 import Ursus
 
-class ChatStore: UrsusApp {
+extension Ursus {
     
-    enum Letter: Decodable {
+    func permissionStore(ship: Ship) -> PermissionStoreApp {
+        return app(ship: ship, app: "permission-store")
+    }
+    
+}
+
+class PermissionStoreApp: UrsusApp {
+    
+    @discardableResult func all(handler: @escaping (SubscribeEvent<AllResponse>) -> Void) -> DataRequest {
+        return subscribeRequest(path: "/all", handler: handler)
+    }
+    
+}
+
+extension PermissionStoreApp {
+    
+    enum AllResponse: Decodable {
         
-        struct Code: Decodable {
-            
-            var expression: String
-            var output: [[String]]
-            
-        }
-        
-        case text(String)
-        case url(URL)
-        case code(Code)
-        case me(String)
+        case permissionInitial(PermissionMap)
+        case permissionUpdate(PermissionUpdate)
         
         enum CodingKeys: String, CodingKey {
             
-            case text
-            case url
-            case code
-            case me
+            case permissionInitial
+            case permissionUpdate
             
         }
         
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
-            case [.text]:
-                self = .text(try container.decode(String.self, forKey: .text))
-            case [.url]:
-                self = .url(try container.decode(URL.self, forKey: .url))
-            case [.code]:
-                self = .code(try container.decode(Code.self, forKey: .code))
-            case [.me]:
-                self = .me(try container.decode(String.self, forKey: .code))
+            case [.permissionInitial]:
+                self = .permissionInitial(try container.decode(PermissionStoreApp.PermissionMap.self, forKey: .permissionInitial))
+            case [.permissionUpdate]:
+                self = .permissionUpdate(try container.decode(PermissionStoreApp.PermissionUpdate.self, forKey: .permissionUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }
@@ -52,41 +54,33 @@ class ChatStore: UrsusApp {
         
     }
     
-    struct Envelope: Decodable {
-
-        var uid: String
-        var number: Int
-        var author: String
-        var when: Date
-        var letter: Letter
-        
-    }
-    
-    struct Config: Decodable {
-        
-        var length: Int
-        var read: Int
-        
-    }
-    
-    struct Mailbox: Decodable {
-        
-        var config: Config
-        var envelopes: [Envelope]
-        
-    }
-    
-    typealias Inbox = [String: Mailbox]
-
 }
 
-extension ChatStore {
+
+extension PermissionStoreApp {
     
-    enum Update: Decodable {
+    enum Kind: String, Decodable {
+        
+        case black
+        case white
+        
+    }
+    
+    struct Permission: Decodable {
+        
+        var kind: Kind
+        var who: Set<String>
+        
+    }
+    
+    typealias PermissionMap = [String: Permission]
+    
+    enum PermissionUpdate: Decodable {
         
         struct Create: Decodable {
             
             var path: String
+            var permission: Permission
             
         }
         
@@ -96,30 +90,31 @@ extension ChatStore {
             
         }
         
-        struct Message: Decodable {
+        struct Add: Decodable {
             
             var path: String
-            var envelope: Envelope
+            var who: Set<String>
             
         }
         
-        struct Read: Decodable {
+        struct Remove: Decodable {
             
             var path: String
+            var who: Set<String>
             
         }
         
         case create(Create)
         case delete(Delete)
-        case message(Message)
-        case read(Read)
+        case add(Add)
+        case remove(Remove)
         
         enum CodingKeys: String, CodingKey {
             
             case create
             case delete
-            case message
-            case read
+            case add
+            case remove
             
         }
         
@@ -130,14 +125,20 @@ extension ChatStore {
                 self = .create(try container.decode(Create.self, forKey: .create))
             case [.delete]:
                 self = .delete(try container.decode(Delete.self, forKey: .delete))
-            case [.message]:
-                self = .message(try container.decode(Message.self, forKey: .message))
-            case [.read]:
-                self = .read(try container.decode(Read.self, forKey: .read))
+            case [.add]:
+                self = .add(try container.decode(Add.self, forKey: .add))
+            case [.remove]:
+                self = .remove(try container.decode(Remove.self, forKey: .remove))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }
         }
+        
+    }
+    
+    struct PermissionAction: Decodable {
+        
+        #warning("Implement decoder for PermissionStore.PermissionAction")
         
     }
     

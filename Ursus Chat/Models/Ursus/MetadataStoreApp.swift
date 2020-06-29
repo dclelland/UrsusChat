@@ -12,13 +12,13 @@ import Ursus
 
 extension Ursus {
     
-    func metadataStore(ship: Ship) -> MetadataStore {
+    func metadataStore(ship: Ship) -> MetadataStoreApp {
         return app(ship: ship, app: "metadata-store")
     }
     
 }
 
-class MetadataStore: UrsusApp {
+class MetadataStoreApp: UrsusApp {
     
     @discardableResult func appName(app: String, handler: @escaping (SubscribeEvent<AppNameResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/app-name/\(app)", handler: handler)
@@ -26,7 +26,7 @@ class MetadataStore: UrsusApp {
     
 }
 
-extension MetadataStore {
+extension MetadataStoreApp {
     
     enum AppNameResponse: Decodable {
         
@@ -52,7 +52,7 @@ extension MetadataStore {
     
 }
 
-extension MetadataStore {
+extension MetadataStoreApp {
     
     typealias Associations = [String: Association]
     
@@ -77,7 +77,7 @@ extension MetadataStore {
     
     enum MetadataUpdate: Decodable {
         
-        #warning("Implement decoder for MetadataStore.MetadataUpdate: Several cases remaining")
+        #warning("Implement decoder for MetadataStoreApp.MetadataUpdate: Several cases remaining")
         
         case associations(Associations)
         

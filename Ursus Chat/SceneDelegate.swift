@@ -38,7 +38,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 handler: { url, code in
                     let ursus = Ursus(url: url, code: code)
                     ursus.authenticationRequest { ship in
-                        ursus.chatView(ship: ship).primary(handler: store.dispatch(_:))
+                        ursus.chatView(ship: ship).primary(handler: chatStore.dispatch(_:))
+                    }.response { response in
+                        if let error = response.error {
+                            let alertController = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+                            self.window?.rootViewController?.present(alertController, animated: true)
+                        }
                     }
                 }
             )

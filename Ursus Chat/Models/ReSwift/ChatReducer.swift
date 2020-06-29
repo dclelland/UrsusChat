@@ -12,33 +12,33 @@ import Ursus
 
 extension SubscribeEvent: Action where Value: Action { }
 
-extension ChatView.PrimaryResponse: Action { }
+extension ChatViewApp.PrimaryResponse: Action { }
 
-extension ChatHook.SyncedResponse: Action { }
+extension ChatHookApp.SyncedResponse: Action { }
 
-extension InviteStore.AllResponse: Action { }
+extension InviteStoreApp.AllResponse: Action { }
 
-extension PermissionStore.AllResponse: Action { }
+extension PermissionStoreApp.AllResponse: Action { }
 
-extension ContactView.PrimaryResponse: Action { }
+extension ContactViewApp.PrimaryResponse: Action { }
 
-extension MetadataStore.AppNameResponse: Action { }
+extension MetadataStoreApp.AppNameResponse: Action { }
 
 let chatReducer: Reducer<ChatState> = { action, state in
     var state = state ?? ChatState()
     
     switch action {
-    case SubscribeEvent<ChatView.PrimaryResponse>.update(let response):
+    case SubscribeEvent<ChatViewApp.PrimaryResponse>.update(let response):
         chatViewReducer(response: response, state: &state)
-    case SubscribeEvent<ChatHook.SyncedResponse>.update(let response):
+    case SubscribeEvent<ChatHookApp.SyncedResponse>.update(let response):
         chatHookReducer(response: response, state: &state)
-    case SubscribeEvent<InviteStore.AllResponse>.update(let response):
+    case SubscribeEvent<InviteStoreApp.AllResponse>.update(let response):
         inviteStoreReducer(response: response, state: &state)
-    case SubscribeEvent<PermissionStore.AllResponse>.update(let response):
+    case SubscribeEvent<PermissionStoreApp.AllResponse>.update(let response):
         permissionStoreReducer(response: response, state: &state)
-    case SubscribeEvent<ContactView.PrimaryResponse>.update(let response):
+    case SubscribeEvent<ContactViewApp.PrimaryResponse>.update(let response):
         contactViewReducer(response: response, state: &state)
-    case SubscribeEvent<MetadataStore.AppNameResponse>.update(let response):
+    case SubscribeEvent<MetadataStoreApp.AppNameResponse>.update(let response):
         metadataStoreReducer(response: response, state: &state)
     default:
         break
@@ -47,14 +47,14 @@ let chatReducer: Reducer<ChatState> = { action, state in
     return state
 }
 
-private func chatViewReducer(response: ChatView.PrimaryResponse, state: inout ChatState) {
+private func chatViewReducer(response: ChatViewApp.PrimaryResponse, state: inout ChatState) {
     switch response {
     case .chatInitial(let initial):
         state.inbox = initial
     case .chatUpdate(let update):
         switch update {
         case .create(let create):
-            state.inbox[create.path] = ChatStore.Mailbox(config: ChatStore.Config(length: 0, read: 0), envelopes: [])
+            state.inbox[create.path] = ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])
         case .delete(let delete):
             state.inbox[delete.path] = nil
         case .message(let message):
@@ -70,14 +70,14 @@ private func chatViewReducer(response: ChatView.PrimaryResponse, state: inout Ch
     }
 }
 
-private func chatHookReducer(response: ChatHook.SyncedResponse, state: inout ChatState) {
+private func chatHookReducer(response: ChatHookApp.SyncedResponse, state: inout ChatState) {
     switch response {
     case .chatHookUpdate(let update):
         state.chatSynced = update
     }
 }
 
-private func inviteStoreReducer(response: InviteStore.AllResponse, state: inout ChatState) {
+private func inviteStoreReducer(response: InviteStoreApp.AllResponse, state: inout ChatState) {
     switch response {
     case .inviteInitial(let initial):
         state.invites = initial
@@ -86,7 +86,7 @@ private func inviteStoreReducer(response: InviteStore.AllResponse, state: inout 
     }
 }
 
-private func permissionStoreReducer(response: PermissionStore.AllResponse, state: inout ChatState) {
+private func permissionStoreReducer(response: PermissionStoreApp.AllResponse, state: inout ChatState) {
     switch response {
     case .permissionInitial(let initial):
         break
@@ -104,7 +104,7 @@ private func permissionStoreReducer(response: PermissionStore.AllResponse, state
     }
 }
 
-private func contactViewReducer(response: ContactView.PrimaryResponse, state: inout ChatState) {
+private func contactViewReducer(response: ContactViewApp.PrimaryResponse, state: inout ChatState) {
     switch response {
     case .contactInitial(let initial):
         state.contacts = initial
@@ -113,7 +113,7 @@ private func contactViewReducer(response: ContactView.PrimaryResponse, state: in
     }
 }
 
-private func metadataStoreReducer(response: MetadataStore.AppNameResponse, state: inout ChatState) {
+private func metadataStoreReducer(response: MetadataStoreApp.AppNameResponse, state: inout ChatState) {
     switch response {
     case .metadataUpdate(let update):
         switch update {
