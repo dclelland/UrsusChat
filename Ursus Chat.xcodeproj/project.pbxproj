@@ -22,6 +22,9 @@
 		655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */; };
 		655DB31D249B006800A591B9 /* ContactStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31C249B006800A591B9 /* ContactStoreApp.swift */; };
 		65861AFE24A97BE100C63E07 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861AFD24A97BE100C63E07 /* ChatStore.swift */; };
+		65861B0624A9A8EA00C63E07 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0524A9A8EA00C63E07 /* ChatsView.swift */; };
+		65861B0824A9A8F700C63E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0724A9A8F700C63E07 /* SettingsView.swift */; };
+		65861B0A24A9A9C300C63E07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0924A9A9C300C63E07 /* HomeView.swift */; };
 		6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */; };
 		6587EF9124A3207500969E92 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9024A3207500969E92 /* AuthenticationView.swift */; };
 		6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9224A3317300969E92 /* URLFormatter.swift */; };
@@ -47,6 +50,9 @@
 		655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteStoreApp.swift; sourceTree = "<group>"; };
 		655DB31C249B006800A591B9 /* ContactStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStoreApp.swift; sourceTree = "<group>"; };
 		65861AFD24A97BE100C63E07 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		65861B0524A9A8EA00C63E07 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		65861B0724A9A8F700C63E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		65861B0924A9A9C300C63E07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMiddleware.swift; sourceTree = "<group>"; };
 		6587EF9024A3207500969E92 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		6587EF9224A3317300969E92 /* URLFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFormatter.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				6587EF9024A3207500969E92 /* AuthenticationView.swift */,
+				65861B0924A9A9C300C63E07 /* HomeView.swift */,
+				65861B0524A9A8EA00C63E07 /* ChatsView.swift */,
+				65861B0724A9A8F700C63E07 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
 				6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */,
+				65861B0624A9A8EA00C63E07 /* ChatsView.swift in Sources */,
 				6587EF9124A3207500969E92 /* AuthenticationView.swift in Sources */,
 				6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */,
 				655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */,
@@ -314,11 +324,13 @@
 				65861AFE24A97BE100C63E07 /* ChatStore.swift in Sources */,
 				655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */,
 				655DB31D249B006800A591B9 /* ContactStoreApp.swift in Sources */,
+				65861B0A24A9A9C300C63E07 /* HomeView.swift in Sources */,
 				6520F62C2498558700F3D56C /* ChatViewApp.swift in Sources */,
 				655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */,
 				655DB30D249A140B00A591B9 /* ChatStoreApp.swift in Sources */,
 				65D95A4C249C541C0002AA4F /* ChatState.swift in Sources */,
+				65861B0824A9A8F700C63E07 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
