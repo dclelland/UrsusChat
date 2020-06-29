@@ -91,8 +91,8 @@
 			children = (
 				6520F60124977BFE00F3D56C /* AppDelegate.swift */,
 				6520F60324977BFE00F3D56C /* SceneDelegate.swift */,
-				6520F623249850FE00F3D56C /* Models */,
 				6520F61524977D1600F3D56C /* Views */,
+				6520F623249850FE00F3D56C /* Models */,
 				6587EF9424A3318100969E92 /* Formatters */,
 				6520F61B24977D4800F3D56C /* Assets */,
 				6520F62024977D6500F3D56C /* Supporting Files */,

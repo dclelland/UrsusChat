@@ -11,21 +11,22 @@ import Ursus
 
 struct AuthenticationView: View {
     
-    @State private var url: URL?
+    @State private var url: String = ""
     
-    @State private var code: Code?
+    @State private var code: String = ""
+    
+    var handler: (_ url: URL, _ code: Code) -> Void
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Urbit URL")) {
-                    TextField("sampel-palnet.arvo.network", value: $url, formatter: URLFormatter())
+                    TextField("sampel-palnet.arvo.network", text: $url)
                         .textContentType(.URL)
                         .autocapitalization(.none)
                 }
                 Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
-                    TextField("sampel-ticlyt-migfun-falmel", value: $code, formatter: CodeFormatter())
-                        .autocapitalization(.none)
+                    SecureField("sampel-ticlyt-migfun-falmel", text: $code)
                 }
                 Section {
                     Button(action: continueButtonTapped) {
@@ -48,7 +49,11 @@ struct AuthenticationView: View {
 extension AuthenticationView {
     
     private func continueButtonTapped() {
+        guard let url = URL(string: url), let code = try? Code(string: code) else {
+            return
+        }
         
+        handler(url, code)
     }
     
     private func bridgeButtonTapped() {
@@ -64,7 +69,9 @@ extension AuthenticationView {
 struct AuthenticationView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AuthenticationView()
+        AuthenticationView(
+            handler: { _, _ in }
+        )
     }
     
 }
