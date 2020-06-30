@@ -25,7 +25,7 @@
 		65861B0624A9A8EA00C63E07 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0524A9A8EA00C63E07 /* ChatsView.swift */; };
 		65861B0824A9A8F700C63E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0724A9A8F700C63E07 /* SettingsView.swift */; };
 		65861B0A24A9A9C300C63E07 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0924A9A9C300C63E07 /* AppView.swift */; };
-		6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */; };
+		6587EF8B24A30D6E00969E92 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF8A24A30D6E00969E92 /* LoggerMiddleware.swift */; };
 		6587EF9124A3207500969E92 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9024A3207500969E92 /* LoginView.swift */; };
 		6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9224A3317300969E92 /* URLFormatter.swift */; };
 		65D95A4C249C541C0002AA4F /* ChatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4B249C541C0002AA4F /* ChatState.swift */; };
@@ -53,7 +53,7 @@
 		65861B0524A9A8EA00C63E07 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		65861B0724A9A8F700C63E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		65861B0924A9A9C300C63E07 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMiddleware.swift; sourceTree = "<group>"; };
+		6587EF8A24A30D6E00969E92 /* LoggerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerMiddleware.swift; sourceTree = "<group>"; };
 		6587EF9024A3207500969E92 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6587EF9224A3317300969E92 /* URLFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFormatter.swift; sourceTree = "<group>"; };
 		65D95A4B249C541C0002AA4F /* ChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatState.swift; sourceTree = "<group>"; };
@@ -148,6 +148,22 @@
 		6520F62A2498557600F3D56C /* Ursus */ = {
 			isa = PBXGroup;
 			children = (
+				65861B0C24AB271D00C63E07 /* Apps */,
+			);
+			path = Ursus;
+			sourceTree = "<group>";
+		};
+		65861B0B24AB270100C63E07 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				6587EF8A24A30D6E00969E92 /* LoggerMiddleware.swift */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
+		65861B0C24AB271D00C63E07 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
 				6520F62B2498558700F3D56C /* ChatViewApp.swift */,
 				655DB30C249A140B00A591B9 /* ChatStoreApp.swift */,
 				655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */,
@@ -157,7 +173,31 @@
 				655DB31C249B006800A591B9 /* ContactStoreApp.swift */,
 				655DB314249ACD7E00A591B9 /* MetadataStoreApp.swift */,
 			);
-			path = Ursus;
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		65861B0D24AB272C00C63E07 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				65D95A4B249C541C0002AA4F /* ChatState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		65861B0E24AB273200C63E07 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				65D95A4E249C54480002AA4F /* ChatReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		65861B0F24AB273700C63E07 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				65861AFD24A97BE100C63E07 /* ChatStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		6587EF9424A3318100969E92 /* Formatters */ = {
@@ -172,10 +212,10 @@
 		65D95A4D249C543D0002AA4F /* ReSwift */ = {
 			isa = PBXGroup;
 			children = (
-				6587EF8A24A30D6E00969E92 /* ChatMiddleware.swift */,
-				65D95A4E249C54480002AA4F /* ChatReducer.swift */,
-				65D95A4B249C541C0002AA4F /* ChatState.swift */,
-				65861AFD24A97BE100C63E07 /* ChatStore.swift */,
+				65861B0F24AB273700C63E07 /* Store */,
+				65861B0D24AB272C00C63E07 /* State */,
+				65861B0E24AB273200C63E07 /* Reducers */,
+				65861B0B24AB270100C63E07 /* Middleware */,
 			);
 			path = ReSwift;
 			sourceTree = "<group>";
@@ -317,7 +357,7 @@
 				6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */,
 				65861B0624A9A8EA00C63E07 /* ChatsView.swift in Sources */,
 				6587EF9124A3207500969E92 /* LoginView.swift in Sources */,
-				6587EF8B24A30D6E00969E92 /* ChatMiddleware.swift in Sources */,
+				6587EF8B24A30D6E00969E92 /* LoggerMiddleware.swift in Sources */,
 				655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */,
 				6516022224A6C7A500CB280C /* CodeFormatter.swift in Sources */,
 				65D95A4F249C54480002AA4F /* ChatReducer.swift in Sources */,

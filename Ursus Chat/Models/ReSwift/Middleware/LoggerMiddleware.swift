@@ -1,5 +1,5 @@
 //
-//  ChatMiddleware.swift
+//  LoggerMiddleware.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 24/06/20.
