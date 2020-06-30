@@ -21,6 +21,22 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Architecture
 
+- [ ] ReSwift and SwiftUI
+    - Implementations:
+        - https://github.com/ReSwift/ReSwift
+            - https://github.com/ReSwift/ReSwift/issues/424
+            - https://github.com/ReSwift/ReSwift/tree/mjarvis/swiftui
+        - https://github.com/Dimillian/SwiftUIFlux
+        - https://github.com/kitasuke/SwiftUI-Redux
+        - https://github.com/StevenLambion/SwiftDux
+        - https://github.com/ReCombine/ReCombine
+    - 'Clean architecture':
+        - https://nalexn.github.io/clean-architecture-swiftui/?utm_source=reddit
+            - https://github.com/nalexn/clean-architecture-swiftui
+    - Other posts:
+        - https://tech.mercari.com/entry/2019/12/11/150000
+        - https://medium.com/better-programming/making-a-real-world-application-with-swiftui-cb40884c1056
+        - https://wojciechkulik.pl/ios/swift-how-to-handle-network-async-calls-using-redux
 - [ ] ReSwift thoughts
     - How to manage top-level state?
         - `AppState` `.unauthenticated`, `.authenticating`, `.authenticated`...?
@@ -28,7 +44,6 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
             - `ChatState(client:store:)`
     - Where to manage top-level state? (`SceneDelegate`...?)
     - Can we use a router?
-    - How to integrate ReSwift and SwiftUI?
     - How to manage asynchronous actions?
 
 ### Interface
