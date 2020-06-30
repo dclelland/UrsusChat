@@ -37,6 +37,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
         - https://tech.mercari.com/entry/2019/12/11/150000
         - https://medium.com/better-programming/making-a-real-world-application-with-swiftui-cb40884c1056
         - https://wojciechkulik.pl/ios/swift-how-to-handle-network-async-calls-using-redux
+        - https://swiftwithmajid.com/2019/09/18/redux-like-state-container-in-swiftui/
 - [ ] ReSwift thoughts
     - How to manage top-level state?
         - `AppState` `.unauthenticated`, `.authenticating`, `.authenticated`...?
