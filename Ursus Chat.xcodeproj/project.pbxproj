@@ -111,8 +111,8 @@
 		6520F61524977D1600F3D56C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6587EF9024A3207500969E92 /* AuthenticationView.swift */,
 				65861B0924A9A9C300C63E07 /* AppView.swift */,
+				6587EF9024A3207500969E92 /* AuthenticationView.swift */,
 				65861B0524A9A8EA00C63E07 /* ChatsView.swift */,
 				65861B0724A9A8F700C63E07 /* SettingsView.swift */,
 			);

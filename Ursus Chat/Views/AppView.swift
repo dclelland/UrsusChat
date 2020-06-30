@@ -10,10 +10,20 @@ import SwiftUI
 
 struct AppView: View {
     
+    @State var authenticated: Bool = true
+    
     var body: some View {
-        TabView {
-            ChatsView()
-            SettingsView()
+        if authenticated {
+            return AnyView(
+                TabView {
+                    ChatsView()
+                    SettingsView()
+                }
+            )
+        } else {
+            return AnyView(
+                AuthenticationView()
+            )
         }
     }
     
@@ -22,7 +32,7 @@ struct AppView: View {
 struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        HomeView()
+        AppView()
     }
     
 }
