@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                             let alertController = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
                             self.window?.rootViewController?.present(alertController, animated: true)
                         } else {
-                            self.window?.rootViewController = UIHostingController(rootView: HomeView())
+                            self.window?.rootViewController = UIHostingController(rootView: AppView())
                         }
                     }
                 }

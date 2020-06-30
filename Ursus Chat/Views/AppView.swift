@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  AppView.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 29/06/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct AppView: View {
     
     var body: some View {
         TabView {
