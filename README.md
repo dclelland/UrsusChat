@@ -21,11 +21,15 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Architecture
 
-- [ ] Decide on design pattern
-    - Coordinator pattern?
-    - Generic view controller pattern?
-    - SwiftUI?
-    - Combine?
+- [ ] ReSwift thoughts
+    - How to manage top-level state?
+        - `AppState` `.unauthenticated`, `.authenticating`, `.authenticated`...?
+            - `AuthenticationState(url:code:)`
+            - `ChatState(client:store:)`
+    - Where to manage top-level state? (`SceneDelegate`...?)
+    - Can we use a router?
+    - How to integrate ReSwift and SwiftUI?
+    - How to manage asynchronous actions?
 
 ### Interface
 
