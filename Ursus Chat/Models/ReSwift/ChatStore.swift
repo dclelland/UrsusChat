@@ -8,5 +8,6 @@
 
 import Foundation
 import ReSwift
+import ReSwiftThunk
 
-let chatStore = Store<ChatState>(reducer: chatReducer, state: nil, middleware: [chatLogger])
+let chatStore = Store<ChatState>(reducer: chatReducer, state: nil, middleware: [createLoggerMiddleware(), createThunkMiddleware()])

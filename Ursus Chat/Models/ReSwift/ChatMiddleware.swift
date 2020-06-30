@@ -9,11 +9,13 @@
 import Foundation
 import ReSwift
 
-let chatLogger: Middleware<ChatState> = { dispatch, getState in
-    return { next in
-        return { action in
-            print("> \(action)")
-            next(action)
+func createLoggerMiddleware<State>() -> Middleware<State> {
+    return { dispatch, getState in
+        return { next in
+            return { action in
+                print("> \(action)")
+                next(action)
+            }
         }
     }
 }
