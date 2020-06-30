@@ -15,6 +15,8 @@ struct LoginView: View {
     
     @State var code: String = ""
     
+    @Environment(\.accessibilityEnabled) var fdsfds: Bool
+    
     var handler: (_ url: URL, _ code: Code) -> Void = { _, _ in }
     
     var body: some View {

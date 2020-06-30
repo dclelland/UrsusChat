@@ -26,13 +26,12 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
         - https://github.com/ReSwift/ReSwift
             - https://github.com/ReSwift/ReSwift/issues/424
             - https://github.com/ReSwift/ReSwift/tree/mjarvis/swiftui
+        - https://github.com/ReSwift/ReSwift-Thunk
         - https://github.com/Dimillian/SwiftUIFlux
         - https://github.com/kitasuke/SwiftUI-Redux
         - https://github.com/StevenLambion/SwiftDux
         - https://github.com/ReCombine/ReCombine
-    - 'Clean architecture':
-        - https://nalexn.github.io/clean-architecture-swiftui/
-            - https://github.com/nalexn/clean-architecture-swiftui
+        - https://github.com/gilbox/Cloe
     - Other posts:
         - https://tech.mercari.com/entry/2019/12/11/150000
         - https://medium.com/better-programming/making-a-real-world-application-with-swiftui-cb40884c1056
