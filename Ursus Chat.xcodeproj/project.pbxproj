@@ -21,12 +21,14 @@
 		655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB314249ACD7E00A591B9 /* MetadataStoreApp.swift */; };
 		655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */; };
 		655DB31D249B006800A591B9 /* ContactStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31C249B006800A591B9 /* ContactStoreApp.swift */; };
-		65861AFE24A97BE100C63E07 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861AFD24A97BE100C63E07 /* ChatStore.swift */; };
+		65861AFE24A97BE100C63E07 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861AFD24A97BE100C63E07 /* AppStore.swift */; };
 		65861B0624A9A8EA00C63E07 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0524A9A8EA00C63E07 /* ChatsView.swift */; };
 		65861B0824A9A8F700C63E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0724A9A8F700C63E07 /* SettingsView.swift */; };
 		65861B0A24A9A9C300C63E07 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0924A9A9C300C63E07 /* AppView.swift */; };
 		65861B1124AB277500C63E07 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B1024AB277500C63E07 /* AppState.swift */; };
 		65861B1324AB277E00C63E07 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B1224AB277E00C63E07 /* LoginState.swift */; };
+		65861B1524AB283000C63E07 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B1424AB283000C63E07 /* AppReducer.swift */; };
+		65861B1724AB283E00C63E07 /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B1624AB283E00C63E07 /* LoginReducer.swift */; };
 		6587EF8B24A30D6E00969E92 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF8A24A30D6E00969E92 /* LoggerMiddleware.swift */; };
 		6587EF9124A3207500969E92 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9024A3207500969E92 /* LoginView.swift */; };
 		6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9224A3317300969E92 /* URLFormatter.swift */; };
@@ -51,12 +53,14 @@
 		655DB314249ACD7E00A591B9 /* MetadataStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataStoreApp.swift; sourceTree = "<group>"; };
 		655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteStoreApp.swift; sourceTree = "<group>"; };
 		655DB31C249B006800A591B9 /* ContactStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStoreApp.swift; sourceTree = "<group>"; };
-		65861AFD24A97BE100C63E07 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		65861AFD24A97BE100C63E07 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		65861B0524A9A8EA00C63E07 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		65861B0724A9A8F700C63E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		65861B0924A9A9C300C63E07 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		65861B1024AB277500C63E07 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		65861B1224AB277E00C63E07 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		65861B1424AB283000C63E07 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		65861B1624AB283E00C63E07 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
 		6587EF8A24A30D6E00969E92 /* LoggerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerMiddleware.swift; sourceTree = "<group>"; };
 		6587EF9024A3207500969E92 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6587EF9224A3317300969E92 /* URLFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFormatter.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		65861B0E24AB273200C63E07 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
+				65861B1424AB283000C63E07 /* AppReducer.swift */,
+				65861B1624AB283E00C63E07 /* LoginReducer.swift */,
 				65D95A4E249C54480002AA4F /* ChatReducer.swift */,
 			);
 			path = Reducers;
@@ -201,7 +207,7 @@
 		65861B0F24AB273700C63E07 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				65861AFD24A97BE100C63E07 /* ChatStore.swift */,
+				65861AFD24A97BE100C63E07 /* AppStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -357,10 +363,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65861B1724AB283E00C63E07 /* LoginReducer.swift in Sources */,
 				655DB311249ACCDE00A591B9 /* PermissionStoreApp.swift in Sources */,
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
 				65861B1324AB277E00C63E07 /* LoginState.swift in Sources */,
+				65861B1524AB283000C63E07 /* AppReducer.swift in Sources */,
 				6587EF9324A3317300969E92 /* URLFormatter.swift in Sources */,
 				65861B0624A9A8EA00C63E07 /* ChatsView.swift in Sources */,
 				6587EF9124A3207500969E92 /* LoginView.swift in Sources */,
@@ -369,7 +377,7 @@
 				6516022224A6C7A500CB280C /* CodeFormatter.swift in Sources */,
 				65861B1124AB277500C63E07 /* AppState.swift in Sources */,
 				65D95A4F249C54480002AA4F /* ChatReducer.swift in Sources */,
-				65861AFE24A97BE100C63E07 /* ChatStore.swift in Sources */,
+				65861AFE24A97BE100C63E07 /* AppStore.swift in Sources */,
 				655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */,
 				655DB31D249B006800A591B9 /* ContactStoreApp.swift in Sources */,
 				65861B0A24A9A9C300C63E07 /* AppView.swift in Sources */,
