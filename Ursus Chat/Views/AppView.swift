@@ -22,7 +22,7 @@ struct AppView: View {
             )
         } else {
             return AnyView(
-                AuthenticationView()
+                LoginView()
             )
         }
     }

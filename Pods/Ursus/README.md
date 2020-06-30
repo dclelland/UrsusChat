@@ -10,7 +10,7 @@ Ursus is very much a work in progress - better documentation and a demo app to c
 
 ```swift
 let ursus = Ursus(url: URL(string: "http://localhost")!, code: "fipfes-fipfes-fipfes-fipfes")
-ursus.authenticationRequest() { ship in
+ursus.loginRequest() { ship in
     ursus.subscribeRequest(ship: ship, app: "chat-view", path: "/primary") { event in
         print("On subscribe event:", event)
     }
@@ -19,7 +19,7 @@ ursus.authenticationRequest() { ship in
 
 ## Installation
 
-Ursus can be installed using Cocoapods by adding `pod 'Ursus', '~> 1.1'` to your `Podfile`.
+Ursus can be installed using Cocoapods by adding `pod 'Ursus', '~> 1.2'` to your `Podfile`.
 
 I can probably help set up Carthage or Swift Package Manager support if you need it.
 
@@ -27,6 +27,8 @@ I can probably help set up Carthage or Swift Package Manager support if you need
 
 Things that would make this codebase nicer:
 
+- [ ] Add support for new `%scry` endpoint
+- [ ] Should the new `%logout` endpoint clear the `urbauth` cookie?
 - [ ] Pass IDs back through to the event handlers so unsubscribe requests can be made.
 - [ ] Test `AckRequest`, `UnsubscribeRequest`, `DeleteRequest` properly.
 - [ ] Better documentation/examples.
@@ -46,3 +48,4 @@ Things that would make this codebase nicer:
 
 - [Alamofire](https://github.com/Alamofire/Alamofire)
 - [BigInt](https://github.com/attaswift/BigInt)
+- [Parity](https://github.com/dclelland/Parity)

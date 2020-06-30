@@ -11,8 +11,8 @@ target 'Ursus Chat' do
         pod 'Ursus', path: '../Ursus'
         pod 'Ursus/Utilities', path: '../Ursus'
     else
-        pod 'Ursus', '~> 1.1'
-        pod 'Ursus/Utilities', '~> 1.1'
+        pod 'Ursus', '~> 1.2'
+        pod 'Ursus/Utilities', '~> 1.2'
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'

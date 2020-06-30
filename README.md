@@ -31,7 +31,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
         - https://github.com/StevenLambion/SwiftDux
         - https://github.com/ReCombine/ReCombine
     - 'Clean architecture':
-        - https://nalexn.github.io/clean-architecture-swiftui/?utm_source=reddit
+        - https://nalexn.github.io/clean-architecture-swiftui/
             - https://github.com/nalexn/clean-architecture-swiftui
     - Other posts:
         - https://tech.mercari.com/entry/2019/12/11/150000

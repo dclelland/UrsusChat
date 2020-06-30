@@ -1,5 +1,5 @@
 //
-//  AuthenticationView.swift
+//  LoginView.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 24/06/20.
@@ -9,7 +9,7 @@
 import SwiftUI
 import Ursus
 
-struct AuthenticationView: View {
+struct LoginView: View {
     
     @State var url: String = ""
     
@@ -40,13 +40,13 @@ struct AuthenticationView: View {
                     }
                 }
             }
-            .navigationBarTitle("Authentication")
+            .navigationBarTitle("Login")
         }
     }
     
 }
 
-extension AuthenticationView {
+extension LoginView {
     
     private func continueButtonTapped() {
         guard let url = URL(string: url), let code = try? Code(string: code) else {
@@ -69,7 +69,7 @@ extension AuthenticationView {
 struct AuthenticationView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AuthenticationView()
+        LoginView()
     }
     
 }

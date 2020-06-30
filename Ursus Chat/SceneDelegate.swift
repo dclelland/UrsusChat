@@ -33,16 +33,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         self.window?.tintColor = .systemIndigo
         self.window?.rootViewController = UIHostingController(
-            rootView: AuthenticationView(
+            rootView: LoginView(
                 url: "http://192.168.1.78:8080",
                 code: "lacnyd-morped-pilbel-pocnep",
                 handler: { url, code in
                     let ursus = Ursus(url: url, code: code)
-                    ursus.authenticationRequest { ship in
+                    ursus.loginRequest { ship in
                         ursus.chatView(ship: ship).primary(handler: chatStore.dispatch(_:))
                     }.response { response in
                         if let error = response.error {
                             let alertController = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+                            alertController.addAction(UIAlertAction(title: "OK", style: .default))
                             self.window?.rootViewController?.present(alertController, animated: true)
                         } else {
                             self.window?.rootViewController = UIHostingController(rootView: AppView())
