@@ -11,9 +11,9 @@ import Ursus
 
 struct LoginView: View {
     
-    @State var state: LoginState
+    @EnvironmentObject var store: AppStore
     
-    var handler: (_ url: URL, _ code: Code) -> Void = { _, _ in }
+    @State var state: LoginState
     
     var body: some View {
         NavigationView {
@@ -51,7 +51,36 @@ extension LoginView {
             return
         }
         
-        handler(url, code)
+
+        let ursus = Ursus(url: url, code: code)
+        ursus.loginRequest { ship in
+            ursus.chatView(ship: ship).primary { response in
+                if let value = response.value {
+                    appStore.dispatch(AppAction.chat(.chatViewResponse(value)))
+                }
+            }
+        }.response { response in
+            if let error = response.error {
+//                let alertController = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+//                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                self.window?.rootViewController?.present(alertController, animated: true)
+            } else {
+                store.dispatch(<#T##action: Action##Action#>)
+        //                self.window?.rootViewController = UIHostingController(rootView: AppView())
+                    }
+                }
+
+                //ursus.authenticationRequest { ship in
+                //    ursus.chatView(ship: ship).primary(handler: store.dispatch(_:)).response { response in
+                //        ursus.chatHook(ship: ship).synced(handler: store.dispatch(_:))
+                //        ursus.inviteStore(ship: ship).all(handler: store.dispatch(_:))
+                //        ursus.permissionStore(ship: ship).all(handler: store.dispatch(_:))
+                //        ursus.contactView(ship: ship).primary(handler: store.dispatch(_:))
+                //        ursus.metadataStore(ship: ship).appName(app: "chat", handler: store.dispatch(_:))
+                //        ursus.metadataStore(ship: ship).appName(app: "contacts", handler: store.dispatch(_:))
+                //    }
+                //}
+        
     }
     
     private func bridgeButtonTapped() {

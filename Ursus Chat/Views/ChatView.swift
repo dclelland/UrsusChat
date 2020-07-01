@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ChatView: View {
     
-    let state: ChatState
+    @EnvironmentObject var store: AppStore
+    
+    @State var state: ChatState
     
     var body: some View {
         NavigationView {
