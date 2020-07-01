@@ -9,6 +9,10 @@
 import Foundation
 import ReSwift
 
-let loginReducer: Reducer<LoginState> = { action, state in
-    fatalError()
+enum LoginAction: Action {
+    
+}
+
+let loginReducer: MyReducer<LoginAction, LoginState> = { action, state in
+    return state
 }

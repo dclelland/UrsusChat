@@ -10,7 +10,17 @@ import Foundation
 import ReSwift
 import ReSwiftThunk
 
-let appStore = Store<AppState>(reducer: appReducer, state: nil, middleware: [createLoggerMiddleware(), createThunkMiddleware()])
+let appStoreReducer: Reducer<AppState> = { action, state in
+    let state = state ?? .login(LoginState(url: "http://192.168.1.78:8080", code: "lacnyd-morped-pilbel-pocnep"))
+    switch action {
+    case let action as AppAction:
+        return appReducer(action, state)
+    default:
+        return state
+    }
+}
+
+let appStore = Store<AppState>(reducer: appStoreReducer, state: nil, middleware: [createLoggerMiddleware(), createThunkMiddleware()])
 
 //// MARK: ObservableState
 //
