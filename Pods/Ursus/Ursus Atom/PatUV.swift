@@ -8,7 +8,7 @@
 import Foundation
 import BigInt
 
-public struct PatUV: WrappedUnsignedInteger {
+public struct PatUV: Atom {
     
     internal var value: BigUInt
 

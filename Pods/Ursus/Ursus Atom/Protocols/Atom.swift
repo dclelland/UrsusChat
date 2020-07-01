@@ -1,13 +1,13 @@
 //
-//  WrappedUnsignedInteger.swift
-//  Alamofire
+//  Atom.swift
+//  Ursus Atom
 //
 //  Created by Daniel Clelland on 27/06/20.
 //
 
 import Foundation
 
-internal protocol WrappedUnsignedInteger: UnsignedInteger {
+internal protocol Atom: UnsignedInteger {
     
     associatedtype Value: UnsignedInteger
     
@@ -17,7 +17,7 @@ internal protocol WrappedUnsignedInteger: UnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public init() {
         self.init(.zero)
@@ -25,7 +25,7 @@ extension WrappedUnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public init(integerLiteral value: Value.IntegerLiteralType) {
         self.init(Value(integerLiteral: value))
@@ -33,7 +33,7 @@ extension WrappedUnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.value == rhs.value
@@ -41,7 +41,7 @@ extension WrappedUnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public static func < (lhs: Self, rhs: Self) -> Bool {
         return lhs.value < rhs.value
@@ -49,7 +49,7 @@ extension WrappedUnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(value)
@@ -57,7 +57,7 @@ extension WrappedUnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public func advanced(by n: Int) -> Self {
         return Self(value.advanced(by: n))
@@ -69,7 +69,7 @@ extension WrappedUnsignedInteger {
     
 }
 
-extension WrappedUnsignedInteger {
+extension Atom {
     
     public init<T>(_ source: T) where T : BinaryInteger {
         self.init(Value(source))

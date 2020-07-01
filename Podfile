@@ -9,10 +9,10 @@ target 'Ursus Chat' do
   
     if development_pods
         pod 'Ursus', path: '../Ursus'
-        pod 'Ursus/Utilities', path: '../Ursus'
+        pod 'Ursus/Atom', path: '../Ursus'
     else
         pod 'Ursus', '~> 1.2'
-        pod 'Ursus/Utilities', '~> 1.2'
+        pod 'Ursus/Atom', '~> 1.2'
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'

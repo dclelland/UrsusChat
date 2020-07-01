@@ -1,5 +1,5 @@
 //
-//  PatQ.swift
+//  PatP.swift
 //  Alamofire
 //
 //  Created by Daniel Clelland on 27/06/20.
@@ -8,7 +8,7 @@
 import Foundation
 import BigInt
 
-public struct PatQ: WrappedUnsignedInteger {
+public struct PatP: Atom {
     
     internal var value: BigUInt
 
@@ -18,34 +18,64 @@ public struct PatQ: WrappedUnsignedInteger {
     
 }
 
-extension PatQ {
+extension PatP {
+    
+    public enum Title {
+        
+        case galaxy
+        case star
+        case planet
+        case moon
+        case comet
+        
+    }
+    
+    public var title: Title {
+        switch bitWidth {
+        case 0...8:
+            return .galaxy
+        case 9...16:
+            return .star
+        case 17...32:
+            return .planet
+        case 33...64:
+            return .moon
+        default:
+            return .comet
+        }
+    }
+    
+}
+
+extension PatP {
     
     public init(string: String) throws {
         let bytes = try PhoneticBaseParser.parse(string)
-        let value = BigUInt(Data(bytes))
-        self.init(value)
+        let deobfuscatedValue = PhoneticBaseObfuscator.deobfuscate(BigUInt(Data(bytes)))
+        self.init(deobfuscatedValue)
     }
     
 }
 
-extension PatQ: CustomStringConvertible {
+extension PatP: CustomStringConvertible {
     
     public var description: String {
-        let bytes: [UInt8] = Array(value.serialize())
-        return PhoneticBaseParser.render(bytes: bytes, padding: .noPadding, spacing: .shortSpacing)
+        let obfuscatedValue = PhoneticBaseObfuscator.obfuscate(value)
+        let bytes: [UInt8] = Array(obfuscatedValue.serialize())
+        return PhoneticBaseParser.render(bytes: bytes, padding: .padding, spacing: .longSpacing)
     }
     
 }
 
-extension PatQ: CustomDebugStringConvertible {
+extension PatP: CustomDebugStringConvertible {
     
     public var debugDescription: String {
-        return ".~" + description
+        return "~" + description
     }
     
 }
 
-extension PatQ: ExpressibleByStringLiteral {
+extension PatP: ExpressibleByStringLiteral {
     
     public init(unicodeScalarLiteral value: String.ExtendedGraphemeClusterLiteralType) {
         try! self.init(string: String(unicodeScalarLiteral: value))
@@ -61,7 +91,7 @@ extension PatQ: ExpressibleByStringLiteral {
     
 }
 
-extension PatQ: Codable {
+extension PatP: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
