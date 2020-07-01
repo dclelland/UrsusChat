@@ -41,11 +41,11 @@ func loginAction(url: URL, code: Code) -> Thunk<AppState> {
         }
         
         let client = Ursus(url: url, code: code)
-        #warning("TODO: Dispatch 'authenticating' login event")
+        #warning("TODO: Dispatch 'loginStart' login action")
         client.loginRequest { ship in
             
             dispatch(AppAction.loginSuccess(client: client))
-            #warning("TODO: Dispatch 'authenticated' login event")
+            #warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
             #warning("TODO: DRY up event handlers")
             client.chatView(ship: ship).primary { event in
                 if let value = event.value {
