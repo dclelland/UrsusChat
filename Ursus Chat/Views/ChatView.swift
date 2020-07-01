@@ -13,8 +13,11 @@ struct ChatView: View {
     
     @EnvironmentObject var store: AppStore
     
+    var state: (name: String, mailbox: ChatStoreApp.Mailbox)
+    
     var body: some View {
         Text("ChatView")
+            .navigationBarTitle(state.name)
     }
     
 }
@@ -22,7 +25,7 @@ struct ChatView: View {
 struct ChatView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatView()
+        ChatView(state: (name: "name", mailbox: ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])))
     }
     
 }
