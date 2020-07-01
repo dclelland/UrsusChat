@@ -17,6 +17,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 - [ ] Clean up `SubscribeEvent` decomposition
     - Add `SubscriptionState`, `SubscriptionEventAction` etc
     - Be sure not to throw away errors
+    - Perhaps have a global app error action, presenting an alert banner...?
 
 ### Authentication
 
