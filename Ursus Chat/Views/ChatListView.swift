@@ -16,10 +16,9 @@ struct ChatListView: View {
     var state: ChatState
     
     var body: some View {
-        Text("Chats")
-//        List(state.inbox, id: \.key) { _ in
-//            Text("Chats")
-//        }
+        List(state.inbox.sorted(by: { $0.key > $1.key }), id: \.key) { (name, mailbox) in
+            ChatListRow(name: name, mailbox: mailbox)
+        }
         .navigationBarTitle("All Chats")
     }
     

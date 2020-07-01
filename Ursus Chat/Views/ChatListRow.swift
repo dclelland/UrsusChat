@@ -13,8 +13,12 @@ struct ChatListRow: View {
     
     @EnvironmentObject var store: AppStore
     
+    var name: String
+    
+    var mailbox: ChatStoreApp.Mailbox
+    
     var body: some View {
-        Text("ChatListRow")
+        Text(name)
     }
     
 }
@@ -22,7 +26,7 @@ struct ChatListRow: View {
 struct ChatListRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatListRow()
+        ChatListRow(name: "name", mailbox: ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: []))
     }
     
 }
