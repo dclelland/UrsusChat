@@ -15,19 +15,19 @@ enum AppAction: Action {
     
     case loginSuccess(client: Ursus)
     
-    case loginAction(LoginAction)
-    case chatAction(ChatAction)
+    case unauthenticatedAction(UnauthenticatedAction)
+    case authenticatedAction(AuthenticatedAction)
     
 }
 
 let appReducer: StateReducer<AppAction, AppState> = { action, state in
     switch (action, state) {
-    case (.loginSuccess(let client), .loginState):
-        return .chatState(ChatState())
-    case (.loginAction(let action), .loginState(let state)):
-        return .loginState(loginReducer(action, state))
-    case (.chatAction(let action), .chatState(let state)):
-        return .chatState(chatReducer(action, state))
+    case (.loginSuccess(let client), .unauthenticatedState):
+        return .authenticatedState(AuthenticatedState(client: client, chatState: ChatState()))
+    case (.unauthenticatedAction(let action), .unauthenticatedState(let state)):
+        return .unauthenticatedState(unauthenticatedReducer(action, state))
+    case (.authenticatedAction(let action), .authenticatedState(let state)):
+        return .authenticatedState(authenticatedReducer(action, state))
     default:
         return state
     }
@@ -49,37 +49,37 @@ func loginAction(url: URL, code: Code) -> Thunk<AppState> {
             #warning("TODO: DRY up event handlers")
             client.chatView(ship: ship).primary { event in
                 if let value = event.value {
-                    appStore.dispatch(AppAction.chatAction(.chatViewResponse(value)))
+                    appStore.dispatch(AppAction.authenticatedAction(.chatAction(.chatViewResponse(value))))
                 }
             }.response { response in
                 client.chatHook(ship: ship).synced { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.chatAction(.chatHookResponse(value)))
+                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.chatHookResponse(value))))
                     }
                 }
                 client.inviteStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.chatAction(.inviteStoreResponse(value)))
+                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.inviteStoreResponse(value))))
                     }
                 }
                 client.permissionStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.chatAction(.permissionStoreResponse(value)))
+                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.permissionStoreResponse(value))))
                     }
                 }
                 client.contactView(ship: ship).primary { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.chatAction(.contactViewResponse(value)))
+                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.contactViewResponse(value))))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "chat") { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.chatAction(.metadataStoreResponse(value)))
+                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.metadataStoreResponse(value))))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "contacts") { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.chatAction(.metadataStoreResponse(value)))
+                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.metadataStoreResponse(value))))
                     }
                 }
             }

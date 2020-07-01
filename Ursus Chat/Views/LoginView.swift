@@ -20,10 +20,13 @@ struct LoginView: View {
             Section(header: Text("Urbit URL")) {
                 TextField("sampel-palnet.arvo.network", text: $state.url)
                     .textContentType(.URL)
+                    .keyboardType(.URL)
                     .autocapitalization(.none)
             }
             Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
                 SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
+                    .textContentType(.password)
+                    .keyboardType(.asciiCapable)
             }
             Section {
                 Button(action: continueButtonTapped) {

@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Ursus
 
 struct AppView: View {
     
@@ -15,31 +14,10 @@ struct AppView: View {
     
     var body: some View {
         switch store.state {
-        case .loginState(let state):
-            return AnyView(
-                NavigationView {
-                    LoginView(state: state)
-                }
-            )
-        case .chatState(let state):
-            return AnyView(
-                TabView {
-                    NavigationView {
-                        ChatListView(state: state)
-                    }
-                    .tabItem {
-                        Image(systemName: "text.bubble")
-                        Text("Chats")
-                    }
-                    NavigationView {
-                        SettingsView()
-                    }
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-                }
-            )
+        case .unauthenticatedState(let state):
+            return AnyView(UnauthenticatedView(state: state))
+        case .authenticatedState(let state):
+            return AnyView(AuthenticatedView(state: state))
         }
     }
     

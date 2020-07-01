@@ -24,7 +24,14 @@ let appStore = AppStore(
                 fatalError("State not initialized")
             }
         },
-        state: .loginState(LoginState(url: "http://192.168.1.78:8080", code: "lacnyd-morped-pilbel-pocnep")),
+        state: .unauthenticatedState(
+            UnauthenticatedState(
+                loginState: LoginState(
+                    url: "http://192.168.1.78:8080",
+                    code: "lacnyd-morped-pilbel-pocnep"
+                )
+            )
+        ),
         middleware: [
             createLoggerMiddleware(),
             createThunkMiddleware()
