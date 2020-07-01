@@ -17,13 +17,27 @@ struct AppView: View {
         switch store.state {
         case .loginState(let state):
             return AnyView(
-                LoginView(state: state)
+                NavigationView {
+                    LoginView(state: state)
+                }
             )
         case .chatState(let state):
             return AnyView(
                 TabView {
-                    ChatView(state: state)
-                    SettingsView()
+                    NavigationView {
+                        ChatListView(state: state)
+                    }
+                    .tabItem {
+                        Image(systemName: "text.bubble")
+                        Text("Chats")
+                    }
+                    NavigationView {
+                        SettingsView()
+                    }
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
                 }
             )
         }

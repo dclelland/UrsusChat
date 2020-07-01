@@ -1,5 +1,5 @@
 //
-//  ChatView.swift
+//  ChatListRow.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 1/07/20.
@@ -9,20 +9,20 @@
 import Foundation
 import SwiftUI
 
-struct ChatView: View {
+struct ChatListRow: View {
     
     @EnvironmentObject var store: AppStore
     
     var body: some View {
-        Text("ChatView")
+        Text("ChatListRow")
     }
     
 }
 
-struct ChatView_Previews: PreviewProvider {
+struct ChatListRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatView()
+        ChatListRow()
     }
     
 }

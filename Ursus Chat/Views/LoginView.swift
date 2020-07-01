@@ -16,30 +16,28 @@ struct LoginView: View {
     @State var state: LoginState
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Urbit URL")) {
-                    TextField("sampel-palnet.arvo.network", text: $state.url)
-                        .textContentType(.URL)
-                        .autocapitalization(.none)
+        Form {
+            Section(header: Text("Urbit URL")) {
+                TextField("sampel-palnet.arvo.network", text: $state.url)
+                    .textContentType(.URL)
+                    .autocapitalization(.none)
+            }
+            Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
+                SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
+            }
+            Section {
+                Button(action: continueButtonTapped) {
+                    Text("Continue")
                 }
-                Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
-                    SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
+                Button(action: bridgeButtonTapped) {
+                    Text("Open Bridge")
                 }
-                Section {
-                    Button(action: continueButtonTapped) {
-                        Text("Continue")
-                    }
-                    Button(action: bridgeButtonTapped) {
-                        Text("Open Bridge")
-                    }
-                    Button(action: purchaseButtonTapped) {
-                        Text("Purchase an Urbit ID")
-                    }
+                Button(action: purchaseButtonTapped) {
+                    Text("Purchase an Urbit ID")
                 }
             }
-            .navigationBarTitle("Login")
         }
+        .navigationBarTitle("Login")
     }
     
 }
