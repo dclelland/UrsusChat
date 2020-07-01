@@ -11,7 +11,7 @@ import ReSwift
 
 enum AppState: StateType {
     
-    case login(LoginState)
-    case chat(ChatState)
+    case loginState(LoginState)
+    case chatState(ChatState)
     
 }

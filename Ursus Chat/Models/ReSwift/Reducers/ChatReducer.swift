@@ -17,7 +17,7 @@ enum ChatAction: Action {
     case inviteStoreResponse(InviteStoreApp.AllResponse)
     case permissionStoreResponse(PermissionStoreApp.AllResponse)
     case contactViewResponse(ContactViewApp.PrimaryResponse)
-    case metadataStoreReponse(MetadataStoreApp.AppNameResponse)
+    case metadataStoreResponse(MetadataStoreApp.AppNameResponse)
     
 }
 
@@ -59,7 +59,7 @@ let chatReducer: StateReducer<ChatAction, ChatState> = { action, state in
         break
     case .contactViewResponse(.contactUpdate(let update)):
         break
-    case .metadataStoreReponse(.metadataUpdate(.associations(let associations))):
+    case .metadataStoreResponse(.metadataUpdate(.associations(let associations))):
         break
     }
     return state

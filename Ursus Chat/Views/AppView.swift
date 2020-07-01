@@ -15,11 +15,11 @@ struct AppView: View {
     
     var body: some View {
         switch store.state {
-        case .login(let state):
+        case .loginState(let state):
             return AnyView(
                 LoginView(state: state)
             )
-        case .chat(let state):
+        case .chatState(let state):
             return AnyView(
                 TabView {
                     ChatView(state: state)
