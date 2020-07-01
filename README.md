@@ -13,6 +13,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
     - See: https://swiftwithmajid.com/2019/09/18/redux-like-state-container-in-swiftui
 - [ ] Switch actions from `enum`s to `structs`
 - [ ] Flesh out login/logout actions/thunks
+    - Will need to also flesh out `AuthenticatedState` and `LoginState` (might not need the latter)
 - [ ] Clean up `SubscribeEvent` decomposition
     - Add `SubscriptionState`, `SubscriptionEventAction` etc
     - Be sure not to throw away errors
