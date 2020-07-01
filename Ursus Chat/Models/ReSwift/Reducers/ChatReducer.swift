@@ -21,7 +21,7 @@ enum ChatAction: Action {
     
 }
 
-let chatReducer: MyReducer<ChatAction, ChatState> = { action, state in
+let chatReducer: StateReducer<ChatAction, ChatState> = { action, state in
     var state = state
     switch action {
     case .chatViewResponse(.chatInitial(let initial)):

@@ -9,8 +9,6 @@
 import Foundation
 import ReSwift
 
-typealias MyReducer<ReducerAction: Action, ReducerStateType: StateType> = (_ action: ReducerAction, _ state: ReducerStateType) -> ReducerStateType
-
 enum AppAction: Action {
     
     case login(LoginAction)
@@ -18,7 +16,7 @@ enum AppAction: Action {
     
 }
 
-let appReducer: MyReducer<AppAction, AppState> = { action, state in
+let appReducer: StateReducer<AppAction, AppState> = { action, state in
     switch (action, state) {
     case (.login(let action), .login(let state)):
         return .login(loginReducer(action, state))
