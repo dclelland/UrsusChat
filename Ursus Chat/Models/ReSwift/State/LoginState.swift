@@ -11,7 +11,7 @@ import ReSwift
 
 struct LoginState: StateType {
     
-    var url: String
-    var code: String
+    var url: String = ""
+    var code: String = ""
     
 }

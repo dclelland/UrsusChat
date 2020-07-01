@@ -14,5 +14,5 @@ enum LoginAction: Action {
 }
 
 let loginReducer: StateReducer<LoginAction, LoginState> = { action, state in
-    return state
+    fatalError()
 }

@@ -1,5 +1,5 @@
 //
-//  ChatsView.swift
+//  ChatView.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 29/06/20.
@@ -8,7 +8,9 @@
 
 import SwiftUI
 
-struct ChatsView: View {
+struct ChatView: View {
+    
+    let state: ChatState
     
     var body: some View {
         NavigationView {
@@ -28,7 +30,7 @@ struct ChatsView: View {
 struct ChatsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatsView()
+        ChatView(state: ChatState())
     }
     
 }

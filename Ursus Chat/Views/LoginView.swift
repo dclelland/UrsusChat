@@ -11,11 +11,7 @@ import Ursus
 
 struct LoginView: View {
     
-    @State var url: String = ""
-    
-    @State var code: String = ""
-    
-    @Environment(\.accessibilityEnabled) var fdsfds: Bool
+    @State var state: LoginState
     
     var handler: (_ url: URL, _ code: Code) -> Void = { _, _ in }
     
@@ -23,12 +19,12 @@ struct LoginView: View {
         NavigationView {
             Form {
                 Section(header: Text("Urbit URL")) {
-                    TextField("sampel-palnet.arvo.network", text: $url)
+                    TextField("sampel-palnet.arvo.network", text: $state.url)
                         .textContentType(.URL)
                         .autocapitalization(.none)
                 }
                 Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
-                    SecureField("sampel-ticlyt-migfun-falmel", text: $code)
+                    SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
                 }
                 Section {
                     Button(action: continueButtonTapped) {
@@ -51,7 +47,7 @@ struct LoginView: View {
 extension LoginView {
     
     private func continueButtonTapped() {
-        guard let url = URL(string: url), let code = try? Code(string: code) else {
+        guard let url = URL(string: state.url), let code = try? Code(string: state.code) else {
             return
         }
         
@@ -71,7 +67,7 @@ extension LoginView {
 struct AuthenticationView_Previews: PreviewProvider {
     
     static var previews: some View {
-        LoginView()
+        LoginView(state: LoginState())
     }
     
 }

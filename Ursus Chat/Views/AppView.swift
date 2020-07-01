@@ -7,29 +7,39 @@
 //
 
 import SwiftUI
+import Ursus
 
 struct AppView: View {
     
-    @State var authenticated: Bool = true
+    @EnvironmentObject var store: AppStore
     
     var body: some View {
-        if authenticated {
+        switch store.state {
+        case .login(let state):
+            return AnyView(
+                LoginView(state: state, handler: loginHandler)
+            )
+        case .chat(let state):
             return AnyView(
                 TabView {
-                    ChatsView()
+                    ChatView(state: state)
                     SettingsView()
                 }
-            )
-        } else {
-            return AnyView(
-                LoginView()
             )
         }
     }
     
 }
 
-struct HomeView_Previews: PreviewProvider {
+extension AppView {
+    
+    private func loginHandler(url: URL, code: Code) {
+        
+    }
+    
+}
+
+struct AppView_Previews: PreviewProvider {
     
     static var previews: some View {
         AppView()
