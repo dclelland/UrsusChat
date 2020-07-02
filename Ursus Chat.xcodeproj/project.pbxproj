@@ -16,6 +16,7 @@
 		65375B6E24AC64A40008EC25 /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B6D24AC64A40008EC25 /* ChatListRow.swift */; };
 		65375B7024AC64E10008EC25 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B6F24AC64E10008EC25 /* ChatView.swift */; };
 		65375B7424AC672E0008EC25 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B7324AC672E0008EC25 /* SessionState.swift */; };
+		65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */; };
 		655DB30D249A140B00A591B9 /* ChatStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB30C249A140B00A591B9 /* ChatStoreApp.swift */; };
 		655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */; };
 		655DB311249ACCDE00A591B9 /* PermissionStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB310249ACCDE00A591B9 /* PermissionStoreApp.swift */; };
@@ -49,6 +50,7 @@
 		65375B6D24AC64A40008EC25 /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
 		65375B6F24AC64E10008EC25 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		65375B7324AC672E0008EC25 /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
+		65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		655DB30C249A140B00A591B9 /* ChatStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreApp.swift; sourceTree = "<group>"; };
 		655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHookApp.swift; sourceTree = "<group>"; };
 		655DB310249ACCDE00A591B9 /* PermissionStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionStoreApp.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				6520F60324977BFE00F3D56C /* SceneDelegate.swift */,
 				6520F61524977D1600F3D56C /* Views */,
 				6520F623249850FE00F3D56C /* Models */,
+				65375B8224ADD9030008EC25 /* Extensions */,
 				65375B7F24ADA8CE0008EC25 /* Publishers */,
 				6520F61B24977D4800F3D56C /* Assets */,
 				6520F62024977D6500F3D56C /* Supporting Files */,
@@ -171,6 +174,14 @@
 				65861B1824AC318A00C63E07 /* ObservableStore.swift */,
 			);
 			path = Publishers;
+			sourceTree = "<group>";
+		};
+		65375B8224ADD9030008EC25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		65861B0B24AB270100C63E07 /* Middleware */ = {
@@ -388,6 +399,7 @@
 				6520F62C2498558700F3D56C /* ChatViewApp.swift in Sources */,
 				655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */,
+				65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */,
 				655DB30D249A140B00A591B9 /* ChatStoreApp.swift in Sources */,
 				65D95A4C249C541C0002AA4F /* SubscriptionState.swift in Sources */,
 				65861B0824A9A8F700C63E07 /* SettingsView.swift in Sources */,

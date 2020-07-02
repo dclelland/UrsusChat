@@ -15,7 +15,7 @@ struct ChatListView: View {
     var state: SubscriptionState
     
     var body: some View {
-        List(state.inbox.sorted(by: { $0.key > $1.key }), id: \.key) { state in
+        List(state.inbox.sorted(by: \.key), id: \.key) { state in
             NavigationLink(destination: ChatView(state: state)) {
                 ChatListRow(state: state)
             }
@@ -28,7 +28,27 @@ struct ChatListView: View {
 struct ChatListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatListView(state: SubscriptionState())
+        ChatListView(
+            state: SubscriptionState(
+                inbox: [
+                    "key": ChatStoreApp.Mailbox(
+                        config: ChatStoreApp.Config(
+                            length: 0,
+                            read: 0
+                        ),
+                        envelopes: [
+                            ChatStoreApp.Envelope(
+                                uid: "0",
+                                number: 0,
+                                author: "author",
+                                when: Date(),
+                                letter: .text("Hello")
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
     }
     
 }
