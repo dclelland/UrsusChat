@@ -25,7 +25,26 @@ struct ChatView: View {
 struct ChatView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatView(state: (name: "name", mailbox: ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])))
+        ChatView(
+            state: (
+                name: "name",
+                mailbox: ChatStoreApp.Mailbox(
+                    config: ChatStoreApp.Config(
+                        length: 0,
+                        read: 0
+                    ),
+                    envelopes: [
+                        ChatStoreApp.Envelope(
+                            uid: "0",
+                            number: 0,
+                            author: "author",
+                            when: Date(),
+                            letter: .text("Hello")
+                        )
+                    ]
+                )
+            )
+        )
     }
     
 }
