@@ -1,5 +1,5 @@
 //
-//  SubscriptionReducer.swift
+//  SubscriptionAction.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 19/06/20.
