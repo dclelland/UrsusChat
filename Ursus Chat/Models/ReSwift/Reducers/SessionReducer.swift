@@ -11,10 +11,10 @@ import ReSwift
 import Ursus
 
 enum SessionAction: Action {
-    
+
     case login(client: Ursus)
     case logout
-    
+
 }
 
 #warning("TODO: Throw error on invalid state")

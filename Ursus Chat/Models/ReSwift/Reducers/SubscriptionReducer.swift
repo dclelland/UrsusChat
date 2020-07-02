@@ -12,53 +12,62 @@ import Ursus
 
 enum SubscriptionAction: Action {
     
-    case chatViewResponse(ChatViewApp.PrimaryResponse)
-    case chatHookResponse(ChatHookApp.SyncedResponse)
-    case inviteStoreResponse(InviteStoreApp.AllResponse)
-    case permissionStoreResponse(PermissionStoreApp.AllResponse)
-    case contactViewResponse(ContactViewApp.PrimaryResponse)
-    case metadataStoreResponse(MetadataStoreApp.AppNameResponse)
+    enum Response {
+        
+        case chatView(ChatViewApp.PrimaryResponse)
+        case chatHook(ChatHookApp.SyncedResponse)
+        case inviteStore(InviteStoreApp.AllResponse)
+        case permissionStore(PermissionStoreApp.AllResponse)
+        case contactView(ContactViewApp.PrimaryResponse)
+        case metadataStore(MetadataStoreApp.AppNameResponse)
+        
+    }
+    
+    case response(Response)
     
 }
 
 let subscriptionReducer: StateReducer<SubscriptionAction, SubscriptionState> = { action, state in
     switch action {
-    case .chatViewResponse(.chatInitial(let initial)):
-        state.inbox = initial
-    case .chatViewResponse(.chatUpdate(.create(let create))):
-        state.inbox[create.path] = ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])
-    case .chatViewResponse(.chatUpdate(.delete(let delete))):
-        state.inbox[delete.path] = nil
-    case .chatViewResponse(.chatUpdate(.message(let message))):
-        if let mailbox = state.inbox[message.path] {
-            state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
-            state.inbox[message.path]?.config.length = mailbox.config.length + 1
+    case .response(let response):
+        switch response {
+        case .chatView(.chatInitial(let initial)):
+            state.inbox = initial
+        case .chatView(.chatUpdate(.create(let create))):
+            state.inbox[create.path] = ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])
+        case .chatView(.chatUpdate(.delete(let delete))):
+            state.inbox[delete.path] = nil
+        case .chatView(.chatUpdate(.message(let message))):
+            if let mailbox = state.inbox[message.path] {
+                state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
+                state.inbox[message.path]?.config.length = mailbox.config.length + 1
+            }
+        case .chatView(.chatUpdate(.read(let read))):
+            if let mailbox = state.inbox[read.path] {
+                state.inbox[read.path]?.config.read = mailbox.config.length
+            }
+        case .chatHook(.chatHookUpdate(let update)):
+            state.synced = update
+        case .inviteStore(.inviteInitial(let initial)):
+            state.invites = initial
+        case .inviteStore(.inviteUpdate(let update)):
+            break
+        case .permissionStore(.permissionInitial(let initial)):
+            break
+        case .permissionStore(.permissionUpdate(.create(let create))):
+            break
+        case .permissionStore(.permissionUpdate(.delete(let delete))):
+            break
+        case .permissionStore(.permissionUpdate(.add(let add))):
+            break
+        case .permissionStore(.permissionUpdate(.remove(let remove))):
+            break
+        case .contactView(.contactInitial(let initial)):
+            break
+        case .contactView(.contactUpdate(let update)):
+            break
+        case .metadataStore(.metadataUpdate(.associations(let associations))):
+            break
         }
-    case .chatViewResponse(.chatUpdate(.read(let read))):
-        if let mailbox = state.inbox[read.path] {
-            state.inbox[read.path]?.config.read = mailbox.config.length
-        }
-    case .chatHookResponse(.chatHookUpdate(let update)):
-        state.synced = update
-    case .inviteStoreResponse(.inviteInitial(let initial)):
-        state.invites = initial
-    case .inviteStoreResponse(.inviteUpdate(let update)):
-        break
-    case .permissionStoreResponse(.permissionInitial(let initial)):
-        break
-    case .permissionStoreResponse(.permissionUpdate(.create(let create))):
-        break
-    case .permissionStoreResponse(.permissionUpdate(.delete(let delete))):
-        break
-    case .permissionStoreResponse(.permissionUpdate(.add(let add))):
-        break
-    case .permissionStoreResponse(.permissionUpdate(.remove(let remove))):
-        break
-    case .contactViewResponse(.contactInitial(let initial)):
-        break
-    case .contactViewResponse(.contactUpdate(let update)):
-        break
-    case .metadataStoreResponse(.metadataUpdate(.associations(let associations))):
-        break
     }
 }
