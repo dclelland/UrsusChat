@@ -11,25 +11,22 @@ import ReSwift
 import ReSwiftThunk
 import Ursus
 
+#warning("TODO: Set up keychain retrieval action")
+#warning("TODO: Set up error/exception handling action")
+
 enum AppAction: Action {
     
-    case loginSuccess(client: Ursus)
-    
-    case unauthenticatedAction(UnauthenticatedAction)
-    case authenticatedAction(AuthenticatedAction)
+    case session(SessionAction)
+    case subscription(SubscriptionAction)
     
 }
 
 let appReducer: StateReducer<AppAction, AppState> = { action, state in
-    switch (action, state) {
-    case (.loginSuccess(let client), .unauthenticatedState):
-        return .authenticatedState(AuthenticatedState(client: client, chatState: ChatState()))
-    case (.unauthenticatedAction(let action), .unauthenticatedState(let state)):
-        return .unauthenticatedState(unauthenticatedReducer(action, state))
-    case (.authenticatedAction(let action), .authenticatedState(let state)):
-        return .authenticatedState(authenticatedReducer(action, state))
-    default:
-        return state
+    switch action {
+    case .session(let action):
+        sessionReducer(action, &state.session)
+    case .subscription(let action):
+        subscriptionReducer(action, &state.subscription)
     }
 }
 
@@ -44,42 +41,42 @@ func loginAction(url: URL, code: Code) -> Thunk<AppState> {
         #warning("TODO: Dispatch 'loginStart' login action")
         client.loginRequest { ship in
             
-            dispatch(AppAction.loginSuccess(client: client))
+            dispatch(AppAction.session(.login(client: client)))
             #warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
             #warning("TODO: DRY up event handlers")
             client.chatView(ship: ship).primary { event in
                 if let value = event.value {
-                    appStore.dispatch(AppAction.authenticatedAction(.chatAction(.chatViewResponse(value))))
+                    appStore.dispatch(AppAction.subscription(.chatViewResponse(value)))
                 }
             }.response { response in
                 client.chatHook(ship: ship).synced { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.chatHookResponse(value))))
+                        appStore.dispatch(AppAction.subscription(.chatHookResponse(value)))
                     }
                 }
                 client.inviteStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.inviteStoreResponse(value))))
+                        appStore.dispatch(AppAction.subscription(.inviteStoreResponse(value)))
                     }
                 }
                 client.permissionStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.permissionStoreResponse(value))))
+                        appStore.dispatch(AppAction.subscription(.permissionStoreResponse(value)))
                     }
                 }
                 client.contactView(ship: ship).primary { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.contactViewResponse(value))))
+                        appStore.dispatch(AppAction.subscription(.contactViewResponse(value)))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "chat") { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.metadataStoreResponse(value))))
+                        appStore.dispatch(AppAction.subscription(.metadataStoreResponse(value)))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "contacts") { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.authenticatedAction(.chatAction(.metadataStoreResponse(value))))
+                        appStore.dispatch(AppAction.subscription(.metadataStoreResponse(value)))
                     }
                 }
             }

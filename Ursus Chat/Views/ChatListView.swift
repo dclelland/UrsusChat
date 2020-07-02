@@ -7,13 +7,12 @@
 //
 
 import SwiftUI
-import Ursus
 
 struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
-    var state: ChatState
+    var state: SubscriptionState
     
     var body: some View {
         List(state.inbox.sorted(by: { $0.key > $1.key }), id: \.key) { state in
@@ -29,7 +28,7 @@ struct ChatListView: View {
 struct ChatListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatListView(state: ChatState())
+        ChatListView(state: SubscriptionState())
     }
     
 }

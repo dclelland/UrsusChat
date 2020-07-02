@@ -1,5 +1,5 @@
 //
-//  ChatReducer.swift
+//  SubscriptionReducer.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 19/06/20.
@@ -10,7 +10,7 @@ import Foundation
 import ReSwift
 import Ursus
 
-enum ChatAction: Action {
+enum SubscriptionAction: Action {
     
     case chatViewResponse(ChatViewApp.PrimaryResponse)
     case chatHookResponse(ChatHookApp.SyncedResponse)
@@ -21,8 +21,7 @@ enum ChatAction: Action {
     
 }
 
-let chatReducer: StateReducer<ChatAction, ChatState> = { action, state in
-    var state = state
+let subscriptionReducer: StateReducer<SubscriptionAction, SubscriptionState> = { action, state in
     switch action {
     case .chatViewResponse(.chatInitial(let initial)):
         state.inbox = initial
@@ -40,7 +39,7 @@ let chatReducer: StateReducer<ChatAction, ChatState> = { action, state in
             state.inbox[read.path]?.config.read = mailbox.config.length
         }
     case .chatHookResponse(.chatHookUpdate(let update)):
-        state.chatSynced = update
+        state.synced = update
     case .inviteStoreResponse(.inviteInitial(let initial)):
         state.invites = initial
     case .inviteStoreResponse(.inviteUpdate(let update)):
@@ -62,5 +61,4 @@ let chatReducer: StateReducer<ChatAction, ChatState> = { action, state in
     case .metadataStoreResponse(.metadataUpdate(.associations(let associations))):
         break
     }
-    return state
 }

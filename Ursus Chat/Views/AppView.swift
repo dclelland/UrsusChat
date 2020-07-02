@@ -13,11 +13,32 @@ struct AppView: View {
     @EnvironmentObject var store: AppStore
     
     var body: some View {
-        switch store.state {
-        case .unauthenticatedState(let state):
-            return AnyView(UnauthenticatedView(state: state))
-        case .authenticatedState(let state):
-            return AnyView(AuthenticatedView(state: state))
+        switch store.state.session {
+        case .unauthenticated(let credentials):
+            return AnyView(
+                NavigationView {
+                    LoginView(state: credentials)
+                }
+            )
+        case .authenticated:
+            return AnyView(
+                TabView {
+                    NavigationView {
+                        ChatListView(state: store.state.subscription)
+                    }
+                    .tabItem {
+                        Image(systemName: "text.bubble")
+                        Text("Chats")
+                    }
+                    NavigationView {
+                        SettingsView()
+                    }
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+                }
+            )
         }
     }
     

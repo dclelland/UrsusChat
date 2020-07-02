@@ -1,5 +1,5 @@
 //
-//  ChatState.swift
+//  SubscriptionState.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 19/06/20.
@@ -9,11 +9,10 @@
 import Foundation
 import ReSwift
 
-struct ChatState: StateType {
+struct SubscriptionState: StateType {
     
     var inbox: ChatStoreApp.Inbox = [:]
-    var chatSynced: [String: String]? = nil
-    
+    var synced: [String: String]? = nil
     var invites: InviteStoreApp.Invites = [:]
     var contacts: ContactStoreApp.Rolodex = [:]
     

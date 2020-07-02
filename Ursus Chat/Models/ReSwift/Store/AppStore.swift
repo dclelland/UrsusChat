@@ -10,28 +10,23 @@ import Foundation
 import ReSwift
 import ReSwiftThunk
 
-typealias StateReducer<ReducerAction: Action, ReducerStateType: StateType> = (_ action: ReducerAction, _ state: ReducerStateType) -> ReducerStateType
+typealias StateReducer<ReducerAction: Action, ReducerStateType: StateType> = (_ action: ReducerAction, _ state: inout ReducerStateType) -> Void
 
 typealias AppStore = ObservableStore<AppState>
 
 let appStore = AppStore(
     store: Store(
         reducer: { action, state in
-            switch (action, state) {
-            case (let action as AppAction, .some(let state)):
-                return appReducer(action, state)
+            var state = state ?? AppState()
+            switch action {
+            case let action as AppAction:
+                appReducer(action, &state)
             default:
-                fatalError("State not initialized")
+                break
             }
+            return state
         },
-        state: .unauthenticatedState(
-            UnauthenticatedState(
-                loginState: LoginState(
-                    url: "http://192.168.1.78:8080",
-                    code: "lacnyd-morped-pilbel-pocnep"
-                )
-            )
-        ),
+        state: AppState(),
         middleware: [
             createLoggerMiddleware(),
             createThunkMiddleware()

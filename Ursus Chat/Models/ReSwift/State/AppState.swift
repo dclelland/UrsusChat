@@ -9,9 +9,11 @@
 import Foundation
 import ReSwift
 
-enum AppState: StateType {
+struct AppState: StateType {
     
-    case unauthenticatedState(UnauthenticatedState)
-    case authenticatedState(AuthenticatedState)
+    #warning("TODO: Remove default credentials")
+    
+    var session: SessionState = .unauthenticated(credentials: SessionState.Credentials(url: "http://192.168.1.78:8080", code: "lacnyd-morped-pilbel-pocnep"))
+    var subscription: SubscriptionState = SubscriptionState()
     
 }

@@ -13,7 +13,7 @@ struct LoginView: View {
     
     @EnvironmentObject var store: AppStore
     
-    @State var state: LoginState
+    @State var state: SessionState.Credentials
     
     var body: some View {
         Form {
@@ -65,10 +65,10 @@ extension LoginView {
     
 }
 
-struct AuthenticationView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     
     static var previews: some View {
-        LoginView(state: LoginState())
+        LoginView(state: SessionState.Credentials(url: "", code: ""))
     }
     
 }
