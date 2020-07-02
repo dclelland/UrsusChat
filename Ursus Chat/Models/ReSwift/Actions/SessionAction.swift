@@ -64,45 +64,48 @@ func sessionLoginThunk(url: URL, code: Code) -> Thunk<AppState> {
         let client = Ursus(url: url, code: code)
         #warning("TODO: Dispatch 'loginStart' login action")
         client.loginRequest { ship in
-
             dispatch(SessionLoginAction(client: client))
             #warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
             #warning("TODO: DRY up event handlers")
             client.chatView(ship: ship).primary { event in
                 if let value = event.value {
-                    appStore.dispatch(SubscriptionUpdateAction.chatView(value))
+                    dispatch(SubscriptionUpdateAction.chatView(value))
                 }
             }.response { response in
                 client.chatHook(ship: ship).synced { event in
                     if let value = event.value {
-                        appStore.dispatch(SubscriptionUpdateAction.chatHook(value))
+                        dispatch(SubscriptionUpdateAction.chatHook(value))
                     }
                 }
                 client.inviteStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(SubscriptionUpdateAction.inviteStore(value))
+                        dispatch(SubscriptionUpdateAction.inviteStore(value))
                     }
                 }
                 client.permissionStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(SubscriptionUpdateAction.permissionStore(value))
+                        dispatch(SubscriptionUpdateAction.permissionStore(value))
                     }
                 }
                 client.contactView(ship: ship).primary { event in
                     if let value = event.value {
-                        appStore.dispatch(SubscriptionUpdateAction.contactView(value))
+                        dispatch(SubscriptionUpdateAction.contactView(value))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "chat") { event in
                     if let value = event.value {
-                        appStore.dispatch(SubscriptionUpdateAction.metadataStore(value))
+                        dispatch(SubscriptionUpdateAction.metadataStore(value))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "contacts") { event in
                     if let value = event.value {
-                        appStore.dispatch(SubscriptionUpdateAction.metadataStore(value))
+                        dispatch(SubscriptionUpdateAction.metadataStore(value))
                     }
                 }
+            }
+        }.response { response in
+            if let error = response.error {
+                dispatch(AppErrorAction(error: error))
             }
         }
     }
