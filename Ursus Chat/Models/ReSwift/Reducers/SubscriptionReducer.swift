@@ -12,7 +12,7 @@ import Ursus
 
 enum SubscriptionAction: Action {
     
-    enum Response {
+    enum Update {
         
         case chatView(ChatViewApp.PrimaryResponse)
         case chatHook(ChatHookApp.SyncedResponse)
@@ -23,14 +23,14 @@ enum SubscriptionAction: Action {
         
     }
     
-    case response(Response)
+    case update(Update)
     
 }
 
 let subscriptionReducer: StateReducer<SubscriptionAction, SubscriptionState> = { action, state in
     switch action {
-    case .response(let response):
-        switch response {
+    case .update(let update):
+        switch update {
         case .chatView(.chatInitial(let initial)):
             state.inbox = initial
         case .chatView(.chatUpdate(.create(let create))):

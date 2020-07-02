@@ -46,37 +46,37 @@ func loginAction(url: URL, code: Code) -> Thunk<AppState> {
             #warning("TODO: DRY up event handlers")
             client.chatView(ship: ship).primary { event in
                 if let value = event.value {
-                    appStore.dispatch(AppAction.subscription(.response(.chatView(value))))
+                    appStore.dispatch(AppAction.subscription(.update(.chatView(value))))
                 }
             }.response { response in
                 client.chatHook(ship: ship).synced { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.subscription(.response(.chatHook(value))))
+                        appStore.dispatch(AppAction.subscription(.update(.chatHook(value))))
                     }
                 }
                 client.inviteStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.subscription(.response(.inviteStore(value))))
+                        appStore.dispatch(AppAction.subscription(.update(.inviteStore(value))))
                     }
                 }
                 client.permissionStore(ship: ship).all { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.subscription(.response(.permissionStore(value))))
+                        appStore.dispatch(AppAction.subscription(.update(.permissionStore(value))))
                     }
                 }
                 client.contactView(ship: ship).primary { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.subscription(.response(.contactView(value))))
+                        appStore.dispatch(AppAction.subscription(.update(.contactView(value))))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "chat") { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.subscription(.response(.metadataStore(value))))
+                        appStore.dispatch(AppAction.subscription(.update(.metadataStore(value))))
                     }
                 }
                 client.metadataStore(ship: ship).appName(app: "contacts") { event in
                     if let value = event.value {
-                        appStore.dispatch(AppAction.subscription(.response(.metadataStore(value))))
+                        appStore.dispatch(AppAction.subscription(.update(.metadataStore(value))))
                     }
                 }
             }
