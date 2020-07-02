@@ -60,8 +60,8 @@ struct SessionLogoutAction: SessionAction {
         switch state {
         case .unauthenticated:
             throw SessionActionError.alreadyLoggedOut
-        case .authenticated(let client):
-            state = .unauthenticated(credentials: SessionState.Credentials(url: client.url.absoluteString, code: client.code.description))
+        case .authenticated:
+            state = .unauthenticated()
         }
     }
     

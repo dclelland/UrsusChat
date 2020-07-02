@@ -10,6 +10,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Build out `AppLaunchAction`
     - Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`
+    - Clear keychain on logout...?
 - [ ] Finish `sessionThunk`: More granular `SessionAction` cases and error handling
 
 ### Data
