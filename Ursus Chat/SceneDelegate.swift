@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftUI
-import Ursus
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

@@ -10,7 +10,6 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Other global actions:
     - `KeychainAction`: Retrieve credentials from keychain on initialization
-    - `TerminationAction`: Send a `deleteRequest` on app termination
 - [ ] Add more granular `SessionAction` cases
     - Catch errors correctly in the thunk
 

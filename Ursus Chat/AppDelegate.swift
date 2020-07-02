@@ -18,5 +18,9 @@ import AlamofireNetworkActivityIndicator
         
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        appStore.dispatch(AppTerminateAction())
+    }
 
 }

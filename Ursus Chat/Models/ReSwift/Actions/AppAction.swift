@@ -32,3 +32,11 @@ struct AppDismissErrorAction: AppAction {
     }
     
 }
+
+struct AppTerminateAction: AppAction {
+    
+    func reduce(_ state: inout AppState) throws {
+        state.session = .unauthenticated()
+    }
+    
+}

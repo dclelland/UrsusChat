@@ -14,12 +14,12 @@ enum SessionState: StateType {
     
     struct Credentials {
         
-        var url: String
-        var code: String
+        var url: String = ""
+        var code: String = ""
         
     }
     
-    case unauthenticated(credentials: Credentials)
+    case unauthenticated(credentials: Credentials = Credentials())
     case authenticated(client: Ursus)
     
 }
