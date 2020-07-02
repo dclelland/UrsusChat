@@ -16,31 +16,33 @@ struct LoginView: View {
     @State var state: SessionState.Credentials
     
     var body: some View {
-        Form {
-            Section(header: Text("Urbit URL")) {
-                TextField("sampel-palnet.arvo.network", text: $state.url)
-                    .textContentType(.URL)
-                    .keyboardType(.URL)
-                    .autocapitalization(.none)
-            }
-            Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
-                SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
-                    .textContentType(.password)
-                    .keyboardType(.asciiCapable)
-            }
-            Section {
-                Button(action: continueButtonTapped) {
-                    Text("Continue")
+        NavigationView {
+            Form {
+                Section(header: Text("Urbit URL")) {
+                    TextField("sampel-palnet.arvo.network", text: $state.url)
+                        .textContentType(.URL)
+                        .keyboardType(.URL)
+                        .autocapitalization(.none)
                 }
-                Button(action: bridgeButtonTapped) {
-                    Text("Open Bridge")
+                Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
+                    SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
+                        .textContentType(.password)
+                        .keyboardType(.asciiCapable)
                 }
-                Button(action: purchaseButtonTapped) {
-                    Text("Purchase an Urbit ID")
+                Section {
+                    Button(action: continueButtonTapped) {
+                        Text("Continue")
+                    }
+                    Button(action: bridgeButtonTapped) {
+                        Text("Open Bridge")
+                    }
+                    Button(action: purchaseButtonTapped) {
+                        Text("Purchase an Urbit ID")
+                    }
                 }
             }
+            .navigationBarTitle("Login")
         }
-        .navigationBarTitle("Login")
     }
     
 }

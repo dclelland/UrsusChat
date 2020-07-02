@@ -16,27 +16,13 @@ struct AppView: View {
         switch store.state.session {
         case .unauthenticated(let credentials):
             return AnyView(
-                NavigationView {
-                    LoginView(state: credentials)
-                }
+                LoginView(state: credentials)
             )
         case .authenticated:
             return AnyView(
                 TabView {
-                    NavigationView {
-                        ChatListView(state: store.state.subscription)
-                    }
-                    .tabItem {
-                        Image(systemName: "text.bubble")
-                        Text("Chats")
-                    }
-                    NavigationView {
-                        SettingsView()
-                    }
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
+                    ChatListView(state: store.state.subscription)
+                    SettingsView()
                 }
             )
         }

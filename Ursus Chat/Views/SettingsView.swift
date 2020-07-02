@@ -11,10 +11,16 @@ import SwiftUI
 struct SettingsView: View {
     
     var body: some View {
-        VStack {
+        NavigationView {
+            VStack {
+                Text("Settings")
+            }
+            .navigationBarTitle("Settings")
+        }
+        .tabItem {
+            Image(systemName: "gear")
             Text("Settings")
         }
-        .navigationBarTitle("Settings")
     }
     
 }

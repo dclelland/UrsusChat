@@ -15,12 +15,18 @@ struct ChatListView: View {
     var state: SubscriptionState
     
     var body: some View {
-        List(state.inbox.sorted(by: \.key), id: \.key) { state in
-            NavigationLink(destination: ChatView(state: state)) {
-                ChatListRow(state: state)
+        NavigationView {
+            List(state.inbox.sorted(by: \.key), id: \.key) { state in
+                NavigationLink(destination: ChatView(state: state)) {
+                    ChatListRow(state: state)
+                }
             }
+            .navigationBarTitle("Chats")
         }
-        .navigationBarTitle("All Chats")
+        .tabItem {
+            Image(systemName: "text.bubble")
+            Text("Chats")
+        }
     }
     
 }
