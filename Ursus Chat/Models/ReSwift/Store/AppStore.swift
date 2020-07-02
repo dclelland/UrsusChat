@@ -20,14 +20,7 @@ enum AppStoreError: Error {
 
 let appStore = AppStore(
     reducer: appReducer,
-    state: AppState(
-        session: .unauthenticated(
-            credentials: SessionState.Credentials(
-                url: "http://192.168.1.78:8080",
-                code: "lacnyd-morped-pilbel-pocnep"
-            )
-        )
-    ),
+    state: AppState(),
     middleware: [
         createLoggerMiddleware(),
         createThunkMiddleware()

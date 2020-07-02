@@ -11,8 +11,6 @@ import ReSwift
 import ReSwiftThunk
 import Ursus
 
-#warning("TODO: Set up keychain retrieval action")
-
 protocol SessionAction: Action {
     
     func reduce(_ state: inout SessionState) throws
@@ -25,10 +23,6 @@ enum SessionActionError: Error {
     case alreadyLoggedOut
     
 }
-
-#warning("TODO: Should pull the login state out here")
-#warning("TODO: Dispatch 'loginStart' login action")
-#warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
 
 func sessionThunk(url: URL, code: Code) -> Thunk<AppState> {
     return Thunk<AppState> { dispatch, getState in

@@ -6,16 +6,11 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ## Todo list
 
-### Architecture
+### Actions
 
-- [ ] Other global actions:
-    - `KeychainAction`: Retrieve credentials from keychain on initialization
-- [ ] Add more granular `SessionAction` cases
-    - Catch errors correctly in the thunk
-
-### Authentication
-
-- [ ] Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`
+- [ ] Build out `AppLaunchAction`
+    - Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`
+- [ ] Finish `sessionThunk`: More granular `SessionAction` cases and error handling
 
 ### Data
 

@@ -15,6 +15,27 @@ protocol AppAction: Action {
     
 }
 
+struct AppLaunchAction: AppAction {
+    
+    func reduce(_ state: inout AppState) throws {
+        state.session = .unauthenticated(
+            credentials: SessionState.Credentials(
+                url: "http://192.168.1.78:8080",
+                code: "lacnyd-morped-pilbel-pocnep"
+            )
+        )
+    }
+    
+}
+
+struct AppTerminateAction: AppAction {
+    
+    func reduce(_ state: inout AppState) throws {
+        state.session = .unauthenticated()
+    }
+    
+}
+
 struct AppErrorAction: AppAction {
     
     var error: Error
@@ -29,14 +50,6 @@ struct AppDismissErrorAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
         state.errors.removeLast()
-    }
-    
-}
-
-struct AppTerminateAction: AppAction {
-    
-    func reduce(_ state: inout AppState) throws {
-        state.session = .unauthenticated()
     }
     
 }
