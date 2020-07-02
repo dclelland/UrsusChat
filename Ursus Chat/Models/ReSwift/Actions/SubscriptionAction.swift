@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import ReSwiftThunk
 import Ursus
 
 protocol SubscriptionAction: Action {
@@ -20,6 +21,34 @@ enum SubscriptionActionError: Error {
     
     case unhandledEventUpdate(Any)
     
+}
+
+func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
+    return Thunk<AppState> { dispatch, getState in
+        client.chatView(ship: ship).primary { event in
+            dispatch(SubscriptionEventAction(event: event))
+        }.response { response in
+            client.chatHook(ship: ship).synced { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            client.inviteStore(ship: ship).all { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            client.permissionStore(ship: ship).all { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            client.contactView(ship: ship).primary { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            client.metadataStore(ship: ship).appName(app: "chat") { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            client.metadataStore(ship: ship).appName(app: "contacts") { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+        }
+    }
+
 }
 
 struct SubscriptionEventAction<Value>: SubscriptionAction {

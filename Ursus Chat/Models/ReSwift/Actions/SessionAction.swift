@@ -26,6 +26,25 @@ enum SessionActionError: Error {
     
 }
 
+#warning("TODO: Should pull the login state out here")
+#warning("TODO: Dispatch 'loginStart' login action")
+#warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
+
+func sessionThunk(url: URL, code: Code) -> Thunk<AppState> {
+    return Thunk<AppState> { dispatch, getState in
+        let client = Ursus(url: url, code: code)
+        client.loginRequest { ship in
+            dispatch(SessionLoginAction(client: client))
+            dispatch(subscriptionThunk(client: client, ship: ship))
+        }.response { response in
+            if let error = response.error {
+                dispatch(AppErrorAction(error: error))
+            }
+        }
+    }
+
+}
+
 struct SessionLoginAction: SessionAction {
     
     var client: Ursus
@@ -52,47 +71,4 @@ struct SessionLogoutAction: SessionAction {
         }
     }
     
-}
-
-func sessionLoginThunk(url: URL, code: Code) -> Thunk<AppState> {
-    return Thunk<AppState> { dispatch, getState in
-        #warning("TODO: Should pull the login state out here")
-        guard let state = getState() else {
-            return
-        }
-
-        let client = Ursus(url: url, code: code)
-        #warning("TODO: Dispatch 'loginStart' login action")
-        client.loginRequest { ship in
-            dispatch(SessionLoginAction(client: client))
-            #warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
-            client.chatView(ship: ship).primary { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }.response { response in
-                client.chatHook(ship: ship).synced { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                client.inviteStore(ship: ship).all { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                client.permissionStore(ship: ship).all { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                client.contactView(ship: ship).primary { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                client.metadataStore(ship: ship).appName(app: "chat") { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                client.metadataStore(ship: ship).appName(app: "contacts") { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-            }
-        }.response { response in
-            if let error = response.error {
-                dispatch(AppErrorAction(error: error))
-            }
-        }
-    }
-
 }

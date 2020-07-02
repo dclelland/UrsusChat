@@ -52,7 +52,7 @@ extension LoginView {
             return
         }
         
-        store.dispatch(sessionLoginThunk(url: url, code: code))
+        store.dispatch(sessionThunk(url: url, code: code))
     }
     
     private func bridgeButtonTapped() {
