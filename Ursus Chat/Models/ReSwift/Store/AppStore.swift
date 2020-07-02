@@ -10,7 +10,20 @@ import Foundation
 import ReSwift
 import ReSwiftThunk
 
-typealias AppStore = ObservableStore<AppState>
+class AppStore: ObservableStore<AppState> {
+    
+    convenience init(state: AppState = AppState()) {
+        self.init(
+            reducer: appReducer,
+            state: AppState(),
+            middleware: [
+                createLoggerMiddleware(),
+                createThunkMiddleware()
+            ]
+        )
+    }
+    
+}
 
 enum AppStoreError: Error {
     
@@ -18,13 +31,36 @@ enum AppStoreError: Error {
     
 }
 
-let appStore = AppStore(
-    reducer: appReducer,
-    state: AppState(),
-    middleware: [
-        createLoggerMiddleware(),
-        createThunkMiddleware()
-    ]
+let appStore = AppStore()
+
+let previewAppStore = AppStore(
+    state: AppState(
+        session: .unauthenticated(
+            credentials: SessionState.Credentials(
+                url: "http://localhost",
+                code: "fipfes-fipfes-fipfes-fipfes"
+            )
+        ),
+        subscription: SubscriptionState(
+            inbox: [
+                "Test Chat": ChatStoreApp.Mailbox(
+                    config: ChatStoreApp.Config(
+                        length: 0,
+                        read: 0
+                    ),
+                    envelopes: [
+                        ChatStoreApp.Envelope(
+                            uid: "0",
+                            number: 0,
+                            author: "~fipfes-fipfes",
+                            when: Date(),
+                            letter: .text("Hello")
+                        )
+                    ]
+                )
+            ]
+        )
+    )
 )
 
 let appReducer: Reducer<AppState> = { action, state in

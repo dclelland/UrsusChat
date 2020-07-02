@@ -21,7 +21,7 @@ struct AppView: View {
         case .authenticated:
             return AnyView(
                 TabView {
-                    ChatListView(state: store.state.subscription)
+                    ChatListView()
                     SettingsView()
                 }
             )
@@ -33,7 +33,7 @@ struct AppView: View {
 struct AppView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AppView()
+        AppView().environmentObject(previewAppStore)
     }
     
 }

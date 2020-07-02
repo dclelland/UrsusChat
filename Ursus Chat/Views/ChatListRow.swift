@@ -43,7 +43,7 @@ struct ChatListRow_Previews: PreviewProvider {
                     ]
                 )
             )
-        )
+        ).previewLayout(.sizeThatFits)
     }
     
 }
