@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import Ursus
 
 protocol SubscriptionAction: Action {
     
@@ -15,53 +16,78 @@ protocol SubscriptionAction: Action {
     
 }
 
-enum SubscriptionUpdateAction: SubscriptionAction {
+enum SubscriptionActionError: Error {
     
-    case chatView(ChatViewApp.PrimaryResponse)
-    case chatHook(ChatHookApp.SyncedResponse)
-    case inviteStore(InviteStoreApp.AllResponse)
-    case permissionStore(PermissionStoreApp.AllResponse)
-    case contactView(ContactViewApp.PrimaryResponse)
-    case metadataStore(MetadataStoreApp.AppNameResponse)
+    case unhandledEventUpdate(Any)
+    
+}
+
+struct SubscriptionEventAction<Value>: SubscriptionAction {
+    
+    var event: SubscribeEvent<Value>
     
     func reduce(_ state: inout SubscriptionState) throws {
-        switch self {
-        case .chatView(.chatInitial(let initial)):
-            state.inbox = initial
-        case .chatView(.chatUpdate(.create(let create))):
-            state.inbox[create.path] = ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])
-        case .chatView(.chatUpdate(.delete(let delete))):
-            state.inbox[delete.path] = nil
-        case .chatView(.chatUpdate(.message(let message))):
-            if let mailbox = state.inbox[message.path] {
-                state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
-                state.inbox[message.path]?.config.length = mailbox.config.length + 1
+        switch event {
+        case .update(let value as ChatViewApp.PrimaryResponse):
+            switch value {
+            case .chatInitial(let initial):
+                state.inbox = initial
+            case .chatUpdate(.create(let create)):
+                state.inbox[create.path] = ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])
+            case .chatUpdate(.delete(let delete)):
+                state.inbox[delete.path] = nil
+            case .chatUpdate(.message(let message)):
+                if let mailbox = state.inbox[message.path] {
+                    state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
+                    state.inbox[message.path]?.config.length = mailbox.config.length + 1
+                }
+            case .chatUpdate(.read(let read)):
+                if let mailbox = state.inbox[read.path] {
+                    state.inbox[read.path]?.config.read = mailbox.config.length
+                }
             }
-        case .chatView(.chatUpdate(.read(let read))):
-            if let mailbox = state.inbox[read.path] {
-                state.inbox[read.path]?.config.read = mailbox.config.length
+        case .update(let value as ChatHookApp.SyncedResponse):
+            switch value {
+            case .chatHookUpdate(let update):
+                state.synced = update
             }
-        case .chatHook(.chatHookUpdate(let update)):
-            state.synced = update
-        case .inviteStore(.inviteInitial(let initial)):
-            state.invites = initial
-        case .inviteStore(.inviteUpdate(let update)):
-            break
-        case .permissionStore(.permissionInitial(let initial)):
-            break
-        case .permissionStore(.permissionUpdate(.create(let create))):
-            break
-        case .permissionStore(.permissionUpdate(.delete(let delete))):
-            break
-        case .permissionStore(.permissionUpdate(.add(let add))):
-            break
-        case .permissionStore(.permissionUpdate(.remove(let remove))):
-            break
-        case .contactView(.contactInitial(let initial)):
-            break
-        case .contactView(.contactUpdate(let update)):
-            break
-        case .metadataStore(.metadataUpdate(.associations(let associations))):
+        case .update(let value as InviteStoreApp.AllResponse):
+            switch value {
+            case .inviteInitial(let initial):
+                state.invites = initial
+            case .inviteUpdate(let update):
+                break
+            }
+        case .update(let value as PermissionStoreApp.AllResponse):
+            switch value {
+            case .permissionInitial(let initial):
+                break
+            case .permissionUpdate(.create(let create)):
+                break
+            case .permissionUpdate(.delete(let delete)):
+                break
+            case .permissionUpdate(.add(let add)):
+                break
+            case .permissionUpdate(.remove(let remove)):
+                break
+            }
+        case .update(let value as ContactViewApp.PrimaryResponse):
+            switch value {
+            case .contactInitial(let initial):
+                break
+            case .contactUpdate(let update):
+                break
+            }
+        case .update(let value as MetadataStoreApp.AppNameResponse):
+            switch value {
+            case .metadataUpdate(.associations(let associations)):
+                break
+            }
+        case .update(let value):
+            throw SubscriptionActionError.unhandledEventUpdate(value)
+        case .failure(let error):
+            throw error
+        default:
             break
         }
     }

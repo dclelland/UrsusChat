@@ -8,7 +8,6 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Architecture
 
-- [ ] Clean up `SubscribeEvent` decomposition; perhaps use a thunk
 - [ ] Other global actions:
     - `KeychainAction`: Retrieve credentials from keychain on initialization
     - `TerminationAction`: Send a `deleteRequest` on app termination

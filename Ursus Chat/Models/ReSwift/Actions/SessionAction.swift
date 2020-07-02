@@ -66,41 +66,26 @@ func sessionLoginThunk(url: URL, code: Code) -> Thunk<AppState> {
         client.loginRequest { ship in
             dispatch(SessionLoginAction(client: client))
             #warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
-            #warning("TODO: DRY up event handlers")
             client.chatView(ship: ship).primary { event in
-                if let value = event.value {
-                    dispatch(SubscriptionUpdateAction.chatView(value))
-                }
+                dispatch(SubscriptionEventAction(event: event))
             }.response { response in
                 client.chatHook(ship: ship).synced { event in
-                    if let value = event.value {
-                        dispatch(SubscriptionUpdateAction.chatHook(value))
-                    }
+                    dispatch(SubscriptionEventAction(event: event))
                 }
                 client.inviteStore(ship: ship).all { event in
-                    if let value = event.value {
-                        dispatch(SubscriptionUpdateAction.inviteStore(value))
-                    }
+                    dispatch(SubscriptionEventAction(event: event))
                 }
                 client.permissionStore(ship: ship).all { event in
-                    if let value = event.value {
-                        dispatch(SubscriptionUpdateAction.permissionStore(value))
-                    }
+                    dispatch(SubscriptionEventAction(event: event))
                 }
                 client.contactView(ship: ship).primary { event in
-                    if let value = event.value {
-                        dispatch(SubscriptionUpdateAction.contactView(value))
-                    }
+                    dispatch(SubscriptionEventAction(event: event))
                 }
                 client.metadataStore(ship: ship).appName(app: "chat") { event in
-                    if let value = event.value {
-                        dispatch(SubscriptionUpdateAction.metadataStore(value))
-                    }
+                    dispatch(SubscriptionEventAction(event: event))
                 }
                 client.metadataStore(ship: ship).appName(app: "contacts") { event in
-                    if let value = event.value {
-                        dispatch(SubscriptionUpdateAction.metadataStore(value))
-                    }
+                    dispatch(SubscriptionEventAction(event: event))
                 }
             }
         }.response { response in
