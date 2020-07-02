@@ -15,8 +15,8 @@ class ObservableStore<State: StateType>: ObservableObject {
     
     private var store: Store<State>
     
-    init(store: Store<State>) {
-        self.store = store
+    init(reducer: @escaping Reducer<State>, state: State? = nil, middleware: [Middleware<State>] = [], automaticallySkipsRepeats: Bool = true) {
+        self.store = Store(reducer: reducer, state: state, middleware: middleware, automaticallySkipsRepeats: automaticallySkipsRepeats)
         self.state = store.state
         store.subscribe(self)
     }

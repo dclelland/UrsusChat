@@ -8,24 +8,103 @@
 
 import Foundation
 import ReSwift
+import ReSwiftThunk
 import Ursus
 
-enum SessionAction: Action {
+#warning("TODO: Set up keychain retrieval action")
 
-    case login(client: Ursus)
-    case logout
-
+protocol SessionAction: Action {
+    
+    func reduce(_ state: inout SessionState) throws
+    
 }
 
-#warning("TODO: Throw error on invalid state")
+enum SessionActionError: Error {
+    
+    case alreadyLoggedIn
+    case alreadyLoggedOut
+    
+}
 
-let sessionReducer: StateReducer<SessionAction, SessionState> = { action, state in
-    switch (action, state) {
-    case (.login(let client), .unauthenticated):
-        state = .authenticated(client: client)
-    case (.logout, .authenticated(let client)):
-        state = .unauthenticated(credentials: SessionState.Credentials(url: client.url.absoluteString, code: client.code.description))
-    default:
-        fatalError("Invalid SessionState")
+struct SessionLoginAction: SessionAction {
+    
+    var client: Ursus
+    
+    func reduce(_ state: inout SessionState) throws {
+        switch state {
+        case .unauthenticated:
+            state = .authenticated(client: client)
+        case .authenticated:
+            throw SessionActionError.alreadyLoggedIn
+        }
     }
+    
+}
+
+struct SessionLogoutAction: SessionAction {
+    
+    func reduce(_ state: inout SessionState) throws {
+        switch state {
+        case .unauthenticated:
+            throw SessionActionError.alreadyLoggedOut
+        case .authenticated(let client):
+            state = .unauthenticated(credentials: SessionState.Credentials(url: client.url.absoluteString, code: client.code.description))
+        }
+    }
+    
+}
+
+func sessionLoginThunk(url: URL, code: Code) -> Thunk<AppState> {
+    return Thunk<AppState> { dispatch, getState in
+        #warning("TODO: Should pull the login state out here")
+        guard let state = getState() else {
+            return
+        }
+
+        let client = Ursus(url: url, code: code)
+        #warning("TODO: Dispatch 'loginStart' login action")
+        client.loginRequest { ship in
+
+            dispatch(SessionLoginAction(client: client))
+            #warning("TODO: Dispatch 'loginSuccess' or 'loginFailure' login actions (loginFailure should be reset using an alert view)")
+            #warning("TODO: DRY up event handlers")
+            client.chatView(ship: ship).primary { event in
+                if let value = event.value {
+                    appStore.dispatch(SubscriptionUpdateAction.chatView(value))
+                }
+            }.response { response in
+                client.chatHook(ship: ship).synced { event in
+                    if let value = event.value {
+                        appStore.dispatch(SubscriptionUpdateAction.chatHook(value))
+                    }
+                }
+                client.inviteStore(ship: ship).all { event in
+                    if let value = event.value {
+                        appStore.dispatch(SubscriptionUpdateAction.inviteStore(value))
+                    }
+                }
+                client.permissionStore(ship: ship).all { event in
+                    if let value = event.value {
+                        appStore.dispatch(SubscriptionUpdateAction.permissionStore(value))
+                    }
+                }
+                client.contactView(ship: ship).primary { event in
+                    if let value = event.value {
+                        appStore.dispatch(SubscriptionUpdateAction.contactView(value))
+                    }
+                }
+                client.metadataStore(ship: ship).appName(app: "chat") { event in
+                    if let value = event.value {
+                        appStore.dispatch(SubscriptionUpdateAction.metadataStore(value))
+                    }
+                }
+                client.metadataStore(ship: ship).appName(app: "contacts") { event in
+                    if let value = event.value {
+                        appStore.dispatch(SubscriptionUpdateAction.metadataStore(value))
+                    }
+                }
+            }
+        }
+    }
+
 }

@@ -11,9 +11,8 @@ import ReSwift
 
 struct AppState: StateType {
     
-    #warning("TODO: Remove default credentials")
-    
-    var session: SessionState = .unauthenticated(credentials: SessionState.Credentials(url: "http://192.168.1.78:8080", code: "lacnyd-morped-pilbel-pocnep"))
+    var session: SessionState = .unauthenticated(credentials: SessionState.Credentials(url: "", code: ""))
     var subscription: SubscriptionState = SubscriptionState()
+    var errors: [Error] = []
     
 }

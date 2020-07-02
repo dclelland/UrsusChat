@@ -8,29 +8,24 @@
 
 import Foundation
 import ReSwift
-import Ursus
 
-enum SubscriptionAction: Action {
+protocol SubscriptionAction: Action {
     
-    enum Update {
-        
-        case chatView(ChatViewApp.PrimaryResponse)
-        case chatHook(ChatHookApp.SyncedResponse)
-        case inviteStore(InviteStoreApp.AllResponse)
-        case permissionStore(PermissionStoreApp.AllResponse)
-        case contactView(ContactViewApp.PrimaryResponse)
-        case metadataStore(MetadataStoreApp.AppNameResponse)
-        
-    }
-    
-    case update(Update)
+    func reduce(_ state: inout SubscriptionState) throws
     
 }
 
-let subscriptionReducer: StateReducer<SubscriptionAction, SubscriptionState> = { action, state in
-    switch action {
-    case .update(let update):
-        switch update {
+enum SubscriptionUpdateAction: SubscriptionAction {
+    
+    case chatView(ChatViewApp.PrimaryResponse)
+    case chatHook(ChatHookApp.SyncedResponse)
+    case inviteStore(InviteStoreApp.AllResponse)
+    case permissionStore(PermissionStoreApp.AllResponse)
+    case contactView(ContactViewApp.PrimaryResponse)
+    case metadataStore(MetadataStoreApp.AppNameResponse)
+    
+    func reduce(_ state: inout SubscriptionState) throws {
+        switch self {
         case .chatView(.chatInitial(let initial)):
             state.inbox = initial
         case .chatView(.chatUpdate(.create(let create))):
@@ -70,4 +65,5 @@ let subscriptionReducer: StateReducer<SubscriptionAction, SubscriptionState> = {
             break
         }
     }
+    
 }

@@ -10,26 +10,47 @@ import Foundation
 import ReSwift
 import ReSwiftThunk
 
-typealias StateReducer<ReducerAction: Action, ReducerStateType: StateType> = (_ action: ReducerAction, _ state: inout ReducerStateType) -> Void
-
 typealias AppStore = ObservableStore<AppState>
 
+enum AppStoreError: Error {
+    
+    case unhandledAction(Action)
+    
+}
+
 let appStore = AppStore(
-    store: Store(
-        reducer: { action, state in
-            var state = state ?? AppState()
-            switch action {
-            case let action as AppAction:
-                appReducer(action, &state)
-            default:
-                break
-            }
-            return state
-        },
-        state: AppState(),
-        middleware: [
-            createLoggerMiddleware(),
-            createThunkMiddleware()
-        ]
-    )
+    reducer: appReducer,
+    state: AppState(
+        session: .unauthenticated(
+            credentials: SessionState.Credentials(
+                url: "http://192.168.1.78:8080",
+                code: "lacnyd-morped-pilbel-pocnep"
+            )
+        )
+    ),
+    middleware: [
+        createLoggerMiddleware(),
+        createThunkMiddleware()
+    ]
 )
+
+let appReducer: Reducer<AppState> = { action, state in
+    var state = state ?? AppState()
+    do {
+        switch action {
+        case let action as AppAction:
+            try action.reduce(&state)
+        case let action as SessionAction:
+            try action.reduce(&state.session)
+        case let action as SubscriptionAction:
+            try action.reduce(&state.subscription)
+        default:
+            throw AppStoreError.unhandledAction(action)
+        }
+    } catch let error {
+        DispatchQueue.main.async {
+            appStore.dispatch(AppErrorAction(error: error))
+        }
+    }
+    return state
+}
