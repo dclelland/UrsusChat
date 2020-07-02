@@ -15,12 +15,12 @@ import AlamofireNetworkActivityIndicator
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NetworkActivityLogManager.shared.level = .verbose
         NetworkActivityIndicatorManager.shared.isEnabled = true
-        appStore.dispatch(AppLaunchAction())
+        AppStore.shared.dispatch(AppLaunchAction())
         return true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        appStore.dispatch(AppTerminateAction())
+        AppStore.shared.dispatch(AppTerminateAction())
     }
 
 }

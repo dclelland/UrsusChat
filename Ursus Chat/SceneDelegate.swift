@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         self.window?.tintColor = .systemIndigo
-        self.window?.rootViewController = UIHostingController(rootView: AppView().environmentObject(appStore))
+        self.window?.rootViewController = UIHostingController(rootView: AppView().environmentObject(AppStore.shared))
         self.window?.makeKeyAndVisible()
     }
 

@@ -25,43 +25,47 @@ class AppStore: ObservableStore<AppState> {
     
 }
 
+extension AppStore {
+    
+    static let shared = AppStore()
+    
+    static let preview = AppStore(
+        state: AppState(
+            session: .unauthenticated(
+                credentials: SessionState.Credentials(
+                    url: "http://localhost",
+                    code: "fipfes-fipfes-fipfes-fipfes"
+                )
+            ),
+            subscription: SubscriptionState(
+                inbox: [
+                    "Test Chat": ChatStoreApp.Mailbox(
+                        config: ChatStoreApp.Config(
+                            length: 0,
+                            read: 0
+                        ),
+                        envelopes: [
+                            ChatStoreApp.Envelope(
+                                uid: "0",
+                                number: 0,
+                                author: "~fipfes-fipfes",
+                                when: Date(),
+                                letter: .text("Hello")
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+    )
+    
+}
+
 enum AppStoreError: Error {
     
     case unhandledAction(Action)
     
 }
-
-let appStore = AppStore()
-
-let previewAppStore = AppStore(
-    state: AppState(
-        session: .unauthenticated(
-            credentials: SessionState.Credentials(
-                url: "http://localhost",
-                code: "fipfes-fipfes-fipfes-fipfes"
-            )
-        ),
-        subscription: SubscriptionState(
-            inbox: [
-                "Test Chat": ChatStoreApp.Mailbox(
-                    config: ChatStoreApp.Config(
-                        length: 0,
-                        read: 0
-                    ),
-                    envelopes: [
-                        ChatStoreApp.Envelope(
-                            uid: "0",
-                            number: 0,
-                            author: "~fipfes-fipfes",
-                            when: Date(),
-                            letter: .text("Hello")
-                        )
-                    ]
-                )
-            ]
-        )
-    )
-)
 
 let appReducer: Reducer<AppState> = { action, state in
     var state = state ?? AppState()
@@ -78,7 +82,7 @@ let appReducer: Reducer<AppState> = { action, state in
         }
     } catch let error {
         DispatchQueue.main.async {
-            appStore.dispatch(AppErrorAction(error: error))
+            AppStore.shared.dispatch(AppErrorAction(error: error))
         }
     }
     return state
