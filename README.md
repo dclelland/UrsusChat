@@ -8,16 +8,13 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Architecture
 
-- [ ] Find better place to store the client
-    - ...on the reducer?
-    - See: https://swiftwithmajid.com/2019/09/18/redux-like-state-container-in-swiftui
-- [ ] Switch actions from `enum`s to `structs`
-- [ ] Flesh out login/logout actions/thunks
-    - Will need to also flesh out `AuthenticatedState` and `LoginState` (might not need the latter)
-- [ ] Clean up `SubscribeEvent` decomposition
-    - Add `SubscriptionState`, `SubscriptionEventAction` etc
-    - Be sure not to throw away errors
-    - Perhaps have a global app error action, presenting an alert banner...?
+- [ ] Clean up `SubscribeEvent` decomposition; perhaps use a thunk
+- [ ] Other global actions:
+    - `ErrorAction`: Global error handling and display
+        - Reducers should be able to `throw`
+    - `KeychainAction`: Retrieve credentials from keychain on initialization
+    - `TerminationAction`: Send a `deleteRequest` on app termination
+- [ ] Add more granular `SessionAction` cases
 
 ### Authentication
 
