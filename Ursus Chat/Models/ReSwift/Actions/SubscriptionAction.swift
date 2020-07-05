@@ -116,6 +116,8 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             }
         case .update(let value):
             throw SubscriptionActionError.unhandledEventUpdate(value)
+        case .finished:
+            break
         case .failure(let error):
             throw error
         }
