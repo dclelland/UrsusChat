@@ -57,6 +57,8 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
     
     func reduce(_ state: inout SubscriptionState) throws {
         switch event {
+        case .started:
+            break
         case .update(let value as ChatViewApp.PrimaryResponse):
             switch value {
             case .chatInitial(let initial):
@@ -116,8 +118,6 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             throw SubscriptionActionError.unhandledEventUpdate(value)
         case .failure(let error):
             throw error
-        default:
-            break
         }
     }
     
