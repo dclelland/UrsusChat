@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainAccess
 import ReSwiftThunk
 import Ursus
 
@@ -14,8 +15,8 @@ typealias AppThunk = Thunk<AppState>
 
 extension AppThunk {
     
-    static func startSession(url: URL, code: Code) -> Thunk<AppState> {
-        return Thunk<AppState> { dispatch, getState in
+    static func startSession(url: URL, code: Code) -> AppThunk {
+        return AppThunk { dispatch, getState in
             let client = Ursus(url: url, code: code)
             client.loginRequest { ship in
                 dispatch(SessionLoginAction(client: client))
@@ -28,8 +29,8 @@ extension AppThunk {
         }
     }
 
-    static func startSubscription(client: Ursus, ship: Ship) -> Thunk<AppState> {
-        return Thunk<AppState> { dispatch, getState in
+    static func startSubscription(client: Ursus, ship: Ship) -> AppThunk {
+        return AppThunk { dispatch, getState in
             client.chatView(ship: ship).primary { event in
                 dispatch(SubscriptionEventAction(event: event))
             }.response { response in
@@ -52,6 +53,22 @@ extension AppThunk {
                     dispatch(SubscriptionEventAction(event: event))
                 }
             }
+        }
+    }
+    
+}
+
+extension AppThunk {
+    
+    static func getCredentials() -> AppThunk {
+        return AppThunk { dispatch, getState in
+            #warning("TODO: Get credentials from keychain")
+        }
+    }
+    
+    static func setCredentials() -> AppThunk {
+        return AppThunk { dispatch, getState in
+            #warning("TODO: Set credentials on keychain")
         }
     }
     
