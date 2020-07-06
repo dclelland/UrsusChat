@@ -8,11 +8,12 @@
 
 import Foundation
 import ReSwift
+import Ursus
 
 struct SubscriptionState: StateType {
     
     var inbox: Inbox = [:]
-    var synced: [String: String]? = nil
+    var synced: [PatP: String]? = nil
     var invites: InviteStoreApp.Invites = [:]
     var contacts: ContactStoreApp.Rolodex = [:]
     
