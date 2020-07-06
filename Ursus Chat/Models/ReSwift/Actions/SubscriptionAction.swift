@@ -28,9 +28,9 @@ func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
         client.chatView(ship: ship).primary { event in
             dispatch(SubscriptionEventAction(event: event))
         }.response { response in
-//            client.chatHook(ship: ship).synced { event in
-//                dispatch(SubscriptionEventAction(event: event))
-//            }
+            client.chatHook(ship: ship).synced { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
 //            client.inviteStore(ship: ship).all { event in
 //                dispatch(SubscriptionEventAction(event: event))
 //            }
