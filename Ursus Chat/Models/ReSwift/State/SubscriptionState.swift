@@ -11,7 +11,7 @@ import ReSwift
 
 struct SubscriptionState: StateType {
     
-    var inbox: ChatStoreApp.Inbox = [:]
+    var inbox: Inbox = [:]
     var synced: [String: String]? = nil
     var invites: InviteStoreApp.Invites = [:]
     var contacts: ContactStoreApp.Rolodex = [:]

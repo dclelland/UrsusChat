@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23B452FE59C83255F4A71C0B /* Pods_Ursus_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CAEC7675FAF4B870F77F9C /* Pods_Ursus_Chat.framework */; };
 		6519483024B2BB0300AF3D44 /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519482F24B2BB0300AF3D44 /* ChatRow.swift */; };
+		6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */; };
 		6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60124977BFE00F3D56C /* AppDelegate.swift */; };
 		6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60324977BFE00F3D56C /* SceneDelegate.swift */; };
 		6520F61E24977D4800F3D56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */; };
@@ -18,7 +19,6 @@
 		65375B7024AC64E10008EC25 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B6F24AC64E10008EC25 /* ChatView.swift */; };
 		65375B7424AC672E0008EC25 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B7324AC672E0008EC25 /* SessionState.swift */; };
 		65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */; };
-		655DB30D249A140B00A591B9 /* ChatStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB30C249A140B00A591B9 /* ChatStoreApp.swift */; };
 		655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */; };
 		655DB311249ACCDE00A591B9 /* PermissionStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB310249ACCDE00A591B9 /* PermissionStoreApp.swift */; };
 		655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB312249ACD2600A591B9 /* ContactViewApp.swift */; };
@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		6519482F24B2BB0300AF3D44 /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
+		6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUpdate.swift; sourceTree = "<group>"; };
 		6520F5FE24977BFE00F3D56C /* Ursus Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ursus Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6520F60124977BFE00F3D56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6520F60324977BFE00F3D56C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		65375B6F24AC64E10008EC25 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		65375B7324AC672E0008EC25 /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
-		655DB30C249A140B00A591B9 /* ChatStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreApp.swift; sourceTree = "<group>"; };
 		655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHookApp.swift; sourceTree = "<group>"; };
 		655DB310249ACCDE00A591B9 /* PermissionStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionStoreApp.swift; sourceTree = "<group>"; };
 		655DB312249ACD2600A591B9 /* ContactViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewApp.swift; sourceTree = "<group>"; };
@@ -89,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6519483124B2BFAC00AF3D44 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		6520F5F524977BFE00F3D56C = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				65861B0C24AB271D00C63E07 /* Apps */,
+				6519483124B2BFAC00AF3D44 /* Types */,
 			);
 			path = Ursus;
 			sourceTree = "<group>";
@@ -199,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				6520F62B2498558700F3D56C /* ChatViewApp.swift */,
-				655DB30C249A140B00A591B9 /* ChatStoreApp.swift */,
 				655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */,
 				655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */,
 				655DB310249ACCDE00A591B9 /* PermissionStoreApp.swift */,
@@ -382,6 +390,7 @@
 			files = (
 				65861B1724AB283E00C63E07 /* SessionAction.swift in Sources */,
 				65375B7424AC672E0008EC25 /* SessionState.swift in Sources */,
+				6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */,
 				655DB311249ACCDE00A591B9 /* PermissionStoreApp.swift in Sources */,
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
@@ -404,7 +413,6 @@
 				655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */,
 				65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */,
-				655DB30D249A140B00A591B9 /* ChatStoreApp.swift in Sources */,
 				65D95A4C249C541C0002AA4F /* SubscriptionState.swift in Sources */,
 				65861B0824A9A8F700C63E07 /* SettingsView.swift in Sources */,
 			);

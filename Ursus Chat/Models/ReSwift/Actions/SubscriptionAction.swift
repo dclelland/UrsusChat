@@ -28,24 +28,24 @@ func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
         client.chatView(ship: ship).primary { event in
             dispatch(SubscriptionEventAction(event: event))
         }.response { response in
-            client.chatHook(ship: ship).synced { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }
-            client.inviteStore(ship: ship).all { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }
-            client.permissionStore(ship: ship).all { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }
-            client.contactView(ship: ship).primary { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }
-            client.metadataStore(ship: ship).appName(app: "chat") { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }
-            client.metadataStore(ship: ship).appName(app: "contacts") { event in
-                dispatch(SubscriptionEventAction(event: event))
-            }
+//            client.chatHook(ship: ship).synced { event in
+//                dispatch(SubscriptionEventAction(event: event))
+//            }
+//            client.inviteStore(ship: ship).all { event in
+//                dispatch(SubscriptionEventAction(event: event))
+//            }
+//            client.permissionStore(ship: ship).all { event in
+//                dispatch(SubscriptionEventAction(event: event))
+//            }
+//            client.contactView(ship: ship).primary { event in
+//                dispatch(SubscriptionEventAction(event: event))
+//            }
+//            client.metadataStore(ship: ship).appName(app: "chat") { event in
+//                dispatch(SubscriptionEventAction(event: event))
+//            }
+//            client.metadataStore(ship: ship).appName(app: "contacts") { event in
+//                dispatch(SubscriptionEventAction(event: event))
+//            }
         }
     }
 
@@ -61,20 +61,33 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             break
         case .update(let value as ChatViewApp.PrimaryResponse):
             switch value {
-            case .chatInitial(let initial):
-                state.inbox = initial
-            case .chatUpdate(.create(let create)):
-                state.inbox[create.path] = ChatStoreApp.Mailbox(config: ChatStoreApp.Config(length: 0, read: 0), envelopes: [])
-            case .chatUpdate(.delete(let delete)):
-                state.inbox[delete.path] = nil
-            case .chatUpdate(.message(let message)):
-                if let mailbox = state.inbox[message.path] {
-                    state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
-                    state.inbox[message.path]?.config.length = mailbox.config.length + 1
-                }
-            case .chatUpdate(.read(let read)):
-                if let mailbox = state.inbox[read.path] {
-                    state.inbox[read.path]?.config.read = mailbox.config.length
+            case .chatUpdate(let update):
+                switch update {
+                case .initial(let inbox):
+                    state.inbox = inbox
+                case .create(let path):
+                    state.inbox[path] = Mailbox(
+                        config: MailboxConfig(
+                            length: 0,
+                            read: 0
+                        ),
+                        envelopes: []
+                    )
+                case .delete(let path):
+                    state.inbox[path] = nil
+                case .message(let message):
+                    if let mailbox = state.inbox[message.path] {
+                        state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
+                        state.inbox[message.path]?.config.length = mailbox.config.length + 1
+                    }
+                case .messages(let messages):
+                    if let mailbox = state.inbox[messages.path] {
+                        state.inbox[messages.path]?.envelopes = messages.envelopes + mailbox.envelopes
+                    }
+                case .read(let read):
+                    if let mailbox = state.inbox[read.path] {
+                        state.inbox[read.path]?.config.read = mailbox.config.length
+                    }
                 }
             }
         case .update(let value as ChatHookApp.SyncedResponse):
