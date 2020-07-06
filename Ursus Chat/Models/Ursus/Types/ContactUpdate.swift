@@ -109,37 +109,7 @@ struct Contact: Decodable {
     
 }
 
-enum ContactAvatar: Decodable {
-    
-    #warning("TODO: Fix issue with avatar decoding")
-    
-    enum CodingKeys: String, CodingKey {
-        
-        case url
-        case octs
-        
-    }
-    
-    case url(ContactAvatarURL)
-    case octs(ContactAvatarOcts)
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        switch Set(container.allKeys) {
-        case [.url]:
-            self = .url(try container.decode(ContactAvatarURL.self, forKey: .url))
-        case [.octs]:
-            self = .octs(try container.decode(ContactAvatarOcts.self, forKey: .octs))
-        default:
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
-        }
-    }
-    
-}
-
-typealias ContactAvatarURL = URL
-
-typealias ContactAvatarOcts = String
+typealias ContactAvatar = URL
 
 enum ContactEdit: Decodable {
     

@@ -55,6 +55,8 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
     
     var event: SubscribeEvent<Value>
     
+    #warning("TODO: Fix issue where dictionaries are not initialised")
+    
     func reduce(_ state: inout SubscriptionState) throws {
         switch event {
         case .started:
