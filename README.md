@@ -6,14 +6,12 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ## Todo list
 
-### Actions
+### Authentication
 
-- [ ] Build out `AppLaunchAction`
-    - Set up secure keychain storage and use [Shared Web Credentials](https://github.com/kishikawakatsumi/KeychainAccess#shared_web_credentials) to store/retrieve the `+code`
-    - Clear keychain on logout...?
-    - LoginView doesn't refresh when the credentials change
-    - `getCredentialsThunk` and `setCredentialsThunk`
-- [ ] Finish `sessionThunk`: More granular `SessionAction` cases and error handling
+- [ ] `LoginView` should just show a splash if attempting initial
+- [ ] `LoginView` should display errors and re-enable the form on login failure
+- [ ] `AppStore.startSession` should employ more granular `SessionState` cases (e.g. '`.authenticating`')
+- [ ] `Credentials` should be cleared on logout
 
 ### Interface
 
