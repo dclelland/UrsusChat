@@ -9,4 +9,6 @@
 import Foundation
 import Ursus
 
-typealias ChatHookUpdate = [String: Ship]
+typealias ChatHookUpdate = Synced
+
+typealias Synced = [String: Ship]

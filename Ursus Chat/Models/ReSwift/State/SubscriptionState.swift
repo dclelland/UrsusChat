@@ -13,7 +13,7 @@ import Ursus
 struct SubscriptionState: StateType {
     
     var inbox: Inbox = [:]
-    var synced: ChatHookUpdate = [:]
+    var synced: Synced = [:]
     var invites: Invites = [:]
     var permissions: Permissions = [:]
     var contacts: Rolodex = [:]

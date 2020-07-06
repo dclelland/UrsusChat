@@ -8,7 +8,6 @@
 
 import Foundation
 import ReSwift
-import ReSwiftThunk
 import Ursus
 
 protocol SessionAction: Action {
@@ -22,21 +21,6 @@ enum SessionActionError: Error {
     case alreadyLoggedIn
     case alreadyLoggedOut
     
-}
-
-func sessionThunk(url: URL, code: Code) -> Thunk<AppState> {
-    return Thunk<AppState> { dispatch, getState in
-        let client = Ursus(url: url, code: code)
-        client.loginRequest { ship in
-            dispatch(SessionLoginAction(client: client))
-            dispatch(subscriptionThunk(client: client, ship: ship))
-        }.response { response in
-            if let error = response.error {
-                dispatch(AppErrorAction(error: error))
-            }
-        }
-    }
-
 }
 
 struct SessionLoginAction: SessionAction {
