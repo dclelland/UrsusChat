@@ -55,8 +55,6 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
     
     var event: SubscribeEvent<Value>
     
-    #warning("TODO: Fix issue where dictionaries are not initialised")
-    
     func reduce(_ state: inout SubscriptionState) throws {
         switch event {
         case .started:
@@ -179,12 +177,12 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                 switch update {
                 case .initial(let initial):
                     for association in initial.values {
-                        state.associations[association.appName]?[association.appPath] = association
+                        state.associations[association.appName, default: [:]][association.appPath] = association
                     }
                 case .add(let add):
-                    state.associations[add.appName]?[add.appPath] = add
+                    state.associations[add.appName, default: [:]][add.appPath] = add
                 case .update(let update):
-                    state.associations[update.appName]?[update.appPath] = update
+                    state.associations[update.appName, default: [:]][update.appPath] = update
                 case .remove(let remove):
                     state.associations[remove.appName]?[remove.appPath] = nil
                 }
