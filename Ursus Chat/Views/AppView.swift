@@ -13,12 +13,12 @@ struct AppView: View {
     @EnvironmentObject var store: AppStore
     
     var body: some View {
-        switch store.state.session {
-        case .unauthenticated(let credentials):
+        switch store.state.session.client {
+        case .none:
             return AnyView(
-                LoginView(state: credentials)
+                LoginView(state: store.state.session.credentials)
             )
-        case .authenticated:
+        case .some:
             return AnyView(
                 TabView {
                     ChatListView()

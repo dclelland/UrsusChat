@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 import Ursus
 
 struct LoginView: View {
@@ -70,7 +71,7 @@ extension LoginView {
 struct LoginView_Previews: PreviewProvider {
     
     static var previews: some View {
-        LoginView(state: SessionState.Credentials(url: "", code: ""))
+        LoginView(state: SessionState.Credentials()).environmentObject(AppStore.preview)
     }
     
 }

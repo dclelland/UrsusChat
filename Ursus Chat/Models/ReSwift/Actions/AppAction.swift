@@ -18,11 +18,9 @@ protocol AppAction: Action {
 struct AppLaunchAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
-        state.session = .unauthenticated(
-            credentials: SessionState.Credentials(
-                url: "http://192.168.1.75:8080",
-                code: "lacnyd-morped-pilbel-pocnep"
-            )
+        state.session.credentials = SessionState.Credentials(
+            url: "http://192.168.1.75:8080",
+            code: "lacnyd-morped-pilbel-pocnep"
         )
     }
     
@@ -31,7 +29,7 @@ struct AppLaunchAction: AppAction {
 struct AppTerminateAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
-        state.session = .unauthenticated()
+        state.session.client = nil
     }
     
 }

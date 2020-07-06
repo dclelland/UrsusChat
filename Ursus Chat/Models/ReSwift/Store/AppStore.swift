@@ -31,7 +31,7 @@ extension AppStore {
     
     static let preview = AppStore(
         state: AppState(
-            session: .unauthenticated(
+            session: SessionState(
                 credentials: SessionState.Credentials(
                     url: "http://localhost",
                     code: "fipfes-fipfes-fipfes-fipfes"

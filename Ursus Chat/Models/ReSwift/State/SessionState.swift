@@ -10,7 +10,7 @@ import Foundation
 import ReSwift
 import Ursus
 
-enum SessionState: StateType {
+struct SessionState: StateType {
     
     struct Credentials {
         
@@ -19,7 +19,7 @@ enum SessionState: StateType {
         
     }
     
-    case unauthenticated(credentials: Credentials = Credentials())
-    case authenticated(client: Ursus)
+    var credentials: Credentials = Credentials()
+    var client: Ursus? = nil
     
 }

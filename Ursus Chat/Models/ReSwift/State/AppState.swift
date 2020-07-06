@@ -11,7 +11,7 @@ import ReSwift
 
 struct AppState: StateType {
     
-    var session: SessionState = .unauthenticated()
+    var session: SessionState = SessionState()
     var subscription: SubscriptionState = SubscriptionState()
     var errors: [Error] = []
     
