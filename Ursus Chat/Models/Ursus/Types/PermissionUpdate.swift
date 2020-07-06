@@ -36,8 +36,8 @@ enum PermissionUpdate: Decodable {
             self = .create(try container.decode(PermissionUpdateCreate.self, forKey: .create))
         case [.delete]:
             self = .delete(try container.decode(PermissionUpdateDelete.self, forKey: .delete))
-            case [.add]:
-                self = .add(try container.decode(PermissionUpdateAdd.self, forKey: .add))
+        case [.add]:
+            self = .add(try container.decode(PermissionUpdateAdd.self, forKey: .add))
         case [.remove]:
             self = .remove(try container.decode(PermissionUpdateRemove.self, forKey: .remove))
         default:

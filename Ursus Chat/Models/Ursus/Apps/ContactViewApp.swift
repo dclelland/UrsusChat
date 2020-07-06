@@ -30,12 +30,10 @@ extension ContactViewApp {
     
     enum PrimaryResponse: Decodable {
         
-        case contactInitial(ContactStoreApp.Rolodex)
-        case contactUpdate(ContactStoreApp.ContactUpdate)
+        case contactUpdate(ContactUpdate)
         
         enum CodingKeys: String, CodingKey {
             
-            case contactInitial
             case contactUpdate
             
         }
@@ -43,10 +41,8 @@ extension ContactViewApp {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
-            case [.contactInitial]:
-                self = .contactInitial(try container.decode(ContactStoreApp.Rolodex.self, forKey: .contactInitial))
             case [.contactUpdate]:
-                self = .contactUpdate(try container.decode(ContactStoreApp.ContactUpdate.self, forKey: .contactUpdate))
+                self = .contactUpdate(try container.decode(ContactUpdate.self, forKey: .contactUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }

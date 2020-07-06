@@ -37,9 +37,9 @@ func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
             client.permissionStore(ship: ship).all { event in
                 dispatch(SubscriptionEventAction(event: event))
             }
-//            client.contactView(ship: ship).primary { event in
-//                dispatch(SubscriptionEventAction(event: event))
-//            }
+            client.contactView(ship: ship).primary { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
 //            client.metadataStore(ship: ship).appName(app: "chat") { event in
 //                dispatch(SubscriptionEventAction(event: event))
 //            }
@@ -138,10 +138,38 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             }
         case .update(let value as ContactViewApp.PrimaryResponse):
             switch value {
-            case .contactInitial(let initial):
-                break
             case .contactUpdate(let update):
-                break
+                switch update {
+                case .initial(let initial):
+                    state.contacts = initial
+                case .create(let create):
+                    state.contacts[create] = [:]
+                case .delete(let delete):
+                    state.contacts[delete] = nil
+                case .add(let add):
+                    state.contacts[add.path]?[add.ship] = add.contact
+                case .remove(let remove):
+                    state.contacts[remove.path]?[remove.ship] = nil
+                case .edit(let edit):
+                    switch edit.editField {
+                    case .nickname(let nickname):
+                        state.contacts[edit.path]?[edit.ship]?.nickname = nickname
+                    case .email(let email):
+                        state.contacts[edit.path]?[edit.ship]?.email = email
+                    case .phone(let phone):
+                        state.contacts[edit.path]?[edit.ship]?.phone = phone
+                    case .website(let website):
+                        state.contacts[edit.path]?[edit.ship]?.website = website
+                    case .notes(let notes):
+                        state.contacts[edit.path]?[edit.ship]?.notes = notes
+                    case .color(let color):
+                        state.contacts[edit.path]?[edit.ship]?.color = color
+                    case .avatar(let avatar):
+                        state.contacts[edit.path]?[edit.ship]?.avatar = avatar
+                    }
+                case .contacts(let contacts):
+                    break
+                }
             }
         case .update(let value as MetadataStoreApp.AppNameResponse):
             switch value {
