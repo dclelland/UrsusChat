@@ -8,30 +8,15 @@
 
 import Foundation
 import ReSwift
+import Ursus
 
 struct SubscriptionState: StateType {
     
-    var inbox: ChatStoreApp.Inbox = [:]
-    var synced: [String: String]? = nil
-    var invites: InviteStoreApp.Invites = [:]
-    var contacts: ContactStoreApp.Rolodex = [:]
-    
-//    initialState() {
-//      return {
-//        inbox: {},
-//        chatSynced: null,
-//        contacts: {},
-//        permissions: {},
-//        invites: {},
-//        associations: {
-//          chat: {},
-//          contacts: {}
-//        },
-//        sidebarShown: true,
-//        pendingMessages: new Map([]),
-//        chatInitialized: false,
-//        s3: {}
-//      };
-//    }
+    var inbox: Inbox = [:]
+    var synced: ChatHookUpdate = [:]
+    var invites: Invites = [:]
+    var permissions: Permissions = [:]
+    var contacts: Rolodex = [:]
+    var associations: Associations = [:]
     
 }

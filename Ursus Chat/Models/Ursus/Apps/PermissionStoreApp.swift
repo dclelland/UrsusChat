@@ -30,12 +30,10 @@ extension PermissionStoreApp {
     
     enum AllResponse: Decodable {
         
-        case permissionInitial(PermissionMap)
         case permissionUpdate(PermissionUpdate)
         
         enum CodingKeys: String, CodingKey {
             
-            case permissionInitial
             case permissionUpdate
             
         }
@@ -43,102 +41,12 @@ extension PermissionStoreApp {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
-            case [.permissionInitial]:
-                self = .permissionInitial(try container.decode(PermissionStoreApp.PermissionMap.self, forKey: .permissionInitial))
             case [.permissionUpdate]:
-                self = .permissionUpdate(try container.decode(PermissionStoreApp.PermissionUpdate.self, forKey: .permissionUpdate))
+                self = .permissionUpdate(try container.decode(PermissionUpdate.self, forKey: .permissionUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }
         }
-        
-    }
-    
-}
-
-
-extension PermissionStoreApp {
-    
-    enum Kind: String, Decodable {
-        
-        case black
-        case white
-        
-    }
-    
-    struct Permission: Decodable {
-        
-        var kind: Kind
-        var who: Set<String>
-        
-    }
-    
-    typealias PermissionMap = [String: Permission]
-    
-    enum PermissionUpdate: Decodable {
-        
-        struct Create: Decodable {
-            
-            var path: String
-            var permission: Permission
-            
-        }
-        
-        struct Delete: Decodable {
-            
-            var path: String
-            
-        }
-        
-        struct Add: Decodable {
-            
-            var path: String
-            var who: Set<String>
-            
-        }
-        
-        struct Remove: Decodable {
-            
-            var path: String
-            var who: Set<String>
-            
-        }
-        
-        case create(Create)
-        case delete(Delete)
-        case add(Add)
-        case remove(Remove)
-        
-        enum CodingKeys: String, CodingKey {
-            
-            case create
-            case delete
-            case add
-            case remove
-            
-        }
-        
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            switch Set(container.allKeys) {
-            case [.create]:
-                self = .create(try container.decode(Create.self, forKey: .create))
-            case [.delete]:
-                self = .delete(try container.decode(Delete.self, forKey: .delete))
-            case [.add]:
-                self = .add(try container.decode(Add.self, forKey: .add))
-            case [.remove]:
-                self = .remove(try container.decode(Remove.self, forKey: .remove))
-            default:
-                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
-            }
-        }
-        
-    }
-    
-    struct PermissionAction: Decodable {
-        
-        #warning("Implement decoder for PermissionStore.PermissionAction")
         
     }
     

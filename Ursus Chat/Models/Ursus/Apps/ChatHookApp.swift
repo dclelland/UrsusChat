@@ -30,7 +30,7 @@ extension ChatHookApp {
     
     enum SyncedResponse: Decodable {
         
-        case chatHookUpdate([String: String])
+        case chatHookUpdate(ChatHookUpdate)
         
         enum CodingKeys: String, CodingKey {
             
@@ -42,7 +42,7 @@ extension ChatHookApp {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
             case [.chatHookUpdate]:
-                self = .chatHookUpdate(try container.decode([String: String].self, forKey: .chatHookUpdate))
+                self = .chatHookUpdate(try container.decode(ChatHookUpdate.self, forKey: .chatHookUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }

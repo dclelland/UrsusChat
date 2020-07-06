@@ -46,13 +46,13 @@ extension AppStore {
             ),
             subscription: SubscriptionState(
                 inbox: [
-                    "Test Chat": ChatStoreApp.Mailbox(
-                        config: ChatStoreApp.Config(
+                    "Test Chat": Mailbox(
+                        config: MailboxConfig(
                             length: 0,
                             read: 0
                         ),
                         envelopes: [
-                            ChatStoreApp.Envelope(
+                            Envelope(
                                 uid: "0",
                                 number: 0,
                                 author: "~fipfes-fipfes",

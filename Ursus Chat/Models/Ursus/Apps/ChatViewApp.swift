@@ -30,12 +30,10 @@ extension ChatViewApp {
     
     enum PrimaryResponse: Decodable {
         
-        case chatInitial(ChatStoreApp.Inbox)
-        case chatUpdate(ChatStoreApp.Update)
+        case chatUpdate(ChatUpdate)
         
         enum CodingKeys: String, CodingKey {
             
-            case chatInitial
             case chatUpdate
             
         }
@@ -43,10 +41,8 @@ extension ChatViewApp {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             switch Set(container.allKeys) {
-            case [.chatInitial]:
-                self = .chatInitial(try container.decode(ChatStoreApp.Inbox.self, forKey: .chatInitial))
             case [.chatUpdate]:
-                self = .chatUpdate(try container.decode(ChatStoreApp.Update.self, forKey: .chatUpdate))
+                self = .chatUpdate(try container.decode(ChatUpdate.self, forKey: .chatUpdate))
             default:
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }
