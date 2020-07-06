@@ -18,6 +18,8 @@ struct LoginView: View {
     
     @State var code: String = ""
     
+    @State var isAuthenticating: Bool = false
+    
     var body: some View {
         NavigationView {
             Form {
@@ -44,6 +46,7 @@ struct LoginView: View {
                     }
                 }
             }
+            .disabled(isAuthenticating)
             .navigationBarTitle("Login")
         }
     }
@@ -57,6 +60,7 @@ extension LoginView {
             return
         }
         
+        isAuthenticating = true
         store.dispatch(sessionThunk(url: url, code: code))
     }
     
