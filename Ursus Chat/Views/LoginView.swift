@@ -61,7 +61,7 @@ extension LoginView {
         }
         
         isAuthenticating = true
-        store.dispatch(AppThunk.startSession(credentials: Credentials(url: url, code: code)))
+        store.dispatch(AppThunk.startSession(credentials: UrsusCredentials(url: url, code: code)))
     }
     
     private func bridgeButtonTapped() {

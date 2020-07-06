@@ -13,18 +13,11 @@ import Ursus
 
 typealias AppThunk = Thunk<AppState>
 
-struct Credentials: Codable {
-    
-    var url: URL
-    var code: Code
-    
-}
-
 extension AppThunk {
     
-    static func startSession(credentials: Credentials) -> AppThunk {
+    static func startSession(credentials: UrsusCredentials) -> AppThunk {
         return AppThunk { dispatch, getState in
-            let client = Ursus(url: credentials.url, code: credentials.code)
+            let client = Ursus(credentials: credentials)
             client.loginRequest { ship in
                 dispatch(SessionLoginAction(client: client))
                 dispatch(AppThunk.startSubscription(client: client, ship: ship))
@@ -68,10 +61,12 @@ extension AppThunk {
 
 extension AppThunk {
     
+    private static let credentialsKey = "Credentials"
+    
     static func getCredentials() -> AppThunk {
         return AppThunk { dispatch, getState in
             do {
-                if let credentials = try Keychain.shared.decodeData(Credentials.self, key: "Credentials") {
+                if let credentials = try Keychain.shared.decodeData(UrsusCredentials.self, key: credentialsKey) {
                     dispatch(AppThunk.startSession(credentials: credentials))
                 }
             } catch let error {
@@ -80,13 +75,19 @@ extension AppThunk {
         }
     }
     
-    static func setCredentials(_ credentials: Credentials) -> AppThunk {
+    static func setCredentials(_ credentials: UrsusCredentials) -> AppThunk {
         return AppThunk { dispatch, getState in
             do {
-                try Keychain.shared.encodeData(credentials, key: "Credentials")
+                try Keychain.shared.encodeData(credentials, key: credentialsKey)
             } catch let error {
                 dispatch(AppErrorAction(error: error))
             }
+        }
+    }
+    
+    static func clearCredentials() -> AppThunk {
+        return AppThunk { dispatch, getState in
+            Keychain.shared.remove(credentialsKey)
         }
     }
     

@@ -8,7 +8,8 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Authentication
 
-- [ ] `LoginView` should just show a splash if attempting initial
+- [ ] Fetching the access key from the web credentials keychain causes the URL field to be cleared
+- [ ] `LoginView` should just show a splash if attempting login with successful `getCredentials`
 - [ ] `LoginView` should display errors and re-enable the form on login failure
 - [ ] `AppStore.startSession` should employ more granular `SessionState` cases (e.g. '`.authenticating`')
 - [ ] `Credentials` should be cleared on logout
