@@ -10,11 +10,18 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @EnvironmentObject var store: AppStore
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Settings")
+            List {
+                Section {
+                    Button(action: store[SessionLogoutAction()]) {
+                        Text("Logout")
+                    }
+                }
             }
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("Settings")
         }
         .tabItem {
