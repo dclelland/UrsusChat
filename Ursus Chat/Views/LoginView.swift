@@ -61,7 +61,7 @@ extension LoginView {
         }
         
         isAuthenticating = true
-        store.dispatch(sessionThunk(url: url, code: code))
+        store.dispatch(AppThunk.startSession(url: url, code: code))
     }
     
     private func bridgeButtonTapped() {
