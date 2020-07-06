@@ -11,6 +11,7 @@
 		6519483024B2BB0300AF3D44 /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519482F24B2BB0300AF3D44 /* ChatRow.swift */; };
 		6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */; };
 		6519483F24B2DC0600AF3D44 /* ChatHookUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */; };
+		6519484124B2DD3700AF3D44 /* InviteUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519484024B2DD3700AF3D44 /* InviteUpdate.swift */; };
 		6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60124977BFE00F3D56C /* AppDelegate.swift */; };
 		6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F60324977BFE00F3D56C /* SceneDelegate.swift */; };
 		6520F61E24977D4800F3D56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */; };
@@ -44,6 +45,7 @@
 		6519482F24B2BB0300AF3D44 /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
 		6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUpdate.swift; sourceTree = "<group>"; };
 		6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHookUpdate.swift; sourceTree = "<group>"; };
+		6519484024B2DD3700AF3D44 /* InviteUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUpdate.swift; sourceTree = "<group>"; };
 		6520F5FE24977BFE00F3D56C /* Ursus Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ursus Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6520F60124977BFE00F3D56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6520F60324977BFE00F3D56C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */,
 				6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */,
+				6519484024B2DD3700AF3D44 /* InviteUpdate.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */,
 				655DB311249ACCDE00A591B9 /* PermissionStoreApp.swift in Sources */,
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
+				6519484124B2DD3700AF3D44 /* InviteUpdate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
 				65375B7024AC64E10008EC25 /* ChatView.swift in Sources */,
 				65861B1524AB283000C63E07 /* AppAction.swift in Sources */,

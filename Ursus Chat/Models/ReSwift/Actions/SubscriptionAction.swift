@@ -31,9 +31,9 @@ func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
             client.chatHook(ship: ship).synced { event in
                 dispatch(SubscriptionEventAction(event: event))
             }
-//            client.inviteStore(ship: ship).all { event in
-//                dispatch(SubscriptionEventAction(event: event))
-//            }
+            client.inviteStore(ship: ship).all { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
 //            client.permissionStore(ship: ship).all { event in
 //                dispatch(SubscriptionEventAction(event: event))
 //            }
@@ -63,18 +63,18 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             switch value {
             case .chatUpdate(let update):
                 switch update {
-                case .initial(let inbox):
-                    state.inbox = inbox
-                case .create(let path):
-                    state.inbox[path] = Mailbox(
+                case .initial(let initial):
+                    state.inbox = initial
+                case .create(let create):
+                    state.inbox[create] = Mailbox(
                         config: MailboxConfig(
                             length: 0,
                             read: 0
                         ),
                         envelopes: []
                     )
-                case .delete(let path):
-                    state.inbox[path] = nil
+                case .delete(let delete):
+                    state.inbox[delete] = nil
                 case .message(let message):
                     if let mailbox = state.inbox[message.path] {
                         state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
@@ -97,10 +97,21 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             }
         case .update(let value as InviteStoreApp.AllResponse):
             switch value {
-            case .inviteInitial(let initial):
-                state.invites = initial
             case .inviteUpdate(let update):
-                break
+                switch update {
+                case .initial(let initial):
+                    state.invites = initial
+                case .create(let create):
+                    state.invites[create.path] = [:]
+                case .delete(let delete):
+                    state.invites[delete.path] = nil
+                case .invite(let invite):
+                    state.invites[invite.path]?[invite.uid] = invite.invite
+                case .accepted(let accepted):
+                    state.invites[accepted.path]?[accepted.uid] = nil
+                case .decline(let decline):
+                    state.invites[decline.path]?[decline.uid] = nil
+                }
             }
         case .update(let value as PermissionStoreApp.AllResponse):
             switch value {

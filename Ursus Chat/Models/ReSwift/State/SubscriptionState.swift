@@ -14,7 +14,7 @@ struct SubscriptionState: StateType {
     
     var inbox: Inbox = [:]
     var synced: ChatHookUpdate = [:]
-    var invites: InviteStoreApp.Invites = [:]
+    var invites: Invites = [:]
     var contacts: ContactStoreApp.Rolodex = [:]
     
 //    initialState() {
