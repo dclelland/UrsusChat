@@ -64,7 +64,7 @@ typealias ContactUpdateDelete = String
 struct ContactUpdateAdd: Decodable {
     
     var path: String
-    var ship: String
+    var ship: Ship
     var contact: Contact
     
 }
@@ -72,14 +72,14 @@ struct ContactUpdateAdd: Decodable {
 struct ContactUpdateRemove: Decodable {
     
     var path: String
-    var ship: String
+    var ship: Ship
     
 }
 
 struct ContactUpdateEdit: Decodable {
     
     var path: String
-    var ship: String
+    var ship: Ship
     var editField: ContactEdit
     
 }
@@ -93,7 +93,9 @@ struct ContactUpdateContacts: Decodable {
 
 typealias Rolodex = [String: Contacts]
 
-typealias Contacts = [String: Contact]
+#warning("TODO: Fix issue with PatP keys")
+
+typealias Contacts = [Ship: Contact]
 
 struct Contact: Decodable {
     

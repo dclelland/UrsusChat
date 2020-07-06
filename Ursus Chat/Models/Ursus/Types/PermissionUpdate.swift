@@ -53,7 +53,7 @@ struct PermissionUpdateCreate: Decodable {
     
     var path: String
     var kind: PermissionKind
-    var who: Set<PatP>
+    var who: Set<Ship>
     
 }
 
@@ -66,14 +66,14 @@ struct PermissionUpdateDelete: Decodable {
 struct PermissionUpdateAdd: Decodable {
     
     var path: String
-    var who: Set<PatP>
+    var who: Set<Ship>
     
 }
 
 struct PermissionUpdateRemove: Decodable {
     
     var path: String
-    var who: Set<PatP>
+    var who: Set<Ship>
     
 }
 
@@ -81,7 +81,7 @@ typealias Permissions = [String: Permission]
 
 struct Permission: Decodable {
     
-    var who: Set<PatP>
+    var who: Set<Ship>
     var kind: PermissionKind
     
 }

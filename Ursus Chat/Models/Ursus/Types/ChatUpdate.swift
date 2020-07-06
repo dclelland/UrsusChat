@@ -106,7 +106,7 @@ struct Envelope: Decodable {
 
     var uid: String
     var number: Int
-    var author: PatP
+    var author: Ship
     var when: Date
     var letter: Letter
     

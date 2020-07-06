@@ -76,6 +76,6 @@ struct Metadata: Decodable {
     var description: String
     var color: String
     var dateCreated: String
-    var creator: PatP
+    var creator: Ship
 
 }
