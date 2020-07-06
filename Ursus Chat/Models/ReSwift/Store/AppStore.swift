@@ -15,14 +15,7 @@ class AppStore: ObservableStore<AppState> {
     convenience init(state: AppState = AppState()) {
         self.init(
             reducer: appReducer,
-            state: AppState(
-                session: SessionState(
-                    credentials: SessionState.Credentials(
-                        url: "http://192.168.1.75:8080",
-                        code: "lacnyd-morped-pilbel-pocnep"
-                    )
-                )
-            ),
+            state: AppState(),
             middleware: [
                 createLoggerMiddleware(),
                 createThunkMiddleware()
@@ -38,12 +31,6 @@ extension AppStore {
     
     static let preview = AppStore(
         state: AppState(
-            session: SessionState(
-                credentials: SessionState.Credentials(
-                    url: "http://localhost",
-                    code: "fipfes-fipfes-fipfes-fipfes"
-                )
-            ),
             subscription: SubscriptionState(
                 inbox: [
                     "Test Chat": Mailbox(

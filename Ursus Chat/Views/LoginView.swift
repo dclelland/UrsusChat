@@ -14,19 +14,21 @@ struct LoginView: View {
     
     @EnvironmentObject var store: AppStore
     
-    @State var state: SessionState.Credentials
+    @State var url: String = ""
+    
+    @State var code: String = ""
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Urbit URL")) {
-                    TextField("sampel-palnet.arvo.network", text: $state.url)
+                    TextField("sampel-palnet.arvo.network", text: $url)
                         .textContentType(.URL)
                         .keyboardType(.URL)
                         .autocapitalization(.none)
                 }
                 Section(header: Text("Access Key"), footer: Text("Get key from Bridge, or +code in dojo")) {
-                    SecureField("sampel-ticlyt-migfun-falmel", text: $state.code)
+                    SecureField("sampel-ticlyt-migfun-falmel", text: $code)
                         .textContentType(.password)
                         .keyboardType(.asciiCapable)
                 }
@@ -51,7 +53,7 @@ struct LoginView: View {
 extension LoginView {
     
     private func continueButtonTapped() {
-        guard let url = URL(string: state.url), let code = try? Code(string: state.code) else {
+        guard let url = URL(string: url), let code = try? Code(string: code) else {
             return
         }
         
@@ -71,7 +73,7 @@ extension LoginView {
 struct LoginView_Previews: PreviewProvider {
     
     static var previews: some View {
-        LoginView(state: SessionState.Credentials()).environmentObject(AppStore.preview)
+        LoginView().environmentObject(AppStore.preview)
     }
     
 }

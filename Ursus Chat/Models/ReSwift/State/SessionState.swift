@@ -10,16 +10,13 @@ import Foundation
 import ReSwift
 import Ursus
 
-struct SessionState: StateType {
+enum SessionState: StateType {
     
-    struct Credentials {
-        
-        var url: String = ""
-        var code: String = ""
-        
+    case unauthenticated
+    case authenticated(client: Ursus)
+    
+    init() {
+        self = .unauthenticated
     }
-    
-    var credentials: Credentials = Credentials()
-    var client: Ursus? = nil
     
 }

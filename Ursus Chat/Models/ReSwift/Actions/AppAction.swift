@@ -26,7 +26,7 @@ struct AppLaunchAction: AppAction {
 struct AppTerminateAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
-        state.session.client = nil
+        state.session = .unauthenticated
     }
     
 }

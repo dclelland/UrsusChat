@@ -17,6 +17,13 @@ protocol SessionAction: Action {
     
 }
 
+enum SessionActionError: Error {
+    
+    case alreadyLoggedIn
+    case alreadyLoggedOut
+    
+}
+
 func sessionThunk(url: URL, code: Code) -> Thunk<AppState> {
     return Thunk<AppState> { dispatch, getState in
         let client = Ursus(url: url, code: code)
@@ -37,7 +44,12 @@ struct SessionLoginAction: SessionAction {
     var client: Ursus
     
     func reduce(_ state: inout SessionState) throws {
-        state.client = client
+        switch state {
+        case .unauthenticated:
+            state = .authenticated(client: client)
+        case .authenticated:
+            throw SessionActionError.alreadyLoggedIn
+        }
     }
     
 }
@@ -45,7 +57,12 @@ struct SessionLoginAction: SessionAction {
 struct SessionLogoutAction: SessionAction {
     
     func reduce(_ state: inout SessionState) throws {
-        state.client = nil
+        switch state {
+        case .unauthenticated:
+            throw SessionActionError.alreadyLoggedOut
+        case .authenticated:
+            state = .unauthenticated
+        }
     }
     
 }
