@@ -16,8 +16,10 @@ struct ChatView: View {
     var state: (name: String, mailbox: ChatStoreApp.Mailbox)
     
     var body: some View {
-        Text("ChatView")
-            .navigationBarTitle(state.name)
+        List(state.mailbox.envelopes.reversed(), id: \.uid) { envelope in
+            ChatRow(state: envelope)
+        }
+        .navigationBarTitle(state.name)
     }
     
 }
