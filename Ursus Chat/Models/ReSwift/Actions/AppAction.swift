@@ -18,10 +18,7 @@ protocol AppAction: Action {
 struct AppLaunchAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
-        state.session.credentials = SessionState.Credentials(
-            url: "http://192.168.1.75:8080",
-            code: "lacnyd-morped-pilbel-pocnep"
-        )
+        
     }
     
 }

@@ -15,7 +15,14 @@ class AppStore: ObservableStore<AppState> {
     convenience init(state: AppState = AppState()) {
         self.init(
             reducer: appReducer,
-            state: AppState(),
+            state: AppState(
+                session: SessionState(
+                    credentials: SessionState.Credentials(
+                        url: "http://192.168.1.75:8080",
+                        code: "lacnyd-morped-pilbel-pocnep"
+                    )
+                )
+            ),
             middleware: [
                 createLoggerMiddleware(),
                 createThunkMiddleware()
