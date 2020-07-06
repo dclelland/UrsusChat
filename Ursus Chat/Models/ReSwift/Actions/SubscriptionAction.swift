@@ -40,12 +40,12 @@ func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
             client.contactView(ship: ship).primary { event in
                 dispatch(SubscriptionEventAction(event: event))
             }
-//            client.metadataStore(ship: ship).appName(app: "chat") { event in
-//                dispatch(SubscriptionEventAction(event: event))
-//            }
-//            client.metadataStore(ship: ship).appName(app: "contacts") { event in
-//                dispatch(SubscriptionEventAction(event: event))
-//            }
+            client.metadataStore(ship: ship).appName(app: "chat") { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            client.metadataStore(ship: ship).appName(app: "contacts") { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
         }
     }
 
@@ -173,8 +173,19 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             }
         case .update(let value as MetadataStoreApp.AppNameResponse):
             switch value {
-            case .metadataUpdate(.associations(let associations)):
-                break
+            case .metadataUpdate(let update):
+                switch update {
+                case .initial(let initial):
+                    for association in initial.values {
+                        state.associations[association.appName]?[association.appPath] = association
+                    }
+                case .add(let add):
+                    state.associations[add.appName]?[add.appPath] = add
+                case .update(let update):
+                    state.associations[update.appName]?[update.appPath] = update
+                case .remove(let remove):
+                    state.associations[remove.appName]?[remove.appPath] = nil
+                }
             }
         case .update(let value):
             throw SubscriptionActionError.unhandledEventUpdate(value)

@@ -93,6 +93,8 @@ struct ContactUpdateContacts: Decodable {
 
 typealias Rolodex = [String: Contacts]
 
+#warning("TODO: Fix issue with PatP keys")
+
 typealias Contacts = [PatP: Contact]
 
 struct Contact: Decodable {
@@ -108,6 +110,8 @@ struct Contact: Decodable {
 }
 
 enum ContactAvatar: Decodable {
+    
+    #warning("TODO: Fix issue with avatar decoding")
     
     enum CodingKeys: String, CodingKey {
         
