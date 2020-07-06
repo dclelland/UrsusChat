@@ -34,9 +34,9 @@ func subscriptionThunk(client: Ursus, ship: Ship) -> Thunk<AppState> {
             client.inviteStore(ship: ship).all { event in
                 dispatch(SubscriptionEventAction(event: event))
             }
-//            client.permissionStore(ship: ship).all { event in
-//                dispatch(SubscriptionEventAction(event: event))
-//            }
+            client.permissionStore(ship: ship).all { event in
+                dispatch(SubscriptionEventAction(event: event))
+            }
 //            client.contactView(ship: ship).primary { event in
 //                dispatch(SubscriptionEventAction(event: event))
 //            }
@@ -115,16 +115,26 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             }
         case .update(let value as PermissionStoreApp.AllResponse):
             switch value {
-            case .permissionInitial(let initial):
-                break
-            case .permissionUpdate(.create(let create)):
-                break
-            case .permissionUpdate(.delete(let delete)):
-                break
-            case .permissionUpdate(.add(let add)):
-                break
-            case .permissionUpdate(.remove(let remove)):
-                break
+            case .permissionUpdate(let update):
+                switch update {
+                case .initial(let initial):
+                    state.permissions = initial
+                case .create(let create):
+                    state.permissions[create.path] = Permission(
+                        who: create.who,
+                        kind: create.kind
+                    )
+                case .delete(let delete):
+                    state.permissions[delete.path] = nil
+                case .add(let add):
+                    for member in add.who {
+                        state.permissions[add.path]?.who.insert(member)
+                    }
+                case .remove(let remove):
+                    for member in remove.who {
+                        state.permissions[remove.path]?.who.remove(member)
+                    }
+                }
             }
         case .update(let value as ContactViewApp.PrimaryResponse):
             switch value {
