@@ -13,7 +13,7 @@ import Ursus
 struct SubscriptionState: StateType {
     
     var inbox: Inbox = [:]
-    var synced: [PatP: String]? = nil
+    var synced: ChatHookUpdate = [:]
     var invites: InviteStoreApp.Invites = [:]
     var contacts: ContactStoreApp.Rolodex = [:]
     

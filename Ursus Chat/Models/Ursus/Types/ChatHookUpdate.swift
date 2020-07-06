@@ -9,4 +9,4 @@
 import Foundation
 import Ursus
 
-typealias ChatHookUpdate = [PatP: String]
+typealias ChatHookUpdate = [String: PatP]
