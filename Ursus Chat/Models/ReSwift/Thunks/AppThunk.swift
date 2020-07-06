@@ -13,14 +13,22 @@ import Ursus
 
 typealias AppThunk = Thunk<AppState>
 
+struct Credentials: Codable {
+    
+    var url: URL
+    var code: Code
+    
+}
+
 extension AppThunk {
     
-    static func startSession(url: URL, code: Code) -> AppThunk {
+    static func startSession(credentials: Credentials) -> AppThunk {
         return AppThunk { dispatch, getState in
-            let client = Ursus(url: url, code: code)
+            let client = Ursus(url: credentials.url, code: credentials.code)
             client.loginRequest { ship in
                 dispatch(SessionLoginAction(client: client))
                 dispatch(AppThunk.startSubscription(client: client, ship: ship))
+                dispatch(AppThunk.setCredentials(credentials))
             }.response { response in
                 if let error = response.error {
                     dispatch(AppErrorAction(error: error))
@@ -62,13 +70,23 @@ extension AppThunk {
     
     static func getCredentials() -> AppThunk {
         return AppThunk { dispatch, getState in
-            #warning("TODO: Get credentials from keychain")
+            do {
+                if let credentials = try Keychain.shared.decodeData(Credentials.self, key: "Credentials") {
+                    dispatch(AppThunk.startSession(credentials: credentials))
+                }
+            } catch let error {
+                dispatch(AppErrorAction(error: error))
+            }
         }
     }
     
-    static func setCredentials() -> AppThunk {
+    static func setCredentials(_ credentials: Credentials) -> AppThunk {
         return AppThunk { dispatch, getState in
-            #warning("TODO: Set credentials on keychain")
+            do {
+                try Keychain.shared.encodeData(credentials, key: "Credentials")
+            } catch let error {
+                dispatch(AppErrorAction(error: error))
+            }
         }
     }
     

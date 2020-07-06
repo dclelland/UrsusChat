@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.tintColor = .systemIndigo
         self.window?.rootViewController = UIHostingController(rootView: AppView().environmentObject(AppStore.shared))
         self.window?.makeKeyAndVisible()
+        
+        AppStore.shared.dispatch(AppThunk.getCredentials())
     }
 
 }
