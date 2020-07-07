@@ -18,7 +18,7 @@ struct ChatListView: View {
     
     var body: some View {
         NavigationView {
-            List(subscription.inbox.sorted(by: \.key), id: \.key) { state in
+            List(subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { state in
                 NavigationLink(destination: ChatView(state: state)) {
                     ChatListRow(state: state)
                 }
@@ -37,6 +37,14 @@ struct ChatListView_Previews: PreviewProvider {
     
     static var previews: some View {
         ChatListView().environmentObject(AppStore.preview)
+    }
+    
+}
+
+extension Mailbox {
+    
+    var when: Date {
+        return envelopes.last?.when ?? Date.distantPast
     }
     
 }
