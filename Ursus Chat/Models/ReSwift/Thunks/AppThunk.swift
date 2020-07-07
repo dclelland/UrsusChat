@@ -87,7 +87,11 @@ extension AppThunk {
     
     static func clearCredentials() -> AppThunk {
         return AppThunk { dispatch, getState in
-            Keychain.shared.remove(credentialsKey)
+            do {
+                try Keychain.shared.remove(credentialsKey)
+            } catch let error {
+                dispatch(AppErrorAction(error: error))
+            }
         }
     }
     
