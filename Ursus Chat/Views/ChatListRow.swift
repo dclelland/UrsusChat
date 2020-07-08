@@ -38,7 +38,7 @@ struct ChatListRow: View {
             subtitle: chat.groupTitle ?? "",
             message: envelope?.letter.text ?? "",
             date: dateFormatter.localizedString(for: date, relativeTo: Date()),
-            unread: chat.mailbox.unread.description
+            unread: chat.mailbox.unread > 0 ? chat.mailbox.unread.description : nil
         )
     }
     
@@ -59,13 +59,20 @@ struct ChatListRow: View {
                     .lineLimit(1)
             }
             Spacer()
-            VStack(alignment: .trailing, spacing: 4.0) {
+            VStack(alignment: .trailing, spacing: 6.0) {
                 Text(model.date)
-                    .font(.subheadline)
+                    .font(.footnote)
                     .foregroundColor(.secondary)
                 Text(model.unread ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .font(.footnote)
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 4.0)
+                    .frame(minWidth: 18.0, minHeight: 18.0)
+                    .background(
+                        RoundedRectangle(cornerRadius: 9.0, style: .continuous)
+                            .fill(Color.secondary)
+                    )
+                    .opacity(model.unread == nil ? 0.0 : 1.0)
             }
         }
     }
