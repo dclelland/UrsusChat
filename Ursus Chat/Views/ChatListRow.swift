@@ -31,11 +31,11 @@ struct ChatListRow: View {
     
     var model: ViewModel {
         let mailbox = subscription.inbox.mailbox(for: path)
-        let metadata = subscription.associations.chat.metadata(for: path)
-        let contact = subscription.contacts.contacts(for: path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
+        let association = subscription.associations.chat.association(for: path)
+        let contact = subscription.contacts.contacts(for: association?.groupPath ?? path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
         
         return ViewModel(
-            title: metadata?.title ?? path,
+            title: association?.metadata.title ?? path,
             subtitle: contact?.nickname ?? mailbox?.envelopes.last?.author.debugDescription ?? "",
             author: mailbox?.envelopes.last?.letter.text ?? "",
             date: DateFormatter.localizedString(from: mailbox?.envelopes.last?.when ?? Date(), dateStyle: .short, timeStyle: .none),
@@ -132,8 +132,8 @@ private extension Associations {
 
 private extension AppAssociations {
     
-    func metadata(for path: String) -> Metadata? {
-        return self[path]?.metadata
+    func association(for path: String) -> Association? {
+        return self[path]
     }
     
 }
