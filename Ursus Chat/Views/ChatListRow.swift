@@ -15,7 +15,7 @@ struct ChatListRow: View {
         
         var title: String
         var subtitle: String
-        var author: String
+        var message: String
         var date: String
         var unread: String?
         
@@ -36,7 +36,7 @@ struct ChatListRow: View {
         return ViewModel(
             title: chat.chatTitle,
             subtitle: chat.groupTitle ?? "",
-            author: (envelope.flatMap { chat.nickname(for: $0.author) } ?? "") + ": " + (envelope?.letter.text ?? ""),
+            message: envelope?.letter.text ?? "",
             date: dateFormatter.localizedString(for: date, relativeTo: Date()),
             unread: chat.mailbox.unread.description
         )
@@ -53,7 +53,7 @@ struct ChatListRow: View {
                     .font(.subheadline)
                     .foregroundColor(.primary)
                     .lineLimit(1)
-                Text(model.author)
+                Text(model.message)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(1)
