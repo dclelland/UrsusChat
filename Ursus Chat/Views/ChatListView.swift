@@ -36,11 +36,3 @@ struct ChatListView_Previews: PreviewProvider {
     }
     
 }
-
-private extension Mailbox {
-    
-    var when: Date {
-        return envelopes.last?.when ?? Date.distantPast
-    }
-    
-}
