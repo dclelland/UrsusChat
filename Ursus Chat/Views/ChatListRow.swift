@@ -23,16 +23,12 @@ struct ChatListRow: View {
     
     @EnvironmentObject var store: AppStore
     
-    var subscription: SubscriptionState {
-        return store.state.subscription
-    }
-    
     var path: String
     
     var model: ViewModel {
-        let mailbox = subscription.inbox.mailbox(for: path)
-        let association = subscription.associations.chat.association(for: path)
-        let contact = subscription.contacts.contacts(for: association?.groupPath ?? path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
+        let mailbox = store.state.subscription.inbox.mailbox(for: path)
+        let association = store.state.subscription.associations.chat.association(for: path)
+        let contact = store.state.subscription.contacts.contacts(for: association?.groupPath ?? path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
         
         return ViewModel(
             title: association?.metadata.title ?? path,

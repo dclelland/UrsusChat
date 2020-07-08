@@ -12,15 +12,11 @@ struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
-    private var subscription: SubscriptionState {
-        return store.state.subscription
-    }
-    
     var body: some View {
         NavigationView {
-            List(subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { element in
-                NavigationLink(destination: ChatView(path: element.key)) {
-                    ChatListRow(path: element.key)
+            List(store.state.subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { (path, mailbox) in
+                NavigationLink(destination: ChatView(path: path)) {
+                    ChatListRow(path: path)
                 }
             }
             .navigationBarTitle("Chats")
