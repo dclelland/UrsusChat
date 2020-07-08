@@ -13,13 +13,15 @@ struct ChatView: View {
     
     @EnvironmentObject var store: AppStore
     
-    var state: (name: String, mailbox: Mailbox)
+    var mailbox: Mailbox
+    
+    var metadata: Metadata? = nil
     
     var body: some View {
-        List(state.mailbox.envelopes.reversed(), id: \.uid) { envelope in
+        List(mailbox.envelopes.reversed(), id: \.uid) { envelope in
             ChatRow(state: envelope)
         }
-        .navigationBarTitle(state.name)
+        .navigationBarTitle(metadata?.title ?? "")
     }
     
 }
@@ -28,23 +30,27 @@ struct ChatView_Previews: PreviewProvider {
     
     static var previews: some View {
         ChatView(
-            state: (
-                name: "name",
-                mailbox: Mailbox(
-                    config: MailboxConfig(
-                        length: 0,
-                        read: 0
-                    ),
-                    envelopes: [
-                        Envelope(
-                            uid: "0",
-                            number: 0,
-                            author: "author",
-                            when: Date(),
-                            letter: .text("Hello")
-                        )
-                    ]
-                )
+            mailbox: Mailbox(
+                config: MailboxConfig(
+                    length: 0,
+                    read: 0
+                ),
+                envelopes: [
+                    Envelope(
+                        uid: "0",
+                        number: 0,
+                        author: "Author",
+                        when: Date(),
+                        letter: .text("Text")
+                    )
+                ]
+            ),
+            metadata: Metadata(
+                title: "Title",
+                description: "Description",
+                color: "0x0",
+                dateCreated: "~2020.1.1..00.00.00..0000",
+                creator: "~zod"
             )
         )
     }

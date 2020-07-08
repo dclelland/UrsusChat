@@ -18,9 +18,9 @@ struct ChatListView: View {
     
     var body: some View {
         NavigationView {
-            List(subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { state in
-                NavigationLink(destination: ChatView(state: state)) {
-                    ChatListRow(state: state)
+            List(subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { element in
+                NavigationLink(destination: ChatView(mailbox: element.value)) {
+                    ChatListRow(mailbox: element.value, metadata: self.subscription.associations["chat"]?[element.key]?.metadata)
                 }
             }
             .navigationBarTitle("Chats")
