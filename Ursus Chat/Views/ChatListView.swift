@@ -19,8 +19,8 @@ struct ChatListView: View {
     var body: some View {
         NavigationView {
             List(subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { element in
-                NavigationLink(destination: ChatView(mailbox: element.value)) {
-                    ChatListRow(mailbox: element.value, metadata: self.subscription.associations["chat"]?[element.key]?.metadata)
+                NavigationLink(destination: ChatView(path: element.key)) {
+                    ChatListRow(path: element.key)
                 }
             }
             .navigationBarTitle("Chats")
@@ -41,7 +41,7 @@ struct ChatListView_Previews: PreviewProvider {
     
 }
 
-extension Mailbox {
+private extension Mailbox {
     
     var when: Date {
         return envelopes.last?.when ?? Date.distantPast

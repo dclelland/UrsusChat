@@ -33,7 +33,7 @@ extension AppStore {
         state: AppState(
             subscription: SubscriptionState(
                 inbox: [
-                    "Test Chat": Mailbox(
+                    "/~fipfes-fipfes/preview-chat": Mailbox(
                         config: MailboxConfig(
                             length: 0,
                             read: 0
@@ -48,6 +48,35 @@ extension AppStore {
                             )
                         ]
                     )
+                ],
+                contacts: [
+                    "/~fipfes-fipfes/preview-chat": [
+                        "fipfes-fipfes": Contact(
+                            nickname: "Fipfes Fipfes",
+                            email: "",
+                            phone: "",
+                            website: "",
+                            notes: "",
+                            color: "0x0",
+                            avatar: nil
+                        )
+                    ]
+                ],
+                associations: [
+                    "chat": [
+                        "/~fipfes-fipfes/preview-chat": Association(
+                            groupPath: "/~fipfes-fipfes/preview-chat",
+                            appName: "chat",
+                            appPath: "/~fipfes-fipfes/preview-chat",
+                            metadata: Metadata(
+                                title: "Preview chat",
+                                description: "Preview chat description",
+                                color: "0x0",
+                                dateCreated: "~2020.1.1..00.00.00..0000",
+                                creator: "~fipfes-fipfes"
+                            )
+                        )
+                    ]
                 ]
             )
         )

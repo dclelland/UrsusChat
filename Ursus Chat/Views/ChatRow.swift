@@ -11,10 +11,10 @@ import SwiftUI
 
 struct ChatRow: View {
     
-    var state: Envelope
+    var envelope: Envelope
     
     var body: some View {
-        Text(state.uid)
+        Text(envelope.uid)
     }
     
 }
@@ -23,7 +23,7 @@ struct ChatRow_Previews: PreviewProvider {
     
     static var previews: some View {
         ChatRow(
-            state: Envelope(
+            envelope: Envelope(
                 uid: "0",
                 number: 0,
                 author: "author",
