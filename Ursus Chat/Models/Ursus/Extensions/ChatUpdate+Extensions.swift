@@ -48,7 +48,7 @@ extension Chat {
     }
     
     func nickname(for ship: Ship) -> String {
-        return contacts.contact(for: ship.description)?.nickname ?? ship.description
+        return contacts.contact(for: ship.description)?.nickname ?? ship.debugDescription
     }
     
 }
