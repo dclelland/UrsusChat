@@ -75,6 +75,7 @@ struct ChatListRow: View {
                     .opacity(model.unread == nil ? 0.0 : 1.0)
             }
         }
+        .padding(.vertical, 4.0)
     }
     
 }
