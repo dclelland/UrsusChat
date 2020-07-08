@@ -31,14 +31,12 @@ struct ChatListRow: View {
         let groupAssociation = store.state.subscription.associations.contacts.association(for: association?.groupPath ?? path)
         let contact = store.state.subscription.contacts.contacts(for: association?.groupPath ?? path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
         
-        print("PATH", path, "GROUP ASSOCIATION", groupAssociation?.metadata.title ?? "NONE")
-        
         let dateFormatter = RelativeDateTimeFormatter()
         
         let date = mailbox?.envelopes.last?.when ?? Date()
         
         return ViewModel(
-            title: association?.metadata.title ?? path,
+            title: (association?.metadata.title ?? path) + " (\(groupAssociation?.metadata.title ?? ""))",
             subtitle: contact?.nickname ?? mailbox?.envelopes.last?.author.debugDescription ?? "",
             author: mailbox?.envelopes.last?.letter.text ?? "",
             date: dateFormatter.localizedString(for: date, relativeTo: Date()),
