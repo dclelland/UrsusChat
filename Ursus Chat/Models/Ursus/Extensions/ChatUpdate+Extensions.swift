@@ -64,7 +64,7 @@ extension Inbox {
 extension Mailbox {
     
     var when: Date {
-        return envelopes.last?.when ?? Date.distantPast
+        return envelopes.first?.when ?? Date.distantPast
     }
     
     var unread: Int {

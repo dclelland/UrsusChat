@@ -27,7 +27,7 @@ struct ChatListRow: View {
     
     var model: ViewModel {
         let chat = store.state.subscription.chat(for: path)
-        let envelope = chat.mailbox.envelopes.last
+        let envelope = chat.mailbox.envelopes.first
         
         let dateFormatter = RelativeDateTimeFormatter()
         
