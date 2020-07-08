@@ -39,7 +39,7 @@ struct ChatListRow: View {
             subtitle: contact?.nickname ?? mailbox?.envelopes.last?.author.debugDescription ?? "",
             author: mailbox?.envelopes.last?.letter.text ?? "",
             date: dateFormatter.localizedString(for: date, relativeTo: Date()),
-            unread: (mailbox!.config.length - mailbox!.config.read).description
+            unread: mailbox?.unread.description
         )
     }
     
@@ -87,6 +87,14 @@ private extension Inbox {
     
     func mailbox(for path: String) -> Mailbox? {
         return self[path]
+    }
+    
+}
+
+private extension Mailbox {
+    
+    var unread: Int {
+        return config.length - config.read
     }
     
 }
