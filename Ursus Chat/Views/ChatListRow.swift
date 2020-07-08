@@ -34,9 +34,9 @@ struct ChatListRow: View {
         let date = envelope?.when ?? Date()
         
         return ViewModel(
-            title: chat.chatTitle + " \(chat.groupTitle ?? "")",
-            subtitle: envelope.flatMap { chat.nickname(for: $0.author) } ?? "",
-            author: envelope?.letter.text ?? "",
+            title: chat.chatTitle,
+            subtitle: chat.groupTitle ?? "",
+            author: (envelope.flatMap { chat.nickname(for: $0.author) } ?? "") + ": " + (envelope?.letter.text ?? ""),
             date: dateFormatter.localizedString(for: date, relativeTo: Date()),
             unread: chat.mailbox.unread.description
         )

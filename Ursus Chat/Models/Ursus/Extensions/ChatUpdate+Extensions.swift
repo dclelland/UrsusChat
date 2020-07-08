@@ -44,7 +44,7 @@ extension Chat {
     }
     
     var groupTitle: String? {
-        return contactsMetadata?.title
+        return contactsMetadata?.title ?? chatMetadata?.creator.debugDescription
     }
     
     func nickname(for ship: Ship) -> String {
