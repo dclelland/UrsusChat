@@ -59,7 +59,7 @@ struct ChatListRow: View {
                     .lineLimit(1)
             }
             Spacer()
-            VStack(alignment: .trailing) {
+            VStack(alignment: .trailing, spacing: 4.0) {
                 Text(model.date)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
