@@ -44,7 +44,7 @@ struct ChatListRow: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2.0) {
                 Text(model.title)
                     .font(.headline)
                     .foregroundColor(.primary)
@@ -59,18 +59,18 @@ struct ChatListRow: View {
                     .lineLimit(1)
             }
             Spacer()
-            VStack(alignment: .trailing, spacing: 6.0) {
+            VStack(alignment: .trailing, spacing: 8.0) {
                 Text(model.date)
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundColor(.secondary)
                 Text(model.unread ?? "")
-                    .font(.footnote)
-                    .foregroundColor(.black)
+                    .font(.subheadline)
+                    .foregroundColor(Color(UIColor.systemBackground))
                     .padding(.horizontal, 4.0)
                     .frame(minWidth: 18.0, minHeight: 18.0)
                     .background(
                         RoundedRectangle(cornerRadius: 9.0, style: .continuous)
-                            .fill(Color.secondary)
+                            .fill(Color(UIColor.systemGray2))
                     )
                     .opacity(model.unread == nil ? 0.0 : 1.0)
             }
