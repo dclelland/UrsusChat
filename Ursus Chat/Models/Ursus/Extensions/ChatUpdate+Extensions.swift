@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Ursus
 
 extension SubscriptionState {
     
@@ -44,6 +45,10 @@ extension Chat {
     
     var groupTitle: String? {
         return contactsMetadata?.title
+    }
+    
+    func nickname(for ship: Ship) -> String {
+        return contacts.contact(for: ship.description)?.nickname ?? ship.description
     }
     
 }

@@ -27,16 +27,16 @@ struct ChatListRow: View {
     
     var model: ViewModel {
         let chat = store.state.subscription.chat(for: path)
-        let contact = chat.contacts.contact(for: chat.mailbox.envelopes.last?.author.description ?? "")
+        let envelope = chat.mailbox.envelopes.last
         
         let dateFormatter = RelativeDateTimeFormatter()
         
-        let date = chat.mailbox.envelopes.last?.when ?? Date()
+        let date = envelope?.when ?? Date()
         
         return ViewModel(
             title: chat.chatTitle + " \(chat.groupTitle ?? "")",
-            subtitle: contact?.nickname ?? chat.mailbox.envelopes.last?.author.debugDescription ?? "",
-            author: chat.mailbox.envelopes.last?.letter.text ?? "",
+            subtitle: envelope.flatMap { chat.nickname(for: $0.author) } ?? "",
+            author: envelope?.letter.text ?? "",
             date: dateFormatter.localizedString(for: date, relativeTo: Date()),
             unread: chat.mailbox.unread.description
         )
