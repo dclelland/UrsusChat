@@ -8,10 +8,50 @@
 
 import Foundation
 
+extension SubscriptionState {
+    
+    func chat(for path: String) -> Chat {
+        let chatAssociation = associations.chat.association(for: path)
+        let contactsAssociation = chatAssociation.flatMap { associations.contacts.association(for: $0.groupPath) }
+        
+        return Chat(
+            path: path,
+            mailbox: inbox.mailbox(for: path),
+            contacts: contactsAssociation.flatMap { contacts.contacts(for: $0.groupPath) } ?? [:],
+            chatMetadata: chatAssociation?.metadata,
+            contactsMetadata: contactsAssociation?.metadata
+        )
+    }
+    
+}
+
+struct Chat {
+    
+    var path: String
+    var mailbox: Mailbox
+    var contacts: Contacts
+    
+    var chatMetadata: Metadata?
+    var contactsMetadata: Metadata?
+    
+}
+
+extension Chat {
+    
+    var chatTitle: String {
+        return chatMetadata?.title ?? path
+    }
+    
+    var groupTitle: String? {
+        return contactsMetadata?.title
+    }
+    
+}
+
 extension Inbox {
     
-    func mailbox(for path: String) -> Mailbox? {
-        return self[path]
+    func mailbox(for path: String) -> Mailbox {
+        return self[path] ?? Mailbox(config: MailboxConfig(length: 0, read: 0), envelopes: [])
     }
     
 }
