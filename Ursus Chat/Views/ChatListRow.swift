@@ -30,11 +30,15 @@ struct ChatListRow: View {
         let association = store.state.subscription.associations.chat.association(for: path)
         let contact = store.state.subscription.contacts.contacts(for: association?.groupPath ?? path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
         
+        let dateFormatter = RelativeDateTimeFormatter()
+        
+        let date = mailbox?.envelopes.last?.when ?? Date()
+        
         return ViewModel(
             title: association?.metadata.title ?? path,
             subtitle: contact?.nickname ?? mailbox?.envelopes.last?.author.debugDescription ?? "",
             author: mailbox?.envelopes.last?.letter.text ?? "",
-            date: DateFormatter.localizedString(from: mailbox?.envelopes.last?.when ?? Date(), dateStyle: .short, timeStyle: .none),
+            date: dateFormatter.localizedString(for: date, relativeTo: Date()),
             unread: (mailbox!.config.length - mailbox!.config.read).description
         )
     }
