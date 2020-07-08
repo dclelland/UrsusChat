@@ -28,7 +28,10 @@ struct ChatListRow: View {
     var model: ViewModel {
         let mailbox = store.state.subscription.inbox.mailbox(for: path)
         let association = store.state.subscription.associations.chat.association(for: path)
+        let groupAssociation = store.state.subscription.associations.contacts.association(for: association?.groupPath ?? path)
         let contact = store.state.subscription.contacts.contacts(for: association?.groupPath ?? path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
+        
+        print("PATH", path, "GROUP ASSOCIATION", groupAssociation?.metadata.title ?? "NONE")
         
         let dateFormatter = RelativeDateTimeFormatter()
         
@@ -136,6 +139,10 @@ private extension Associations {
     
     var chat: AppAssociations {
         return self["chat"] ?? [:]
+    }
+    
+    var contacts: AppAssociations {
+        return self["contacts"] ?? [:]
     }
     
 }
