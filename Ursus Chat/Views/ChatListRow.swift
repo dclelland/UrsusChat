@@ -23,15 +23,23 @@ struct ChatListRow: View {
     
     @EnvironmentObject var store: AppStore
     
+    var subscription: SubscriptionState {
+        return store.state.subscription
+    }
+    
     var path: String
     
     var model: ViewModel {
+        let mailbox = subscription.inbox.mailbox(for: path)
+        let metadata = subscription.associations.chat.metadata(for: path)
+        let contact = subscription.contacts.contacts(for: path).contact(for: mailbox?.envelopes.last?.author.description ?? "")
+        
         return ViewModel(
-            title: "Title",
-            subtitle: "Subtitle",
-            author: "~fipfes-fipfes",
-            date: "1/1/20",
-            unread: "1"
+            title: metadata?.title ?? path,
+            subtitle: contact?.nickname ?? mailbox?.envelopes.last?.author.debugDescription ?? "",
+            author: mailbox?.envelopes.last?.letter.text ?? "",
+            date: DateFormatter.localizedString(from: mailbox?.envelopes.last?.when ?? Date(), dateStyle: .short, timeStyle: .none),
+            unread: (mailbox!.config.length - mailbox!.config.read).description
         )
     }
     
@@ -48,6 +56,8 @@ struct ChatListRow: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
+            .lineLimit(1)
+            .frame(maxWidth: .infinity)
             VStack(alignment: .trailing) {
                 Text(model.date)
                     .font(.subheadline)
@@ -67,6 +77,63 @@ struct ChatListRow_Previews: PreviewProvider {
         ChatListRow(path: "/~fipfes-fipfes/preview-chat")
             .environmentObject(AppStore.preview)
             .previewLayout(.sizeThatFits)
+    }
+    
+}
+
+private extension Inbox {
+    
+    func mailbox(for path: String) -> Mailbox? {
+        return self[path]
+    }
+    
+}
+
+private extension Letter {
+    
+    var text: String {
+        switch self {
+        case .text(let text):
+            return text
+        case .url(let url):
+            return url
+        case .code(let code):
+            return code.expression
+        case .me(let narrative):
+            return narrative
+        }
+    }
+    
+}
+
+private extension Rolodex {
+    
+    func contacts(for path: String) -> Contacts {
+        return self[path] ?? [:]
+    }
+    
+}
+
+private extension Contacts {
+    
+    func contact(for ship: String) -> Contact? {
+        return self[ship]
+    }
+    
+}
+
+private extension Associations {
+    
+    var chat: AppAssociations {
+        return self["chat"] ?? [:]
+    }
+    
+}
+
+private extension AppAssociations {
+    
+    func metadata(for path: String) -> Metadata? {
+        return self[path]?.metadata
     }
     
 }
