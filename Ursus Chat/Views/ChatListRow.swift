@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftDate
 
 struct ChatListRow: View {
     
@@ -28,16 +29,23 @@ struct ChatListRow: View {
     var model: ViewModel {
         let chat = store.state.subscription.chat(for: path)
         let envelope = chat.mailbox.envelopes.first
-        
-        let dateFormatter = RelativeDateTimeFormatter()
-        
         let date = envelope?.when ?? Date()
+        
+        let dateString: String = {
+            if date.compare(.isToday) {
+                return date.toString(.time(.short))
+            } else if date.compare(toDate: Date() - 7.days, granularity: .day) == .orderedDescending || date.compare(toDate: Date() - 7.days, granularity: .day) == .orderedSame {
+                return date.weekdayName(.default)
+            } else {
+                return date.toString(.date(.short))
+            }
+        }()
         
         return ViewModel(
             title: chat.chatTitle,
             subtitle: chat.groupTitle ?? "",
             message: envelope?.letter.text ?? "",
-            date: dateFormatter.localizedString(for: date, relativeTo: Date()),
+            date: dateString,
             unread: chat.mailbox.unread > 0 ? chat.mailbox.unread.description : nil
         )
     }

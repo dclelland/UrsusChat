@@ -3,7 +3,7 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-development_pods = true
+development_pods = false
 
 target 'Ursus Chat' do
   
@@ -20,5 +20,6 @@ target 'Ursus Chat' do
     pod 'KeychainAccess', '~> 4.2'
     pod 'ReSwift', '~> 5.0'
     pod 'ReSwiftThunk', '~> 1.2'
+    pod 'SwiftDate', '~> 6.1'
     
 end
