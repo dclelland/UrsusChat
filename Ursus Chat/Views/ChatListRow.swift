@@ -26,8 +26,11 @@ struct ChatListRow: View {
     
     var path: String
     
+    var chat: Chat {
+        return store.state.subscription.chat(for: path)
+    }
+    
     var model: ViewModel {
-        let chat = store.state.subscription.chat(for: path)
         let envelope = chat.mailbox.envelopes.first
         let date = envelope?.when ?? Date()
         

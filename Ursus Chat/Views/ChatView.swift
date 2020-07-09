@@ -15,11 +15,15 @@ struct ChatView: View {
     
     var path: String
     
+    var chat: Chat {
+        return store.state.subscription.chat(for: path)
+    }
+    
     var body: some View {
-        List(store.state.subscription.inbox.mailbox(for: path).envelopes.reversed(), id: \.uid) { envelope in
+        List(chat.mailbox.envelopes.reversed(), id: \.uid) { envelope in
             ChatRow(envelope: envelope)
         }
-        .navigationBarTitle(store.state.subscription.chat(for: path).chatTitle)
+        .navigationBarTitle(chat.chatTitle)
     }
     
 }
