@@ -6,6 +6,18 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ## Todo list
 
+### General
+
+- [ ] Fix the SwiftUI Xcode previews
+- [ ] Build out **Ursus Sigil**, as this will be needed for chat views. See [`sigil-js`](https://github.com/urbit/sigil-js) for reference.
+    - Perhaps time to split up the Ursus work off into its own organisation with separate repos?
+    - Might need to fix the obfuscation issues at the same time
+        - Wasn't there a bug found in the `++mud` implementation recently...?
+- [ ] Try a basic `%poke` request, as haven't done that yet really. For example, to `chat-hook`: `{"message": {"path: "/~/~zod/mc", "envelope": {"uid": "0v3.l14pg.36jh8.mh9dl.ps65v.4lujh", "number": 1, "author: "~zod", "when": 15942876211449, "letter": {"text": "Hello world"}}}}`
+- [ ] Current set of type extensions are messy as hell; `ChatListView.ViewModel` also needs to go.
+    - Look at how the current chat app aggregates this data
+- [ ] I spotted some JSON decoding errors when parsing a set of `MetadataUpdate` instances; need to recreate this issue
+
 ### Authentication
 
 - [ ] Fetching the access key from the web credentials keychain causes the URL field to be cleared
@@ -20,19 +32,26 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat list view
 
-- [ ] TODO: THIS LIST
+- [ ] Cells need a set fixed height; also hide the table view separators until the content is loaded
+- [ ] Test whether the split view works on iPad
 
 ### Chat list row
 
-- [ ] TODO: THIS LIST
+- [ ] Look into: Grouping chats by group; perhaps separate view, one up the hierarchy (will also need DMs, 'all chats' etc.)
+- [ ] Look into: Different sorting modes
+- [ ] Look into: Filters (e.g. search)
 
 ### Chat view
 
-- [ ] TODO: THIS LIST
+- [ ] Set up scroll view offset state
+    - Should 'stick' to the bottom of the window 
+    - When new chats are inserted the scroll view jumps around
 
 ### Chat row
 
-- [ ] TODO: THIS LIST
+- [ ] Decide: Chat bubbles vs. plain text
+    - With chat bubbles; DMs can omit certain information like usernames and avatars 
+- [ ] This will need to support inline formatting
 
 ### Settings view
 
