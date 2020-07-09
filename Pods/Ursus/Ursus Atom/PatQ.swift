@@ -8,12 +8,12 @@
 import Foundation
 import BigInt
 
-public struct PatQ: Atom {
+public struct PatQ: Aura {
     
-    internal var value: BigUInt
+    internal var atom: BigUInt
 
-    internal init(_ value: BigUInt) {
-        self.value = value
+    internal init(_ atom: BigUInt) {
+        self.atom = atom
     }
     
 }
@@ -22,8 +22,8 @@ extension PatQ {
     
     public init(string: String) throws {
         let bytes = try PhoneticBaseParser.parse(string)
-        let value = BigUInt(Data(bytes))
-        self.init(value)
+        let atom = BigUInt(Data(bytes))
+        self.init(atom)
     }
     
 }
@@ -31,7 +31,7 @@ extension PatQ {
 extension PatQ: CustomStringConvertible {
     
     public var description: String {
-        let bytes: [UInt8] = Array(value.serialize())
+        let bytes: [UInt8] = Array(atom.serialize())
         return PhoneticBaseParser.render(bytes: bytes, padding: .noPadding, spacing: .shortSpacing)
     }
     

@@ -14,15 +14,15 @@ PODS:
   - ReSwiftThunk/Core (1.2.0):
     - ReSwift (~> 5.0)
   - SwiftDate (6.1.0)
-  - Ursus (1.2.3):
+  - Ursus (1.2.4):
     - Alamofire (~> 5.2)
-    - Ursus/Atom (= 1.2.3)
-    - Ursus/EventSource (= 1.2.3)
-  - Ursus/Atom (1.2.3):
+    - Ursus/Atom (= 1.2.4)
+    - Ursus/EventSource (= 1.2.4)
+  - Ursus/Atom (1.2.4):
     - Alamofire (~> 5.2)
     - BigInt (~> 5.0)
     - Parity (~> 2.3)
-  - Ursus/EventSource (1.2.3):
+  - Ursus/EventSource (1.2.4):
     - Alamofire (~> 5.2)
 
 DEPENDENCIES:
@@ -58,7 +58,7 @@ SPEC CHECKSUMS:
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
-  Ursus: 8b93dcbc6c33fb6271032793f18369953c7cb3ad
+  Ursus: a4f482ae25f1595ab9a860cb3712713902bbb5fe
 
 PODFILE CHECKSUM: 5c88fd7389453c091e0abdce85102e04567f6fb1
 

@@ -1,23 +1,23 @@
 //
-//  Atom.swift
-//  Ursus Atom
+//  Aura.swift
+//  Ursus Aura
 //
 //  Created by Daniel Clelland on 27/06/20.
 //
 
 import Foundation
 
-internal protocol Atom: UnsignedInteger {
+internal protocol Aura: UnsignedInteger {
     
-    associatedtype Value: UnsignedInteger
+    associatedtype Atom: UnsignedInteger
     
-    var value: Value { get }
+    var atom: Atom { get }
 
-    init(_ value: Value)
+    init(_ atom: Atom)
     
 }
 
-extension Atom {
+extension Aura {
     
     public init() {
         self.init(.zero)
@@ -25,102 +25,102 @@ extension Atom {
     
 }
 
-extension Atom {
+extension Aura {
     
-    public init(integerLiteral value: Value.IntegerLiteralType) {
-        self.init(Value(integerLiteral: value))
+    public init(integerLiteral value: Atom.IntegerLiteralType) {
+        self.init(Atom(integerLiteral: value))
     }
     
 }
 
-extension Atom {
+extension Aura {
     
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.value == rhs.value
+        return lhs.atom == rhs.atom
     }
     
 }
 
-extension Atom {
+extension Aura {
     
     public static func < (lhs: Self, rhs: Self) -> Bool {
-        return lhs.value < rhs.value
+        return lhs.atom < rhs.atom
     }
     
 }
 
-extension Atom {
+extension Aura {
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(value)
+        hasher.combine(atom)
     }
     
 }
 
-extension Atom {
+extension Aura {
     
     public func advanced(by n: Int) -> Self {
-        return Self(value.advanced(by: n))
+        return Self(atom.advanced(by: n))
     }
     
     public func distance(to other: Self) -> Int {
-        return value.distance(to: other.value)
+        return atom.distance(to: other.atom)
     }
     
 }
 
-extension Atom {
+extension Aura {
     
     public init<T>(_ source: T) where T : BinaryInteger {
-        self.init(Value(source))
+        self.init(Atom(source))
     }
     
     public init<T>(_ source: T) where T : BinaryFloatingPoint {
-        self.init(Value(source))
+        self.init(Atom(source))
     }
     
     public init?<T>(exactly source: T) where T : BinaryFloatingPoint {
-        guard let value = Value(exactly: source) else {
+        guard let atom = Atom(exactly: source) else {
             return nil
         }
 
-        self.init(value)
+        self.init(atom)
     }
     
     public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let value = Value(exactly: source) else {
+        guard let atom = Atom(exactly: source) else {
             return nil
         }
         
-        self.init(value)
+        self.init(atom)
     }
     
     public init<T>(clamping source: T) where T : BinaryInteger {
-        self.init(Value(clamping: source))
+        self.init(Atom(clamping: source))
     }
 
     public init<T>(truncatingIfNeeded source: T) where T : BinaryInteger {
-        self.init(Value(truncatingIfNeeded: source))
+        self.init(Atom(truncatingIfNeeded: source))
     }
     
     public var bitWidth: Int {
-        return value.bitWidth
+        return atom.bitWidth
     }
     
     public var trailingZeroBitCount: Int {
-        return value.trailingZeroBitCount
+        return atom.trailingZeroBitCount
     }
     
-    public var words: Value.Words {
-        return value.words
+    public var words: Atom.Words {
+        return atom.words
     }
     
     public static var isSigned: Bool {
-        return Value.isSigned
+        return Atom.isSigned
     }
     
     public static func % (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value % rhs.value)
+        return Self(lhs.atom % rhs.atom)
     }
     
     public static func %= (lhs: inout Self, rhs: Self) {
@@ -128,7 +128,7 @@ extension Atom {
     }
     
     public static func & (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value & rhs.value)
+        return Self(lhs.atom & rhs.atom)
     }
     
     public static func &= (lhs: inout Self, rhs: Self) {
@@ -136,7 +136,7 @@ extension Atom {
     }
     
     public static func * (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value * rhs.value)
+        return Self(lhs.atom * rhs.atom)
     }
     
     public static func *= (lhs: inout Self, rhs: Self) {
@@ -144,7 +144,7 @@ extension Atom {
     }
     
     public static func + (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value + rhs.value)
+        return Self(lhs.atom + rhs.atom)
     }
     
     public static func += (lhs: inout Self, rhs: Self) {
@@ -152,7 +152,7 @@ extension Atom {
     }
     
     public static func - (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value - rhs.value)
+        return Self(lhs.atom - rhs.atom)
     }
     
     public static func -= (lhs: inout Self, rhs: Self) {
@@ -160,7 +160,7 @@ extension Atom {
     }
     
     public static func / (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value / rhs.value)
+        return Self(lhs.atom / rhs.atom)
     }
     
     public static func /= (lhs: inout Self, rhs: Self) {
@@ -168,7 +168,7 @@ extension Atom {
     }
     
     public static func << <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger {
-        return Self(lhs.value << rhs)
+        return Self(lhs.atom << rhs)
     }
     
     public static func <<= <RHS>(lhs: inout Self, rhs: RHS) where RHS : BinaryInteger {
@@ -176,7 +176,7 @@ extension Atom {
     }
     
     public static func >> <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger {
-        return Self(lhs.value >> rhs)
+        return Self(lhs.atom >> rhs)
     }
     
     public static func >>= <RHS>(lhs: inout Self, rhs: RHS) where RHS : BinaryInteger {
@@ -184,7 +184,7 @@ extension Atom {
     }
     
     public static func ^ (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value ^ rhs.value)
+        return Self(lhs.atom ^ rhs.atom)
     }
     
     public static func ^= (lhs: inout Self, rhs: Self) {
@@ -192,7 +192,7 @@ extension Atom {
     }
     
     public static func | (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.value | rhs.value)
+        return Self(lhs.atom | rhs.atom)
     }
     
     public static func |= (lhs: inout Self, rhs: Self) {
@@ -200,7 +200,7 @@ extension Atom {
     }
     
     public static prefix func ~ (x: Self) -> Self {
-        return Self(~x.value)
+        return Self(~x.atom)
     }
 
 }

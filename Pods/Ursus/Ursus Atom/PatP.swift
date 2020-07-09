@@ -8,12 +8,12 @@
 import Foundation
 import BigInt
 
-public struct PatP: Atom {
+public struct PatP: Aura {
     
-    internal var value: BigUInt
+    internal var atom: BigUInt
 
-    internal init(_ value: BigUInt) {
-        self.value = value
+    internal init(_ atom: BigUInt) {
+        self.atom = atom
     }
     
 }
@@ -51,8 +51,8 @@ extension PatP {
     
     public init(string: String) throws {
         let bytes = try PhoneticBaseParser.parse(string)
-        let deobfuscatedValue = PhoneticBaseObfuscator.deobfuscate(BigUInt(Data(bytes)))
-        self.init(deobfuscatedValue)
+        let deobfuscatedAtom = PhoneticBaseObfuscator.deobfuscate(BigUInt(Data(bytes)))
+        self.init(deobfuscatedAtom)
     }
     
 }
@@ -60,8 +60,8 @@ extension PatP {
 extension PatP: CustomStringConvertible {
     
     public var description: String {
-        let obfuscatedValue = PhoneticBaseObfuscator.obfuscate(value)
-        let bytes: [UInt8] = Array(obfuscatedValue.serialize())
+        let obfuscatedAtom = PhoneticBaseObfuscator.obfuscate(atom)
+        let bytes: [UInt8] = Array(obfuscatedAtom.serialize())
         return PhoneticBaseParser.render(bytes: bytes, padding: .padding, spacing: .longSpacing)
     }
     

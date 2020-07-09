@@ -8,12 +8,12 @@
 import Foundation
 import BigInt
 
-public struct PatUV: Atom {
+public struct PatUV: Aura {
     
-    internal var value: BigUInt
+    internal var atom: BigUInt
 
-    internal init(_ value: BigUInt) {
-        self.value = value
+    internal init(_ atom: BigUInt) {
+        self.atom = atom
     }
     
 }

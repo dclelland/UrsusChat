@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-public typealias Ship = PatP
-
-public typealias Code = PatP
-
 public class Ursus {
     
     private var session: Session = .default
@@ -33,12 +29,14 @@ public class Ursus {
     
     private var lastEventID: String? = nil
     
-    public var url: URL
-    public var code: Code
+    public var credentials: UrsusCredentials
     
-    public init(url: URL, code: Code) {
-        self.url = url
-        self.code = code
+    public init(credentials: UrsusCredentials) {
+        self.credentials = credentials
+    }
+    
+    public convenience init(url: URL, code: Code) {
+        self.init(credentials: UrsusCredentials(url: url, code: code))
     }
     
     deinit {
@@ -50,7 +48,7 @@ public class Ursus {
 extension Ursus {
     
     @discardableResult public func loginRequest(handler: @escaping (Ship) -> Void) -> DataRequest {
-        return session.request(loginURL, method: .post, parameters: ["password": code.description], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
+        return session.request(loginURL, method: .post, parameters: ["password": credentials.code.description], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
             guard let urbauth = response.response?.value(forHTTPHeaderField: "Set-Cookie") else {
                 print("[Ursus] Error retrieving urbauth")
                 return
@@ -215,19 +213,19 @@ extension Ursus {
 extension Ursus {
     
     private var loginURL: URL {
-        return url.appendingPathComponent("/~/login")
+        return credentials.url.appendingPathComponent("/~/login")
     }
     
     private var logoutURL: URL {
-        return url.appendingPathComponent("/~/logout")
+        return credentials.url.appendingPathComponent("/~/logout")
     }
     
     private var channelURL: URL {
-        return url.appendingPathComponent("/~/channel/\(uid)")
+        return credentials.url.appendingPathComponent("/~/channel/\(uid)")
     }
     
     private var scryURL: URL {
-        return url.appendingPathComponent("/~/scry")
+        return credentials.url.appendingPathComponent("/~/scry")
     }
     
 }

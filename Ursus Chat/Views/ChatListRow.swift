@@ -34,7 +34,7 @@ struct ChatListRow: View {
         let dateString: String = {
             if date.compare(.isToday) {
                 return date.toString(.time(.short))
-            } else if date.compare(toDate: Date() - 7.days, granularity: .day) == .orderedDescending || date.compare(toDate: Date() - 7.days, granularity: .day) == .orderedSame {
+            } else if date.compare(toDate: Date() - 7.days, granularity: .day) != .orderedAscending {
                 return date.weekdayName(.default)
             } else {
                 return date.toString(.date(.short))
