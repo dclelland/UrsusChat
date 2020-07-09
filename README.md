@@ -28,7 +28,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Login view
 
-- [ ] TODO: THIS LIST
+- [ ] Redesign this; get rid of the table view
 
 ### Chat list view
 
@@ -55,8 +55,12 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Settings view
 
-- [ ] Open Landscape button
-- [ ] Open support/discussion channel button
+- [ ] Add meta/session information ("signed in as ~lanrus-rinfep on http://localhost")
+    - Ship name + sigil
+- [ ] 'Open Landscape' link
+- [ ] 'Open Bridge' link
+- [ ] 'Support/discussion channel' link
+- [ ] 'Bug reports' link (to GitHub)
 
 ### Design
 
