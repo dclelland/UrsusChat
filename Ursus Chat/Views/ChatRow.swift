@@ -14,7 +14,7 @@ struct ChatRow: View {
     var envelope: Envelope
     
     var body: some View {
-        Text(envelope.uid)
+        Text(envelope.letter.text)
     }
     
 }
