@@ -14,14 +14,14 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
     - Might need to fix the obfuscation issues at the same time
         - Wasn't there a bug found in the `++mud` implementation recently...?
 - [ ] Try a basic `%poke` request, as haven't done that yet really. For example, to `chat-hook`: `{"message": {"path: "/~/~zod/mc", "envelope": {"uid": "0v3.l14pg.36jh8.mh9dl.ps65v.4lujh", "number": 1, "author: "~zod", "when": 15942876211449, "letter": {"text": "Hello world"}}}}`
-- [ ] Current set of type extensions are messy as hell; `ChatListView.ViewModel` also needs to go.
-    - Look at how the current chat app aggregates this data
 
 ### Store and reducers
 
 - [ ] What do we use the `Synced` data from the `chat-hook` subscription for?
 - [ ] Same goes for the permissions data; need to read the landscape frontend code
 - [ ] I spotted some JSON decoding errors when parsing a set of `MetadataUpdate` instances; need to recreate this issue
+- [ ] Current set of type extensions are messy as hell; `ChatListView.ViewModel` also needs to go.
+    - Look at how the current chat app aggregates this data
 
 ### Authentication
 
