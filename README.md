@@ -14,19 +14,30 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 - [ ] `AppStore.startSession` should employ more granular `SessionState` cases (e.g. '`.authenticating`')
 - [ ] `Credentials` should be cleared on logout
 
-### Interface
+### Login view
 
-- [ ] Add tab view
-- [ ] Add split view
-- [ ] Add authentication view
-- [ ] Add chat list view
-- [ ] Add chat view
-- [ ] Add settings view
+- [ ] TODO: THIS LIST
 
-### Features
+### Chat list view
 
-- [ ] Open Landscape function
-- [ ] Open support/discussion channel function
+- [ ] TODO: THIS LIST
+
+### Chat list row
+
+- [ ] TODO: THIS LIST
+
+### Chat view
+
+- [ ] TODO: THIS LIST
+
+### Chat row
+
+- [ ] TODO: THIS LIST
+
+### Settings view
+
+- [ ] Open Landscape button
+- [ ] Open support/discussion channel button
 
 ### Design
 
