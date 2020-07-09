@@ -10,7 +10,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 - [ ] Fix the SwiftUI Xcode previews
 - [ ] Build out **Ursus Sigil**, as this will be needed for chat views. See [`sigil-js`](https://github.com/urbit/sigil-js) for reference.
-    - Perhaps time to split up the Ursus work off into its own organisation with separate repos?
+    - Perhaps time to split up the Ursus work off into its own organisation with separate repos for the growing list of submodules?
     - Might need to fix the obfuscation issues at the same time
         - Wasn't there a bug found in the `++mud` implementation recently...?
 - [ ] Try a basic `%poke` request, as haven't done that yet really. For example, to `chat-hook`: `{"message": {"path: "/~/~zod/mc", "envelope": {"uid": "0v3.l14pg.36jh8.mh9dl.ps65v.4lujh", "number": 1, "author: "~zod", "when": 15942876211449, "letter": {"text": "Hello world"}}}}`
