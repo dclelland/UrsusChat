@@ -11,6 +11,8 @@ import SwiftUI
 
 struct ChatRow: View {
     
+    @EnvironmentObject var store: AppStore
+    
     var envelope: Envelope
     
     var body: some View {
@@ -26,11 +28,13 @@ struct ChatRow_Previews: PreviewProvider {
             envelope: Envelope(
                 uid: "0",
                 number: 0,
-                author: "author",
+                author: "~fipfes-fipfes",
                 when: Date(),
                 letter: .text("Hello")
             )
         )
+        .previewLayout(.sizeThatFits)
+        .environmentObject(AppStore.preview)
     }
     
 }

@@ -50,7 +50,7 @@ extension AppStore {
                     )
                 ],
                 contacts: [
-                    "/~fipfes-fipfes/preview-chat": [
+                    "/~/~fipfes-fipfes/preview-chat": [
                         "fipfes-fipfes": Contact(
                             nickname: "Fipfes Fipfes",
                             email: "",
@@ -65,12 +65,26 @@ extension AppStore {
                 associations: [
                     "chat": [
                         "/~fipfes-fipfes/preview-chat": Association(
-                            groupPath: "/~fipfes-fipfes/preview-chat",
+                            groupPath: "/~/~fipfes-fipfes/preview-chat",
                             appName: "chat",
                             appPath: "/~fipfes-fipfes/preview-chat",
                             metadata: Metadata(
                                 title: "Preview chat",
                                 description: "Preview chat description",
+                                color: "0x0",
+                                dateCreated: "~2020.1.1..00.00.00..0000",
+                                creator: "~fipfes-fipfes"
+                            )
+                        )
+                    ],
+                    "contacts": [
+                        "/~/~fipfes-fipfes/preview-chat": Association(
+                            groupPath: "/~/~fipfes-fipfes/preview-chat",
+                            appName: "contacts",
+                            appPath: "/~fipfes-fipfes/preview-chat",
+                            metadata: Metadata(
+                                title: "Preview group",
+                                description: "Preview group description",
                                 color: "0x0",
                                 dateCreated: "~2020.1.1..00.00.00..0000",
                                 creator: "~fipfes-fipfes"

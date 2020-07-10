@@ -95,8 +95,8 @@ struct ChatListRow_Previews: PreviewProvider {
     
     static var previews: some View {
         ChatListRow(path: "/~fipfes-fipfes/preview-chat")
-            .environmentObject(AppStore.preview)
             .previewLayout(.sizeThatFits)
+            .environmentObject(AppStore.preview)
     }
     
 }

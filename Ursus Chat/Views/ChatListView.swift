@@ -32,7 +32,8 @@ struct ChatListView: View {
 struct ChatListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatListView().environmentObject(AppStore.preview)
+        ChatListView()
+            .environmentObject(AppStore.preview)
     }
     
 }
