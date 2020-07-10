@@ -97,7 +97,7 @@ extension Letter {
         case .url(let url):
             return url
         case .code(let code):
-            return code.expression
+            return ([code.expression] + code.output.joined()).joined(separator: " ")
         case .me(let narrative):
             return narrative
         }

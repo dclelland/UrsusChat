@@ -24,18 +24,22 @@ struct LetterView: View {
             )
         case .url(let url):
             return AnyView(
-                Text(url)
-                    .font(.body)
-                    .underline()
+                Button(action: openURL) {
+                    Text(url)
+                        .font(.body)
+                        .underline()
+                }
             )
         case .code(let code):
             return AnyView(
-                VStack {
+                VStack(alignment: .leading, spacing: 4.0) {
                     Text(code.expression)
                         .font(.system(.body, design: .monospaced))
+                    Divider()
                     Text(code.output.joined().joined(separator: " "))
                         .font(.system(.body, design: .monospaced))
                 }
+                .frame(idealWidth: 0.0)
             )
         case .me(let me):
             return AnyView(
@@ -44,6 +48,29 @@ struct LetterView: View {
                     .italic()
             )
         }
+    }
+    
+}
+
+enum LetterViewError: Error {
+    
+    case invalidURL(String)
+    
+}
+
+extension LetterView {
+    
+    func openURL() {
+        guard case .url(let string) = letter else {
+            return
+        }
+        
+        guard let url = URL(string: string) else {
+            store.dispatch(AppErrorAction(error: LetterViewError.invalidURL(string)))
+            return
+        }
+        
+        UIApplication.shared.open(url)
     }
     
 }

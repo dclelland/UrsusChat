@@ -97,9 +97,8 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 ### Letter view
 
 - [ ] `.text`: Add support for inline formatting
-- [ ] `.url`: Link to web view; inline images if the link is to an image
-- [ ] `.code`: Test this
-- [ ] `.me`: Test this
+- [ ] `.url`: Fix the way the underlying cell view highlights on tap
+- [ ] `.code`: Divider should not stretch the bubble to full width
 
 ### Settings view
 
