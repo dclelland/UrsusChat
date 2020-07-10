@@ -74,6 +74,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 - [ ] Display group name/DM host name if available in addition to chat name
 - [ ] Display chat/group metadata (separate view)
 - [ ] Text input view/send message button
+- [ ] Should hide tab bar on push
 
 ### Chat row
 
