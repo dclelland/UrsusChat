@@ -23,17 +23,18 @@ struct ChatView: View {
     
     var body: some View {
         VStack {
-
             List(chat.mailbox.envelopes.reversed(), id: \.uid) { envelope in
                 ChatRow(envelope: envelope)
             }
-            HStack {
-                TextField("Message...", text: $message)
-                    .frame(minHeight: CGFloat(30))
-                Button(action: sendMessage) {
-                    Text("Send")
-                }
-            }.frame(minHeight: CGFloat(50)).padding()
+//            HStack {
+//                TextField("Message...", text: $message)
+//                    .frame(minHeight: CGFloat(30))
+//                Button(action: sendMessage) {
+//                    Text("Send")
+//                }
+//            }
+//            .frame(minHeight: CGFloat(50))
+//            .padding()
         }
         .navigationBarTitle(chat.chatTitle)
     }

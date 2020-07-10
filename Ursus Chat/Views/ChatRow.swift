@@ -16,7 +16,12 @@ struct ChatRow: View {
     var envelope: Envelope
     
     var body: some View {
-        Text(envelope.letter.text)
+        HStack(alignment: .bottom) {
+            Circle()
+                .frame(width: 18.0, height: 18.0)
+            Text(envelope.letter.text)
+                .font(.body)
+        }
     }
     
 }
