@@ -78,6 +78,11 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat row
 
+- [ ] Display sigil in avatar view
+    - Custom avatar links should be supported
+- [ ] Display custom username in avatar view
+    - Tapping should show ship name...?
+    - Copy paste support for ship names?
 - [ ] Messages from self should be right-aligned, with no avatar or username
 - [ ] Sequential messages from same user should be grouped
     - Username only visible on the first message
