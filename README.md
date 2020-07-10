@@ -61,6 +61,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 - [ ] DM/New chat/Join chat
     - Popover modal for chat name...?
 - [ ] Will eventually need to display invites
+- [ ] Need to retain the selected chat list row; it pops automatically on chat update
 
 ### Chat list row
 
