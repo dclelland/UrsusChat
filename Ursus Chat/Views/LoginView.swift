@@ -49,6 +49,7 @@ struct LoginView: View {
             .disabled(isAuthenticating)
             .navigationBarTitle("Login")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
 }

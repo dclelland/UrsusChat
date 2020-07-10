@@ -30,12 +30,13 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 ### App view
 
 - [ ] Fade animation, spinner on login (this is where `SessionState` should be handled, see below)
+- [ ] The tab view might be incompatible with `ChatView` on iPad; make it part of `ChatListView`...?
 
 ### Login view
 
 - [ ] Redesign this
     - Possibly: get rid of the table view
-        - Custom keyboard dodging if we don't use a table view (does this work anyway?) 
+        - Custom keyboard dodging if we don't use a table view (does this work anyway?)
     - Nicer text input fields
         - Highlight with red border and display validation message when an invalid URL or code is input
         - URL input field needs message explaining what your URL is for newbies
