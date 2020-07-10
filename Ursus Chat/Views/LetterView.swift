@@ -32,7 +32,9 @@ struct LetterView: View {
             return AnyView(
                 VStack {
                     Text(code.expression)
-    //                Text(code.output.joined(separator: " "))
+                        .font(.system(.body, design: .monospaced))
+                    Text(code.output.joined().joined(separator: " "))
+                        .font(.system(.body, design: .monospaced))
                 }
             )
         case .me(let me):
