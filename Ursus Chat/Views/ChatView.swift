@@ -13,6 +13,8 @@ struct ChatView: View {
     
     @EnvironmentObject var store: AppStore
     
+    @State var message: String = ""
+    
     var path: String
     
     var chat: Chat {
@@ -20,10 +22,28 @@ struct ChatView: View {
     }
     
     var body: some View {
-        List(chat.mailbox.envelopes.reversed(), id: \.uid) { envelope in
-            ChatRow(envelope: envelope)
+        VStack {
+
+            List(chat.mailbox.envelopes.reversed(), id: \.uid) { envelope in
+                ChatRow(envelope: envelope)
+            }
+            HStack {
+                TextField("Message...", text: $message)
+                    .frame(minHeight: CGFloat(30))
+                Button(action: sendMessage) {
+                    Text("Send")
+                }
+            }.frame(minHeight: CGFloat(50)).padding()
         }
         .navigationBarTitle(chat.chatTitle)
+    }
+    
+}
+
+extension ChatView {
+    
+    func sendMessage() {
+        
     }
     
 }
