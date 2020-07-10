@@ -68,6 +68,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat view
 
+- [ ] Remove table view separators
 - [ ] Set up scroll view offset state
     - Should 'stick' to the bottom of the window 
     - When new chats are inserted the scroll view jumps around
