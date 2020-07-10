@@ -18,11 +18,14 @@ PODS:
     - Alamofire (~> 5.2)
     - Ursus/Atom (= 1.2.4)
     - Ursus/EventSource (= 1.2.4)
+    - Ursus/Sigil (= 1.2.4)
   - Ursus/Atom (1.2.4):
     - Alamofire (~> 5.2)
     - BigInt (~> 5.0)
     - Parity (~> 2.3)
   - Ursus/EventSource (1.2.4):
+    - Alamofire (~> 5.2)
+  - Ursus/Sigil (1.2.4):
     - Alamofire (~> 5.2)
 
 DEPENDENCIES:
@@ -32,8 +35,8 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - Ursus (~> 1.2)
-  - Ursus/Atom (~> 1.2)
+  - Ursus (from `../Ursus`)
+  - Ursus/Atom (from `../Ursus`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -46,7 +49,10 @@ SPEC REPOS:
     - ReSwift
     - ReSwiftThunk
     - SwiftDate
-    - Ursus
+
+EXTERNAL SOURCES:
+  Ursus:
+    :path: "../Ursus"
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -58,8 +64,8 @@ SPEC CHECKSUMS:
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
-  Ursus: a4f482ae25f1595ab9a860cb3712713902bbb5fe
+  Ursus: 1f8ea934831a6e3db99d6c6620467d60f746d4b5
 
-PODFILE CHECKSUM: 5c88fd7389453c091e0abdce85102e04567f6fb1
+PODFILE CHECKSUM: 4808b4c212a1fa24375b3e3b6d5180d5a1178799
 
 COCOAPODS: 1.8.3
