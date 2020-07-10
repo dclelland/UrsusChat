@@ -84,18 +84,22 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
     - Tapping should show ship name...?
     - Copy paste support for ship names?
 - [ ] Messages from self should be right-aligned, with no avatar or username
+    - Also, different gray
 - [ ] Sequential messages from same user should be grouped
     - Username only visible on the first message
     - Avatar only visible on the last message
+- [ ] Add accessory view timestamps once per day
+- [ ] Time should be visible when swiping to the left
+- [ ] Pending message handling
+- [ ] Context menu with option to copy the letter text
+
+### Letter view
+
 - [ ] Support for different letter types
     - `.text`: Plain text with inline formatting
     - `.url`: Underlined with link to web view; inline images if the link is to an image
     - `.code`: Monospaced text, show input and output separately
     - `.me`: Italic text
-- [ ] Add accessory view timestamps once per day
-- [ ] Time should be visible when swiping to the left
-- [ ] Pending message handling
-- [ ] Context menu with option to copy the letter text
 
 ### Settings view
 

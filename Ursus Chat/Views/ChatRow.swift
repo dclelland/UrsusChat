@@ -23,13 +23,12 @@ struct ChatRow: View {
                 Text(envelope.author.debugDescription)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Text(envelope.letter.text)
-                    .font(.body)
+                LetterView(letter: envelope.letter)
             }
             .padding(EdgeInsets(top: 4.0, leading: 8.0, bottom: 4.0, trailing: 8.0))
             .background(
                 RoundedRectangle(cornerRadius: 9.0, style: .continuous)
-                    .fill(Color(UIColor.systemGray3))
+                    .fill(Color(UIColor.systemGray4))
             )
         }
     }
