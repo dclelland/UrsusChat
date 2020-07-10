@@ -78,15 +78,19 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat row
 
-- [ ] Review what UI components we'll need (avatars, timestamps (as table view accessories), etc.)
-- [ ] Support for different `Letter` types
-- [ ] Decide: Chat bubbles vs. plain text
-    - With chat bubbles; DMs can omit certain information like usernames and avatars 
-- [ ] This will need to support inline formatting
+- [ ] Messages from self should be right-aligned, with no avatar or username
+- [ ] Sequential messages from same user should be grouped
+    - Username only visible on the first message
+    - Avatar only visible on the last message
+- [ ] Support for different letter types
+    - `.text`: Plain text with inline formatting
+    - `.url`: Underlined with link to web view; inline images if the link is to an image
+    - `.code`: Monospaced text, show input and output separately
+    - `.me`: Italic text
+- [ ] Add accessory view timestamps once per day
+- [ ] Time should be visible when swiping to the left
 - [ ] Pending message handling
-- [ ] Swipe to reveal date/time
-- [ ] Context menu:
-    - Copy chat
+- [ ] Context menu with option to copy the letter text
 
 ### Settings view
 

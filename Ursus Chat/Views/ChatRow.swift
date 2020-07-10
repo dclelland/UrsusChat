@@ -18,9 +18,19 @@ struct ChatRow: View {
     var body: some View {
         HStack(alignment: .bottom) {
             Circle()
-                .frame(width: 18.0, height: 18.0)
-            Text(envelope.letter.text)
-                .font(.body)
+                .frame(width: 24.0, height: 24.0)
+            VStack(alignment: .leading) {
+                Text(envelope.author.debugDescription)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Text(envelope.letter.text)
+                    .font(.body)
+            }
+            .padding(EdgeInsets(top: 4.0, leading: 8.0, bottom: 4.0, trailing: 8.0))
+            .background(
+                RoundedRectangle(cornerRadius: 9.0, style: .continuous)
+                    .fill(Color(UIColor.systemGray3))
+            )
         }
     }
     
