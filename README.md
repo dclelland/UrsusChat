@@ -19,7 +19,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 - [ ] What do we use the `Synced` data from the `chat-hook` subscription for?
 - [ ] Same goes for the permissions data; need to read the landscape frontend code
 - [ ] I spotted some JSON decoding errors when parsing a set of `MetadataUpdate` instances; need to recreate this issue
-- [ ] Current set of type extensions are messy as hell; `ChatListView.ViewModel` also needs to go.
+- [ ] Current set of type extensions are messy as hell
     - Look at how the current chat app aggregates this data
 
 ### Authentication

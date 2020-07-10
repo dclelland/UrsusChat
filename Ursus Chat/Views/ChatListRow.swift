@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftUI
-import SwiftDate
 
 struct ChatListRow: View {
     
@@ -30,51 +29,28 @@ struct ChatListRow: View {
         return store.state.subscription.chat(for: path)
     }
     
-    var model: ViewModel {
-        let envelope = chat.mailbox.envelopes.first
-        let date = envelope?.when ?? Date()
-        
-        let dateString: String = {
-            if date.compare(.isToday) {
-                return date.toString(.time(.short))
-            } else if date.compare(toDate: Date() - 7.days, granularity: .day) != .orderedAscending {
-                return date.weekdayName(.default)
-            } else {
-                return date.toString(.date(.short))
-            }
-        }()
-        
-        return ViewModel(
-            title: chat.chatTitle,
-            subtitle: chat.groupTitle ?? "",
-            message: envelope?.letter.text ?? "",
-            date: dateString,
-            unread: chat.mailbox.unread > 0 ? chat.mailbox.unread.description : nil
-        )
-    }
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2.0) {
-                Text(model.title)
+                Text(chat.chatTitle)
                     .font(.headline)
                     .foregroundColor(.primary)
                     .lineLimit(1)
-                Text(model.subtitle)
+                Text(chat.groupTitle ?? "")
                     .font(.subheadline)
                     .foregroundColor(.primary)
                     .lineLimit(1)
-                Text(model.message)
+                Text(chat.mailbox.envelopes.first?.letter.text ?? "")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(1)
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 8.0) {
-                Text(model.date)
+                Text(chat.mailbox.envelopes.first?.formattedDate ?? "")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Text(model.unread ?? "")
+                Text(String(chat.mailbox.unread))
                     .font(.subheadline)
                     .foregroundColor(Color(UIColor.systemBackground))
                     .padding(.horizontal, 4.0)
@@ -83,7 +59,7 @@ struct ChatListRow: View {
                         RoundedRectangle(cornerRadius: 9.0, style: .continuous)
                             .fill(Color(UIColor.systemGray2))
                     )
-                    .opacity(model.unread == nil ? 0.0 : 1.0)
+                    .opacity(chat.mailbox.unread > 0 ? 1.0 : 0.0)
             }
         }
         .padding(.vertical, 4.0)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 import Ursus
 
 extension SubscriptionState {
@@ -69,6 +70,20 @@ extension Mailbox {
     
     var unread: Int {
         return config.length - config.read
+    }
+    
+}
+
+extension Envelope {
+    
+    var formattedDate: String {
+        if when.compare(.isToday) {
+            return when.toString(.time(.short))
+        } else if when.compare(toDate: Date() - 7.days, granularity: .day) != .orderedAscending {
+            return when.weekdayName(.default)
+        } else {
+            return when.toString(.date(.short))
+        }
     }
     
 }
