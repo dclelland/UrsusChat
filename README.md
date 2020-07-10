@@ -95,11 +95,10 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Letter view
 
-- [ ] Support for different letter types
-    - `.text`: Plain text with inline formatting
-    - `.url`: Underlined with link to web view; inline images if the link is to an image
-    - `.code`: Monospaced text, show input and output separately
-    - `.me`: Italic text
+- [ ] `.text`: Add support for inline formatting
+- [ ] `.url`: Link to web view; inline images if the link is to an image
+- [ ] `.code`: Test this
+- [ ] `.me`: Test this
 
 ### Settings view
 
