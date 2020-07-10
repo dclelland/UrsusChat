@@ -20,22 +20,3 @@ struct ChatRow: View {
     }
     
 }
-
-struct ChatRow_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ChatRow(
-            envelope: Envelope(
-                uid: "0",
-                number: 0,
-                author: "~fipfes-fipfes",
-                when: Date(),
-                letter: .text("Hello")
-            )
-        )
-        .previewLayout(.sizeThatFits)
-        .environmentObject(AppStore.preview)
-    }
-    
-}
-

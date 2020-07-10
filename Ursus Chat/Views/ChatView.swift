@@ -27,12 +27,3 @@ struct ChatView: View {
     }
     
 }
-
-struct ChatView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ChatView(path: "/~fipfes-fipfes/preview-chat")
-            .environmentObject(AppStore.preview)
-    }
-    
-}
