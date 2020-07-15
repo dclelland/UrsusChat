@@ -8,6 +8,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### General
 
+- [ ] Ursus should pause the connection when the app is backgrounded, and resume when the app reenters foreground
 - [ ] Build out **Ursus Sigil**, as this will be needed for chat views. See [`sigil-js`](https://github.com/urbit/sigil-js) for reference.
     - Perhaps time to split up the Ursus work off into its own organisation with separate repos for the growing list of submodules?
     - Might need to fix the obfuscation issues at the same time
