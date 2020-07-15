@@ -3,18 +3,18 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-development_pods = false
+development_pods = true
 
 target 'Ursus Chat' do
   
     if development_pods
         pod 'Ursus', path: '../Ursus'
         pod 'UrsusAtom', path: '../UrsusAtom'
-#        pod 'UrsusSigil', path: '../UrsusSigil'
+        pod 'UrsusSigil', path: '../UrsusSigil'
     else
         pod 'Ursus', '~> 1.3'
         pod 'UrsusAtom', '~> 1.0'
-#        pod 'UrsusSigil', '~> 0.1'
+        pod 'UrsusSigil', '~> 0.1'
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'
