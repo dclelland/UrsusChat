@@ -10,10 +10,18 @@ import BigInt
 
 public struct PatUV: Aura {
     
-    internal var atom: BigUInt
+    public var atom: BigUInt
+    
+    public var string: String {
+        return "0v" + String(self, radix: 32, chunk: 5)
+    }
 
-    internal init(_ atom: BigUInt) {
+    internal init(atom: BigUInt) {
         self.atom = atom
+    }
+    
+    init(string: String) throws {
+        fatalError("PatUV.init(string:) is not implemented yet")
     }
     
 }
@@ -21,7 +29,7 @@ public struct PatUV: Aura {
 extension PatUV: CustomStringConvertible {
     
     public var description: String {
-        return "0v" + String(self, radix: 32, chunk: 5)
+        return string
     }
     
 }
@@ -29,16 +37,7 @@ extension PatUV: CustomStringConvertible {
 extension PatUV: CustomDebugStringConvertible {
     
     public var debugDescription: String {
-        return description
-    }
-    
-}
-
-extension PatUV: Encodable {
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encode(description)
+        return string
     }
     
 }

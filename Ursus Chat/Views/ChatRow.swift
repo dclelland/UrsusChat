@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+//import UrsusSigil
 
 struct ChatRow: View {
     
@@ -17,6 +18,8 @@ struct ChatRow: View {
     
     var body: some View {
         HStack(alignment: .bottom) {
+//            SigilView(ship: envelope.author)
+//                .frame(width: 24.0, height: 24.0)
             Circle()
                 .frame(width: 24.0, height: 24.0)
             VStack(alignment: .leading) {

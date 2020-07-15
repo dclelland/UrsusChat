@@ -7,20 +7,36 @@
 
 import Foundation
 
-internal protocol Aura: UnsignedInteger {
+internal protocol Aura: UnsignedInteger, RawRepresentable, Codable, ExpressibleByStringLiteral {
     
     associatedtype Atom: UnsignedInteger
     
     var atom: Atom { get }
+    
+    var string: String { get }
 
-    init(_ atom: Atom)
+    init(atom: Atom)
+    
+    init(string: String) throws
     
 }
 
 extension Aura {
     
     public init() {
-        self.init(.zero)
+        self.init(atom: .zero)
+    }
+    
+}
+
+extension Aura {
+    
+    public init?(rawValue: String) {
+        try? self.init(string: rawValue)
+    }
+    
+    public var rawValue: String {
+        return string
     }
     
 }
@@ -28,7 +44,23 @@ extension Aura {
 extension Aura {
     
     public init(integerLiteral value: Atom.IntegerLiteralType) {
-        self.init(Atom(integerLiteral: value))
+        self.init(atom: Atom(integerLiteral: value))
+    }
+    
+}
+
+extension Aura {
+    
+    public init(unicodeScalarLiteral value: String.ExtendedGraphemeClusterLiteralType) {
+        try! self.init(string: String(unicodeScalarLiteral: value))
+    }
+    
+    public init(extendedGraphemeClusterLiteral value: String) {
+        try! self.init(string: String(extendedGraphemeClusterLiteral: value))
+    }
+
+    public init(stringLiteral value: String) {
+        try! self.init(string: String(stringLiteral: value))
     }
     
 }
@@ -60,7 +92,7 @@ extension Aura {
 extension Aura {
     
     public func advanced(by n: Int) -> Self {
-        return Self(atom.advanced(by: n))
+        return Self(atom: atom.advanced(by: n))
     }
     
     public func distance(to other: Self) -> Int {
@@ -72,11 +104,11 @@ extension Aura {
 extension Aura {
     
     public init<T>(_ source: T) where T : BinaryInteger {
-        self.init(Atom(source))
+        self.init(atom: Atom(source))
     }
     
     public init<T>(_ source: T) where T : BinaryFloatingPoint {
-        self.init(Atom(source))
+        self.init(atom: Atom(source))
     }
     
     public init?<T>(exactly source: T) where T : BinaryFloatingPoint {
@@ -84,7 +116,7 @@ extension Aura {
             return nil
         }
 
-        self.init(atom)
+        self.init(atom: atom)
     }
     
     public init?<T>(exactly source: T) where T : BinaryInteger {
@@ -92,15 +124,15 @@ extension Aura {
             return nil
         }
         
-        self.init(atom)
+        self.init(atom: atom)
     }
     
     public init<T>(clamping source: T) where T : BinaryInteger {
-        self.init(Atom(clamping: source))
+        self.init(atom: Atom(clamping: source))
     }
 
     public init<T>(truncatingIfNeeded source: T) where T : BinaryInteger {
-        self.init(Atom(truncatingIfNeeded: source))
+        self.init(atom: Atom(truncatingIfNeeded: source))
     }
     
     public var bitWidth: Int {
@@ -120,7 +152,7 @@ extension Aura {
     }
     
     public static func % (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom % rhs.atom)
+        return Self(atom: lhs.atom % rhs.atom)
     }
     
     public static func %= (lhs: inout Self, rhs: Self) {
@@ -128,7 +160,7 @@ extension Aura {
     }
     
     public static func & (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom & rhs.atom)
+        return Self(atom: lhs.atom & rhs.atom)
     }
     
     public static func &= (lhs: inout Self, rhs: Self) {
@@ -136,7 +168,7 @@ extension Aura {
     }
     
     public static func * (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom * rhs.atom)
+        return Self(atom: lhs.atom * rhs.atom)
     }
     
     public static func *= (lhs: inout Self, rhs: Self) {
@@ -144,7 +176,7 @@ extension Aura {
     }
     
     public static func + (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom + rhs.atom)
+        return Self(atom: lhs.atom + rhs.atom)
     }
     
     public static func += (lhs: inout Self, rhs: Self) {
@@ -152,7 +184,7 @@ extension Aura {
     }
     
     public static func - (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom - rhs.atom)
+        return Self(atom: lhs.atom - rhs.atom)
     }
     
     public static func -= (lhs: inout Self, rhs: Self) {
@@ -160,7 +192,7 @@ extension Aura {
     }
     
     public static func / (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom / rhs.atom)
+        return Self(atom: lhs.atom / rhs.atom)
     }
     
     public static func /= (lhs: inout Self, rhs: Self) {
@@ -168,7 +200,7 @@ extension Aura {
     }
     
     public static func << <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger {
-        return Self(lhs.atom << rhs)
+        return Self(atom: lhs.atom << rhs)
     }
     
     public static func <<= <RHS>(lhs: inout Self, rhs: RHS) where RHS : BinaryInteger {
@@ -176,7 +208,7 @@ extension Aura {
     }
     
     public static func >> <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger {
-        return Self(lhs.atom >> rhs)
+        return Self(atom: lhs.atom >> rhs)
     }
     
     public static func >>= <RHS>(lhs: inout Self, rhs: RHS) where RHS : BinaryInteger {
@@ -184,7 +216,7 @@ extension Aura {
     }
     
     public static func ^ (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom ^ rhs.atom)
+        return Self(atom: lhs.atom ^ rhs.atom)
     }
     
     public static func ^= (lhs: inout Self, rhs: Self) {
@@ -192,7 +224,7 @@ extension Aura {
     }
     
     public static func | (lhs: Self, rhs: Self) -> Self {
-        return Self(lhs.atom | rhs.atom)
+        return Self(atom: lhs.atom | rhs.atom)
     }
     
     public static func |= (lhs: inout Self, rhs: Self) {
@@ -200,7 +232,7 @@ extension Aura {
     }
     
     public static prefix func ~ (x: Self) -> Self {
-        return Self(~x.atom)
+        return Self(atom: ~x.atom)
     }
 
 }

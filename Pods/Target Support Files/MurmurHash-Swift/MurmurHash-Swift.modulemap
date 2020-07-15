@@ -1,0 +1,6 @@
+framework module MurmurHash_Swift {
+  umbrella header "MurmurHash-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
