@@ -18,10 +18,10 @@ struct ChatRow: View {
     
     var body: some View {
         HStack(alignment: .bottom) {
-            SigilView(ship: envelope.author)
-                .frame(width: 24.0, height: 24.0)
-//            Circle()
-//                .frame(width: 24.0, height: 24.0)
+            Image(
+                uiImage: Sigil(ship: envelope.author, foregroundColor: .systemFill, backgroundColor: .systemBackground)
+                    .image(with: CGSize(width: 24.0, height: 24.0))
+            )
             VStack(alignment: .leading) {
                 Text(envelope.author.debugDescription)
                     .font(.subheadline)

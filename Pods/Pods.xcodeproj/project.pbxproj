@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		013BAC24F7AC722E59517CB110A9E685 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B47343327BD6D5B31DCDE61696BFB5 /* HTTPMethod.swift */; };
-		0227552AC402D9310616355F728BA7A3 /* UrsusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3316DCDC72312C0111E7EC29D85C27 /* UrsusApp.swift */; };
+		0227552AC402D9310616355F728BA7A3 /* UrsusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DDA6A0BD0C434817774689133CC347 /* UrsusApp.swift */; };
 		0441B3E976E5F55E22731AECFF0DBA88 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908F301B4FBD419395DE0624F7820412 /* Keychain.swift */; };
 		04C4B5D00750E2E4DFD4C4C7CC47283A /* Bitwise Ops.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF61ACADADF4FE7B4D199F28025CC41 /* Bitwise Ops.swift */; };
 		04DBFC7384A95DBD195D6ED3F848E3E1 /* UIBezierPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC05C8C13FEFE13F453F0F4D730A119 /* UIBezierPath+SVG.swift */; };
 		0579DB182A9DF9334D6F85BFFE5E2C7B /* SVGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77400CC15C345DB6540FE25A95DFB52D /* SVGElement.swift */; };
-		0588457E0D81CF8E11123F430011575C /* UrsusAtom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8965CE4FF8292483A19F848757D2B760 /* UrsusAtom-dummy.m */; };
-		068B0346A61BE0C2047784A35DDE2445 /* UrsusAtom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADCB24FCDB178778D0D9F99F7DC867ED /* UrsusAtom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0588457E0D81CF8E11123F430011575C /* UrsusAtom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAF608B411C8A1D3DBEDA9D9E9E63D6 /* UrsusAtom-dummy.m */; };
+		068B0346A61BE0C2047784A35DDE2445 /* UrsusAtom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E09D22123EBFFB655B8E288D39BAFCF7 /* UrsusAtom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06AF08EE94A52FBEC4B23FC8F7E46B50 /* SVGRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798F33E1D61B22E23BF15993D14335C /* SVGRectangle.swift */; };
 		073D58C924EBAC5DF59D87938F543A02 /* RelativeFormatterLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C407F1D811922059923D9B23F3914B /* RelativeFormatterLanguage.swift */; };
 		0829D39A7891D0CD419F5B0FA945D78B /* SVGRootElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC6BF7FDAC5CB29FA332C26EF3243C /* SVGRootElement.swift */; };
@@ -27,40 +27,41 @@
 		0DF63A4C8FA0E53FB630F5B5429FF066 /* Exponentiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20027626939FFE56B87E769ECB8B2697 /* Exponentiation.swift */; };
 		0F377111846A587376BBE8E4A467AD41 /* Int+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB766D55520B1A87B835A0F3C1DDA76 /* Int+DateComponents.swift */; };
 		117DA50B6B632D4AC77FB0192A6139E8 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CFB533CE169ED9FC1A568D9D8BBBEB /* ReSwift.framework */; };
+		11F5CD77DD7380C34470DA83CC02C5F2 /* CGContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFD446A702F2BDA83AB0B095AE446B /* CGContext+Extensions.swift */; };
 		1208E81DA8B532D0646D627B50290EB6 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC4C16D4B8B9E83C7175378D0E2B51 /* AFError.swift */; };
 		137B0B5E63202FE2E9FAD9C3FAA2ADA6 /* Fillable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB575364F0DC428B15B69FA45775B5 /* Fillable.swift */; };
-		13F56EBDD9742120F4A39F259B8111D7 /* UnsubscribeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021C31C9D0B092E83C05128BB552A56 /* UnsubscribeRequest.swift */; };
+		13F56EBDD9742120F4A39F259B8111D7 /* UnsubscribeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6387016789D4ADD676134A084EA2D /* UnsubscribeRequest.swift */; };
 		1465B023003B74FD145CC3F01AE65F8C /* DateComponents+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33C85C411D60D26B03728EE65B97847 /* DateComponents+Extras.swift */; };
 		14E1BE8EDA1E323BB8AAD5212B9FFB12 /* TimePeriod+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479409E30790C62C94F462B434329E09 /* TimePeriod+Support.swift */; };
 		15902B4671D48351D19579EBDD712FD1 /* AlamofireLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED4E9DAEB9004FA135B8CF0A8B676C /* AlamofireLogger-dummy.m */; };
 		16F71F20D31B7EEC6A60DB14135AB7A9 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025681C440DF94F90469E4818FEAC172 /* Comparable.swift */; };
-		17B57723091C9349BB370A7F3EC0E6C0 /* SubscribeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4902149C0F9A1EE7BCEAE3E1E4B5E66 /* SubscribeResponse.swift */; };
-		1864264DD1B3918D9FE80F3D6B849264 /* PatP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F70164C97550647618C1E726B00DF /* PatP.swift */; };
-		18EF4F9240397F7DDDF966BA60AC7575 /* EventSourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5639120238971CB8BD0E41E7FC19597 /* EventSourceParser.swift */; };
+		17B57723091C9349BB370A7F3EC0E6C0 /* SubscribeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09EB775CA5FD6D10A583F837A5FC35B /* SubscribeResponse.swift */; };
+		1864264DD1B3918D9FE80F3D6B849264 /* PatP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734FD58312AFBEA2FC688F413D3395D /* PatP.swift */; };
+		18EF4F9240397F7DDDF966BA60AC7575 /* EventSourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBE8E8348A1576F7198B17E503D39B /* EventSourceParser.swift */; };
 		19D605A3233499828FB6B790869F3E9C /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656F0DB8D6849444720CEBC9FAFCFFE /* NetworkReachabilityManager.swift */; };
 		1AC00B5C1555BDC7A5B0690BBE29769E /* PathDLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E1384F45F8F75BA5FDA79E7AA097B /* PathDLexer.swift */; };
-		1B700F38A3451D481EF7FDD72AB6BA40 /* UrsusCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8FA7169CCE4B26A4725E01012BB80 /* UrsusCredentials.swift */; };
+		1B700F38A3451D481EF7FDD72AB6BA40 /* UrsusCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223A92A55D69FEFC05530644DAA39B5 /* UrsusCredentials.swift */; };
 		1BA68E00C3BA704B0ED72BAF9CD1CFE1 /* FloatingPoint+DegreesRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75A29E35C088D6A94C8E46179430DB /* FloatingPoint+DegreesRadians.swift */; };
-		1E0BD2FF97A1CFF934F9874B78E4A5F8 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F63609C3A05F362D2218E9F73F6445 /* EventSource.swift */; };
-		1E803C88410A2920E85D05B21E38E467 /* PhoneticBaseObfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB3757B60956F8A38B4C849A77321F /* PhoneticBaseObfuscator.swift */; };
+		1D99DBA62294ADA0746494C926821BCD /* LineElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0944A7506D0804F33A958F417B063 /* LineElement.swift */; };
+		1E0BD2FF97A1CFF934F9874B78E4A5F8 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547026394A9EEB9F0791B2AB5ED28FD0 /* EventSource.swift */; };
+		1E803C88410A2920E85D05B21E38E467 /* PhoneticBaseObfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38503152E855397687EEA26571C2B105 /* PhoneticBaseObfuscator.swift */; };
 		1F5FAACE87B623C44153DD09A822E1B3 /* ParsesAsynchronously.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039BC3F1738395BD7CA11E5586064C5 /* ParsesAsynchronously.swift */; };
 		2030DCBC8447E22A3EB4F310B2D8B078 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90136FD782F9096A7561C8E8BE991C7 /* UIColor+Extensions.swift */; };
-		2086338FA238CFBB2F3AC65D7EB42939 /* SigilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807D095F0DE939EA92C2F2D5D564DAA /* SigilView.swift */; };
 		20D0958CD391F68453C1E8CF9A09FDC2 /* MurmurHash3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E216D35592123B3C8F0197C255B5CD /* MurmurHash3.swift */; };
 		20E0BE472F06CDD82AA660C4C0B190E3 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E3532462BA8C5EA92419EBB376645 /* String+Trim.swift */; };
 		212EDC48B68107BEA9247F3464CE696E /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556D24DA5FFF597B8C27249A2FA5991 /* StringEncoding+Alamofire.swift */; };
 		218C14EAE5AA31C30314AE0289B732A0 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C95C8EE277C89C4CE91961040B4679 /* Protected.swift */; };
 		2228B8549F0F5445D1B2D346E12A20CD /* Floating Point Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED6A8AC52D8A7B65297689FA746AF4 /* Floating Point Conversion.swift */; };
-		23382C23FE4BC26B90EF0945E4F4A030 /* DiffResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3195C1BBE5722E77C29CAB6A59BD0 /* DiffResponse.swift */; };
+		23382C23FE4BC26B90EF0945E4F4A030 /* DiffResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5923E08221FF2BBFE49BD9E507DF7E1 /* DiffResponse.swift */; };
 		2451ABFC466C0707C424E182D0F91BAD /* MurmurHash3_x86_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B0956C74740EE6667CFBAE3480F3C /* MurmurHash3_x86_128.swift */; };
 		27E59A11A2743B0595CDE3A08675EAE1 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207F1C0EA6D7E6213B1FFCAB5BD94F4 /* DispatchQueue+Alamofire.swift */; };
-		28112B75CEBDD02FF3C73A0121ADB9E0 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6504C5F97CB01FAF689847BE0CDDA5F /* Symbol.swift */; };
 		290FDD6000DBBC635016326F9711F111 /* PathCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C40FDC930771CE3B4DD128BAF95EE /* PathCommand.swift */; };
+		292E1A48B3F01BA11A3A6B72B573FE38 /* ElementAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE14740EEA99397F2E16311B8EE32F9 /* ElementAttributes.swift */; };
 		2B3221296319AB33BFB4C756AE5F4D72 /* SVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A92EFB69DF84F2620888ACB667273B /* SVGParser.swift */; };
 		2B51BABACCA8BB003BF832C7199ACB3C /* SVGCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8D425C4F640A1BE7160F82416EF3D /* SVGCache.swift */; };
 		2B5E07B521E4AADF4E24EC39B7014080 /* Date+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64795CB118B7FE65E139EDF2BA8D9F3B /* Date+Compare.swift */; };
-		2D81FFA2BB94416859BB61381E4A2272 /* Ursus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E077609923BDA84C9F922F77F71AE2 /* Ursus-dummy.m */; };
-		2D9282A445413EC07C2BA36793A16ED2 /* PatQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82DA97121DADA956C5ADA8206179944 /* PatQ.swift */; };
+		2D81FFA2BB94416859BB61381E4A2272 /* Ursus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86588DF8EB243E4D4667DFFEE0AB7B3C /* Ursus-dummy.m */; };
+		2D9282A445413EC07C2BA36793A16ED2 /* PatQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF43644677374DED89C269CAD3B8773 /* PatQ.swift */; };
 		34FB97622838BAF70DF4F754183CE03E /* CALayer+Sublayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D12B305D2AF410FDAC92C97FFCB83 /* CALayer+Sublayers.swift */; };
 		35DF6382CADD2A0BE2BA216DC3AC709C /* UIView+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36306B719C09BCD5ADA2F5242ACDF8C2 /* UIView+SVG.swift */; };
 		36BEC5617259C56934C39D350DE32F17 /* Locales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8A6A2A37D85B250649E9553EE137 /* Locales.swift */; };
@@ -72,7 +73,8 @@
 		38EABE62E192B1BA56147AEDA7944007 /* TimePeriodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8B077692AABE3ABF2E43FCE54B444 /* TimePeriodCollection.swift */; };
 		39137B0D7B8FB5BF554BDE012BD85061 /* Data Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D21AC95F2488E8C9E992B2FC1AF681 /* Data Conversion.swift */; };
 		399FADF0A86557CDFB3B8CA527BCD0F0 /* SVGGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C00F2CC79EBD97A58EC2C36F901D20 /* SVGGroup.swift */; };
-		3B58A13F0513537E1D1FBBC472DC7CD4 /* Ursus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2BFD7B64196EAB56EBA3213F7F269AC /* Ursus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A510BCF8A8FDC2BF9BD1C85C5DC86BE /* UrsusSigil-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F46D747A1767220D3875A27B53242 /* UrsusSigil-dummy.m */; };
+		3B58A13F0513537E1D1FBBC472DC7CD4 /* Ursus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586B526CFC17200B755F474979884D4 /* Ursus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B9A2601095A9A72843D76CA44B37782 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50D0E6305EC8289205AD023A80E4AD /* Division.swift */; };
 		3BA5FD16025D43169F2AD94F48E0B569 /* ReSwiftThunk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712138CE5CA14F0828315922E765496 /* ReSwiftThunk-dummy.m */; };
 		3DA09CE1B9ABF3A539CDC39350987495 /* ReSwiftThunk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6A22200AC5A2C9D5316A4A5D1B779DF /* ReSwiftThunk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,35 +82,36 @@
 		4217B666E8B11298CAB40E36E13150B9 /* AlamofireLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 188A815123CDFCC5F8D10FAF045C8943 /* AlamofireLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42D320370BAB479AD7CF7FDE68C0ABE9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF11E9349809CA4EBFF726E71A55AE2 /* Alamofire.framework */; };
 		4362503059C68DFCDCB8621F4FD9E325 /* Square Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9613F6E3CAEB26FF4DE5BBF94EF675D /* Square Root.swift */; };
-		43F66A0143AC1F81CD7C13352AE7CDFE /* Ursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89585CC99CB65473249242B8B1816587 /* Ursus.swift */; };
+		43F66A0143AC1F81CD7C13352AE7CDFE /* Ursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083B7B9C8B33B0D35FC0F706D7A1D18A /* Ursus.swift */; };
 		44CCF26D36C6F2A2A6C7E547B0BB26CE /* TimePeriodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F9C5D58B3CD1B9F6C696657E614DE /* TimePeriodGroup.swift */; };
 		45B8CC1C61E7A0BB28CFA8CE7C12FEBC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED55FDC112BF70A7654AB722EB5ACF /* MultipartFormData.swift */; };
 		4793C5306D63A8A6194AEBE87931A624 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCF0E25F9B9E9098D75472887A731 /* TimePeriod.swift */; };
-		47C554724F5BF63838C84623AF44E007 /* UrsusSigil-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BF655CE0AA081B9A6C47D4FE331754 /* UrsusSigil-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47FDBBBD2704901588C3A7C56BBC502D /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEF4E74053CAEA3AFF7E7CAAD60ADC /* ServerTrustEvaluation.swift */; };
+		4869DECC290040D14A252EAA2DA5FC26 /* PathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E84F02B1A0CB2CD5CE1E5898B2A807 /* PathElement.swift */; };
 		49A099D4A60AACE3F1650352C82A051C /* Parity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA7C8654DC51066C4AB1476280619D /* Parity-dummy.m */; };
 		4A8B21596204A43258F4EC69A7AEC66E /* Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A02FA868AD42CA625DA321B8A725F0 /* Hashable.swift */; };
 		4AEB48FE18565A59266480250E7C3FEA /* KeychainAccess-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A4B38551901469DDD8BC7C3CCE593 /* KeychainAccess-dummy.m */; };
 		4AEC050FA7D5ED52FDA9DF50EA3560DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F22D228E4F778469F7D14F24B8751F /* ParameterEncoder.swift */; };
 		4C075371146A8E2EBBCD691A7B639B07 /* SVGPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B50C12C7D374B6001653BF8227111C /* SVGPolygon.swift */; };
-		4C0B3789A857979D1EABAFF808C6D61C /* SubscribeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571956041B69D5A5F2FE581012A3CF6B /* SubscribeRequest.swift */; };
+		4C0B3789A857979D1EABAFF808C6D61C /* SubscribeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4D30EFAC0158FE97FB64F75640E55 /* SubscribeRequest.swift */; };
 		4DE70CC7BF3B17FD8261EF554AA466FF /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F104F2965989CA76C7AD64E98DE52B0D /* NetworkActivityIndicatorManager.swift */; };
-		55C259B1C6E94A51E61E638D2244B950 /* UrsusAtom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980A011CDBE0E7AC365BD1B686197374 /* UrsusAtom.framework */; };
+		5436126B7681AB5AC7B27AB90503EA56 /* CircleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC555CA05780B185D3784455B7C5DEC /* CircleElement.swift */; };
 		566764BFBC4ADE538700C57185757CFE /* NetworkActivityLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ABF8AB401089B96EBC24915D00D1C9 /* NetworkActivityLogManager.swift */; };
 		5C2B11AD3706F2A828F267B8AF5FA1F4 /* DateInRegion+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC65D7C25F47C1D89FA0C0C0C6079D /* DateInRegion+Components.swift */; };
-		5C4B3A8D2CA075E8B1533398A8057178 /* EventSourceMessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273130EAD103D563FF3AA710F3554503 /* EventSourceMessageField.swift */; };
+		5C4B3A8D2CA075E8B1533398A8057178 /* EventSourceMessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF66132F7E193DF109EBE5A868A0651 /* EventSourceMessageField.swift */; };
 		5DA027631BDB15613D95126EEFDF5187 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
-		5DA8E16383C939B94D0DE9CCA84133B6 /* EventSourceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAD2AFC3079677A44C5AD773AC6FEA /* EventSourceError.swift */; };
+		5DA8E16383C939B94D0DE9CCA84133B6 /* EventSourceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC101F66E5C7A7FA81AF354A91913CC /* EventSourceError.swift */; };
 		5E2574B7162EED00A81237F56CDC0BE4 /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B7C1045E4E521ACD84069EE8638BB3 /* BigInt.swift */; };
 		6002AD14210CBE9C34EB848031CFD7E6 /* Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8578E3531433657C333827713270C3 /* Addition.swift */; };
-		6066CEF30F1ADCD2FD69608BAA566C7B /* PatUV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EBF3F94E5800F2A975AF7AE10FCA29 /* PatUV.swift */; };
-		606E7781F17BDAA7BED4FEB9D4CC56F9 /* PhoneticBaseSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A39D6780F78B95924E6CF7C551CF19 /* PhoneticBaseSuffix.swift */; };
-		628A9E5379382C5F82642C9ABCC7C649 /* PhoneticBaseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075B948B16E22D8A952A14E4C84D13B /* PhoneticBaseParser.swift */; };
+		6066CEF30F1ADCD2FD69608BAA566C7B /* PatUV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3873E115146AE6DFE61C4241B52D89B /* PatUV.swift */; };
+		606E7781F17BDAA7BED4FEB9D4CC56F9 /* PhoneticBaseSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7E5CD19CB2A669054F00B98FAB5E8 /* PhoneticBaseSuffix.swift */; };
+		628A9E5379382C5F82642C9ABCC7C649 /* PhoneticBaseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FAE293194DAD5A9C6D72DEC889659 /* PhoneticBaseParser.swift */; };
 		632B1F711A52794609423DCD131C0907 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		636DB433A183CC26D8902AE2B18A8E5A /* TimeInterval+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD5ADE51778CD83DE9305E04E73A56 /* TimeInterval+Formatter.swift */; };
 		63DC9E0B2F3C2FA86FF7B77E51779A8C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DEC759EB1EFA57CA639A0B2E5C0FC /* Identifiable.swift */; };
 		6546D728B69398F93B506845141EBD61 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92217213DBB7D1597F7812AF6FCB2498 /* EventMonitor.swift */; };
 		65F34BB4DE789E21466F4D42C2EB133A /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF54718C88A7180A82389E9A68D67FD /* Assertions.swift */; };
+		66411985AFF4B421E0AF74E066D5CCE1 /* UIBezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D563DEC41ABE52B7B5460EFA53F8AE3B /* UIBezierPath+Extensions.swift */; };
 		666EC5C8356E6D4448A2FE7BEE77AD88 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CFF5BC89323B76E63C81D068F90B77 /* RedirectHandler.swift */; };
 		66B26C6CAE737EC21F4BA1F1851B69C5 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3466E6A2C520120691D76484D229E7 /* Result+Alamofire.swift */; };
 		678E43954A4EB360F356B90A6B68C460 /* Calendars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC902AA06A4B823105B379304974F3A /* Calendars.swift */; };
@@ -116,26 +119,30 @@
 		69308E5CF28EED1FD2713C7B240117B9 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28BEAF8BD36D30B9E291C8FA99C7717 /* Reducer.swift */; };
 		69C4BC38BDB1CC5A94DE64750C1EA9CD /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FE57D14A157874D58C0AFAF391761 /* Store.swift */; };
 		6A15282F3FCAC7CF4154B5155001A63D /* RelativeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E07A5F330956B65D83D398A8A381C /* RelativeFormatter.swift */; };
-		6A89818511AAF0BFA33C2F06E29F45ED /* AckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6BF27C86B1B478FB6A10358D21597A /* AckRequest.swift */; };
+		6A89818511AAF0BFA33C2F06E29F45ED /* AckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBE971569D4182B91B49A263FFFE20D /* AckRequest.swift */; };
 		6AA458D361CB0B6A6424318191046CA3 /* SwiftDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF2246446AB254E277B8CFC7003A1D /* SwiftDate-dummy.m */; };
 		6AE407A4FB6C3D6ADD862CC6E3067A17 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF325FDD5152C627B303F56C798F39CC /* Session.swift */; };
+		6B39BA2C81AEA7F1E91470A25611F541 /* index.json in Resources */ = {isa = PBXBuildFile; fileRef = 8263D0FA4F106E899C29B1002E5D73B6 /* index.json */; };
 		6C08F6A77889651626583100F560153D /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3B17291F5607A3A49ACD4DA599EBC /* RequestTaskMap.swift */; };
+		6C65DE2EF8B2568692C381EEC0F85A6E /* UrsusSigil-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B071C3173810684EB0D7D7FACF8A38 /* UrsusSigil-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D23C152B6445C4508F6FF8FB352F4DC /* SVGLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3FFE09FA503C5E67964DD8D2FED86 /* SVGLayer.swift */; };
 		6E54F64E8DA73F4B0B46C216F9F93F63 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E873C5BCF30A3334C0E28435E053CCF /* RequestInterceptor.swift */; };
 		6E636388E18A816493343C46C98E5057 /* SwiftSVG-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4175D91F43E410604CC18A293064B82 /* SwiftSVG-dummy.m */; };
-		701BFEDE3C123614CB33BF54217B0C39 /* PokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042501D16A2C5BF18D3597DD665DD73E /* PokeRequest.swift */; };
+		6FE74354B59002AEE41E7658D1F2ECDE /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DEBA0D54F86C5242378A09F89582B3 /* Element.swift */; };
+		701BFEDE3C123614CB33BF54217B0C39 /* PokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52DDB2D4CF0303943F69CC453C6928C /* PokeRequest.swift */; };
 		705B44ABD8F0768F9A00E583D8C886A5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0083F3D3E092F58A438778F6E370A2B1 /* BigInt.framework */; };
 		712DD65FE85BCC1B3485EE683FFB6C98 /* DelaysApplyingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957930D1300545BC8D8088AFF73A8F3 /* DelaysApplyingAttributes.swift */; };
 		71335E148066526A88313E314F11DFE7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB869FD1796DE52C43BA4D345224A23 /* State.swift */; };
-		721C6FB769F1A5693272540BCCC2D866 /* PokeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C132804A2E27FE93091AE4C645B6B8 /* PokeEvent.swift */; };
+		721C6FB769F1A5693272540BCCC2D866 /* PokeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1ABE5D0D32F08D068A6FC9E9A2D8F /* PokeEvent.swift */; };
 		72B3FA09072C7DCA75B0D2B9C6D7C570 /* DateInRegion+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90429297EDFEF41993536ED8227F18BC /* DateInRegion+Math.swift */; };
 		72CEB8D2AA9A82759E40D3DF91E8DE46 /* TimeStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374A41A99318DD22064ECE93DCFCD89 /* TimeStructures.swift */; };
 		72EC2712926E6D28B52360D9AC41668F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE962DF4C337BCBFA94BC44E5247E65 /* AlamofireExtended.swift */; };
 		73679B4D1491FAC841D4777EF2AF7383 /* ReSwift_Thunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E6DCFE20DE7D07706B1EAE67E47C46E /* ReSwift_Thunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74CEB5EBE745CA2C3EF30D8F90CA2C11 /* PokeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670549BE3561FBA5070F924BE50B1A86 /* PokeError.swift */; };
+		737C8DE349BCAA6854DF5FE4B5D9B0E2 /* CGAffineTransform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D94143B933320B2E0278FFABCBBAEB0 /* CGAffineTransform+Extensions.swift */; };
+		74CEB5EBE745CA2C3EF30D8F90CA2C11 /* PokeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B5E266A548F21FC75A749B81273934 /* PokeError.swift */; };
 		74FA8AFC6A63DF31AF092826DD3EAD3F /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4865DC23975353837E3B03A8801336 /* Middleware.swift */; };
 		7743B437A7C29FE6821E3A4C9FA45577 /* CoordinateLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB02CB7F26253ECD675ADA6F1A0267A0 /* CoordinateLexer.swift */; };
-		795AB6E0ED928CD7326306CB577FAC1D /* DeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68C270C0EECBB9B12DE709F0DE9A5D /* DeleteRequest.swift */; };
+		795AB6E0ED928CD7326306CB577FAC1D /* DeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0ACEDB02E5F0A4F1B4E8CBEB29680 /* DeleteRequest.swift */; };
 		7A944E3EA9DB85A331046FC1AF7A2278 /* MurmurHash3_x86_32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87AB418AB8535398D6CCD1CB6AD65E /* MurmurHash3_x86_32.swift */; };
 		7BF1D1DD912831899B096247CDA15C54 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1C6BE5E8EDA35C730B8EAA961C3B8 /* StoreSubscriber.swift */; };
 		7D3DD4A8BB36733BA15868F7FB8C56CE /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 905D89B518448EEF2696A7D64F935F34 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -143,12 +150,12 @@
 		80114139616C5E85806FF5C0F35E5597 /* Pods-Ursus Chat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CE55070225DD8F7CA2C4EB8FEDE0EC /* Pods-Ursus Chat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		809F5737584AC988E0246F344E30BAF6 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266D3BD7E3848DC8C8D7B40F6300F95 /* Coding.swift */; };
 		8122C520D61F1401624316A423F5B789 /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C7F66E9F33F909BF37D8B28B3BB8D43 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		814187D7E3982DBEBC31FD15D6E8BE4C /* SubscribeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36864938AD882B16FBCFF9BE1D00DD /* SubscribeEvent.swift */; };
+		814187D7E3982DBEBC31FD15D6E8BE4C /* SubscribeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9750ED67B1AA756389AFD662197F80 /* SubscribeEvent.swift */; };
 		835BAD832AAFBA5CB9A1A75FE631D338 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F249CBC04775D2462AB9A3CDEED63 /* Region.swift */; };
 		83A08103C8B00501469ACF5908850A7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		8440F47E6FDC99176EC286603B0FB840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
-		84C16DFCE54B7CC83B642258F559F6F6 /* UrsusDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF7173DBADCB43F00470EDC35E5FA7E /* UrsusDecoder.swift */; };
-		853FEE239FE607B80DC4D1338586F84F /* EventSourceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3811952F11094074828459BF48876 /* EventSourceMessage.swift */; };
+		84C16DFCE54B7CC83B642258F559F6F6 /* UrsusDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78149F0376D89CA61C6A65801B92AA35 /* UrsusDecoder.swift */; };
+		853FEE239FE607B80DC4D1338586F84F /* EventSourceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F17D4327079278CE02932F5A4D327 /* EventSourceMessage.swift */; };
 		8565C0F45674DD18847C54DD78577600 /* Pods-Ursus Chat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFD5911D9C5FE6093A9CED2386CB02 /* Pods-Ursus Chat-dummy.m */; };
 		8599E23B2946C6F3F6DA3D63EC82C4A3 /* Words and Bits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492B7D54272CE03994F9F074AFEE6EE /* Words and Bits.swift */; };
 		8A1D5BEC09D49AF708E28815BFB073B7 /* Parity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E5D9A9900DDCAF5CF9B5503B215417 /* Parity.framework */; };
@@ -158,48 +165,50 @@
 		91B837CE0DCD8EDB300FCDFFA1279162 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2788D687D98A45DE5CD4675E140309F /* HTTPHeaders.swift */; };
 		922C6139A1B46AA2DD907A8F946C268A /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14260BB40C2C02C400EE5542455327 /* Subscription.swift */; };
 		9529A27CA5D248AACAEE97F7A95F49DB /* DateInRegion+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FFA4FA50ED8B7EB265203AB58A5429 /* DateInRegion+Create.swift */; };
+		95A235C65438729C80A8D32C1B03361E /* GroupElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A40A970A559F23FBA54E63EC57D05 /* GroupElement.swift */; };
 		95FCA1C4E626F70924D111DA2609D2D1 /* NSBezierPath+CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FC2A5269DCF782197B6CA0F1162AC /* NSBezierPath+CrossPlatform.swift */; };
 		9707A3D6C72179DF7BE18A4EE3C88F4E /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1B9B01701722890D38A7FC644508E /* SVGView.swift */; };
 		9766DF1967D193B1EA3B266C25814EE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		976D8FDC460439007E79F43A67A493A8 /* MurmurHash-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E169182A3489AA546EAE72D692C9E84D /* MurmurHash-Swift-dummy.m */; };
 		98B1981D77B2DC0B50356EAC116CFF94 /* SwiftSVG-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD439044A197FF3FE17E81E7CC5B34F /* SwiftSVG-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99A0535E10E77F5CA2690CFD1197CE44 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB87418CDDC729DB63674D73FEEA86D /* Bundle+Extensions.swift */; };
 		99EF0E3EC03BCFC297DF399105502FDB /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B78C373CE927B69C84B76362943C95 /* Stylable.swift */; };
 		99F35D362CDAA3F01D59E05FAB02907D /* Strideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9452038BEECDFB92DB8A623E15BCF /* Strideable.swift */; };
 		9A0E47682B59A3B119C23F4EFA6E271F /* Scalar+FromByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41E08DE255D83E1C5FD4936D6 /* Scalar+FromByteArray.swift */; };
 		9A9D956F06ED090E30A48ACF6A8E65C4 /* SVGCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0156AEAE40EA6A17B3003A4AAFACFDA /* SVGCircle.swift */; };
 		9B1D8A7798D8A6F518FC9AF9725431D0 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363AE391ECD26419A6C9D4B53D00FCCD /* URLConvertible+URLRequestConvertible.swift */; };
-		9CD9E303D5043F5A065D904EAE4A519B /* UrsusEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE2AD45A5A2AB4CF7ACF63A510649A /* UrsusEncoder.swift */; };
+		9CD9E303D5043F5A065D904EAE4A519B /* UrsusEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B34BF19989E94DC821C84B8189EBCB /* UrsusEncoder.swift */; };
 		9D967308ACAC7A1083969A17DA370F66 /* SVGShapeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FC2F2987FAE8572767E0A373D1DBD /* SVGShapeElement.swift */; };
 		9EC4DC3F4A764364051BE6DB7FD72161 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
-		9F2EDA6E1E76EBAA16B3D1075074E8EF /* index.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC52B68FA34EF972D86B38F2336E479 /* index.json */; };
 		9F7A4F9069B21B086E4C0B5C48027898 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		9FED70D1E1FBFB80E974E999EF732258 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474AC6BC4C47BB33E09C2D2A8869A47E /* RetryPolicy.swift */; };
 		A1A70911B4BB0636F75A1897CB2447B1 /* NetworkActivityLogMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF396C467BC4A2300DC679986EF0FCF /* NetworkActivityLogMode.swift */; };
-		A22ABB2F5A8C2EED50CD9C5D0F2EFEB5 /* UrsusSigil-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FC510A0A8C7D78234B126F47A410B3 /* UrsusSigil-dummy.m */; };
 		A2B9ED2191B47DE2B3D5F357B14D838F /* CALayer+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD677E2684FACEB5D65B9EEBAC075D27 /* CALayer+SVG.swift */; };
 		A3FE64F1CDE83839169A8497E2BBA303 /* NSXMLSVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D0E8C9466C406B5AA2B11D6C9A742 /* NSXMLSVGParser.swift */; };
-		A5B75B0A9632023F089D990BDF3D4262 /* PokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30768858DE5BE5AEA33D511E6658A116 /* PokeResponse.swift */; };
+		A5B75B0A9632023F089D990BDF3D4262 /* PokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B9FEF4037D2DD7F193DA467CF7D08 /* PokeResponse.swift */; };
 		A62A4B9C7489986A8CD23787856B6A1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		A6577E273761F4946B31D6FF92D78A40 /* SVGParserSupportedElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7132BE6014DB4B42390149D6720E83 /* SVGParserSupportedElements.swift */; };
-		A69D91087627E2F62B32DF1F5C03956D /* QuitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DF421501B13F6919BAE220A659A33 /* QuitResponse.swift */; };
+		A69D91087627E2F62B32DF1F5C03956D /* QuitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8A4549AEE40C415FA9B11A20CCF82F /* QuitResponse.swift */; };
 		A738C2A39C0150BBA7EA5EC19B95F03E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F88D7D0901940ADF6D9740355BE59FE /* CFNetwork.framework */; };
+		A847BFA46004A0FD09C6F483DB4AAE36 /* Sigil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294451EC09007F9C84ED22C4C645D640 /* Sigil.swift */; };
 		A9E8F15FD1CF5ED960B637D688A63DDA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B284370647BB15F47070ABF0D679A /* Stack.swift */; };
+		AA653059ADDB6B55689FDAAB52262084 /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDCE3B1813218EC39234E388A5CDCD4 /* SwiftSVG.framework */; };
 		ABA85887A41495358C83CE3F3030EDEA /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B9B0EF3EAF26086860299F09831CE /* CachedResponseHandler.swift */; };
 		AC07823B941A20C4922DE7C88F3570DE /* SVGContainerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5AF7419371D03A8DC3206B4E7103A7 /* SVGContainerElement.swift */; };
 		AC4E061C6A2D21210122B471D8BCC81E /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225454B07C01812A671B41A472D44CA6 /* Random.swift */; };
 		AC7DBF3AD44B3E7644068E6F09F9EBF2 /* BigUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D476B5625A2AD5551FF5B1422847CE7 /* BigUInt.swift */; };
 		AF24D9B52BF1DEA3111A00651265E016 /* Formatter+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185420ED816754F81298919B55B0A1A /* Formatter+Protocols.swift */; };
 		B0A6A57A2E8CA1E4BB466357A82DB9D7 /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B56D42B3340B295C81C885D054393 /* DateInRegion.swift */; };
-		B2691C6D12E78144552236BE705A76B3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F96B4FF40D2D6E4C72223008F49E63 /* String+Extensions.swift */; };
+		B147B3E1C6FCBE1404BD6F14E4CE3755 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D225817FC5048A54F9584D3258EA7C /* Symbol.swift */; };
+		B2691C6D12E78144552236BE705A76B3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43402780C050CB4177C3D9A70C1C8598 /* String+Extensions.swift */; };
 		B3A384A0CD6468AE2808DB582F3EAC2E /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697A9AAA10BEFA68F7D407350F4CD666 /* CrossPlatform.swift */; };
 		B41D94BED7BD2B2728C80F0479BFAFBA /* Date+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA41709399C4E347491EA41D44CD6157 /* Date+Math.swift */; };
 		B8EADFF26F30B2D18255DC6292042EBB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF11E9349809CA4EBFF726E71A55AE2 /* Alamofire.framework */; };
-		B92D0F0784D4EE9A4827905B96206E54 /* PhoneticBasePrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA94BFE208741490659124E63542A34 /* PhoneticBasePrefix.swift */; };
+		B92D0F0784D4EE9A4827905B96206E54 /* PhoneticBasePrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB39579B8D282175ECE2CCA6FBB14BE /* PhoneticBasePrefix.swift */; };
 		BAA052C302D45F8DAB72606E997CAD69 /* Subtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BCE2ED44E4C73AFF601FFE481CCFC6 /* Subtraction.swift */; };
 		BB6CDBCD56FE7AD6B053C4A572B79F39 /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615B651D42043B7F2338C56A4ACC09E /* Dictionary+JSON.swift */; };
-		BBC5B60539075E31C87B0E6883DDAA66 /* Sigil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B041C5D30E061EAE5353E77E743157 /* Sigil.swift */; };
 		BC78D21F69A5B1670EA837C0A5F6390D /* BinaryFloatingPoint+ParseLengthString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7103E7DB0AF81F7461768ABD3484570F /* BinaryFloatingPoint+ParseLengthString.swift */; };
-		BD0657A308A51FA5853D9070C686BA19 /* URLSessionConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29E4A044AE6BC35957093685041C69 /* URLSessionConfiguration+Extensions.swift */; };
+		BD0657A308A51FA5853D9070C686BA19 /* URLSessionConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7938A9EA9F20033D8032AE9907824 /* URLSessionConfiguration+Extensions.swift */; };
 		BD2F9C317AE69C85ACB02F0D5989C5FC /* TimePeriodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE0677093CA423C834287213BFFD9A /* TimePeriodProtocol.swift */; };
 		BD5AEAE5C754E31177ACF6CE6BF56E96 /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4873CF88BFE71FBEF5BEA04BEA02BD8 /* String+Subscript.swift */; };
 		BD61DD79F86B26BD7DCC9A19C151476F /* SVGEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3864BA376E5F86DF1AA9B2A25B5F482 /* SVGEllipse.swift */; };
@@ -209,6 +218,7 @@
 		C1F1DB6A9CBDE584D09BA1613AAD4F9D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C026662C9FBBDD3C1048BA22FAFC8 /* Alamofire.swift */; };
 		C273B9C191667BC163803D06184B08E9 /* MurmurHash3Tail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602DC4810D7B8503F22E04C0970DCA4F /* MurmurHash3Tail.swift */; };
 		C52BC2E7DD872295FB91B69ACAB6F95D /* AlamofireNetworkActivityIndicator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97A7581582EE1E07EAE527C5EE37418C /* AlamofireNetworkActivityIndicator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5CCBF21EF46D7DF699BB60C8F1A9D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		C61CF6456D99FE9DF78D9CCD6DED8D8B /* SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C75E78D503812F00D2F570542E98040 /* SwiftDate.swift */; };
 		C6D5A4B4028B2C43380C9FA58BD5C8CA /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF188992A246F629F0BFB74BF716AE5F /* Alamofire-dummy.m */; };
 		C85836F46724931F1392C52C7981851D /* AlamofireNetworkActivityIndicator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59BA29D6D7DD455BC62537AE5466BF /* AlamofireNetworkActivityIndicator-dummy.m */; };
@@ -222,9 +232,10 @@
 		D03F1F02DE8606E6057D57866611BEBF /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECA9341C9C534A149C8AF508DE3986 /* MultipartUpload.swift */; };
 		D10A1A0A15865E50C5BA2CA55ABB8AAC /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEDBC8D5611669ECBCCB16FC0DF1EB /* Date+Components.swift */; };
 		D14066FAE94E304798E43651E5886D13 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B2593E6AFE3B6733FBEA5CC34EFA1B /* ParameterEncoding.swift */; };
-		D233E5D9E89E33CEFEB61A4B8ED7257A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5FD51FEC0A76AF4B7CA95C989F79C6 /* Response.swift */; };
+		D233E5D9E89E33CEFEB61A4B8ED7257A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6F44C4C152D6BD2794CB20076C2024 /* Response.swift */; };
+		D2E55A64858C9DE91F5B6553347913DB /* RectElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62464E4E1A0A06EB1CBA5F32AB04982 /* RectElement.swift */; };
 		D31FC7FDD450C4CDD633ECBAD27C6221 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0CD4A0E92855715510347050F1158 /* URLEncodedFormEncoder.swift */; };
-		D37977823CBD115B72A8C6130D163ADA /* UUID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598C03C958258B9F3A258399AD4E2BF /* UUID+Extensions.swift */; };
+		D37977823CBD115B72A8C6130D163ADA /* UUID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148EAB284CFE1D8C4787A22D4C586CAD /* UUID+Extensions.swift */; };
 		D3A85838CBDD5655BE4558D57C7F053B /* String+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423D931BB5C2A3D5229C66E9228E0C6 /* String+Parser.swift */; };
 		D3B55EC0016ABBC02EB9376CFAFC7B41 /* SVGLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D32B21B0B22E2DF8C179524D175D7CE /* SVGLine.swift */; };
 		D3BC8F27EF2619B62BB3CB77A28B572C /* MurmurHash3_x64_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FF61907CD2D7F9EEEBF43FB1907FB /* MurmurHash3_x64_128.swift */; };
@@ -235,7 +246,7 @@
 		D645B97EEDCC3957BFA8C4B83605C3E8 /* NetworkActivityLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942442FF2E6C7A1CDBEDA11A286F90E /* NetworkActivityLogLevel.swift */; };
 		D6A5E0A7D3A764B88F95358826689C28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		D8ABDEA1D615E22488ABB57529375E7B /* Date+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6151D0DC2C86F7F95C08D4A18D553 /* Date+Create.swift */; };
-		D9C52270AF90AEB50F0039D8BB39DFAF /* PhoneticBaseSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB955FB98E16DA2C5549C1A304512AE6 /* PhoneticBaseSyllable.swift */; };
+		D9C52270AF90AEB50F0039D8BB39DFAF /* PhoneticBaseSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEB89CC3D05B0E77C96FE59B26EF7C /* PhoneticBaseSyllable.swift */; };
 		DA5830F8370A4DCA48A3EB4EA3DD2E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		DBE9A6D9CB82D8605F4C25B9426B1557 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55117F88184F715DD0E37DDCE80E8 /* Codable.swift */; };
 		DC43473AE241365B8666AF2D2A6D9B96 /* NetworkActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F579B2EB6259176A4ACD56950656A6 /* NetworkActivityLog.swift */; };
@@ -246,6 +257,7 @@
 		E1318F32BB098EFC1AFE64F9A0E9725F /* DateRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56D3432B0023C4533033E961C92718 /* DateRepresentable.swift */; };
 		E559A613C33A78DDCA287A33229B86AA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE46891AA3C48B116135E511EFA665A1 /* Common.swift */; };
 		E7037403CB88BEF0647F1B233C758105 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
+		E7AB348247320C522A8314693AFF5710 /* UrsusAtom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980A011CDBE0E7AC365BD1B686197374 /* UrsusAtom.framework */; };
 		E8ABBB87CFEBE721FC2D14B71A719BC2 /* String Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE81C22685FC013CD5AE69AC7BE7192 /* String Conversion.swift */; };
 		E93CF504980B3D653BB4530E7F98E9F6 /* Prime Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75812A6F81405B1BE5EEF8C3DB15105 /* Prime Test.swift */; };
 		EAEC62731E421E8C8BE928032193B9EB /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE15C87E8CABFF159761C59BB5BEA4C8 /* Print.swift */; };
@@ -254,12 +266,10 @@
 		EDC93BD7B9262119AE145E4C7A9D0212 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EC80937D11B6C3FE88183016E5A4D /* Request.swift */; };
 		EEADFC5C1C5EC6E3E20506B8E069931D /* KeychainAccess-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F69B3A94E24AA8DC8540900753A3F370 /* KeychainAccess-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEFBB9B0DDD2FADB095080F3B644303E /* ISOParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0C830A3762DFA25D676B6797EBBF3 /* ISOParser.swift */; };
-		EF65667787F9916FE4C3F74A7DA6759A /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99FD31354EAAA69B41B89141B0E04D /* Bundle+Extensions.swift */; };
 		F03F38CC113EE98E70C495A79AC68B7E /* ISOFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70ADDF9303C9FED142B2C46D2F1660 /* ISOFormatter.swift */; };
 		F05946185B7A37653C0BA3149687EDB3 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC961201E0E539ACA0B14E7D188713C1 /* DispatchQueue+Extensions.swift */; };
 		F0C0274D3FB9D20A4232B5BE8DAE532F /* Strokable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00893AD3697187EBB7E55A766964 /* Strokable.swift */; };
 		F0F3224FF592F9BA2A044A2FC2BD4CCD /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6705E15C9CB2ADBAB20DF46BF6B7C957 /* Validation.swift */; };
-		F10FD14FC912B6BABF901A1804F5AC99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		F13925E2206A7647AC326ECFA6ED2856 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5756FEC7A5D2E3398F1D19B0BFA964 /* GCD.swift */; };
 		F3A44066BC57A48842378DAF2B011EC7 /* langs in Resources */ = {isa = PBXBuildFile; fileRef = 42087FDD68C4464D4FAA1CC4AC7FFC07 /* langs */; };
 		F4771B5E9728FE589F1888C720412D09 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B2BA69C5D42D8B6A4682291757649 /* Commons.swift */; };
@@ -267,11 +277,10 @@
 		F6B16DC8CADA07287C6A372AC8AD787C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */; };
 		F705950FA31C2729E1112069D577C1A2 /* SwiftDate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D0798931714D5F0EBF64A4C024FC7E /* SwiftDate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F70EF854395CDE981A8336E4FF0310FE /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50BE4B7378F48E0883D5AED6805B4D /* URLSessionConfiguration+Alamofire.swift */; };
-		F8A0E9E539D28C323AFE66CFE1161601 /* Aura.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4705D82885F05272ED636071AEFEC93 /* Aura.swift */; };
+		F8A0E9E539D28C323AFE66CFE1161601 /* Aura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A06612D3A3DF633F625E3E94953AC /* Aura.swift */; };
 		F8B2D027C1C322893DB3B82870D42306 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5B886CD905D67C6018821EF23B102 /* Action.swift */; };
 		FC29D0FC49F95670787A0ECBBF10778C /* TypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064AF9BBC3C8B5B10A2FE161F77A180 /* TypeHelper.swift */; };
-		FC9DA0BE4CFA7CE10D338E972304EAD4 /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDCE3B1813218EC39234E388A5CDCD4 /* SwiftSVG.framework */; };
-		FD00726E9F3B2D96BB749AAAFED9BE64 /* SubscribeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620477885243F88141485FEAA8E3462 /* SubscribeError.swift */; };
+		FD00726E9F3B2D96BB749AAAFED9BE64 /* SubscribeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96D9CBF60E783A5848836C8E8BD77B /* SubscribeError.swift */; };
 		FF274B739B932D5475DCBE355567F21E /* Dictionary+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F5761BF3B435DDCA7E95797008DDC4 /* Dictionary+Add.swift */; };
 		FFF7E224F5F3094210837EC8C7FE4960 /* BigInt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED269F537C1B16D1B88032C99A0DCF7 /* BigInt-dummy.m */; };
 /* End PBXBuildFile section */
@@ -283,6 +292,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
+		};
+		0AC703AC9ED2F837A37AEC5BF9045279 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2349E173F60A2065FC65E52DD215DFF0;
+			remoteInfo = SwiftSVG;
 		};
 		0AEF50305B07480222AA5FE848095184 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -340,13 +356,6 @@
 			remoteGlobalIDString = 3D8EA5BD8126DF56C564CDD8B8C585D0;
 			remoteInfo = ReSwift;
 		};
-		4999F51CAFB4F745BCE083DD83C37592 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2349E173F60A2065FC65E52DD215DFF0;
-			remoteInfo = SwiftSVG;
-		};
 		5B00512D55116DE70866D8D2D7556719 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -360,13 +369,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2E7CCD80317E923032BB5D175884AB06;
 			remoteInfo = UrsusSigil;
-		};
-		658B3B75B10426EBC3D09D18BB0ACE82 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 135CD96EC40EEFAF00D8705597A19B65;
-			remoteInfo = UrsusAtom;
 		};
 		ABDEDE094497D22CEF7B18694CEF233B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -402,6 +404,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
+		};
+		DFBAFA7435CFD3086159BA6674A768C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 135CD96EC40EEFAF00D8705597A19B65;
+			remoteInfo = UrsusAtom;
 		};
 		E4BF36CF9479E2EFE41ADA406CA99E33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -450,29 +459,28 @@
 /* Begin PBXFileReference section */
 		0083F3D3E092F58A438778F6E370A2B1 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C00F2CC79EBD97A58EC2C36F901D20 /* SVGGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGGroup.swift; path = SwiftSVG/SVG/Elements/SVGGroup.swift; sourceTree = "<group>"; };
-		00E077609923BDA84C9F922F77F71AE2 /* Ursus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ursus-dummy.m"; sourceTree = "<group>"; };
+		00C03E001B619F752EA6C118437A41CA /* UrsusAtom-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UrsusAtom-Info.plist"; sourceTree = "<group>"; };
 		01CE55070225DD8F7CA2C4EB8FEDE0EC /* Pods-Ursus Chat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ursus Chat-umbrella.h"; sourceTree = "<group>"; };
 		025681C440DF94F90469E4818FEAC172 /* Comparable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Comparable.swift; path = Sources/Comparable.swift; sourceTree = "<group>"; };
 		031FE57D14A157874D58C0AFAF391761 /* Store.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Store.swift; path = ReSwift/CoreTypes/Store.swift; sourceTree = "<group>"; };
 		034F9C5D58B3CD1B9F6C696657E614DE /* TimePeriodGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodGroup.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodGroup.swift; sourceTree = "<group>"; };
 		039560F7C59341CE268D952B80281725 /* Transformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transformable.swift; path = SwiftSVG/SVG/Attributes/Transformable.swift; sourceTree = "<group>"; };
-		03B041C5D30E061EAE5353E77E743157 /* Sigil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sigil.swift; path = "Ursus Sigil/Sigil.swift"; sourceTree = "<group>"; };
 		03BFA23293A8D0A2704F950124AA8B41 /* Integer Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Integer Conversion.swift"; path = "Sources/Integer Conversion.swift"; sourceTree = "<group>"; };
 		040B2BA69C5D42D8B6A4682291757649 /* Commons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Commons.swift; path = Sources/SwiftDate/Supports/Commons.swift; sourceTree = "<group>"; };
-		042501D16A2C5BF18D3597DD665DD73E /* PokeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeRequest.swift; sourceTree = "<group>"; };
 		042FC2F2987FAE8572767E0A373D1DBD /* SVGShapeElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGShapeElement.swift; path = SwiftSVG/SVG/Elements/SVGShapeElement.swift; sourceTree = "<group>"; };
 		04D5F607AC58097CA4C31EB5A84F10BF /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		04F9452038BEECDFB92DB8A623E15BCF /* Strideable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Strideable.swift; path = Sources/Strideable.swift; sourceTree = "<group>"; };
+		05B6498401A5A857E0CCFDEDE58FC17F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		06C850DFB715A2FA99B9EC9061C35B6C /* ReSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReSwift-Info.plist"; sourceTree = "<group>"; };
 		077C41F72BB9E3D927E5155D92A93DD8 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		083B7B9C8B33B0D35FC0F706D7A1D18A /* Ursus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ursus.swift; path = Ursus/Ursus.swift; sourceTree = "<group>"; };
 		091FB5CBD341402C3969C1330A0AC88F /* Parity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Parity.framework; path = Parity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5AF7419371D03A8DC3206B4E7103A7 /* SVGContainerElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGContainerElement.swift; path = SwiftSVG/SVG/Elements/SVGContainerElement.swift; sourceTree = "<group>"; };
 		0AF11E9349809CA4EBFF726E71A55AE2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE08AEC9077BD3FF11BCB19A2B18262 /* MurmurHash-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MurmurHash-Swift-umbrella.h"; sourceTree = "<group>"; };
 		0C1A2B35197D79B7767B7FB31EA6392D /* MurmurHash-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "MurmurHash-Swift.modulemap"; sourceTree = "<group>"; };
-		0C29E4A044AE6BC35957093685041C69 /* URLSessionConfiguration+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+Extensions.swift"; sourceTree = "<group>"; };
 		0C3466E6A2C520120691D76484D229E7 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
-		0CEFDF153FD5FA2F108F7F7667F62884 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0DB1ABE5D0D32F08D068A6FC9E9A2D8F /* PokeEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeEvent.swift; sourceTree = "<group>"; };
 		0DD79EC55F957654A5BBF8E30ED907BA /* Pods-Ursus Chat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ursus Chat-acknowledgements.plist"; sourceTree = "<group>"; };
 		0ED269F537C1B16D1B88032C99A0DCF7 /* BigInt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BigInt-dummy.m"; sourceTree = "<group>"; };
 		100DAE70123D78201C42E2967738D80D /* UrsusAtom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UrsusAtom.framework; path = UrsusAtom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,21 +488,22 @@
 		10B7C1045E4E521ACD84069EE8638BB3 /* BigInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BigInt.swift; path = Sources/BigInt.swift; sourceTree = "<group>"; };
 		1207F1C0EA6D7E6213B1FFCAB5BD94F4 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		13E216D35592123B3C8F0197C255B5CD /* MurmurHash3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MurmurHash3.swift; path = Sources/MurmurHash/MurmurHash3.swift; sourceTree = "<group>"; };
+		148EAB284CFE1D8C4787A22D4C586CAD /* UUID+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
 		188A815123CDFCC5F8D10FAF045C8943 /* AlamofireLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireLogger-umbrella.h"; sourceTree = "<group>"; };
-		18FC510A0A8C7D78234B126F47A410B3 /* UrsusSigil-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UrsusSigil-dummy.m"; sourceTree = "<group>"; };
 		190C026662C9FBBDD3C1048BA22FAFC8 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		1A59BA29D6D7DD455BC62537AE5466BF /* AlamofireNetworkActivityIndicator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireNetworkActivityIndicator-dummy.m"; sourceTree = "<group>"; };
 		1A7E9408EDFE64BFDA67AF304CCC7B91 /* TimePeriodChain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodChain.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodChain.swift; sourceTree = "<group>"; };
-		1AA56A19DD896356E0043F75E6129242 /* Ursus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ursus.xcconfig; sourceTree = "<group>"; };
-		1AF2954451BD50D047A820736E52EA82 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		1B45BB4E35C7D79193F791327BC9992A /* AlamofireLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireLogger-prefix.pch"; sourceTree = "<group>"; };
 		1B87AB418AB8535398D6CCD1CB6AD65E /* MurmurHash3_x86_32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MurmurHash3_x86_32.swift; path = Sources/MurmurHash/MurmurHash3_x86_32.swift; sourceTree = "<group>"; };
 		1BEAD4FBE87A95C2A9F718F437091FE2 /* KeychainAccess-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-prefix.pch"; sourceTree = "<group>"; };
 		1C7F66E9F33F909BF37D8B28B3BB8D43 /* ReSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-umbrella.h"; sourceTree = "<group>"; };
+		1CF0944A7506D0804F33A958F417B063 /* LineElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LineElement.swift; sourceTree = "<group>"; };
 		1E93F44E849D1C6EF28E769795FD9295 /* SwiftDate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftDate.modulemap; sourceTree = "<group>"; };
 		1F4E1384F45F8F75BA5FDA79E7AA097B /* PathDLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathDLexer.swift; path = SwiftSVG/SVG/Iterators/PathDLexer.swift; sourceTree = "<group>"; };
 		1F88D7D0901940ADF6D9740355BE59FE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		1FC555CA05780B185D3784455B7C5DEC /* CircleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CircleElement.swift; sourceTree = "<group>"; };
 		20027626939FFE56B87E769ECB8B2697 /* Exponentiation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Exponentiation.swift; path = Sources/Exponentiation.swift; sourceTree = "<group>"; };
+		20E3DD6193A875D8BEFE863FCB5F6AEF /* UrsusSigil-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusSigil-prefix.pch"; sourceTree = "<group>"; };
 		2177643F889530E564465BCDB386F3D5 /* Pods-Ursus Chat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ursus Chat-acknowledgements.markdown"; sourceTree = "<group>"; };
 		225454B07C01812A671B41A472D44CA6 /* Random.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Random.swift; path = Sources/Random.swift; sourceTree = "<group>"; };
 		235ED9E3D2DC94B68857BA4376B89F16 /* Parity-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parity-umbrella.h"; sourceTree = "<group>"; };
@@ -503,34 +512,35 @@
 		248E1F40A149A31B799BF4457E62176A /* AlamofireLogger-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlamofireLogger-Info.plist"; sourceTree = "<group>"; };
 		253E8A6A2A37D85B250649E9553EE137 /* Locales.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locales.swift; path = Sources/SwiftDate/Supports/Locales.swift; sourceTree = "<group>"; };
 		26BFEDD209703911E3B33E99E36EFA14 /* BigInt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BigInt-Info.plist"; sourceTree = "<group>"; };
-		273130EAD103D563FF3AA710F3554503 /* EventSourceMessageField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceMessageField.swift; path = "Ursus Event Source/EventSourceMessageField.swift"; sourceTree = "<group>"; };
+		27A317FFFD43B2838E60E839C4339399 /* UrsusSigil.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UrsusSigil.modulemap; sourceTree = "<group>"; };
 		288001FBE3E8F9391248C5A42CB6678C /* Parity.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parity.xcconfig; sourceTree = "<group>"; };
 		28806E983857A55D35313E967D7C6BDF /* MurmurHash_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MurmurHash_Swift.framework; path = "MurmurHash-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		293A0F308FDB8411857A2C5F40369005 /* Ursus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ursus-prefix.pch"; sourceTree = "<group>"; };
-		2C6E63D5C7414DC3883F93FC8A313464 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		294451EC09007F9C84ED22C4C645D640 /* Sigil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sigil.swift; path = "Ursus Sigil/Sigil.swift"; sourceTree = "<group>"; };
+		2CE14740EEA99397F2E16311B8EE32F9 /* ElementAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ElementAttributes.swift; sourceTree = "<group>"; };
 		2DCDF5E12279096CC454B457DC296354 /* Unown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Unown.swift; path = SwiftSVG/SVG/Helpers/Unown.swift; sourceTree = "<group>"; };
 		2EF396C467BC4A2300DC679986EF0FCF /* NetworkActivityLogMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityLogMode.swift; path = Sources/NetworkActivityLogMode.swift; sourceTree = "<group>"; };
 		2F5A4B38551901469DDD8BC7C3CCE593 /* KeychainAccess-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainAccess-dummy.m"; sourceTree = "<group>"; };
-		30768858DE5BE5AEA33D511E6658A116 /* PokeResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeResponse.swift; sourceTree = "<group>"; };
+		303EC07A9189CEA10B87081D5E46EB5F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		31C12AA2B2E65884F6DFE615B502DBF6 /* SwiftSVG.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSVG.xcconfig; sourceTree = "<group>"; };
-		32106CDADD82F6E623DB7DB867E4DDD0 /* Ursus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Ursus.modulemap; sourceTree = "<group>"; };
 		3252FE0489AEFA94259F3BCFD7DACCD5 /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
 		330C998243491E525AFF85583B1A3D32 /* MurmurHash-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MurmurHash-Swift-prefix.pch"; sourceTree = "<group>"; };
 		336E4BBB35DAA78E37D9DBD746B76B37 /* Data+CacheKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+CacheKey.swift"; path = "SwiftSVG/SVG/Helpers/Data+CacheKey.swift"; sourceTree = "<group>"; };
+		33DDA6A0BD0C434817774689133CC347 /* UrsusApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrsusApp.swift; path = Ursus/UrsusApp.swift; sourceTree = "<group>"; };
 		33F5B886CD905D67C6018821EF23B102 /* Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ReSwift/CoreTypes/Action.swift; sourceTree = "<group>"; };
 		3423D931BB5C2A3D5229C66E9228E0C6 /* String+Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Parser.swift"; path = "Sources/SwiftDate/Foundation+Extras/String+Parser.swift"; sourceTree = "<group>"; };
 		352C01B32A8642AF71C72E72954CDC8D /* MurmurHash_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36306B719C09BCD5ADA2F5242ACDF8C2 /* UIView+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+SVG.swift"; path = "SwiftSVG/SVG Extensions/UIView+SVG.swift"; sourceTree = "<group>"; };
 		363AE391ECD26419A6C9D4B53D00FCCD /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
-		38F63609C3A05F362D2218E9F73F6445 /* EventSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSource.swift; path = "Ursus Event Source/EventSource.swift"; sourceTree = "<group>"; };
+		3734FD58312AFBEA2FC688F413D3395D /* PatP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatP.swift; path = "Ursus Atom/PatP.swift"; sourceTree = "<group>"; };
+		38503152E855397687EEA26571C2B105 /* PhoneticBaseObfuscator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseObfuscator.swift; path = "Ursus Phonetic Base/PhoneticBaseObfuscator.swift"; sourceTree = "<group>"; };
 		3942442FF2E6C7A1CDBEDA11A286F90E /* NetworkActivityLogLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityLogLevel.swift; path = Sources/NetworkActivityLogLevel.swift; sourceTree = "<group>"; };
 		3AF54718C88A7180A82389E9A68D67FD /* Assertions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Assertions.swift; path = ReSwift/Utils/Assertions.swift; sourceTree = "<group>"; };
 		3B5E07A5F330956B65D83D398A8A381C /* RelativeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatter.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatter.swift; sourceTree = "<group>"; };
-		3C36864938AD882B16FBCFF9BE1D00DD /* SubscribeEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeEvent.swift; sourceTree = "<group>"; };
-		3C99FD31354EAAA69B41B89141B0E04D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		3CF0C830A3762DFA25D676B6797EBBF3 /* ISOParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOParser.swift; path = Sources/SwiftDate/Formatters/ISOParser.swift; sourceTree = "<group>"; };
 		3D0B284370647BB15F47070ABF0D679A /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = SwiftSVG/SVG/Helpers/Stack.swift; sourceTree = "<group>"; };
 		3D476B5625A2AD5551FF5B1422847CE7 /* BigUInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BigUInt.swift; path = Sources/BigUInt.swift; sourceTree = "<group>"; };
+		3DCA3D6D21C5495D990A36E4AD307B69 /* UrsusSigil.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UrsusSigil.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3DFFD446A702F2BDA83AB0B095AE446B /* CGContext+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGContext+Extensions.swift"; sourceTree = "<group>"; };
 		3E69DCBEC9991E5AE5130A0794A56455 /* Parity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
 		3E6DCFE20DE7D07706B1EAE67E47C46E /* ReSwift_Thunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ReSwift_Thunk.h; path = "ReSwift-Thunk/ReSwift_Thunk.h"; sourceTree = "<group>"; };
 		3E7132BE6014DB4B42390149D6720E83 /* SVGParserSupportedElements.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGParserSupportedElements.swift; path = SwiftSVG/SVG/Parser/SVGParserSupportedElements.swift; sourceTree = "<group>"; };
@@ -538,23 +548,22 @@
 		40B78C373CE927B69C84B76362943C95 /* Stylable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stylable.swift; path = SwiftSVG/SVG/Attributes/Stylable.swift; sourceTree = "<group>"; };
 		416E7AEF96E8736ECEF4103E48EFBE8D /* ReSwiftThunk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReSwiftThunk.modulemap; sourceTree = "<group>"; };
 		42087FDD68C4464D4FAA1CC4AC7FFC07 /* langs */ = {isa = PBXFileReference; includeInIndex = 1; name = langs; path = Sources/SwiftDate/Formatters/RelativeFormatter/langs; sourceTree = "<group>"; };
-		423BA2EEA81CB95CF7A2A2D1CE1666CE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		42A019E1DFA628ED440EB68134F8647B /* BigInt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BigInt-umbrella.h"; sourceTree = "<group>"; };
 		42FFA4FA50ED8B7EB265203AB58A5429 /* DateInRegion+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Create.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Create.swift"; sourceTree = "<group>"; };
+		43402780C050CB4177C3D9A70C1C8598 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		43962C91D9A2E3D1FA1781BA80CDB6C2 /* Ursus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ursus.xcconfig; sourceTree = "<group>"; };
 		44726CB7E78496B3D53C3881BD804CFB /* Thunk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thunk.swift; path = "ReSwift-Thunk/Thunk.swift"; sourceTree = "<group>"; };
 		44D21AC95F2488E8C9E992B2FC1AF681 /* Data Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data Conversion.swift"; path = "Sources/Data Conversion.swift"; sourceTree = "<group>"; };
-		4598C03C958258B9F3A258399AD4E2BF /* UUID+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
+		4586B526CFC17200B755F474979884D4 /* Ursus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ursus-umbrella.h"; sourceTree = "<group>"; };
 		45D0798931714D5F0EBF64A4C024FC7E /* SwiftDate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-umbrella.h"; sourceTree = "<group>"; };
 		45F579B2EB6259176A4ACD56950656A6 /* NetworkActivityLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityLog.swift; path = Sources/NetworkActivityLog.swift; sourceTree = "<group>"; };
 		4656F0DB8D6849444720CEBC9FAFCFFE /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		46B071C3173810684EB0D7D7FACF8A38 /* UrsusSigil-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusSigil-umbrella.h"; sourceTree = "<group>"; };
 		474AC6BC4C47BB33E09C2D2A8869A47E /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		479409E30790C62C94F462B434329E09 /* TimePeriod+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimePeriod+Support.swift"; path = "Sources/SwiftDate/TimePeriod/TimePeriod+Support.swift"; sourceTree = "<group>"; };
-		4807D095F0DE939EA92C2F2D5D564DAA /* SigilView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SigilView.swift; path = "Ursus Sigil/SigilView.swift"; sourceTree = "<group>"; };
-		48BF655CE0AA081B9A6C47D4FE331754 /* UrsusSigil-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusSigil-umbrella.h"; sourceTree = "<group>"; };
+		47E84F02B1A0CB2CD5CE1E5898B2A807 /* PathElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PathElement.swift; sourceTree = "<group>"; };
 		4945A4A8D2A21E2C28A2DE7F79F70D73 /* CAShapeLayer+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAShapeLayer+SVG.swift"; path = "SwiftSVG/SVG Extensions/CAShapeLayer+SVG.swift"; sourceTree = "<group>"; };
 		495B56D42B3340B295C81C885D054393 /* DateInRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInRegion.swift; path = Sources/SwiftDate/DateInRegion/DateInRegion.swift; sourceTree = "<group>"; };
-		4A24AB0A0327D8C288166C29C75907EB /* UrsusAtom-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusAtom-prefix.pch"; sourceTree = "<group>"; };
-		4A3316DCDC72312C0111E7EC29D85C27 /* UrsusApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrsusApp.swift; path = Ursus/UrsusApp.swift; sourceTree = "<group>"; };
 		4A56D3432B0023C4533033E961C92718 /* DateRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRepresentable.swift; path = Sources/SwiftDate/DateRepresentable.swift; sourceTree = "<group>"; };
 		4AFD6B7EDBD26A0876077387271B31DE /* Pods_Ursus_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Ursus_Chat.framework; path = "Pods-Ursus Chat.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0DEC759EB1EFA57CA639A0B2E5C0FC /* Identifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifiable.swift; path = SwiftSVG/SVG/Attributes/Identifiable.swift; sourceTree = "<group>"; };
@@ -568,34 +577,30 @@
 		51069A637B25DD9CA3566A2B002F7E13 /* AlamofireNetworkActivityIndicator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireNetworkActivityIndicator.xcconfig; sourceTree = "<group>"; };
 		514A76CAF6C6FCF583E3F2E46F505DB7 /* SVGPolyline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGPolyline.swift; path = SwiftSVG/SVG/Elements/SVGPolyline.swift; sourceTree = "<group>"; };
 		51731BC6D8C9B8E727B5A555952E3C58 /* AlamofireLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlamofireLogger.modulemap; sourceTree = "<group>"; };
-		523F58E733A1A35861567BD5243E3521 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5304C709279A55BFF8B99271386E0ED8 /* UrsusSigil.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UrsusSigil.xcconfig; sourceTree = "<group>"; };
 		530D21EC85A249737FFD8D9CBCE451A5 /* AlamofireLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireLogger.xcconfig; sourceTree = "<group>"; };
 		53C4EC720CB09236628393E03701F5F9 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		53F44A0E43512395DA41579B2E4C358C /* UrsusSigil-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UrsusSigil-Info.plist"; sourceTree = "<group>"; };
 		540EC80937D11B6C3FE88183016E5A4D /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		55D9E02884FBA0827B504626A41ECF3F /* UrsusAtom.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UrsusAtom.modulemap; sourceTree = "<group>"; };
+		547026394A9EEB9F0791B2AB5ED28FD0 /* EventSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSource.swift; path = "Ursus Event Source/EventSource.swift"; sourceTree = "<group>"; };
+		5502B290D02AF8F8D1EBE21F710C3FAB /* UrsusAtom.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UrsusAtom.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		55DE749E3C8672D01E270E75FF9E407D /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		5712138CE5CA14F0828315922E765496 /* ReSwiftThunk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwiftThunk-dummy.m"; sourceTree = "<group>"; };
-		571956041B69D5A5F2FE581012A3CF6B /* SubscribeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeRequest.swift; sourceTree = "<group>"; };
+		5741A771532803D17CE103CBF828A1E9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		58AE0544E0C381DDBD09356C357EC82B /* SwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftDate.framework; path = SwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		592518405736F2C30035581E1B2CF723 /* Ursus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Ursus.modulemap; sourceTree = "<group>"; };
 		5B8A767F3D161E0632A6EF477FEA19A1 /* Pods-Ursus Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ursus Chat.release.xcconfig"; sourceTree = "<group>"; };
 		5BFF2246446AB254E277B8CFC7003A1D /* SwiftDate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftDate-dummy.m"; sourceTree = "<group>"; };
 		5C8B0C0BB8F409521D05AF9F2D0352E2 /* MurmurHash-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MurmurHash-Swift.xcconfig"; sourceTree = "<group>"; };
 		5C9EE6C17B42E7FF1291CE9B24E531E0 /* KeychainAccess.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.xcconfig; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DC52B68FA34EF972D86B38F2336E479 /* index.json */ = {isa = PBXFileReference; includeInIndex = 1; name = index.json; path = "Ursus Sigil/Resources/index.json"; sourceTree = "<group>"; };
 		5E50BE4B7378F48E0883D5AED6805B4D /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		5F7FF61907CD2D7F9EEEBF43FB1907FB /* MurmurHash3_x64_128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MurmurHash3_x64_128.swift; path = Sources/MurmurHash/MurmurHash3_x64_128.swift; sourceTree = "<group>"; };
 		602DC4810D7B8503F22E04C0970DCA4F /* MurmurHash3Tail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MurmurHash3Tail.swift; path = Sources/MurmurHash/MurmurHash3Tail.swift; sourceTree = "<group>"; };
-		60EE2AD45A5A2AB4CF7ACF63A510649A /* UrsusEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UrsusEncoder.swift; sourceTree = "<group>"; };
 		6185420ED816754F81298919B55B0A1A /* Formatter+Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Formatter+Protocols.swift"; path = "Sources/SwiftDate/Formatters/Formatter+Protocols.swift"; sourceTree = "<group>"; };
 		61CA7C8654DC51066C4AB1476280619D /* Parity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parity-dummy.m"; sourceTree = "<group>"; };
 		62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSVG.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63A3811952F11094074828459BF48876 /* EventSourceMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceMessage.swift; path = "Ursus Event Source/EventSourceMessage.swift"; sourceTree = "<group>"; };
 		64795CB118B7FE65E139EDF2BA8D9F3B /* Date+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Compare.swift"; path = "Sources/SwiftDate/Date/Date+Compare.swift"; sourceTree = "<group>"; };
-		64A8FA7169CCE4B26A4725E01012BB80 /* UrsusCredentials.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrsusCredentials.swift; path = Ursus/UrsusCredentials.swift; sourceTree = "<group>"; };
 		655D3F7CC9403D9D94AED14418433714 /* Parity-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Parity-Info.plist"; sourceTree = "<group>"; };
-		670549BE3561FBA5070F924BE50B1A86 /* PokeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeError.swift; sourceTree = "<group>"; };
 		6705E15C9CB2ADBAB20DF46BF6B7C957 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		6736497FF39F2E9080F4BD09FE188432 /* AlamofireNetworkActivityIndicator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireNetworkActivityIndicator-prefix.pch"; sourceTree = "<group>"; };
 		68F1D2E7EE6D2679CC4D926B1BF71013 /* Multiplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multiplication.swift; path = Sources/Multiplication.swift; sourceTree = "<group>"; };
@@ -603,39 +608,40 @@
 		697A9AAA10BEFA68F7D407350F4CD666 /* CrossPlatform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossPlatform.swift; path = SwiftSVG/CrossPlatform.swift; sourceTree = "<group>"; };
 		69A1C6BE5E8EDA35C730B8EAA961C3B8 /* StoreSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreSubscriber.swift; path = ReSwift/CoreTypes/StoreSubscriber.swift; sourceTree = "<group>"; };
 		6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6CF43644677374DED89C269CAD3B8773 /* PatQ.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatQ.swift; path = "Ursus Atom/PatQ.swift"; sourceTree = "<group>"; };
 		6D32B21B0B22E2DF8C179524D175D7CE /* SVGLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGLine.swift; path = SwiftSVG/SVG/Elements/SVGLine.swift; sourceTree = "<group>"; };
 		6DD439044A197FF3FE17E81E7CC5B34F /* SwiftSVG-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSVG-umbrella.h"; sourceTree = "<group>"; };
+		6FC101F66E5C7A7FA81AF354A91913CC /* EventSourceError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceError.swift; path = "Ursus Event Source/EventSourceError.swift"; sourceTree = "<group>"; };
+		70D225817FC5048A54F9584D3258EA7C /* Symbol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		7103E7DB0AF81F7461768ABD3484570F /* BinaryFloatingPoint+ParseLengthString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BinaryFloatingPoint+ParseLengthString.swift"; path = "SwiftSVG/SVG/Helpers/BinaryFloatingPoint+ParseLengthString.swift"; sourceTree = "<group>"; };
 		712E3532462BA8C5EA92419EBB376645 /* String+Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Trim.swift"; path = "SwiftSVG/SVG/Helpers/String+Trim.swift"; sourceTree = "<group>"; };
-		729E55A7D422B6535A625DF870952ACA /* UrsusAtom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UrsusAtom.xcconfig; sourceTree = "<group>"; };
-		72DAD2AFC3079677A44C5AD773AC6FEA /* EventSourceError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceError.swift; path = "Ursus Event Source/EventSourceError.swift"; sourceTree = "<group>"; };
-		72F96B4FF40D2D6E4C72223008F49E63 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		73B2593E6AFE3B6733FBEA5CC34EFA1B /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		73ECA9341C9C534A149C8AF508DE3986 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		74BF1BDCE513D1E497E32CE50555F3AF /* Pods-Ursus Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ursus Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		767A06612D3A3DF633F625E3E94953AC /* Aura.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aura.swift; path = "Ursus Atom/Aura.swift"; sourceTree = "<group>"; };
 		76C407F1D811922059923D9B23F3914B /* RelativeFormatterLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatterLanguage.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatterLanguage.swift; sourceTree = "<group>"; };
 		77400CC15C345DB6540FE25A95DFB52D /* SVGElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGElement.swift; path = SwiftSVG/SVG/Elements/SVGElement.swift; sourceTree = "<group>"; };
 		775ED2D76836B7F5FC874F0200AFDAF3 /* SVGPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGPath.swift; path = SwiftSVG/SVG/Elements/SVGPath.swift; sourceTree = "<group>"; };
 		77CFF5BC89323B76E63C81D068F90B77 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
-		78A39D6780F78B95924E6CF7C551CF19 /* PhoneticBaseSuffix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseSuffix.swift; path = "Ursus Phonetic Base/PhoneticBaseSuffix.swift"; sourceTree = "<group>"; };
+		78149F0376D89CA61C6A65801B92AA35 /* UrsusDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UrsusDecoder.swift; sourceTree = "<group>"; };
+		78B5E266A548F21FC75A749B81273934 /* PokeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeError.swift; sourceTree = "<group>"; };
 		79A7AACD3E6B028F01437EF9C645FA37 /* DateInRegion+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Compare.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Compare.swift"; sourceTree = "<group>"; };
+		7AE2A111EE20F4398DD1E6B5B4161851 /* Ursus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Ursus-Info.plist"; sourceTree = "<group>"; };
 		7C75E78D503812F00D2F570542E98040 /* SwiftDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftDate.swift; path = Sources/SwiftDate/SwiftDate.swift; sourceTree = "<group>"; };
-		7D6AD42135D72A35015C98C0DDA63FC0 /* Ursus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Ursus.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7DB869FD1796DE52C43BA4D345224A23 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = ReSwift/CoreTypes/State.swift; sourceTree = "<group>"; };
 		7DED6A8AC52D8A7B65297689FA746AF4 /* Floating Point Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Floating Point Conversion.swift"; path = "Sources/Floating Point Conversion.swift"; sourceTree = "<group>"; };
-		8021C31C9D0B092E83C05128BB552A56 /* UnsubscribeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnsubscribeRequest.swift; sourceTree = "<group>"; };
 		81F24D30BD59ADDA336CA6F5A4CA4C5D /* Pods-Ursus Chat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ursus Chat-Info.plist"; sourceTree = "<group>"; };
 		822FC2A5269DCF782197B6CA0F1162AC /* NSBezierPath+CrossPlatform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBezierPath+CrossPlatform.swift"; path = "SwiftSVG/NSBezierPath+CrossPlatform.swift"; sourceTree = "<group>"; };
-		829F70164C97550647618C1E726B00DF /* PatP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatP.swift; path = "Ursus Atom/PatP.swift"; sourceTree = "<group>"; };
+		8263D0FA4F106E899C29B1002E5D73B6 /* index.json */ = {isa = PBXFileReference; includeInIndex = 1; name = index.json; path = "Ursus Sigil/Resources/index.json"; sourceTree = "<group>"; };
 		83A02FA868AD42CA625DA321B8A725F0 /* Hashable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hashable.swift; path = Sources/Hashable.swift; sourceTree = "<group>"; };
 		847DCCAEBAF5B5E9426E22C79AB8A8B1 /* AlamofireLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireLogger.framework; path = AlamofireLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A487B78F8972DA71EF14D7255C67A2 /* Ursus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Ursus.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		84FBE8E8348A1576F7198B17E503D39B /* EventSourceParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceParser.swift; path = "Ursus Event Source/EventSourceParser.swift"; sourceTree = "<group>"; };
 		84FEF4E74053CAEA3AFF7E7CAAD60ADC /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		854A4EC40AAB2A4FEB7E77DC62CADEB5 /* BigInt-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BigInt-prefix.pch"; sourceTree = "<group>"; };
-		8592E850BABFFA9DCB6132D42D1AB143 /* UrsusSigil.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UrsusSigil.modulemap; sourceTree = "<group>"; };
 		862D0E8C9466C406B5AA2B11D6C9A742 /* NSXMLSVGParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSXMLSVGParser.swift; path = SwiftSVG/SVG/Parser/NSXMLSVGParser.swift; sourceTree = "<group>"; };
+		86588DF8EB243E4D4667DFFEE0AB7B3C /* Ursus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ursus-dummy.m"; sourceTree = "<group>"; };
 		86D8B8DD12644CDD5396DFF97BA103DB /* ReSwiftThunk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwiftThunk-prefix.pch"; sourceTree = "<group>"; };
-		89585CC99CB65473249242B8B1816587 /* Ursus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ursus.swift; path = Ursus/Ursus.swift; sourceTree = "<group>"; };
-		8965CE4FF8292483A19F848757D2B760 /* UrsusAtom-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UrsusAtom-dummy.m"; sourceTree = "<group>"; };
 		89ABB7D848D0EE5FBD0DAF44D4690596 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		89CC4C16D4B8B9E83C7175378D0E2B51 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		8A70ADDF9303C9FED142B2C46D2F1660 /* ISOFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOFormatter.swift; path = Sources/SwiftDate/Formatters/ISOFormatter.swift; sourceTree = "<group>"; };
@@ -648,121 +654,133 @@
 		8E70517078CD64937E512CE25731512C /* SwiftSVG.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftSVG.modulemap; sourceTree = "<group>"; };
 		8EB8626B2D019F176152DE914573AB76 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		8ECC6BF7FDAC5CB29FA332C26EF3243C /* SVGRootElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGRootElement.swift; path = SwiftSVG/SVG/Elements/SVGRootElement.swift; sourceTree = "<group>"; };
+		8EE6387016789D4ADD676134A084EA2D /* UnsubscribeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnsubscribeRequest.swift; sourceTree = "<group>"; };
 		8FF214FBAFBF98B0E661F583E58F41A2 /* DispatchingStoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DispatchingStoreType.swift; path = ReSwift/CoreTypes/DispatchingStoreType.swift; sourceTree = "<group>"; };
 		90429297EDFEF41993536ED8227F18BC /* DateInRegion+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Math.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Math.swift"; sourceTree = "<group>"; };
 		905D89B518448EEF2696A7D64F935F34 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		908F301B4FBD419395DE0624F7820412 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Lib/KeychainAccess/Keychain.swift; sourceTree = "<group>"; };
 		90E5D9A9900DDCAF5CF9B5503B215417 /* Parity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9132CB185B4FF5CC80CB3649FAD45C6F /* UrsusSigil-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UrsusSigil-Info.plist"; sourceTree = "<group>"; };
 		91BB24BA472AF523E913108C9AA301F2 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92217213DBB7D1597F7812AF6FCB2498 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		92E0ACEDB02E5F0A4F1B4E8CBEB29680 /* DeleteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeleteRequest.swift; sourceTree = "<group>"; };
 		9343189CFD3795B4175517E786E1D51C /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
 		93ABF8AB401089B96EBC24915D00D1C9 /* NetworkActivityLogManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityLogManager.swift; path = Sources/NetworkActivityLogManager.swift; sourceTree = "<group>"; };
 		945ADE968151104F0370A85C58CD0CF8 /* SwiftDate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDate.xcconfig; sourceTree = "<group>"; };
 		9556D24DA5FFF597B8C27249A2FA5991 /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
 		95CFB533CE169ED9FC1A568D9D8BBBEB /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DEBA0D54F86C5242378A09F89582B3 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		9615B651D42043B7F2338C56A4ACC09E /* Dictionary+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+JSON.swift"; path = "SwiftSVG/SVG/Helpers/Dictionary+JSON.swift"; sourceTree = "<group>"; };
 		9787E0C5FA28F9ED39D0498C7D0097B2 /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
 		97A7581582EE1E07EAE527C5EE37418C /* AlamofireNetworkActivityIndicator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireNetworkActivityIndicator-umbrella.h"; sourceTree = "<group>"; };
 		980A011CDBE0E7AC365BD1B686197374 /* UrsusAtom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrsusAtom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		985A40A970A559F23FBA54E63EC57D05 /* GroupElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupElement.swift; sourceTree = "<group>"; };
+		997F17D4327079278CE02932F5A4D327 /* EventSourceMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceMessage.swift; path = "Ursus Event Source/EventSourceMessage.swift"; sourceTree = "<group>"; };
+		99B34BF19989E94DC821C84B8189EBCB /* UrsusEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UrsusEncoder.swift; sourceTree = "<group>"; };
 		99C990E52EF81E2B8D8578F82958764D /* Ursus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Ursus.framework; path = Ursus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F5761BF3B435DDCA7E95797008DDC4 /* Dictionary+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+Add.swift"; path = "SwiftSVG/SVG/Helpers/Dictionary+Add.swift"; sourceTree = "<group>"; };
 		99FA39C5789460D52E37074056E9D150 /* AssociatedValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedValues.swift; path = Sources/SwiftDate/Supports/AssociatedValues.swift; sourceTree = "<group>"; };
-		9AC9A04E17492BD5C5CC1B384658C282 /* UrsusSigil.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UrsusSigil.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B1F4D291014ECD415BABC4F684D37DB /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwift.framework; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D94143B933320B2E0278FFABCBBAEB0 /* CGAffineTransform+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Extensions.swift"; sourceTree = "<group>"; };
+		9FAF608B411C8A1D3DBEDA9D9E9E63D6 /* UrsusAtom-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UrsusAtom-dummy.m"; sourceTree = "<group>"; };
 		9FF8D425C4F640A1BE7160F82416EF3D /* SVGCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGCache.swift; path = SwiftSVG/SVG/Cache/SVGCache.swift; sourceTree = "<group>"; };
-		A056C88CF46256A11158CC4CE8D64CCD /* UrsusAtom.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UrsusAtom.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A05BAD98B117236CF65A2EE9F1E44F40 /* Shifts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shifts.swift; path = Sources/Shifts.swift; sourceTree = "<group>"; };
+		A2387E81E6EA9090C91121AA95F9D686 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		A27CCF0E25F9B9E9098D75472887A731 /* TimePeriod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriod.swift; path = Sources/SwiftDate/TimePeriod/TimePeriod.swift; sourceTree = "<group>"; };
+		A2F6281C73C060F46C74CA2F10CF4B4C /* Ursus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ursus-prefix.pch"; sourceTree = "<group>"; };
 		A4873CF88BFE71FBEF5BEA04BEA02BD8 /* String+Subscript.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Subscript.swift"; path = "SwiftSVG/SVG/Helpers/String+Subscript.swift"; sourceTree = "<group>"; };
+		A52DDB2D4CF0303943F69CC453C6928C /* PokeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeRequest.swift; sourceTree = "<group>"; };
 		A5F5248F09E10395A77818FFF97016E6 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		A5FE0677093CA423C834287213BFFD9A /* TimePeriodProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodProtocol.swift; path = Sources/SwiftDate/TimePeriod/TimePeriodProtocol.swift; sourceTree = "<group>"; };
-		A64EF003CEA74B96F64970EB5725A939 /* UrsusAtom-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UrsusAtom-Info.plist"; sourceTree = "<group>"; };
 		A6C95C8EE277C89C4CE91961040B4679 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		AAAB331341EE61FAC36C60C1C89A1C93 /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
 		AACF32F3628294BDB9004FDD76766737 /* ReSwiftThunk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReSwiftThunk-Info.plist"; sourceTree = "<group>"; };
 		ABE81C22685FC013CD5AE69AC7BE7192 /* String Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String Conversion.swift"; path = "Sources/String Conversion.swift"; sourceTree = "<group>"; };
-		ACA94BFE208741490659124E63542A34 /* PhoneticBasePrefix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBasePrefix.swift; path = "Ursus Phonetic Base/PhoneticBasePrefix.swift"; sourceTree = "<group>"; };
 		ACD0CD4A0E92855715510347050F1158 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		AD677E2684FACEB5D65B9EEBAC075D27 /* CALayer+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+SVG.swift"; path = "SwiftSVG/SVG Extensions/CALayer+SVG.swift"; sourceTree = "<group>"; };
-		ADCB24FCDB178778D0D9F99F7DC867ED /* UrsusAtom-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusAtom-umbrella.h"; sourceTree = "<group>"; };
 		ADF61ACADADF4FE7B4D199F28025CC41 /* Bitwise Ops.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bitwise Ops.swift"; path = "Sources/Bitwise Ops.swift"; sourceTree = "<group>"; };
 		AE17A0D7B4C09FFD1BC9CD3251F88D1A /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		AF8A4549AEE40C415FA9B11A20CCF82F /* QuitResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuitResponse.swift; sourceTree = "<group>"; };
+		AFB87418CDDC729DB63674D73FEEA86D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		AFF66132F7E193DF109EBE5A868A0651 /* EventSourceMessageField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceMessageField.swift; path = "Ursus Event Source/EventSourceMessageField.swift"; sourceTree = "<group>"; };
+		B17B9FEF4037D2DD7F193DA467CF7D08 /* PokeResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeResponse.swift; sourceTree = "<group>"; };
 		B23E480F6FDED91ABCD91F0AA4C70557 /* KeychainAccess-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainAccess-Info.plist"; sourceTree = "<group>"; };
 		B28BEAF8BD36D30B9E291C8FA99C7717 /* Reducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reducer.swift; path = ReSwift/CoreTypes/Reducer.swift; sourceTree = "<group>"; };
+		B2FF44118B5CD7BEE883DB292C8FF2E5 /* UrsusAtom.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UrsusAtom.modulemap; sourceTree = "<group>"; };
 		B3EFD5911D9C5FE6093A9CED2386CB02 /* Pods-Ursus Chat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ursus Chat-dummy.m"; sourceTree = "<group>"; };
 		B4175D91F43E410604CC18A293064B82 /* SwiftSVG-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSVG-dummy.m"; sourceTree = "<group>"; };
-		B42DF421501B13F6919BAE220A659A33 /* QuitResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuitResponse.swift; sourceTree = "<group>"; };
-		B4902149C0F9A1EE7BCEAE3E1E4B5E66 /* SubscribeResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeResponse.swift; sourceTree = "<group>"; };
 		B7F22D228E4F778469F7D14F24B8751F /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		B8B50C12C7D374B6001653BF8227111C /* SVGPolygon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGPolygon.swift; path = SwiftSVG/SVG/Elements/SVGPolygon.swift; sourceTree = "<group>"; };
+		B8EDC1D91CBC4C17F61198A3BF4DE66C /* UrsusAtom-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusAtom-prefix.pch"; sourceTree = "<group>"; };
 		B9ED4E9DAEB9004FA135B8CF0A8B676C /* AlamofireLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireLogger-dummy.m"; sourceTree = "<group>"; };
 		BA445E370DC7B5147276CC2AD968BC63 /* Pods-Ursus Chat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Ursus Chat.modulemap"; sourceTree = "<group>"; };
-		BB711449132284E011EAB78E1CA7A4F0 /* UrsusSigil.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UrsusSigil.xcconfig; sourceTree = "<group>"; };
 		BB99F61F59DB53BA6A897343AD056290 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/SwiftDate/Date/Date.swift; sourceTree = "<group>"; };
-		BC5FD51FEC0A76AF4B7CA95C989F79C6 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		BBB39579B8D282175ECE2CCA6FBB14BE /* PhoneticBasePrefix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBasePrefix.swift; path = "Ursus Phonetic Base/PhoneticBasePrefix.swift"; sourceTree = "<group>"; };
+		BC6FAE293194DAD5A9C6D72DEC889659 /* PhoneticBaseParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseParser.swift; path = "Ursus Phonetic Base/PhoneticBaseParser.swift"; sourceTree = "<group>"; };
+		BC9750ED67B1AA756389AFD662197F80 /* SubscribeEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeEvent.swift; sourceTree = "<group>"; };
 		BDC902AA06A4B823105B379304974F3A /* Calendars.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Calendars.swift; path = Sources/SwiftDate/Supports/Calendars.swift; sourceTree = "<group>"; };
 		BEC3FFE09FA503C5E67964DD8D2FED86 /* SVGLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGLayer.swift; path = "SwiftSVG/SVG Extensions/SVGLayer.swift"; sourceTree = "<group>"; };
+		BEE4EC59E5AD318267B06F7D47418929 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		BF325FDD5152C627B303F56C798F39CC /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		C020F1906CF9ED08C9EA5B7596A72440 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
+		C09EB775CA5FD6D10A583F837A5FC35B /* SubscribeResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeResponse.swift; sourceTree = "<group>"; };
 		C0DE00893AD3697187EBB7E55A766964 /* Strokable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Strokable.swift; path = SwiftSVG/SVG/Attributes/Strokable.swift; sourceTree = "<group>"; };
 		C1F6151D0DC2C86F7F95C08D4A18D553 /* Date+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Create.swift"; path = "Sources/SwiftDate/Date/Date+Create.swift"; sourceTree = "<group>"; };
 		C2A0A7FD38A39912EE94ED8FF65EEB74 /* AlamofireNetworkActivityIndicator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlamofireNetworkActivityIndicator-Info.plist"; sourceTree = "<group>"; };
+		C3873E115146AE6DFE61C4241B52D89B /* PatUV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatUV.swift; path = "Ursus Atom/PatUV.swift"; sourceTree = "<group>"; };
 		C3CC65D7C25F47C1D89FA0C0C0C6079D /* DateInRegion+Components.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Components.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Components.swift"; sourceTree = "<group>"; };
 		C3D53B3CED1ACB3C48E6CFE24FBAD676 /* SwiftDate-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftDate-Info.plist"; sourceTree = "<group>"; };
 		C43D12B305D2AF410FDAC92C97FFCB83 /* CALayer+Sublayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Sublayers.swift"; path = "SwiftSVG/SVG/Helpers/CALayer+Sublayers.swift"; sourceTree = "<group>"; };
-		C4D9C11E5088721D2FFCA6A682965512 /* UrsusSigil-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusSigil-prefix.pch"; sourceTree = "<group>"; };
 		C5E6FC6C236AFE7D11B7796E12D2AC95 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		C6B47343327BD6D5B31DCDE61696BFB5 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
-		C82DA97121DADA956C5ADA8206179944 /* PatQ.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatQ.swift; path = "Ursus Atom/PatQ.swift"; sourceTree = "<group>"; };
 		C82F7203DE15B1E48351FCFFEE0DC88A /* Parity.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Parity.modulemap; sourceTree = "<group>"; };
 		C9613F6E3CAEB26FF4DE5BBF94EF675D /* Square Root.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Square Root.swift"; path = "Sources/Square Root.swift"; sourceTree = "<group>"; };
 		CA4C40FDC930771CE3B4DD128BAF95EE /* PathCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathCommand.swift; path = SwiftSVG/SVG/Iterators/PathCommand.swift; sourceTree = "<group>"; };
 		CB02CB7F26253ECD675ADA6F1A0267A0 /* CoordinateLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoordinateLexer.swift; path = SwiftSVG/SVG/Iterators/CoordinateLexer.swift; sourceTree = "<group>"; };
-		CBEB3757B60956F8A38B4C849A77321F /* PhoneticBaseObfuscator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseObfuscator.swift; path = "Ursus Phonetic Base/PhoneticBaseObfuscator.swift"; sourceTree = "<group>"; };
+		CCA4D30EFAC0158FE97FB64F75640E55 /* SubscribeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeRequest.swift; sourceTree = "<group>"; };
 		CCC05C8C13FEFE13F453F0F4D730A119 /* UIBezierPath+SVG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBezierPath+SVG.swift"; path = "SwiftSVG/SVG Extensions/UIBezierPath+SVG.swift"; sourceTree = "<group>"; };
 		CE0F249CBC04775D2462AB9A3CDEED63 /* Region.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Sources/SwiftDate/DateInRegion/Region.swift; sourceTree = "<group>"; };
 		CE14260BB40C2C02C400EE5542455327 /* Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = ReSwift/CoreTypes/Subscription.swift; sourceTree = "<group>"; };
 		CF2D55A9DF7447E35C4278B52DAD5047 /* BigInt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BigInt.modulemap; sourceTree = "<group>"; };
 		CFDB256A67F42A962E1764EE98D5D6F7 /* StoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreType.swift; path = ReSwift/CoreTypes/StoreType.swift; sourceTree = "<group>"; };
-		D075B948B16E22D8A952A14E4C84D13B /* PhoneticBaseParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseParser.swift; path = "Ursus Phonetic Base/PhoneticBaseParser.swift"; sourceTree = "<group>"; };
+		D00F46D747A1767220D3875A27B53242 /* UrsusSigil-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UrsusSigil-dummy.m"; sourceTree = "<group>"; };
 		D15CF50BA9A3F18FB3743237E1106E51 /* Zones.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zones.swift; path = Sources/SwiftDate/Supports/Zones.swift; sourceTree = "<group>"; };
 		D2883ADA77FDCE8B81F2C5DDAD66578F /* AlamofireNetworkActivityIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireNetworkActivityIndicator.framework; path = AlamofireNetworkActivityIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2BFD7B64196EAB56EBA3213F7F269AC /* Ursus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ursus-umbrella.h"; sourceTree = "<group>"; };
 		D43242B2A23E55783A911332212B51D7 /* SwiftSVG-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSVG-prefix.pch"; sourceTree = "<group>"; };
 		D539D8C41E08DE255D83E1C5FD4936D6 /* Scalar+FromByteArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Scalar+FromByteArray.swift"; path = "SwiftSVG/SVG/Helpers/Scalar+FromByteArray.swift"; sourceTree = "<group>"; };
-		D5639120238971CB8BD0E41E7FC19597 /* EventSourceParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSourceParser.swift; path = "Ursus Event Source/EventSourceParser.swift"; sourceTree = "<group>"; };
+		D563DEC41ABE52B7B5460EFA53F8AE3B /* UIBezierPath+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extensions.swift"; sourceTree = "<group>"; };
+		D5923E08221FF2BBFE49BD9E507DF7E1 /* DiffResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffResponse.swift; sourceTree = "<group>"; };
 		D5E31441EC133D2DFA923EBC5B465439 /* BigInt.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BigInt.xcconfig; sourceTree = "<group>"; };
-		D620477885243F88141485FEAA8E3462 /* SubscribeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeError.swift; sourceTree = "<group>"; };
-		D6504C5F97CB01FAF689847BE0CDDA5F /* Symbol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Symbol.swift; path = "Ursus Sigil/Symbol.swift"; sourceTree = "<group>"; };
 		D6BCE2ED44E4C73AFF601FFE481CCFC6 /* Subtraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subtraction.swift; path = Sources/Subtraction.swift; sourceTree = "<group>"; };
 		D6ED55FDC112BF70A7654AB722EB5ACF /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		D6F6F86524731DCBFC9E5227D69EC600 /* ReSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.xcconfig; sourceTree = "<group>"; };
 		D798F33E1D61B22E23BF15993D14335C /* SVGRectangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGRectangle.swift; path = SwiftSVG/SVG/Elements/SVGRectangle.swift; sourceTree = "<group>"; };
+		D808218C98F129C6D6A867F0E8237F41 /* UrsusAtom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UrsusAtom.xcconfig; sourceTree = "<group>"; };
 		D8E1B9B01701722890D38A7FC644508E /* SVGView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGView.swift; path = "SwiftSVG/SVG Extensions/SVGView.swift"; sourceTree = "<group>"; };
-		D8EBF3F94E5800F2A975AF7AE10FCA29 /* PatUV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatUV.swift; path = "Ursus Atom/PatUV.swift"; sourceTree = "<group>"; };
 		DA41709399C4E347491EA41D44CD6157 /* Date+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Math.swift"; path = "Sources/SwiftDate/Date/Date+Math.swift"; sourceTree = "<group>"; };
-		DA6BF27C86B1B478FB6A10358D21597A /* AckRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AckRequest.swift; sourceTree = "<group>"; };
 		DA9B0956C74740EE6667CFBAE3480F3C /* MurmurHash3_x86_128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MurmurHash3_x86_128.swift; path = Sources/MurmurHash/MurmurHash3_x86_128.swift; sourceTree = "<group>"; };
-		DB955FB98E16DA2C5549C1A304512AE6 /* PhoneticBaseSyllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseSyllable.swift; path = "Ursus Phonetic Base/PhoneticBaseSyllable.swift"; sourceTree = "<group>"; };
-		DCE96AE5E2B6CCDFD460B6DBD2AFEEE6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DD6F44C4C152D6BD2794CB20076C2024 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		DE15C87E8CABFF159761C59BB5BEA4C8 /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = SwiftSVG/SVG/Helpers/Print.swift; sourceTree = "<group>"; };
 		DF188992A246F629F0BFB74BF716AE5F /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		DF8578E3531433657C333827713270C3 /* Addition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Addition.swift; path = Sources/Addition.swift; sourceTree = "<group>"; };
+		DFBE971569D4182B91B49A263FFFE20D /* AckRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AckRequest.swift; sourceTree = "<group>"; };
 		E082E5EE80B2D16C01DDFCC250A8D83B /* ReSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReSwift.modulemap; sourceTree = "<group>"; };
+		E09D22123EBFFB655B8E288D39BAFCF7 /* UrsusAtom-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UrsusAtom-umbrella.h"; sourceTree = "<group>"; };
 		E0CF3B790BA069D97D5013E4A9D999CD /* SwiftDate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-prefix.pch"; sourceTree = "<group>"; };
 		E11CA66346276C9B36200E08F0B13ACD /* Pods-Ursus Chat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ursus Chat-frameworks.sh"; sourceTree = "<group>"; };
 		E169182A3489AA546EAE72D692C9E84D /* MurmurHash-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MurmurHash-Swift-dummy.m"; sourceTree = "<group>"; };
+		E223A92A55D69FEFC05530644DAA39B5 /* UrsusCredentials.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrsusCredentials.swift; path = Ursus/UrsusCredentials.swift; sourceTree = "<group>"; };
 		E266D3BD7E3848DC8C8D7B40F6300F95 /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = ReSwift/Utils/Coding.swift; sourceTree = "<group>"; };
 		E33C85C411D60D26B03728EE65B97847 /* DateComponents+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateComponents+Extras.swift"; path = "Sources/SwiftDate/Foundation+Extras/DateComponents+Extras.swift"; sourceTree = "<group>"; };
-		E352A554DF5C05E623CB3CA121FB424E /* Ursus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Ursus-Info.plist"; sourceTree = "<group>"; };
+		E6EEB89CC3D05B0E77C96FE59B26EF7C /* PhoneticBaseSyllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseSyllable.swift; path = "Ursus Phonetic Base/PhoneticBaseSyllable.swift"; sourceTree = "<group>"; };
 		E8A92EFB69DF84F2620888ACB667273B /* SVGParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGParser.swift; path = SwiftSVG/SVG/Parser/SVGParser.swift; sourceTree = "<group>"; };
 		E8DE9076D3C9D318BBD26C927F3EEA06 /* KeychainAccess.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainAccess.modulemap; sourceTree = "<group>"; };
 		E8EE7F078656FABB8F6821D10FF994BB /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC68C270C0EECBB9B12DE709F0DE9A5D /* DeleteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeleteRequest.swift; sourceTree = "<group>"; };
 		EC961201E0E539ACA0B14E7D188713C1 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "SwiftSVG/SVG/Helpers/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		EDC8B077692AABE3ABF2E43FCE54B444 /* TimePeriodCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodCollection.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodCollection.swift; sourceTree = "<group>"; };
 		EDF55117F88184F715DD0E37DDCE80E8 /* Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Codable.swift; path = Sources/Codable.swift; sourceTree = "<group>"; };
+		EF28CCE255EDA8DFD8F850B8211A80B5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F0156AEAE40EA6A17B3003A4AAFACFDA /* SVGCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGCircle.swift; path = SwiftSVG/SVG/Elements/SVGCircle.swift; sourceTree = "<group>"; };
 		F104F2965989CA76C7AD64E98DE52B0D /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityIndicatorManager.swift; path = Source/NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		F1AB60913D08BB713C2271D762C523EC /* ReSwiftThunk.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwiftThunk.xcconfig; sourceTree = "<group>"; };
@@ -770,22 +788,22 @@
 		F2D876FF55B0CACF7D23F576C5D90B51 /* ReSwiftThunk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwiftThunk.framework; path = ReSwiftThunk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F374A41A99318DD22064ECE93DCFCD89 /* TimeStructures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeStructures.swift; path = Sources/SwiftDate/Supports/TimeStructures.swift; sourceTree = "<group>"; };
 		F3864BA376E5F86DF1AA9B2A25B5F482 /* SVGEllipse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGEllipse.swift; path = SwiftSVG/SVG/Elements/SVGEllipse.swift; sourceTree = "<group>"; };
-		F4705D82885F05272ED636071AEFEC93 /* Aura.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aura.swift; path = "Ursus Atom/Aura.swift"; sourceTree = "<group>"; };
 		F492B7D54272CE03994F9F074AFEE6EE /* Words and Bits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Words and Bits.swift"; path = "Sources/Words and Bits.swift"; sourceTree = "<group>"; };
 		F4FB575364F0DC428B15B69FA45775B5 /* Fillable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fillable.swift; path = SwiftSVG/SVG/Attributes/Fillable.swift; sourceTree = "<group>"; };
+		F5D7E5CD19CB2A669054F00B98FAB5E8 /* PhoneticBaseSuffix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneticBaseSuffix.swift; path = "Ursus Phonetic Base/PhoneticBaseSuffix.swift"; sourceTree = "<group>"; };
+		F62464E4E1A0A06EB1CBA5F32AB04982 /* RectElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RectElement.swift; sourceTree = "<group>"; };
 		F69B3A94E24AA8DC8540900753A3F370 /* KeychainAccess-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-umbrella.h"; sourceTree = "<group>"; };
 		F6A22200AC5A2C9D5316A4A5D1B779DF /* ReSwiftThunk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwiftThunk-umbrella.h"; sourceTree = "<group>"; };
-		F6A3195C1BBE5722E77C29CAB6A59BD0 /* DiffResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffResponse.swift; sourceTree = "<group>"; };
 		F6A61F00991593EF529A5BF381C66001 /* MurmurHash-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MurmurHash-Swift-Info.plist"; sourceTree = "<group>"; };
 		F6D0ADD27DE06CFCB85A73A8B4BE0D82 /* DotNetParserFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotNetParserFormatter.swift; path = Sources/SwiftDate/Formatters/DotNetParserFormatter.swift; sourceTree = "<group>"; };
 		F75812A6F81405B1BE5EEF8C3DB15105 /* Prime Test.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Prime Test.swift"; path = "Sources/Prime Test.swift"; sourceTree = "<group>"; };
-		F7C132804A2E27FE93091AE4C645B6B8 /* PokeEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeEvent.swift; sourceTree = "<group>"; };
 		F81B9B0EF3EAF26086860299F09831CE /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		F90136FD782F9096A7561C8E8BE991C7 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "SwiftSVG/SVG/Helpers/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F9A7938A9EA9F20033D8032AE9907824 /* URLSessionConfiguration+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+Extensions.swift"; sourceTree = "<group>"; };
 		FB2D122589D4F0AE6B76943828D71AB8 /* RelativeFormatter+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RelativeFormatter+Style.swift"; path = "Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatter+Style.swift"; sourceTree = "<group>"; };
+		FD96D9CBF60E783A5848836C8E8BD77B /* SubscribeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscribeError.swift; sourceTree = "<group>"; };
 		FE46891AA3C48B116135E511EFA665A1 /* Common.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Sources/MurmurHash/Common.swift; sourceTree = "<group>"; };
 		FEB6E11130A1F1DE01EC2B5DFBDA0D48 /* AlamofireNetworkActivityIndicator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlamofireNetworkActivityIndicator.modulemap; sourceTree = "<group>"; };
-		FEF7173DBADCB43F00470EDC35E5FA7E /* UrsusDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UrsusDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -847,16 +865,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D21FB00D7FAE5E0026A670F86AD60D4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F10FD14FC912B6BABF901A1804F5AC99 /* Foundation.framework in Frameworks */,
-				FC9DA0BE4CFA7CE10D338E972304EAD4 /* SwiftSVG.framework in Frameworks */,
-				55C259B1C6E94A51E61E638D2244B950 /* UrsusAtom.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7668D0A8468B5894E555ECAA4EC50BC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,6 +917,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E85E3D6715D1F83850863C70ADED691D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5CCBF21EF46D7DF699BB60C8F1A9D13 /* Foundation.framework in Frameworks */,
+				AA653059ADDB6B55689FDAAB52262084 /* SwiftSVG.framework in Frameworks */,
+				E7AB348247320C522A8314693AFF5710 /* UrsusAtom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F345EC25B227E21983FB285D1F9688A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -923,6 +941,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03D1C11E9E2A84724F60DF612C06DBD5 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				78B5E266A548F21FC75A749B81273934 /* PokeError.swift */,
+				FD96D9CBF60E783A5848836C8E8BD77B /* SubscribeError.swift */,
+			);
+			name = Errors;
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		03DDAD6977A51962E98EDE427FCFCFA7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,6 +963,19 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MurmurHash-Swift";
+			sourceTree = "<group>";
+		};
+		08DBD0A7B6132883DF6CB95CDAC6AEC7 /* EventSource */ = {
+			isa = PBXGroup;
+			children = (
+				547026394A9EEB9F0791B2AB5ED28FD0 /* EventSource.swift */,
+				6FC101F66E5C7A7FA81AF354A91913CC /* EventSourceError.swift */,
+				997F17D4327079278CE02932F5A4D327 /* EventSourceMessage.swift */,
+				AFF66132F7E193DF109EBE5A868A0651 /* EventSourceMessageField.swift */,
+				84FBE8E8348A1576F7198B17E503D39B /* EventSourceParser.swift */,
+				DAECAA1BE2C49742FF799EC8ECCCA35A /* Extensions */,
+			);
+			name = EventSource;
 			sourceTree = "<group>";
 		};
 		0E72539FC9E2BEE8668002EAC2B744D9 /* MurmurHash-Swift */ = {
@@ -952,14 +993,12 @@
 			path = "MurmurHash-Swift";
 			sourceTree = "<group>";
 		};
-		1035C4793DA80B7528D84DC5E50DFBFE /* Pod */ = {
+		10AD9F82E44D712AC26355A651AF16C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C6E63D5C7414DC3883F93FC8A313464 /* LICENSE */,
-				1AF2954451BD50D047A820736E52EA82 /* README.md */,
-				7D6AD42135D72A35015C98C0DDA63FC0 /* Ursus.podspec */,
+				8263D0FA4F106E899C29B1002E5D73B6 /* index.json */,
 			);
-			name = Pod;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		14B66BA267956B8480C4CDC6754363FF /* Support Files */ = {
@@ -989,19 +1028,6 @@
 				664A049829949EFFC5E9086EA1836A47 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		19E6C2A49AB600A3E98541214E6CECEF /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				F6A3195C1BBE5722E77C29CAB6A59BD0 /* DiffResponse.swift */,
-				30768858DE5BE5AEA33D511E6658A116 /* PokeResponse.swift */,
-				B42DF421501B13F6919BAE220A659A33 /* QuitResponse.swift */,
-				BC5FD51FEC0A76AF4B7CA95C989F79C6 /* Response.swift */,
-				B4902149C0F9A1EE7BCEAE3E1E4B5E66 /* SubscribeResponse.swift */,
-			);
-			name = Responses;
-			path = Responses;
 			sourceTree = "<group>";
 		};
 		1A8E1218698C47ED1AB300649DB6FC7A /* BigInt */ = {
@@ -1035,18 +1061,52 @@
 			path = BigInt;
 			sourceTree = "<group>";
 		};
-		2354C497AC74F4A2E003E687E5E54D14 /* Support Files */ = {
+		20C9E4ADE3AB80006168665386940368 /* UrsusAtom */ = {
 			isa = PBXGroup;
 			children = (
-				55D9E02884FBA0827B504626A41ECF3F /* UrsusAtom.modulemap */,
-				729E55A7D422B6535A625DF870952ACA /* UrsusAtom.xcconfig */,
-				8965CE4FF8292483A19F848757D2B760 /* UrsusAtom-dummy.m */,
-				A64EF003CEA74B96F64970EB5725A939 /* UrsusAtom-Info.plist */,
-				4A24AB0A0327D8C288166C29C75907EB /* UrsusAtom-prefix.pch */,
-				ADCB24FCDB178778D0D9F99F7DC867ED /* UrsusAtom-umbrella.h */,
+				767A06612D3A3DF633F625E3E94953AC /* Aura.swift */,
+				3734FD58312AFBEA2FC688F413D3395D /* PatP.swift */,
+				6CF43644677374DED89C269CAD3B8773 /* PatQ.swift */,
+				C3873E115146AE6DFE61C4241B52D89B /* PatUV.swift */,
+				31017F98E87DD0C29C05D6741C9AD785 /* Extensions */,
+				83FCC037E7196C398CEE111E85DEB4C6 /* PhoneticBase */,
+				3B9477AA09FE3CB2B1E97D6C08C98FB8 /* Pod */,
+				D37206B53EF39A97EFE12CE0B742B15E /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../UrsusChat/Pods/Target Support Files/UrsusAtom";
+			name = UrsusAtom;
+			path = ../../UrsusAtom;
+			sourceTree = "<group>";
+		};
+		2B51D2BE6286E492543CB0616E98C9F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				03D1C11E9E2A84724F60DF612C06DBD5 /* Errors */,
+				B5462B0A9FB79C4DB14A5D0931E24B5B /* Events */,
+				E1EDC9D70D8B99130085F4F9B2F50598 /* Requests */,
+				CDADCA35BBB96FEA7BB1DB41C5A74EE6 /* Responses */,
+				AF4D33A72BF6FE4EE2F35DA30BFCB35C /* Serialization */,
+			);
+			name = Models;
+			path = Ursus/Models;
+			sourceTree = "<group>";
+		};
+		2EDE5CA9211ABEFF66F6526B6CBA698F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D714CFD3D00AA041499402C248338E2C /* Ursus */,
+				20C9E4ADE3AB80006168665386940368 /* UrsusAtom */,
+				5B9D1E00258C67B553F7D1E902123B1A /* UrsusSigil */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		31017F98E87DD0C29C05D6741C9AD785 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				148EAB284CFE1D8C4787A22D4C586CAD /* UUID+Extensions.swift */,
+			);
+			name = Extensions;
+			path = "Ursus Atom/Extensions";
 			sourceTree = "<group>";
 		};
 		350884EE1D525AD07C726A0522DC3C9F /* Resources */ = {
@@ -1065,6 +1125,16 @@
 				44726CB7E78496B3D53C3881BD804CFB /* Thunk.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		3B9477AA09FE3CB2B1E97D6C08C98FB8 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BEE4EC59E5AD318267B06F7D47418929 /* LICENSE */,
+				5741A771532803D17CE103CBF828A1E9 /* README.md */,
+				5502B290D02AF8F8D1EBE21F710C3FAB /* UrsusAtom.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		45F7105122C7E1A5B7D9892AF318886E /* SwiftSVG */ = {
@@ -1124,23 +1194,18 @@
 			path = SwiftSVG;
 			sourceTree = "<group>";
 		};
-		47BF8E3CE12C80B3BECEFE30BF1851E2 /* Events */ = {
+		4906A7A29B3705FD8B0CC9E9444281DB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F7C132804A2E27FE93091AE4C645B6B8 /* PokeEvent.swift */,
-				3C36864938AD882B16FBCFF9BE1D00DD /* SubscribeEvent.swift */,
+				27A317FFFD43B2838E60E839C4339399 /* UrsusSigil.modulemap */,
+				5304C709279A55BFF8B99271386E0ED8 /* UrsusSigil.xcconfig */,
+				D00F46D747A1767220D3875A27B53242 /* UrsusSigil-dummy.m */,
+				9132CB185B4FF5CC80CB3649FAD45C6F /* UrsusSigil-Info.plist */,
+				20E3DD6193A875D8BEFE863FCB5F6AEF /* UrsusSigil-prefix.pch */,
+				46B071C3173810684EB0D7D7FACF8A38 /* UrsusSigil-umbrella.h */,
 			);
-			name = Events;
-			path = Events;
-			sourceTree = "<group>";
-		};
-		4DAC77CEBD0FEA8F26F340BCB6D8155B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0C29E4A044AE6BC35957093685041C69 /* URLSessionConfiguration+Extensions.swift */,
-			);
-			name = Extensions;
-			path = "Ursus Event Source/Extensions";
+			name = "Support Files";
+			path = "../UrsusChat/Pods/Target Support Files/UrsusSigil";
 			sourceTree = "<group>";
 		};
 		50C621FCEBBCD2EAB46D11058242F1B5 /* Support Files */ = {
@@ -1157,6 +1222,31 @@
 			path = "../Target Support Files/SwiftDate";
 			sourceTree = "<group>";
 		};
+		526D2539401BC2E187C6C0D838FF69BA /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				1FC555CA05780B185D3784455B7C5DEC /* CircleElement.swift */,
+				985A40A970A559F23FBA54E63EC57D05 /* GroupElement.swift */,
+				1CF0944A7506D0804F33A958F417B063 /* LineElement.swift */,
+				47E84F02B1A0CB2CD5CE1E5898B2A807 /* PathElement.swift */,
+				F62464E4E1A0A06EB1CBA5F32AB04982 /* RectElement.swift */,
+			);
+			name = Elements;
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		5339325BF2EEECE5B63D21F92CBEBEB5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95DEBA0D54F86C5242378A09F89582B3 /* Element.swift */,
+				2CE14740EEA99397F2E16311B8EE32F9 /* ElementAttributes.swift */,
+				70D225817FC5048A54F9584D3258EA7C /* Symbol.swift */,
+				526D2539401BC2E187C6C0D838FF69BA /* Elements */,
+			);
+			name = Models;
+			path = "Ursus Sigil/Models";
+			sourceTree = "<group>";
+		};
 		56506631049B7666A3086E9F5608BD56 /* Parity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1167,36 +1257,18 @@
 			path = Parity;
 			sourceTree = "<group>";
 		};
-		58A7FE5EE4FF61AEAE78BF42EF0B1C70 /* Pod */ = {
+		5B9D1E00258C67B553F7D1E902123B1A /* UrsusSigil */ = {
 			isa = PBXGroup;
 			children = (
-				423BA2EEA81CB95CF7A2A2D1CE1666CE /* LICENSE */,
-				523F58E733A1A35861567BD5243E3521 /* README.md */,
-				9AC9A04E17492BD5C5CC1B384658C282 /* UrsusSigil.podspec */,
+				294451EC09007F9C84ED22C4C645D640 /* Sigil.swift */,
+				896CF9220263824F2CAEA22D26F5C7AC /* Extensions */,
+				5339325BF2EEECE5B63D21F92CBEBEB5 /* Models */,
+				B15CE30EF8C6CA394C48BF64CFC34A3C /* Pod */,
+				10AD9F82E44D712AC26355A651AF16C5 /* Resources */,
+				4906A7A29B3705FD8B0CC9E9444281DB /* Support Files */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		5D1644F5D3CB0F97292C734FDD67A4E5 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				DA6BF27C86B1B478FB6A10358D21597A /* AckRequest.swift */,
-				EC68C270C0EECBB9B12DE709F0DE9A5D /* DeleteRequest.swift */,
-				042501D16A2C5BF18D3597DD665DD73E /* PokeRequest.swift */,
-				571956041B69D5A5F2FE581012A3CF6B /* SubscribeRequest.swift */,
-				8021C31C9D0B092E83C05128BB552A56 /* UnsubscribeRequest.swift */,
-			);
-			name = Requests;
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		5F7BC94F10E1A31338041598CCEF256D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4598C03C958258B9F3A258399AD4E2BF /* UUID+Extensions.swift */,
-			);
-			name = Extensions;
-			path = "Ursus Atom/Extensions";
+			name = UrsusSigil;
+			path = ../../UrsusSigil;
 			sourceTree = "<group>";
 		};
 		607DECF57D661E35009B97A748422F67 /* AlamofireLogger */ = {
@@ -1212,47 +1284,6 @@
 			path = AlamofireLogger;
 			sourceTree = "<group>";
 		};
-		616B3D00C6ECBB73DA118B0D84A4D6AA /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6B40DFBEE167D5FD954A1E82522A6BF6 /* Ursus */,
-				61EA7B3832BF90BB06B01EC07FF3F6A9 /* UrsusAtom */,
-				6587D28C9D7249F8998991BF62FABF0B /* UrsusSigil */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		61EA7B3832BF90BB06B01EC07FF3F6A9 /* UrsusAtom */ = {
-			isa = PBXGroup;
-			children = (
-				F4705D82885F05272ED636071AEFEC93 /* Aura.swift */,
-				829F70164C97550647618C1E726B00DF /* PatP.swift */,
-				C82DA97121DADA956C5ADA8206179944 /* PatQ.swift */,
-				D8EBF3F94E5800F2A975AF7AE10FCA29 /* PatUV.swift */,
-				5F7BC94F10E1A31338041598CCEF256D /* Extensions */,
-				F8FDA69D664074D96207CE47FA2C52CC /* PhoneticBase */,
-				69826C07EBA3AFD10E463765070D5111 /* Pod */,
-				2354C497AC74F4A2E003E687E5E54D14 /* Support Files */,
-			);
-			name = UrsusAtom;
-			path = ../../UrsusAtom;
-			sourceTree = "<group>";
-		};
-		6587D28C9D7249F8998991BF62FABF0B /* UrsusSigil */ = {
-			isa = PBXGroup;
-			children = (
-				03B041C5D30E061EAE5353E77E743157 /* Sigil.swift */,
-				4807D095F0DE939EA92C2F2D5D564DAA /* SigilView.swift */,
-				D6504C5F97CB01FAF689847BE0CDDA5F /* Symbol.swift */,
-				9028CCE902C8DA56B415813F95B28184 /* Extensions */,
-				58A7FE5EE4FF61AEAE78BF42EF0B1C70 /* Pod */,
-				8DA7DA8224B0655DAA7B1D96145F29D5 /* Resources */,
-				9B5D0D31D57508C9C2BFE51354D0A596 /* Support Files */,
-			);
-			name = UrsusSigil;
-			path = ../../UrsusSigil;
-			sourceTree = "<group>";
-		};
 		664A049829949EFFC5E9086EA1836A47 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1260,29 +1291,6 @@
 				6B1C6B80C12F4A52655771F9C692FB96 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		67538895054FBD0D7503527582FDB434 /* EventSource */ = {
-			isa = PBXGroup;
-			children = (
-				38F63609C3A05F362D2218E9F73F6445 /* EventSource.swift */,
-				72DAD2AFC3079677A44C5AD773AC6FEA /* EventSourceError.swift */,
-				63A3811952F11094074828459BF48876 /* EventSourceMessage.swift */,
-				273130EAD103D563FF3AA710F3554503 /* EventSourceMessageField.swift */,
-				D5639120238971CB8BD0E41E7FC19597 /* EventSourceParser.swift */,
-				4DAC77CEBD0FEA8F26F340BCB6D8155B /* Extensions */,
-			);
-			name = EventSource;
-			sourceTree = "<group>";
-		};
-		69826C07EBA3AFD10E463765070D5111 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				0CEFDF153FD5FA2F108F7F7667F62884 /* LICENSE */,
-				DCE96AE5E2B6CCDFD460B6DBD2AFEEE6 /* README.md */,
-				A056C88CF46256A11158CC4CE8D64CCD /* UrsusAtom.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		6AFA2220977988B303A7A3DEAA232599 /* Products */ = {
@@ -1305,35 +1313,6 @@
 				4EC86241BF8879F21DF6CA391B85A290 /* UrsusSigil.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6B40DFBEE167D5FD954A1E82522A6BF6 /* Ursus */ = {
-			isa = PBXGroup;
-			children = (
-				89585CC99CB65473249242B8B1816587 /* Ursus.swift */,
-				4A3316DCDC72312C0111E7EC29D85C27 /* UrsusApp.swift */,
-				64A8FA7169CCE4B26A4725E01012BB80 /* UrsusCredentials.swift */,
-				67538895054FBD0D7503527582FDB434 /* EventSource */,
-				DA5D0E8D6D1D768089579FDE9B72DF1A /* Models */,
-				1035C4793DA80B7528D84DC5E50DFBFE /* Pod */,
-				6CE0109C42E6E5CA0264F2064DC573D6 /* Support Files */,
-			);
-			name = Ursus;
-			path = ../../Ursus;
-			sourceTree = "<group>";
-		};
-		6CE0109C42E6E5CA0264F2064DC573D6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				32106CDADD82F6E623DB7DB867E4DDD0 /* Ursus.modulemap */,
-				1AA56A19DD896356E0043F75E6129242 /* Ursus.xcconfig */,
-				00E077609923BDA84C9F922F77F71AE2 /* Ursus-dummy.m */,
-				E352A554DF5C05E623CB3CA121FB424E /* Ursus-Info.plist */,
-				293A0F308FDB8411857A2C5F40369005 /* Ursus-prefix.pch */,
-				D2BFD7B64196EAB56EBA3213F7F269AC /* Ursus-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../UrsusChat/Pods/Target Support Files/Ursus";
 			sourceTree = "<group>";
 		};
 		70F7540FFC31F9F7B7259B4DE6EAEF6D /* Support Files */ = {
@@ -1364,18 +1343,40 @@
 			path = "../Target Support Files/KeychainAccess";
 			sourceTree = "<group>";
 		};
-		8DA7DA8224B0655DAA7B1D96145F29D5 /* Resources */ = {
+		83FCC037E7196C398CEE111E85DEB4C6 /* PhoneticBase */ = {
 			isa = PBXGroup;
 			children = (
-				5DC52B68FA34EF972D86B38F2336E479 /* index.json */,
+				38503152E855397687EEA26571C2B105 /* PhoneticBaseObfuscator.swift */,
+				BC6FAE293194DAD5A9C6D72DEC889659 /* PhoneticBaseParser.swift */,
+				BBB39579B8D282175ECE2CCA6FBB14BE /* PhoneticBasePrefix.swift */,
+				F5D7E5CD19CB2A669054F00B98FAB5E8 /* PhoneticBaseSuffix.swift */,
+				E6EEB89CC3D05B0E77C96FE59B26EF7C /* PhoneticBaseSyllable.swift */,
+				FE80E985E9D0F9EA433DBDBD78CB032C /* Extensions */,
 			);
-			name = Resources;
+			name = PhoneticBase;
 			sourceTree = "<group>";
 		};
-		9028CCE902C8DA56B415813F95B28184 /* Extensions */ = {
+		880A784039DFA23D7FC25B8A28284176 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C99FD31354EAAA69B41B89141B0E04D /* Bundle+Extensions.swift */,
+				592518405736F2C30035581E1B2CF723 /* Ursus.modulemap */,
+				43962C91D9A2E3D1FA1781BA80CDB6C2 /* Ursus.xcconfig */,
+				86588DF8EB243E4D4667DFFEE0AB7B3C /* Ursus-dummy.m */,
+				7AE2A111EE20F4398DD1E6B5B4161851 /* Ursus-Info.plist */,
+				A2F6281C73C060F46C74CA2F10CF4B4C /* Ursus-prefix.pch */,
+				4586B526CFC17200B755F474979884D4 /* Ursus-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../UrsusChat/Pods/Target Support Files/Ursus";
+			sourceTree = "<group>";
+		};
+		896CF9220263824F2CAEA22D26F5C7AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AFB87418CDDC729DB63674D73FEEA86D /* Bundle+Extensions.swift */,
+				9D94143B933320B2E0278FFABCBBAEB0 /* CGAffineTransform+Extensions.swift */,
+				3DFFD446A702F2BDA83AB0B095AE446B /* CGContext+Extensions.swift */,
+				D563DEC41ABE52B7B5460EFA53F8AE3B /* UIBezierPath+Extensions.swift */,
 			);
 			name = Extensions;
 			path = "Ursus Sigil/Extensions";
@@ -1413,20 +1414,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ReSwiftThunk";
-			sourceTree = "<group>";
-		};
-		9B5D0D31D57508C9C2BFE51354D0A596 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8592E850BABFFA9DCB6132D42D1AB143 /* UrsusSigil.modulemap */,
-				BB711449132284E011EAB78E1CA7A4F0 /* UrsusSigil.xcconfig */,
-				18FC510A0A8C7D78234B126F47A410B3 /* UrsusSigil-dummy.m */,
-				53F44A0E43512395DA41579B2E4C358C /* UrsusSigil-Info.plist */,
-				C4D9C11E5088721D2FFCA6A682965512 /* UrsusSigil-prefix.pch */,
-				48BF655CE0AA081B9A6C47D4FE331754 /* UrsusSigil-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../UrsusChat/Pods/Target Support Files/UrsusSigil";
 			sourceTree = "<group>";
 		};
 		9FF6CB71733914CA9873E8BA86A473B6 /* Support Files */ = {
@@ -1518,14 +1505,34 @@
 			path = AlamofireNetworkActivityIndicator;
 			sourceTree = "<group>";
 		};
-		B108ECCE452BD3DA102D7E3B9EE633F9 /* Errors */ = {
+		AF4D33A72BF6FE4EE2F35DA30BFCB35C /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				670549BE3561FBA5070F924BE50B1A86 /* PokeError.swift */,
-				D620477885243F88141485FEAA8E3462 /* SubscribeError.swift */,
+				78149F0376D89CA61C6A65801B92AA35 /* UrsusDecoder.swift */,
+				99B34BF19989E94DC821C84B8189EBCB /* UrsusEncoder.swift */,
 			);
-			name = Errors;
-			path = Errors;
+			name = Serialization;
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		B15CE30EF8C6CA394C48BF64CFC34A3C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				303EC07A9189CEA10B87081D5E46EB5F /* LICENSE */,
+				EF28CCE255EDA8DFD8F850B8211A80B5 /* README.md */,
+				3DCA3D6D21C5495D990A36E4AD307B69 /* UrsusSigil.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		B5462B0A9FB79C4DB14A5D0931E24B5B /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1ABE5D0D32F08D068A6FC9E9A2D8F /* PokeEvent.swift */,
+				BC9750ED67B1AA756389AFD662197F80 /* SubscribeEvent.swift */,
+			);
+			name = Events;
+			path = Events;
 			sourceTree = "<group>";
 		};
 		B949CBB0D90B125076E94AE171515DFB /* Pods-Ursus Chat */ = {
@@ -1543,6 +1550,16 @@
 			);
 			name = "Pods-Ursus Chat";
 			path = "Target Support Files/Pods-Ursus Chat";
+			sourceTree = "<group>";
+		};
+		C4E7C81A6DCDA26DFC4C24A2A69D33D4 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A2387E81E6EA9090C91121AA95F9D686 /* LICENSE */,
+				05B6498401A5A857E0CCFDEDE58FC17F /* README.md */,
+				84A487B78F8972DA71EF14D7255C67A2 /* Ursus.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		C9A9D4295210BF3A4CC2EE9568BF4C69 /* Pods */ = {
@@ -1563,16 +1580,43 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CDADCA35BBB96FEA7BB1DB41C5A74EE6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				D5923E08221FF2BBFE49BD9E507DF7E1 /* DiffResponse.swift */,
+				B17B9FEF4037D2DD7F193DA467CF7D08 /* PokeResponse.swift */,
+				AF8A4549AEE40C415FA9B11A20CCF82F /* QuitResponse.swift */,
+				DD6F44C4C152D6BD2794CB20076C2024 /* Response.swift */,
+				C09EB775CA5FD6D10A583F837A5FC35B /* SubscribeResponse.swift */,
+			);
+			name = Responses;
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				616B3D00C6ECBB73DA118B0D84A4D6AA /* Development Pods */,
+				2EDE5CA9211ABEFF66F6526B6CBA698F /* Development Pods */,
 				14BD970A7756DCBBAEB031454D405A7A /* Frameworks */,
 				C9A9D4295210BF3A4CC2EE9568BF4C69 /* Pods */,
 				6AFA2220977988B303A7A3DEAA232599 /* Products */,
 				E8689907E431F6ED232FEE4AE512FF73 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D37206B53EF39A97EFE12CE0B742B15E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2FF44118B5CD7BEE883DB292C8FF2E5 /* UrsusAtom.modulemap */,
+				D808218C98F129C6D6A867F0E8237F41 /* UrsusAtom.xcconfig */,
+				9FAF608B411C8A1D3DBEDA9D9E9E63D6 /* UrsusAtom-dummy.m */,
+				00C03E001B619F752EA6C118437A41CA /* UrsusAtom-Info.plist */,
+				B8EDC1D91CBC4C17F61198A3BF4DE66C /* UrsusAtom-prefix.pch */,
+				E09D22123EBFFB655B8E288D39BAFCF7 /* UrsusAtom-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../UrsusChat/Pods/Target Support Files/UrsusAtom";
 			sourceTree = "<group>";
 		};
 		D53D86ABABCF6C6C3CC66E1E6D0C5021 /* Support Files */ = {
@@ -1589,27 +1633,41 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
-		DA5D0E8D6D1D768089579FDE9B72DF1A /* Models */ = {
+		D714CFD3D00AA041499402C248338E2C /* Ursus */ = {
 			isa = PBXGroup;
 			children = (
-				B108ECCE452BD3DA102D7E3B9EE633F9 /* Errors */,
-				47BF8E3CE12C80B3BECEFE30BF1851E2 /* Events */,
-				5D1644F5D3CB0F97292C734FDD67A4E5 /* Requests */,
-				19E6C2A49AB600A3E98541214E6CECEF /* Responses */,
-				DDA88890BBA8D877F4EE4EEF4C36D500 /* Serialization */,
+				083B7B9C8B33B0D35FC0F706D7A1D18A /* Ursus.swift */,
+				33DDA6A0BD0C434817774689133CC347 /* UrsusApp.swift */,
+				E223A92A55D69FEFC05530644DAA39B5 /* UrsusCredentials.swift */,
+				08DBD0A7B6132883DF6CB95CDAC6AEC7 /* EventSource */,
+				2B51D2BE6286E492543CB0616E98C9F5 /* Models */,
+				C4E7C81A6DCDA26DFC4C24A2A69D33D4 /* Pod */,
+				880A784039DFA23D7FC25B8A28284176 /* Support Files */,
 			);
-			name = Models;
-			path = Ursus/Models;
+			name = Ursus;
+			path = ../../Ursus;
 			sourceTree = "<group>";
 		};
-		DDA88890BBA8D877F4EE4EEF4C36D500 /* Serialization */ = {
+		DAECAA1BE2C49742FF799EC8ECCCA35A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FEF7173DBADCB43F00470EDC35E5FA7E /* UrsusDecoder.swift */,
-				60EE2AD45A5A2AB4CF7ACF63A510649A /* UrsusEncoder.swift */,
+				F9A7938A9EA9F20033D8032AE9907824 /* URLSessionConfiguration+Extensions.swift */,
 			);
-			name = Serialization;
-			path = Serialization;
+			name = Extensions;
+			path = "Ursus Event Source/Extensions";
+			sourceTree = "<group>";
+		};
+		E1EDC9D70D8B99130085F4F9B2F50598 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DFBE971569D4182B91B49A263FFFE20D /* AckRequest.swift */,
+				92E0ACEDB02E5F0A4F1B4E8CBEB29680 /* DeleteRequest.swift */,
+				A52DDB2D4CF0303943F69CC453C6928C /* PokeRequest.swift */,
+				CCA4D30EFAC0158FE97FB64F75640E55 /* SubscribeRequest.swift */,
+				8EE6387016789D4ADD676134A084EA2D /* UnsubscribeRequest.swift */,
+			);
+			name = Requests;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		E8689907E431F6ED232FEE4AE512FF73 /* Targets Support Files */ = {
@@ -1618,15 +1676,6 @@
 				B949CBB0D90B125076E94AE171515DFB /* Pods-Ursus Chat */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F0134E070196E3F01B47D758E4CA3133 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				72F96B4FF40D2D6E4C72223008F49E63 /* String+Extensions.swift */,
-			);
-			name = Extensions;
-			path = "Ursus Phonetic Base/Extensions";
 			sourceTree = "<group>";
 		};
 		F3B14EB267F53A5EE5616387B2265BF0 /* Support Files */ = {
@@ -1641,19 +1690,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AlamofireLogger";
-			sourceTree = "<group>";
-		};
-		F8FDA69D664074D96207CE47FA2C52CC /* PhoneticBase */ = {
-			isa = PBXGroup;
-			children = (
-				CBEB3757B60956F8A38B4C849A77321F /* PhoneticBaseObfuscator.swift */,
-				D075B948B16E22D8A952A14E4C84D13B /* PhoneticBaseParser.swift */,
-				ACA94BFE208741490659124E63542A34 /* PhoneticBasePrefix.swift */,
-				78A39D6780F78B95924E6CF7C551CF19 /* PhoneticBaseSuffix.swift */,
-				DB955FB98E16DA2C5549C1A304512AE6 /* PhoneticBaseSyllable.swift */,
-				F0134E070196E3F01B47D758E4CA3133 /* Extensions */,
-			);
-			name = PhoneticBase;
 			sourceTree = "<group>";
 		};
 		F952D8A8FDC22EBCE51558C580E9F267 /* Support Files */ = {
@@ -1730,6 +1766,15 @@
 			path = "../Target Support Files/BigInt";
 			sourceTree = "<group>";
 		};
+		FE80E985E9D0F9EA433DBDBD78CB032C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43402780C050CB4177C3D9A70C1C8598 /* String+Extensions.swift */,
+			);
+			name = Extensions;
+			path = "Ursus Phonetic Base/Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1798,14 +1843,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76B74E201D932768653E866F8C4C537E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47C554724F5BF63838C84623AF44E007 /* UrsusSigil-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		79CCF2E2630C7C5B2B6A6FBE8DC43AC4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1819,6 +1856,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D3DD4A8BB36733BA15868F7FB8C56CE /* Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB918FBE0839A81CE7C56AFA99A0D5A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C65DE2EF8B2568692C381EEC0F85A6E /* UrsusSigil-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1935,18 +1980,18 @@
 		};
 		2E7CCD80317E923032BB5D175884AB06 /* UrsusSigil */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4BE53A9277A3BE0D131CE63491287DB5 /* Build configuration list for PBXNativeTarget "UrsusSigil" */;
+			buildConfigurationList = 775021A7C379F983701B31EDCB6E3DC3 /* Build configuration list for PBXNativeTarget "UrsusSigil" */;
 			buildPhases = (
-				76B74E201D932768653E866F8C4C537E /* Headers */,
-				D9B638CD449A0145126BF580E929D20A /* Sources */,
-				5D21FB00D7FAE5E0026A670F86AD60D4 /* Frameworks */,
-				688108303006A04ABE154A9311C3F614 /* Resources */,
+				AB918FBE0839A81CE7C56AFA99A0D5A6 /* Headers */,
+				CDECBBF5CA948DA63A3097C9AA977D3F /* Sources */,
+				E85E3D6715D1F83850863C70ADED691D /* Frameworks */,
+				488EAA0E0D8B55173E4F10F2E75F3C91 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D8182E1A8EFA867D8B113368D518E5D8 /* PBXTargetDependency */,
-				36CA9A9348ACE56A00065363CA3CDD40 /* PBXTargetDependency */,
+				1485D6ACA2473867A61E7BAA32F1D866 /* PBXTargetDependency */,
+				BD8E8A868F87DED2A4FD1F487286D3A5 /* PBXTargetDependency */,
 			);
 			name = UrsusSigil;
 			productName = UrsusSigil;
@@ -2213,18 +2258,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		488EAA0E0D8B55173E4F10F2E75F3C91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B39BA2C81AEA7F1E91470A25611F541 /* index.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C193E54B44DAEF03EE281A99BB02E30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		688108303006A04ABE154A9311C3F614 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F2EDA6E1E76EBAA16B3D1075074E8EF /* index.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2585,15 +2630,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9B638CD449A0145126BF580E929D20A /* Sources */ = {
+		CDECBBF5CA948DA63A3097C9AA977D3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF65667787F9916FE4C3F74A7DA6759A /* Bundle+Extensions.swift in Sources */,
-				BBC5B60539075E31C87B0E6883DDAA66 /* Sigil.swift in Sources */,
-				2086338FA238CFBB2F3AC65D7EB42939 /* SigilView.swift in Sources */,
-				28112B75CEBDD02FF3C73A0121ADB9E0 /* Symbol.swift in Sources */,
-				A22ABB2F5A8C2EED50CD9C5D0F2EFEB5 /* UrsusSigil-dummy.m in Sources */,
+				99A0535E10E77F5CA2690CFD1197CE44 /* Bundle+Extensions.swift in Sources */,
+				737C8DE349BCAA6854DF5FE4B5D9B0E2 /* CGAffineTransform+Extensions.swift in Sources */,
+				11F5CD77DD7380C34470DA83CC02C5F2 /* CGContext+Extensions.swift in Sources */,
+				5436126B7681AB5AC7B27AB90503EA56 /* CircleElement.swift in Sources */,
+				6FE74354B59002AEE41E7658D1F2ECDE /* Element.swift in Sources */,
+				292E1A48B3F01BA11A3A6B72B573FE38 /* ElementAttributes.swift in Sources */,
+				95A235C65438729C80A8D32C1B03361E /* GroupElement.swift in Sources */,
+				1D99DBA62294ADA0746494C926821BCD /* LineElement.swift in Sources */,
+				4869DECC290040D14A252EAA2DA5FC26 /* PathElement.swift in Sources */,
+				D2E55A64858C9DE91F5B6553347913DB /* RectElement.swift in Sources */,
+				A847BFA46004A0FD09C6F483DB4AAE36 /* Sigil.swift in Sources */,
+				B147B3E1C6FCBE1404BD6F14E4CE3755 /* Symbol.swift in Sources */,
+				66411985AFF4B421E0AF74E066D5CCE1 /* UIBezierPath+Extensions.swift in Sources */,
+				3A510BCF8A8FDC2BF9BD1C85C5DC86BE /* UrsusSigil-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2639,6 +2693,12 @@
 			target = 2349E173F60A2065FC65E52DD215DFF0 /* SwiftSVG */;
 			targetProxy = 3E302ABD72E51FE3281B708335686DF4 /* PBXContainerItemProxy */;
 		};
+		1485D6ACA2473867A61E7BAA32F1D866 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftSVG;
+			target = 2349E173F60A2065FC65E52DD215DFF0 /* SwiftSVG */;
+			targetProxy = 0AC703AC9ED2F837A37AEC5BF9045279 /* PBXContainerItemProxy */;
+		};
 		1B5FB2FAC6573AD3541A1A58B3138BFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AlamofireNetworkActivityIndicator;
@@ -2680,12 +2740,6 @@
 			name = ReSwiftThunk;
 			target = 1E36A7821BD2936E2FE04C35E6A20CAD /* ReSwiftThunk */;
 			targetProxy = E4BF36CF9479E2EFE41ADA406CA99E33 /* PBXContainerItemProxy */;
-		};
-		36CA9A9348ACE56A00065363CA3CDD40 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = UrsusAtom;
-			target = 135CD96EC40EEFAF00D8705597A19B65 /* UrsusAtom */;
-			targetProxy = 658B3B75B10426EBC3D09D18BB0ACE82 /* PBXContainerItemProxy */;
 		};
 		40139362C0B3AA712E5D3CB1A735E960 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2735,11 +2789,11 @@
 			target = 6038CE6006EFBE9D905454CF01909C42 /* SwiftDate */;
 			targetProxy = 2BBE442E0370932847E3D791E613FCD7 /* PBXContainerItemProxy */;
 		};
-		D8182E1A8EFA867D8B113368D518E5D8 /* PBXTargetDependency */ = {
+		BD8E8A868F87DED2A4FD1F487286D3A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftSVG;
-			target = 2349E173F60A2065FC65E52DD215DFF0 /* SwiftSVG */;
-			targetProxy = 4999F51CAFB4F745BCE083DD83C37592 /* PBXContainerItemProxy */;
+			name = UrsusAtom;
+			target = 135CD96EC40EEFAF00D8705597A19B65 /* UrsusAtom */;
+			targetProxy = DFBAFA7435CFD3086159BA6674A768C4 /* PBXContainerItemProxy */;
 		};
 		DD3FE7484F90AF3C2F4E1AB33BF50A41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2782,7 +2836,7 @@
 /* Begin XCBuildConfiguration section */
 		06AC0F56FA94555127EDD1EE4A2EE1C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 729E55A7D422B6535A625DF870952ACA /* UrsusAtom.xcconfig */;
+			baseConfigurationReference = D808218C98F129C6D6A867F0E8237F41 /* UrsusAtom.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2806,42 +2860,6 @@
 				MODULEMAP_FILE = "Target Support Files/UrsusAtom/UrsusAtom.modulemap";
 				PRODUCT_MODULE_NAME = UrsusAtom;
 				PRODUCT_NAME = UrsusAtom;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		11D4F58ADC320C2E9C19D9B8B77A949E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB711449132284E011EAB78E1CA7A4F0 /* UrsusSigil.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UrsusSigil/UrsusSigil-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UrsusSigil/UrsusSigil-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/UrsusSigil/UrsusSigil.modulemap";
-				PRODUCT_MODULE_NAME = UrsusSigil;
-				PRODUCT_NAME = UrsusSigil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -2912,43 +2930,6 @@
 			};
 			name = Release;
 		};
-		19FF1E23003594C9BC82DCB30641735C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB711449132284E011EAB78E1CA7A4F0 /* UrsusSigil.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UrsusSigil/UrsusSigil-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UrsusSigil/UrsusSigil-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/UrsusSigil/UrsusSigil.modulemap";
-				PRODUCT_MODULE_NAME = UrsusSigil;
-				PRODUCT_NAME = UrsusSigil;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1F2C78C442D1A0DB01AC20CDE6470585 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6F6F86524731DCBFC9E5227D69EC600 /* ReSwift.xcconfig */;
@@ -2983,6 +2964,43 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		230895E34DDCABEBB24FE23C18FA500F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5304C709279A55BFF8B99271386E0ED8 /* UrsusSigil.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UrsusSigil/UrsusSigil-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UrsusSigil/UrsusSigil-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UrsusSigil/UrsusSigil.modulemap";
+				PRODUCT_MODULE_NAME = UrsusSigil;
+				PRODUCT_NAME = UrsusSigil;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		2BAEA1AEA2DC1DE44ADBC70D2B5765BA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3456,7 +3474,7 @@
 		};
 		9368BB49A24E5F9A7AC8FBAF9977D32D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA56A19DD896356E0043F75E6129242 /* Ursus.xcconfig */;
+			baseConfigurationReference = 43962C91D9A2E3D1FA1781BA80CDB6C2 /* Ursus.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -3673,7 +3691,7 @@
 		};
 		E009E72DACE59138FFEA34353B315588 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 729E55A7D422B6535A625DF870952ACA /* UrsusAtom.xcconfig */;
+			baseConfigurationReference = D808218C98F129C6D6A867F0E8237F41 /* UrsusAtom.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -3710,7 +3728,7 @@
 		};
 		E4902725FD5C6A90EA10BCEE5E9D80D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA56A19DD896356E0043F75E6129242 /* Ursus.xcconfig */;
+			baseConfigurationReference = 43962C91D9A2E3D1FA1781BA80CDB6C2 /* Ursus.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -3843,6 +3861,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		F627AFA12C5C8E16E20AA1BA7B949FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5304C709279A55BFF8B99271386E0ED8 /* UrsusSigil.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UrsusSigil/UrsusSigil-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UrsusSigil/UrsusSigil-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UrsusSigil/UrsusSigil.modulemap";
+				PRODUCT_MODULE_NAME = UrsusSigil;
+				PRODUCT_NAME = UrsusSigil;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		F74139B4BC42BED235272EF0160DD8A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4037,15 +4091,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4BE53A9277A3BE0D131CE63491287DB5 /* Build configuration list for PBXNativeTarget "UrsusSigil" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11D4F58ADC320C2E9C19D9B8B77A949E /* Debug */,
-				19FF1E23003594C9BC82DCB30641735C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4BEE926243448802ACA6F07A75D9C025 /* Build configuration list for PBXNativeTarget "KeychainAccess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -4069,6 +4114,15 @@
 			buildConfigurations = (
 				1F2C78C442D1A0DB01AC20CDE6470585 /* Debug */,
 				78C31637FC0554681178D80C8912C432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		775021A7C379F983701B31EDCB6E3DC3 /* Build configuration list for PBXNativeTarget "UrsusSigil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F627AFA12C5C8E16E20AA1BA7B949FB2 /* Debug */,
+				230895E34DDCABEBB24FE23C18FA500F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

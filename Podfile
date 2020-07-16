@@ -3,7 +3,7 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-development_pods = true
+development_pods = false
 
 target 'Ursus Chat' do
   
@@ -14,7 +14,7 @@ target 'Ursus Chat' do
     else
         pod 'Ursus', '~> 1.3'
         pod 'UrsusAtom', '~> 1.0'
-        pod 'UrsusSigil', '~> 0.1'
+        pod 'UrsusSigil', '~> 1.0'
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'
