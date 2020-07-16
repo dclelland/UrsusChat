@@ -63,7 +63,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat list row
 
-- [ ] Is this finished...? Do we need swipe to delete? Context menus?
+- [ ] Is this finished...? Do we need swipe to delete? Context menus? Swipe to mark as read/unread
 
 ### Chat view
 
