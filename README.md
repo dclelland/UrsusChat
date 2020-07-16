@@ -9,10 +9,6 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 ### General
 
 - [ ] Ursus should pause the connection when the app is backgrounded, and resume when the app reenters foreground
-- [ ] Build out **Ursus Sigil**, as this will be needed for chat views. See [`sigil-js`](https://github.com/urbit/sigil-js) for reference.
-    - Perhaps time to split up the Ursus work off into its own organisation with separate repos for the growing list of submodules?
-    - Might need to fix the obfuscation issues at the same time
-        - Wasn't there a bug found in the `++mud` implementation recently...?
 - [ ] Try a basic `%poke` request, as haven't done that yet really. For example, to `chat-hook`: `{"message": {"path: "/~/~zod/mc", "envelope": {"uid": "0v3.l14pg.36jh8.mh9dl.ps65v.4lujh", "number": 1, "author: "~zod", "when": 15942876211449, "letter": {"text": "Hello world"}}}}`
 
 ### Store and reducers
@@ -82,8 +78,8 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat row
 
-- [ ] Display sigil in avatar view
-    - Custom avatar links should be supported
+- [ ] Sigils should respect dark mode
+- [ ] Display custom avatar in avatar view
 - [ ] Display custom username in avatar view
     - Tapping should show ship name...?
     - Copy paste support for ship names?
@@ -109,6 +105,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
     - Ship name + sigil
     - App version + base hash (see above)
 - [ ] Dark mode device setting override (like the way Twitter does it)
+- [ ] Custom sigil/nickname disabling
 - [ ] 'Open Landscape' link
 - [ ] 'Open Bridge' link
 - [ ] 'Support/discussion channel' link

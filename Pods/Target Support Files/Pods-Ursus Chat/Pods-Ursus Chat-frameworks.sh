@@ -171,8 +171,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReSwiftThunk/ReSwiftThunk.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Ursus/Ursus.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UrsusAtom/UrsusAtom.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UrsusSigil/UrsusSigil.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
@@ -185,8 +187,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReSwiftThunk/ReSwiftThunk.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Ursus/Ursus.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UrsusAtom/UrsusAtom.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UrsusSigil/UrsusSigil.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

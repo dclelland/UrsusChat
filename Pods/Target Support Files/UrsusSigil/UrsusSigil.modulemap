@@ -1,0 +1,6 @@
+framework module UrsusSigil {
+  umbrella header "UrsusSigil-umbrella.h"
+
+  export *
+  module * { export * }
+}
