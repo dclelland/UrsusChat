@@ -78,6 +78,7 @@ Work in progress; first project using my [Ursus](https://github.com/dclelland/Ur
 
 ### Chat row
 
+- [ ] Sigils should respect dark mode
 - [ ] Display custom avatar in avatar view
 - [ ] Display custom username in avatar view
     - Tapping should show ship name...?

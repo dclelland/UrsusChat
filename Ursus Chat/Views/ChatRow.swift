@@ -19,7 +19,7 @@ struct ChatRow: View {
     var body: some View {
         HStack(alignment: .bottom) {
             Image(
-                uiImage: Sigil(ship: envelope.author, foregroundColor: .systemFill, backgroundColor: .systemBackground)
+                uiImage: Sigil(ship: envelope.author)
                     .image(with: CGSize(width: 24.0, height: 24.0))
             )
             VStack(alignment: .leading) {
