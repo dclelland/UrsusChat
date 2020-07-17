@@ -14,7 +14,7 @@ target 'Ursus Chat' do
     else
         pod 'Ursus', '~> 1.3'
         pod 'UrsusAtom', '~> 1.0'
-        pod 'UrsusSigil', '~> 1.0'
+        pod 'UrsusSigil', '~> 1.1'
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'

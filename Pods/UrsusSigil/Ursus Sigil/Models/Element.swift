@@ -17,19 +17,41 @@ internal protocol Element: Decodable {
 
 extension Element {
     
-    func render(into context: CGContext, bounds: CGRect, foregroundColor: UIColor, backgroundColor: UIColor) {
+    func render(into context: CGContext, bounds: CGRect, color: UIColor) {
         let transformedPath = path.applying(attributes.transform).applying(CGAffineTransform(from: Symbol.bounds, to: bounds))
         
         context.draw { context in
-            context.setFillColor(attributes.fill.color(foregroundColor: foregroundColor, backgroundColor: backgroundColor).cgColor)
-            context.addPath(transformedPath.cgPath)
-            context.fillPath(using: attributes.fillRule)
-            
-            context.setStrokeColor(attributes.stroke.color(foregroundColor: foregroundColor, backgroundColor: backgroundColor).cgColor)
-            context.setLineWidth(bounds.width / 128.0 + 0.33)
-            context.setLineCap(attributes.strokeLineCap)
-            context.addPath(transformedPath.cgPath)
-            context.strokePath()
+            switch attributes.fill {
+            case .none:
+                break
+            case .foreground:
+                context.setFillColor(color.cgColor)
+                context.addPath(transformedPath.cgPath)
+                context.fillPath(using: attributes.fillRule)
+            case .background:
+                context.setBlendMode(.clear)
+                context.addPath(transformedPath.cgPath)
+                context.fillPath(using: attributes.clipRule)
+            }
+        }
+        
+        context.draw { context in
+            switch attributes.stroke {
+            case .none:
+                break
+            case .foreground:
+                context.setLineWidth(bounds.width / 128.0 + 0.33)
+                context.setLineCap(attributes.strokeLineCap)
+                context.setStrokeColor(color.cgColor)
+                context.addPath(transformedPath.cgPath)
+                context.strokePath()
+            case .background:
+                context.setLineWidth(bounds.width / 128.0 + 0.33)
+                context.setLineCap(attributes.strokeLineCap)
+                context.setBlendMode(.clear)
+                context.addPath(transformedPath.cgPath)
+                context.strokePath()
+            }
         }
     }
     

@@ -15,17 +15,6 @@ internal struct ElementAttributes: Decodable {
         case foreground = "@FG"
         case background = "@BG"
         
-        func color(foregroundColor: UIColor, backgroundColor: UIColor) -> UIColor {
-            switch self {
-            case .none:
-                return .clear
-            case .foreground:
-                return foregroundColor
-            case .background:
-                return backgroundColor
-            }
-        }
-        
     }
     
     private enum LineCap: String, Decodable {

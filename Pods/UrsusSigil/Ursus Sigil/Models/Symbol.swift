@@ -68,10 +68,10 @@ extension Symbol {
 
 extension Symbol {
     
-    func render(into context: CGContext, bounds: CGRect, foregroundColor: UIColor, backgroundColor: UIColor) {
-        element.render(into: context, bounds: bounds, foregroundColor: foregroundColor, backgroundColor: backgroundColor)
+    func render(into context: CGContext, bounds: CGRect, color: UIColor) {
+        element.render(into: context, bounds: bounds, color: color)
         for element in children {
-            element.render(into: context, bounds: bounds, foregroundColor: foregroundColor, backgroundColor: backgroundColor)
+            element.render(into: context, bounds: bounds, color: color)
         }
     }
     
