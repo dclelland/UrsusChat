@@ -8,11 +8,11 @@ development_pods = false
 target 'Ursus Chat' do
   
     if development_pods
-        pod 'Ursus', path: '../Ursus'
+        pod 'UrsusAirlock', path: '../UrsusAirlock'
         pod 'UrsusAtom', path: '../UrsusAtom'
         pod 'UrsusSigil', path: '../UrsusSigil'
     else
-        pod 'Ursus', '~> 1.3'
+        pod 'UrsusAirlock', '~> 1.4'
         pod 'UrsusAtom', '~> 1.0'
         pod 'UrsusSigil', '~> 1.1'
     end

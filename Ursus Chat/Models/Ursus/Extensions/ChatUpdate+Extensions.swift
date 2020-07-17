@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftDate
-import Ursus
+import UrsusAirlock
 
 extension SubscriptionState {
     

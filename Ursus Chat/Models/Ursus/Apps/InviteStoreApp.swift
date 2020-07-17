@@ -8,9 +8,9 @@
 
 import Foundation
 import Alamofire
-import Ursus
+import UrsusAirlock
 
-extension Ursus {
+extension Airlock {
     
     func inviteStore(ship: Ship) -> InviteStoreApp {
         return app(ship: ship, app: "invite-store")
@@ -18,7 +18,7 @@ extension Ursus {
     
 }
 
-class InviteStoreApp: UrsusApp {
+class InviteStoreApp: AirlockApp {
     
     @discardableResult func all(handler: @escaping (SubscribeEvent<AllResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)

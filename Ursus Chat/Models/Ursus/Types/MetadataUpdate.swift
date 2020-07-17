@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Ursus
+import UrsusAirlock
 
 enum MetadataUpdate: Decodable {
     

@@ -8,7 +8,7 @@
 
 import Foundation
 import ReSwift
-import Ursus
+import UrsusAirlock
 
 protocol SessionAction: Action {
     
@@ -25,12 +25,12 @@ enum SessionActionError: Error {
 
 struct SessionLoginAction: SessionAction {
     
-    var client: Ursus
+    var airlock: Airlock
     
     func reduce(_ state: inout SessionState) throws {
         switch state {
         case .unauthenticated:
-            state = .authenticated(client: client)
+            state = .authenticated(airlock: airlock)
         case .authenticated:
             throw SessionActionError.alreadyLoggedIn
         }

@@ -8,12 +8,12 @@
 
 import Foundation
 import ReSwift
-import Ursus
+import UrsusAirlock
 
 enum SessionState: StateType {
     
     case unauthenticated
-    case authenticated(client: Ursus)
+    case authenticated(airlock: Airlock)
     
     init() {
         self = .unauthenticated

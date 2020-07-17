@@ -1,5 +1,5 @@
 //
-//  Ursus.swift
+//  Airlock.swift
 //  Ursus
 //
 //  Created by Daniel Clelland on 3/06/20.
@@ -7,19 +7,24 @@
 
 import Foundation
 import Alamofire
+import UrsusAtom
 
-public class Ursus {
+public typealias Ship = PatP
+
+public typealias Code = PatP
+
+public class Airlock {
     
     private var session: Session = .default
     private var eventSource: EventSource? = nil
     
-    private var encoder = UrsusEncoder()
-    private var decoder = UrsusDecoder()
+    private var encoder = AirlockEncoder()
+    private var decoder = AirlockDecoder()
     
     private var pokeHandlers = [Int: (PokeEvent) -> Void]()
     private var subscribeHandlers = [Int: (SubscribeEvent<Data>) -> Void]()
     
-    private var uid: String = Ursus.uid()
+    private var uid: String = Airlock.uid()
     
     private var requestID: Int = 0
     private var nextRequestID: Int {
@@ -29,14 +34,14 @@ public class Ursus {
     
     private var lastEventID: String? = nil
     
-    public var credentials: UrsusCredentials
+    public var credentials: AirlockCredentials
     
-    public init(credentials: UrsusCredentials) {
+    public init(credentials: AirlockCredentials) {
         self.credentials = credentials
     }
     
     public convenience init(url: URL, code: Code) {
-        self.init(credentials: UrsusCredentials(url: url, code: code))
+        self.init(credentials: AirlockCredentials(url: url, code: code))
     }
     
     deinit {
@@ -45,7 +50,7 @@ public class Ursus {
     
 }
 
-extension Ursus {
+extension Airlock {
     
     @discardableResult public func loginRequest(handler: @escaping (Ship) -> Void) -> DataRequest {
         return session.request(loginURL, method: .post, parameters: ["password": credentials.code.description], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
@@ -59,7 +64,7 @@ extension Ursus {
                 return
             }
             
-            guard let ship = try? Ship(string: name) else {
+            guard let ship = Ship(rawValue: name) else {
                 print("[Ursus] Error decoding urbauth:", urbauth)
                 return
             }
@@ -84,7 +89,7 @@ extension Ursus {
     
 }
 
-extension Ursus {
+extension Airlock {
     
     @discardableResult public func ackRequest(eventID: Int) -> DataRequest {
         let request = AckRequest(eventID: eventID)
@@ -135,7 +140,7 @@ extension Ursus {
     
 }
 
-extension Ursus: EventSourceDelegate {
+extension Airlock: EventSourceDelegate {
     
     public func eventSource(_ eventSource: EventSource, didReceiveMessage message: EventSourceMessage) {
         self.lastEventID = message.id
@@ -188,7 +193,7 @@ extension Ursus: EventSourceDelegate {
     
 }
 
-extension Ursus {
+extension Airlock {
     
     private func connectEventSourceIfDisconnected() {
         guard eventSource == nil else {
@@ -202,7 +207,7 @@ extension Ursus {
     private func resetEventSource() {
         eventSource = nil
         
-        uid = Ursus.uid()
+        uid = Airlock.uid()
         
         requestID = 0
         lastEventID = nil
@@ -210,7 +215,7 @@ extension Ursus {
     
 }
 
-extension Ursus {
+extension Airlock {
     
     private var loginURL: URL {
         return credentials.url.appendingPathComponent("/~/login")
@@ -230,7 +235,7 @@ extension Ursus {
     
 }
 
-extension Ursus {
+extension Airlock {
     
     private static func uid() -> String {
         return "\(Int(Date().timeIntervalSince1970 * 1000))-\(String(Int.random(in: 0...0xFFFFFF), radix: 16))"

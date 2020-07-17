@@ -10,6 +10,6 @@ ${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework
 ${BUILT_PRODUCTS_DIR}/ReSwiftThunk/ReSwiftThunk.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework
-${BUILT_PRODUCTS_DIR}/Ursus/Ursus.framework
+${BUILT_PRODUCTS_DIR}/UrsusAirlock/UrsusAirlock.framework
 ${BUILT_PRODUCTS_DIR}/UrsusAtom/UrsusAtom.framework
 ${BUILT_PRODUCTS_DIR}/UrsusSigil/UrsusSigil.framework

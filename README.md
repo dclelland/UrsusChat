@@ -2,7 +2,7 @@
 
 An Urbit chat application for iOS.
 
-Work in progress; first project using my [Ursus](https://github.com/dclelland/Ursus) HTTP/`%eyre` client library.
+Work in progress; first project using my [UrsusAirlock](https://github.com/dclelland/UrsusAirlock) HTTP/`%eyre` client library.
 
 ## Todo list
 

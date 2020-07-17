@@ -8,7 +8,7 @@
 
 import Foundation
 import ReSwift
-import Ursus
+import UrsusAirlock
 
 struct SubscriptionState: StateType {
     

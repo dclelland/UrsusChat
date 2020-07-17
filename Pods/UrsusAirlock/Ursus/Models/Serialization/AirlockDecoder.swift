@@ -1,5 +1,5 @@
 //
-//  UrsusDecoder.swift
+//  AirlockDecoder.swift
 //  Alamofire
 //
 //  Created by Daniel Clelland on 13/06/20.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class UrsusDecoder: JSONDecoder {
+public class AirlockDecoder: JSONDecoder {
     
     public override init() {
         super.init()

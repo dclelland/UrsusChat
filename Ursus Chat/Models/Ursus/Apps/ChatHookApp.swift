@@ -8,9 +8,9 @@
 
 import Foundation
 import Alamofire
-import Ursus
+import UrsusAirlock
 
-extension Ursus {
+extension Airlock {
     
     func chatHook(ship: Ship) -> ChatHookApp {
         return app(ship: ship, app: "chat-hook")
@@ -18,7 +18,7 @@ extension Ursus {
     
 }
 
-class ChatHookApp: UrsusApp {
+class ChatHookApp: AirlockApp {
     
     @discardableResult func synced(handler: @escaping (SubscribeEvent<SyncedResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/synced", handler: handler)

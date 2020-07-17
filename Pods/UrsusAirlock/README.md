@@ -1,4 +1,4 @@
-# Ursus
+# Ursus Airlock
 
 An Urbit HTTP/`%eyre` client for iOS/macOS in Swift.
 
@@ -6,12 +6,12 @@ See my [Ursus Chat](https://github.com/dclelland/UrsusChat) repository for a dem
 
 ## Usage
 
-Ursus is very much a work in progress - better documentation and a demo app to come. Here's a quick sketch for now:
+Ursus Airlock is very much a work in progress - better documentation and a demo app to come. Here's a quick sketch for now:
 
 ```swift
-let ursus = Ursus(url: URL(string: "http://localhost")!, code: "fipfes-fipfes-fipfes-fipfes")
-ursus.loginRequest() { ship in
-    ursus.subscribeRequest(ship: ship, app: "chat-view", path: "/primary") { event in
+let airlock = Airlock(url: URL(string: "http://localhost")!, code: "fipfes-fipfes-fipfes-fipfes")
+airlock.loginRequest() { ship in
+    airlock.subscribeRequest(ship: ship, app: "chat-view", path: "/primary") { event in
         print("On subscribe event:", event)
     }
 }
@@ -19,10 +19,10 @@ ursus.loginRequest() { ship in
 
 ## Installation
 
-Ursus can be installed using Cocoapods by adding the following lines to your podfile:
+Ursus can be installed using Cocoapods by adding the following line to your podfile:
 
 ```ruby
-pod 'Ursus', '~> 1.2'
+pod 'UrsusAirlock', '~> 1.4'
 ```
 
 I can probably help set up Carthage or Swift Package Manager support if you need it.

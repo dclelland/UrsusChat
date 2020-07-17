@@ -1,6 +1,0 @@
-framework module Ursus {
-  umbrella header "Ursus-umbrella.h"
-
-  export *
-  module * { export * }
-}

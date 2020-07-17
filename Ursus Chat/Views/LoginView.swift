@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-import Ursus
+import UrsusAirlock
 
 struct LoginView: View {
     
@@ -62,7 +62,7 @@ extension LoginView {
         }
         
         isAuthenticating = true
-        store.dispatch(AppThunk.startSession(credentials: UrsusCredentials(url: url, code: code)))
+        store.dispatch(AppThunk.startSession(credentials: AirlockCredentials(url: url, code: code)))
     }
     
     private func bridgeButtonTapped() {

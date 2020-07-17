@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Ursus
+import UrsusAirlock
 
 typealias ChatHookUpdate = Synced
 

@@ -8,9 +8,9 @@
 
 import Foundation
 import Alamofire
-import Ursus
+import UrsusAirlock
 
-extension Ursus {
+extension Airlock {
     
     func chatView(ship: Ship) -> ChatViewApp {
         return app(ship: ship, app: "chat-view")
@@ -18,7 +18,7 @@ extension Ursus {
     
 }
 
-class ChatViewApp: UrsusApp {
+class ChatViewApp: AirlockApp {
     
     @discardableResult func primary(handler: @escaping (SubscribeEvent<PrimaryResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)

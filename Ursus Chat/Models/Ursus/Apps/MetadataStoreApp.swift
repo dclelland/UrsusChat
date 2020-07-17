@@ -8,9 +8,9 @@
 
 import Foundation
 import Alamofire
-import Ursus
+import UrsusAirlock
 
-extension Ursus {
+extension Airlock {
     
     func metadataStore(ship: Ship) -> MetadataStoreApp {
         return app(ship: ship, app: "metadata-store")
@@ -18,7 +18,7 @@ extension Ursus {
     
 }
 
-class MetadataStoreApp: UrsusApp {
+class MetadataStoreApp: AirlockApp {
     
     @discardableResult func appName(app: String, handler: @escaping (SubscribeEvent<AppNameResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/app-name/\(app)", handler: handler)

@@ -1,5 +1,5 @@
 //
-//  UrsusApp.swift
+//  AirlockApp.swift
 //  Alamofire
 //
 //  Created by Daniel Clelland on 16/06/20.
@@ -8,52 +8,52 @@
 import Foundation
 import Alamofire
 
-extension Ursus {
+extension Airlock {
     
-    public func app<App: UrsusApp>(ship: Ship, app: String) -> App {
-        return App(ursus: self, ship: ship, app: app)
+    public func app<App: AirlockApp>(ship: Ship, app: String) -> App {
+        return App(airlock: self, ship: ship, app: app)
     }
     
 }
 
-open class UrsusApp {
+open class AirlockApp {
     
-    public var ursus: Ursus
+    public var airlock: Airlock
     public var ship: Ship
     public var app: String
     
-    required public init(ursus: Ursus, ship: Ship, app: String) {
-        self.ursus = ursus
+    required public init(airlock: Airlock, ship: Ship, app: String) {
+        self.airlock = airlock
         self.ship = ship
         self.app = app
     }
     
 }
 
-extension UrsusApp {
+extension AirlockApp {
     
     @discardableResult public func ackRequest(eventID: Int) -> DataRequest {
-        return ursus.ackRequest(eventID: eventID)
+        return airlock.ackRequest(eventID: eventID)
     }
     
     @discardableResult public func pokeRequest<JSON: Encodable>(mark: String = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
-        return ursus.pokeRequest(ship: ship, app: app, mark: mark, json: json, handler: handler)
+        return airlock.pokeRequest(ship: ship, app: app, mark: mark, json: json, handler: handler)
     }
     
     @discardableResult public func subscribeRequest(path: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
-        return ursus.subscribeRequest(ship: ship, app: app, path: path, handler: handler)
+        return airlock.subscribeRequest(ship: ship, app: app, path: path, handler: handler)
     }
     
     @discardableResult public func subscribeRequest<JSON: Decodable>(path: String, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
-        return ursus.subscribeRequest(ship: ship, app: app, path: path, handler: handler)
+        return airlock.subscribeRequest(ship: ship, app: app, path: path, handler: handler)
     }
     
     @discardableResult public func unsubscribeRequest(subscriptionID: Int) -> DataRequest {
-        return ursus.channelRequest(subscriptionID)
+        return airlock.channelRequest(subscriptionID)
     }
     
     @discardableResult public func deleteRequest() -> DataRequest {
-        return ursus.deleteRequest()
+        return airlock.deleteRequest()
     }
     
 }

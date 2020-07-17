@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double UrsusVersionNumber;
-FOUNDATION_EXPORT const unsigned char UrsusVersionString[];
+FOUNDATION_EXPORT double UrsusAirlockVersionNumber;
+FOUNDATION_EXPORT const unsigned char UrsusAirlockVersionString[];
 
