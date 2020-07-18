@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct ChatListView: View {
     
@@ -20,6 +21,9 @@ struct ChatListView: View {
                 }
             }
             .navigationBarTitle("Chats")
+            .introspectTableView { tableView in
+                tableView.tableFooterView = UIView()
+            }
         }
         .tabItem {
             Image(systemName: "text.bubble")

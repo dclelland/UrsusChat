@@ -26,6 +26,10 @@ struct ChatView: View {
             List(chat.mailbox.envelopes.reversed(), id: \.uid) { envelope in
                 ChatRow(envelope: envelope)
             }
+            .introspectTableView { tableView in
+                tableView.tableFooterView = UIView()
+                tableView.separatorStyle = .none
+            }
 //            HStack {
 //                TextField("Message...", text: $message)
 //                    .frame(minHeight: CGFloat(30))

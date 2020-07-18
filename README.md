@@ -50,7 +50,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat list view
 
-- [ ] Cells need a set fixed height; also hide the table view separators until the content is loaded
+- [ ] Cells need a set fixed height
 - [ ] Test whether the split view works on iPad
 - [ ] Look into: Grouping chats by group (with table view headers...?)
     - Perhaps use a second list view, one up the hierarchy (will also need DMs, 'all chats' etc.)
@@ -67,9 +67,9 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat view
 
-- [ ] Remove table view separators
 - [ ] Set up scroll view offset state
-    - Should 'stick' to the bottom of the window 
+    - Initially; scroll to bottom
+    - Should 'stick' to the bottom of the window
     - When new chats are inserted the scroll view jumps around
 - [ ] Display group name/DM host name if available in addition to chat name
 - [ ] Display chat/group metadata (separate view)
