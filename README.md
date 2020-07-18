@@ -70,6 +70,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat view
 
+- [ ] Experiment with grey background/light bubble foreground
 - [ ] Set up scroll view offset state
     - Initially; scroll to bottom
     - Should 'stick' to the bottom of the window
