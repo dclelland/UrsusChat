@@ -14,7 +14,7 @@ enum SessionState: StateType {
     
     case unauthenticated
     case authenticating
-    case authenticated(airlock: Airlock)
+    case authenticated(airlock: Airlock, ship: Ship)
     
     init() {
         self = .unauthenticated

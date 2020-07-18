@@ -22,9 +22,9 @@ struct AppView: View {
             return AnyView(
                 LoginView(isAuthenticating: true)
             )
-        case .authenticated:
+        case .authenticated(_, let ship):
             return AnyView(
-                ChatListView()
+                ChatListView(ship: ship)
             )
         }
     }

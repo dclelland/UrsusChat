@@ -20,7 +20,7 @@ extension AppThunk {
             dispatch(SessionLoginStartAction())
             let airlock = Airlock(credentials: credentials)
             airlock.loginRequest { ship in
-                dispatch(SessionLoginFinishAction(airlock: airlock))
+                dispatch(SessionLoginFinishAction(airlock: airlock, ship: ship))
                 dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
                 dispatch(AppThunk.setCredentials(credentials))
             }.response { response in

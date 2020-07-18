@@ -8,12 +8,15 @@
 
 import SwiftUI
 import Introspect
+import UrsusAirlock
 
 struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
     @State private var showingActionSheet = false
+    
+    var ship: Ship
     
     var body: some View {
         NavigationView {
@@ -25,13 +28,13 @@ struct ChatListView: View {
             .navigationBarTitle("Chats")
             .navigationBarItems(
                 trailing: Button(action: openSigil) {
-                    SigilView(ship: "~sampel-palnet", color: .white, size: CGSize(width: 24.0, height: 24.0))
+                    SigilView(ship: ship, color: .white, size: CGSize(width: 24.0, height: 24.0))
 //                    .padding(8.0)
 //                    .background(Circle())
                 }
                 .actionSheet(isPresented: $showingActionSheet) {
                     ActionSheet(
-                        title: Text("~sampel-palnet"),
+                        title: Text(ship.debugDescription),
                         buttons: [
                             .destructive(Text("Logout"), action: store[SessionLogoutAction()]),
                             .cancel()

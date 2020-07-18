@@ -50,9 +50,10 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat list view
 
-- [ ] Add button with own sigil; shows popover with 'logout' etc; remove/revisit Settings view functionality; perhaps make most of that post v1
+- [ ] Add button with own sigil
     - Fix action sheet constraint issues
-    - Display actual sigil in button; make button correct size for Apple HIG; circular background
+    - remove/revisit Settings view functionality; perhaps make most of that post v1
+    - Make sigil button correct size for Apple HIG; circular background
         - Will need fallback sigil image for moons and comets
 - [ ] Look into: Grouping chats by group (with table view headers...?)
     - Perhaps use a second list view, one up the hierarchy (will also need DMs, 'all chats' etc.)
