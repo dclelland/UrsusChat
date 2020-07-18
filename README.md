@@ -77,8 +77,6 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat row
 
-- [ ] Sigils should respect dark mode
-- [ ] Sigils should align with top (so as to visually associate themselves with the ship name)
 - [ ] Display custom avatar in avatar view
 - [ ] Display custom username in avatar view
     - Tapping should show ship name...?
