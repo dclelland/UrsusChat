@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftUI
-import UrsusSigil
 
 struct ChatRow: View {
     
@@ -17,11 +16,8 @@ struct ChatRow: View {
     var envelope: Envelope
     
     var body: some View {
-        HStack(alignment: .bottom) {
-            Image(
-                uiImage: Sigil(ship: envelope.author)
-                    .image(with: CGSize(width: 24.0, height: 24.0))
-            )
+        HStack(alignment: .top) {
+            SigilView(ship: envelope.author)
             VStack(alignment: .leading) {
                 Text(envelope.author.debugDescription)
                     .font(.subheadline)
