@@ -16,11 +16,11 @@ PODS:
     - ReSwift (~> 5.0)
   - SwiftDate (6.1.0)
   - SwiftSVG (2.3.2)
-  - UrsusAirlock (1.4.0):
+  - UrsusAirlock (1.4.1):
     - Alamofire (~> 5.2)
-    - UrsusAirlock/EventSource (= 1.4.0)
+    - UrsusAirlock/EventSource (= 1.4.1)
     - UrsusAtom (~> 1.0)
-  - UrsusAirlock/EventSource (1.4.0):
+  - UrsusAirlock/EventSource (1.4.1):
     - Alamofire (~> 5.2)
     - UrsusAtom (~> 1.0)
   - UrsusAtom (1.0.1):
@@ -74,7 +74,7 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
-  UrsusAirlock: 7d69580bc90cf83193ac10711f3f214b46a2ccb1
+  UrsusAirlock: 7037200409a51e75e75b631ea944eb5540a0283a
   UrsusAtom: 338c4e17785d824a8d9d2a41aa9d359227bba9ba
   UrsusSigil: 38e4e9cc80b07d8b24356d3644eba1f50472a0f7
 

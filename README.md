@@ -15,6 +15,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 - [ ] What do we use the `Synced` data from the `chat-hook` subscription for?
 - [ ] Same goes for the permissions data; need to read the landscape frontend code
+    - Permissions swapped with groups in the [new groups refactor](https://github.com/urbit/urbit/compare/lf/groups-refactor#diff-516b27b1aa5e14dab4867795e7f50203R166)
 - [ ] I spotted some JSON decoding errors when parsing a set of `MetadataUpdate` instances; need to recreate this issue
 - [ ] Current set of type extensions are messy as hell
     - Look at how the current chat app aggregates this data
