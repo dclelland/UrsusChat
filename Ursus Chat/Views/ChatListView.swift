@@ -25,13 +25,13 @@ struct ChatListView: View {
             .navigationBarTitle("Chats")
             .navigationBarItems(
                 trailing: Button(action: openSigil) {
-                    SigilView(ship: "~fipfes-fipfes", color: .white, size: CGSize(width: 24.0, height: 24.0))
+                    SigilView(ship: "~sampel-palnet", color: .white, size: CGSize(width: 24.0, height: 24.0))
 //                    .padding(8.0)
 //                    .background(Circle())
                 }
                 .actionSheet(isPresented: $showingActionSheet) {
                     ActionSheet(
-                        title: Text("~fipfes-fipfes"),
+                        title: Text("~sampel-palnet"),
                         buttons: [
                             .destructive(Text("Logout"), action: store[SessionLogoutAction()]),
                             .cancel()
