@@ -32,6 +32,14 @@ open class AirlockApp {
 
 extension AirlockApp {
     
+    @discardableResult public func scryRequest(path: String) -> DataRequest {
+        return airlock.scryRequest(app: app, path: path)
+    }
+    
+}
+
+extension AirlockApp {
+    
     @discardableResult public func ackRequest(eventID: Int) -> DataRequest {
         return airlock.ackRequest(eventID: eventID)
     }

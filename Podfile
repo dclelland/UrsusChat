@@ -3,7 +3,7 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-development_pods = true
+development_pods = false
 
 target 'Ursus Chat' do
   

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.2.2)
   - AlamofireLogger (1.0.1):
     - Alamofire (~> 5.0)
   - AlamofireNetworkActivityIndicator (3.1.0):
@@ -16,11 +16,11 @@ PODS:
     - ReSwift (~> 5.0)
   - SwiftDate (6.1.0)
   - SwiftSVG (2.3.2)
-  - UrsusAirlock (1.4.1):
+  - UrsusAirlock (1.4.2):
     - Alamofire (~> 5.2)
-    - UrsusAirlock/EventSource (= 1.4.1)
+    - UrsusAirlock/EventSource (= 1.4.2)
     - UrsusAtom (~> 1.0)
-  - UrsusAirlock/EventSource (1.4.1):
+  - UrsusAirlock/EventSource (1.4.2):
     - Alamofire (~> 5.2)
     - UrsusAtom (~> 1.0)
   - UrsusAtom (1.0.1):
@@ -41,9 +41,9 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - UrsusAirlock (from `../UrsusAirlock`)
-  - UrsusAtom (from `../UrsusAtom`)
-  - UrsusSigil (from `../UrsusSigil`)
+  - UrsusAirlock (~> 1.4)
+  - UrsusAtom (~> 1.0)
+  - UrsusSigil (~> 1.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -58,17 +58,12 @@ SPEC REPOS:
     - ReSwiftThunk
     - SwiftDate
     - SwiftSVG
-
-EXTERNAL SOURCES:
-  UrsusAirlock:
-    :path: "../UrsusAirlock"
-  UrsusAtom:
-    :path: "../UrsusAtom"
-  UrsusSigil:
-    :path: "../UrsusSigil"
+    - UrsusAirlock
+    - UrsusAtom
+    - UrsusSigil
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AlamofireLogger: 7f4bde032340dad1f6b50c97ef3e6a3acf24e708
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
@@ -79,10 +74,10 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
-  UrsusAirlock: 7037200409a51e75e75b631ea944eb5540a0283a
+  UrsusAirlock: 41cefdd756e8deec5edd4f10ee4a007936c4dad4
   UrsusAtom: 338c4e17785d824a8d9d2a41aa9d359227bba9ba
   UrsusSigil: 38e4e9cc80b07d8b24356d3644eba1f50472a0f7
 
-PODFILE CHECKSUM: 22c9b76aa3602bcfe43c4108bd647bda8c44fdbd
+PODFILE CHECKSUM: 30af97327dcc840075809029e5b881f85358d3c2
 
 COCOAPODS: 1.8.3

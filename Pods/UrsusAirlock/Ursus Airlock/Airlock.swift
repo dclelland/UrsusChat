@@ -83,8 +83,8 @@ extension Airlock {
         }
     }
     
-    @discardableResult public func scryRequest() -> DataRequest {
-        fatalError("scryRequest stubbed out for now")
+    @discardableResult public func scryRequest(app: String, path: String) -> DataRequest {
+        return session.request(scryURL(app: app, path: path))
     }
     
 }
@@ -229,8 +229,8 @@ extension Airlock {
         return credentials.url.appendingPathComponent("/~/channel/\(uid)")
     }
     
-    private var scryURL: URL {
-        return credentials.url.appendingPathComponent("/~/scry")
+    private func scryURL(app: String, path: String) -> URL {
+        return credentials.url.appendingPathComponent("/~/scry/\(app)\(path).json")
     }
     
 }
