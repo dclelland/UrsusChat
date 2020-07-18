@@ -25,10 +25,6 @@ struct ChatListView: View {
                 tableView.tableFooterView = UIView()
             }
         }
-        .tabItem {
-            Image(systemName: "text.bubble")
-            Text("Chats")
-        }
     }
     
 }

@@ -24,10 +24,6 @@ struct SettingsView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Settings")
         }
-        .tabItem {
-            Image(systemName: "gear")
-            Text("Settings")
-        }
     }
     
 }
