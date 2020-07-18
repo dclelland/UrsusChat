@@ -70,7 +70,6 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat view
 
-- [ ] Experiment with grey background/light bubble foreground
 - [ ] Set up scroll view offset state
     - Initially; scroll to bottom
     - Should 'stick' to the bottom of the window
@@ -81,6 +80,9 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat row
 
+- [ ] Experiment with bubbs/nobubbs
+    - Experiment with circular avatar views
+    - Experiment with grey background/light bubble foreground
 - [ ] Display custom avatar in avatar view
 - [ ] Display custom username in avatar view
     - Tapping should show ship name...?
@@ -91,6 +93,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
     - Username only visible on the first message
     - Avatar only visible on the last message
 - [ ] Add accessory view timestamps once per day
+- [ ] Add 'last unread' accessory view
 - [ ] Time should be visible when swiping to the left
 - [ ] Pending message handling
 - [ ] Context menu with option to copy the letter text
