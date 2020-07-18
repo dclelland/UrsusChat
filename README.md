@@ -50,7 +50,6 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat list view
 
-- [ ] Cells need a set fixed height
 - [ ] Test whether the split view works on iPad
 - [ ] Look into: Grouping chats by group (with table view headers...?)
     - Perhaps use a second list view, one up the hierarchy (will also need DMs, 'all chats' etc.)
@@ -79,6 +78,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 ### Chat row
 
 - [ ] Sigils should respect dark mode
+- [ ] Sigils should align with top (so as to visually associate themselves with the ship name)
 - [ ] Display custom avatar in avatar view
 - [ ] Display custom username in avatar view
     - Tapping should show ship name...?
