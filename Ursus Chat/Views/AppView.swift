@@ -24,10 +24,7 @@ struct AppView: View {
             )
         case .authenticated:
             return AnyView(
-                TabView {
-                    ChatListView()
-                    SettingsView()
-                }
+                ChatListView()
             )
         }
     }

@@ -39,7 +39,7 @@ struct ChatView: View {
             }
             .padding()
         }
-        .navigationBarTitle(chat.chatTitle)
+        .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
         .introspectViewController { viewController in
             viewController.hidesBottomBarWhenPushed = true
         }

@@ -50,7 +50,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Chat list view
 
-- [ ] Test whether the split view works on iPad
+- [ ] Add button with own sigil; shows popover with 'logout' etc; remove/revisit Settings view functionality; perhaps make most of that post v1
 - [ ] Look into: Grouping chats by group (with table view headers...?)
     - Perhaps use a second list view, one up the hierarchy (will also need DMs, 'all chats' etc.)
 - [ ] Look into: Different sorting modes
@@ -73,7 +73,6 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 - [ ] Display group name/DM host name if available in addition to chat name
 - [ ] Display chat/group metadata (separate view)
 - [ ] Text input view/send message button
-- [ ] Should hide tab bar on push
 
 ### Chat row
 
