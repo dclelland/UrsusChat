@@ -77,6 +77,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 - [ ] Display group name/DM host name if available in addition to chat name
 - [ ] Display chat/group metadata (separate view)
 - [ ] Text input view/send message button
+- [ ] Implement pagination
 
 ### Chat row
 
