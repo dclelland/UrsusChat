@@ -13,6 +13,8 @@ import UrsusSigil
 
 struct SigilView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var ship: Ship
     
     var color: UIColor
