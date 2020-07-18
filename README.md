@@ -19,6 +19,10 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 - [ ] I spotted some JSON decoding errors when parsing a set of `MetadataUpdate` instances; need to recreate this issue
 - [ ] Current set of type extensions are messy as hell
     - Look at how the current chat app aggregates this data
+    
+### Subscription
+    
+- [ ] Will need to store success/loading/failure state so as to enable pull to refresh on the chat list view
 
 ### Authentication
 
