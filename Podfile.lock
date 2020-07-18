@@ -41,9 +41,9 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - UrsusAirlock (~> 1.4)
-  - UrsusAtom (~> 1.0)
-  - UrsusSigil (~> 1.1)
+  - UrsusAirlock (from `../UrsusAirlock`)
+  - UrsusAtom (from `../UrsusAtom`)
+  - UrsusSigil (from `../UrsusSigil`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -58,9 +58,14 @@ SPEC REPOS:
     - ReSwiftThunk
     - SwiftDate
     - SwiftSVG
-    - UrsusAirlock
-    - UrsusAtom
-    - UrsusSigil
+
+EXTERNAL SOURCES:
+  UrsusAirlock:
+    :path: "../UrsusAirlock"
+  UrsusAtom:
+    :path: "../UrsusAtom"
+  UrsusSigil:
+    :path: "../UrsusSigil"
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -78,6 +83,6 @@ SPEC CHECKSUMS:
   UrsusAtom: 338c4e17785d824a8d9d2a41aa9d359227bba9ba
   UrsusSigil: 38e4e9cc80b07d8b24356d3644eba1f50472a0f7
 
-PODFILE CHECKSUM: 30af97327dcc840075809029e5b881f85358d3c2
+PODFILE CHECKSUM: 22c9b76aa3602bcfe43c4108bd647bda8c44fdbd
 
 COCOAPODS: 1.8.3
