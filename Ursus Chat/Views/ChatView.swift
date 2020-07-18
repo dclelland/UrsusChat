@@ -22,7 +22,7 @@ struct ChatView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0.0) {
             List(chat.mailbox.envelopes.reversed(), id: \.uid) { envelope in
                 ChatRow(envelope: envelope)
             }
@@ -30,17 +30,19 @@ struct ChatView: View {
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
             }
-//            HStack {
-//                TextField("Message...", text: $message)
-//                    .frame(minHeight: CGFloat(30))
-//                Button(action: sendMessage) {
-//                    Text("Send")
-//                }
-//            }
-//            .frame(minHeight: CGFloat(50))
-//            .padding()
+            Divider()
+            HStack {
+                TextField("Message...", text: $message)
+                Button(action: sendMessage) {
+                    Text("Send")
+                }
+            }
+            .padding()
         }
         .navigationBarTitle(chat.chatTitle)
+        .introspectViewController { viewController in
+            viewController.hidesBottomBarWhenPushed = true
+        }
     }
     
 }
