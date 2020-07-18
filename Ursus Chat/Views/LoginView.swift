@@ -18,7 +18,7 @@ struct LoginView: View {
     
     @State var code: String = ""
     
-    @State var isAuthenticating: Bool = false
+    var isAuthenticating: Bool
     
     var body: some View {
         NavigationView {
@@ -61,7 +61,6 @@ extension LoginView {
             return
         }
         
-        isAuthenticating = true
         store.dispatch(AppThunk.startSession(credentials: AirlockCredentials(url: url, code: code)))
     }
     

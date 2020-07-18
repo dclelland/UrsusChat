@@ -17,13 +17,15 @@ extension AppThunk {
     
     static func startSession(credentials: AirlockCredentials) -> AppThunk {
         return AppThunk { dispatch, getState in
+            dispatch(SessionLoginStartAction())
             let airlock = Airlock(credentials: credentials)
             airlock.loginRequest { ship in
-                dispatch(SessionLoginAction(airlock: airlock))
+                dispatch(SessionLoginFinishAction(airlock: airlock))
                 dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
                 dispatch(AppThunk.setCredentials(credentials))
             }.response { response in
                 if let error = response.error {
+                    dispatch(SessionLoginFailureAction())
                     dispatch(AppErrorAction(error: error))
                 }
             }

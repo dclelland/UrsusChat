@@ -22,7 +22,6 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Authentication
 
-- [ ] `AppStore.startSession` should employ more granular `SessionState` cases (e.g. '`.authenticating`')
 - [ ] `Credentials` should be cleared on logout
 
 ### App view

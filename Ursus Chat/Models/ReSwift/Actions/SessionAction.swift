@@ -16,24 +16,28 @@ protocol SessionAction: Action {
     
 }
 
-enum SessionActionError: Error {
+struct SessionLoginStartAction: SessionAction {
     
-    case alreadyLoggedIn
-    case alreadyLoggedOut
+    func reduce(_ state: inout SessionState) throws {
+        state = .authenticating
+    }
     
 }
 
-struct SessionLoginAction: SessionAction {
+struct SessionLoginFailureAction: SessionAction {
+    
+    func reduce(_ state: inout SessionState) throws {
+        state = .unauthenticated
+    }
+    
+}
+
+struct SessionLoginFinishAction: SessionAction {
     
     var airlock: Airlock
     
     func reduce(_ state: inout SessionState) throws {
-        switch state {
-        case .unauthenticated:
-            state = .authenticated(airlock: airlock)
-        case .authenticated:
-            throw SessionActionError.alreadyLoggedIn
-        }
+        state = .authenticated(airlock: airlock)
     }
     
 }
@@ -41,12 +45,7 @@ struct SessionLoginAction: SessionAction {
 struct SessionLogoutAction: SessionAction {
     
     func reduce(_ state: inout SessionState) throws {
-        switch state {
-        case .unauthenticated:
-            throw SessionActionError.alreadyLoggedOut
-        case .authenticated:
-            state = .unauthenticated
-        }
+        state = .unauthenticated
     }
     
 }

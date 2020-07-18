@@ -16,7 +16,11 @@ struct AppView: View {
         switch store.state.session {
         case .unauthenticated:
             return AnyView(
-                LoginView()
+                LoginView(isAuthenticating: false)
+            )
+        case .authenticating:
+            return AnyView(
+                LoginView(isAuthenticating: true)
             )
         case .authenticated:
             return AnyView(

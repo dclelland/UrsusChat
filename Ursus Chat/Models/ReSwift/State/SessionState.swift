@@ -13,6 +13,7 @@ import UrsusAirlock
 enum SessionState: StateType {
     
     case unauthenticated
+    case authenticating
     case authenticated(airlock: Airlock)
     
     init() {
