@@ -44,7 +44,7 @@ struct ChatListView: View {
                     )
                 },
                 trailing: Button(action: showChatActionSheet) {
-                    Image(systemName: "pencil.circle")
+                    Image(systemName: "square.and.pencil")
                         .resizable()
                         .frame(width: 24.0, height: 24.0)
                 }
