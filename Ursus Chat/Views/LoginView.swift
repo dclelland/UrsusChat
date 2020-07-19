@@ -56,10 +56,23 @@ struct LoginView: View {
     
 }
 
+enum LoginViewError: Error {
+    
+    case invalidURL(String)
+    case invalidCode(String)
+    
+}
+
 extension LoginView {
     
     private func continueButtonTapped() {
-        guard let url = URL(string: url), let code = try? Code(string: code) else {
+        guard let url = URL(string: url) else {
+            store.dispatch(AppErrorAction(error: LoginViewError.invalidURL(self.url)))
+            return
+        }
+        
+        guard let code = try? Code(string: code) else {
+            store.dispatch(AppErrorAction(error: LoginViewError.invalidCode(self.code)))
             return
         }
         
