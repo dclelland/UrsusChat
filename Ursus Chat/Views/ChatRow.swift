@@ -8,29 +8,32 @@
 
 import Foundation
 import SwiftUI
+import NonEmpty
 
 struct ChatRow: View {
     
     @EnvironmentObject var store: AppStore
     
-    var envelope: Envelope
+    var envelopes: NonEmpty<[Envelope]>
     
     var body: some View {
         HStack(alignment: .top, spacing: 16.0) {
             VStack(alignment: .leading) {
-                SigilView(ship: envelope.author)
+                SigilView(ship: envelopes.head.author)
             }
             VStack(alignment: .leading, spacing: 8.0) {
                 HStack(alignment: .firstTextBaseline, spacing: 8.0) {
-                    Text(envelope.author.debugDescription)
+                    Text(envelopes.head.author.debugDescription)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Spacer()
-                    Text(envelope.formattedTime)
+                    Text(envelopes.head.formattedTime)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                LetterView(letter: envelope.letter)
+                ForEach(envelopes, id: \.uid) { envelope in
+                    LetterView(letter: envelope.letter)
+                }
             }
         }
         .padding(.bottom, 8.0)

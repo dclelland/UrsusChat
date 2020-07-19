@@ -22,6 +22,7 @@ target 'Ursus Chat' do
     pod 'Introspect', '~> 0.1'
     pod 'KeyboardObserving', '~> 0.3'
     pod 'KeychainAccess', '~> 4.2'
+    pod 'NonEmpty', '~> 0.2'
     pod 'ReSwift', '~> 5.0'
     pod 'ReSwiftThunk', '~> 1.2'
     pod 'SwiftDate', '~> 6.1'

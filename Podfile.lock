@@ -9,6 +9,7 @@ PODS:
   - KeyboardObserving (0.3.0)
   - KeychainAccess (4.2.0)
   - MurmurHash-Swift (1.0.13)
+  - NonEmpty (0.2.2)
   - Parity (2.3.0)
   - ReSwift (5.0.0)
   - ReSwiftThunk (1.2.0):
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - Introspect (~> 0.1)
   - KeyboardObserving (~> 0.3)
   - KeychainAccess (~> 4.2)
+  - NonEmpty (~> 0.2)
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
@@ -59,6 +61,7 @@ SPEC REPOS:
     - KeyboardObserving
     - KeychainAccess
     - MurmurHash-Swift
+    - NonEmpty
     - Parity
     - ReSwift
     - ReSwiftThunk
@@ -77,6 +80,7 @@ SPEC CHECKSUMS:
   KeyboardObserving: 0e3089bfd76cd10cd49f28532450e70b16c239c3
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   MurmurHash-Swift: ea96df4ff29458af4e4b74e407992ff77b731ecc
+  NonEmpty: efbc7019959feceee98ac2fc0e47f3ad24f900f0
   Parity: d2a2617bf13b982f62a89a6864207dda83f5f0f2
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
@@ -86,6 +90,6 @@ SPEC CHECKSUMS:
   UrsusAtom: 338c4e17785d824a8d9d2a41aa9d359227bba9ba
   UrsusSigil: 38e4e9cc80b07d8b24356d3644eba1f50472a0f7
 
-PODFILE CHECKSUM: 6b0ac8a98ee28c2f81ffa8d8c4f034548c08c62c
+PODFILE CHECKSUM: e5afe3846c5d7e809e6b1ebf51abe4f70f7b4e63
 
 COCOAPODS: 1.8.3

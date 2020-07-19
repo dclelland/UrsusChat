@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NonEmpty
 import SwiftDate
 import UrsusAirlock
 
@@ -70,6 +71,17 @@ extension Mailbox {
     
     var unread: Int {
         return config.length - config.read
+    }
+    
+    var aggregatedEnvelopes: [NonEmpty<[Envelope]>] {
+        return envelopes.reduce(into: []) { result, envelope in
+            if let last = result.last, last.head.author == envelope.author {
+                _ = result.popLast()
+                result.append(last + [envelope])
+            } else {
+                result.append(NonEmpty(envelope))
+            }
+        }
     }
     
 }
