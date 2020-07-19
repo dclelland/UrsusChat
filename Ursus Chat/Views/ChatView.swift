@@ -23,7 +23,7 @@ struct ChatView: View {
     
     var body: some View {
         VStack(spacing: 0.0) {
-            List(chat.mailbox.aggregatedEnvelopes.reversed(), id: \.head.uid) { envelopes in
+            List(chat.mailbox.authorAggregatedEnvelopes, id: \.head.uid) { envelopes in
                 ChatRow(envelopes: envelopes)
             }
             .introspectTableView { tableView in
