@@ -34,6 +34,10 @@
 		655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB312249ACD2600A591B9 /* ContactViewApp.swift */; };
 		655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB314249ACD7E00A591B9 /* MetadataStoreApp.swift */; };
 		655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */; };
+		6560604B24C3DB8400565232 /* LetterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560604A24C3DB8400565232 /* LetterTextView.swift */; };
+		6560604D24C3DB8F00565232 /* LetterURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560604C24C3DB8F00565232 /* LetterURLView.swift */; };
+		6560604F24C3DB9A00565232 /* LetterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560604E24C3DB9A00565232 /* LetterCodeView.swift */; };
+		6560605124C3DBB300565232 /* LetterMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560605024C3DBB300565232 /* LetterMeView.swift */; };
 		65861AFE24A97BE100C63E07 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861AFD24A97BE100C63E07 /* AppStore.swift */; };
 		65861B0624A9A8EA00C63E07 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0524A9A8EA00C63E07 /* ChatListView.swift */; };
 		65861B0A24A9A9C300C63E07 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65861B0924A9A9C300C63E07 /* AppView.swift */; };
@@ -80,6 +84,10 @@
 		655DB312249ACD2600A591B9 /* ContactViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewApp.swift; sourceTree = "<group>"; };
 		655DB314249ACD7E00A591B9 /* MetadataStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataStoreApp.swift; sourceTree = "<group>"; };
 		655DB31A249ADDA800A591B9 /* InviteStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteStoreApp.swift; sourceTree = "<group>"; };
+		6560604A24C3DB8400565232 /* LetterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterTextView.swift; sourceTree = "<group>"; };
+		6560604C24C3DB8F00565232 /* LetterURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterURLView.swift; sourceTree = "<group>"; };
+		6560604E24C3DB9A00565232 /* LetterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCodeView.swift; sourceTree = "<group>"; };
+		6560605024C3DBB300565232 /* LetterMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterMeView.swift; sourceTree = "<group>"; };
 		65861AFD24A97BE100C63E07 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		65861B0524A9A8EA00C63E07 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		65861B0924A9A9C300C63E07 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -193,6 +201,10 @@
 				6519482F24B2BB0300AF3D44 /* ChatRow.swift */,
 				65A8726324C2A57200650EBA /* SigilView.swift */,
 				65ACC46E24B804A40014E2AE /* LetterView.swift */,
+				6560604A24C3DB8400565232 /* LetterTextView.swift */,
+				6560604C24C3DB8F00565232 /* LetterURLView.swift */,
+				6560604E24C3DB9A00565232 /* LetterCodeView.swift */,
+				6560605024C3DBB300565232 /* LetterMeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +460,7 @@
 				65861B1524AB283000C63E07 /* AppAction.swift in Sources */,
 				6519485124B5746200AF3D44 /* ChatUpdate+Extensions.swift in Sources */,
 				65861B0624A9A8EA00C63E07 /* ChatListView.swift in Sources */,
+				6560605124C3DBB300565232 /* LetterMeView.swift in Sources */,
 				65861B1924AC318A00C63E07 /* ObservableStore.swift in Sources */,
 				65A8726424C2A57300650EBA /* SigilView.swift in Sources */,
 				6587EF9124A3207500969E92 /* LoginView.swift in Sources */,
@@ -462,13 +475,16 @@
 				6519484C24B3E5F300AF3D44 /* Keychain+Extensions.swift in Sources */,
 				6519484A24B3D83F00AF3D44 /* AppThunk.swift in Sources */,
 				65861AFE24A97BE100C63E07 /* AppStore.swift in Sources */,
+				6560604D24C3DB8F00565232 /* LetterURLView.swift in Sources */,
 				655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */,
 				65861B0A24A9A9C300C63E07 /* AppView.swift in Sources */,
 				6520F62C2498558700F3D56C /* ChatViewApp.swift in Sources */,
 				6519484724B2EB5600AF3D44 /* MetadataUpdate.swift in Sources */,
 				655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */,
+				6560604B24C3DB8400565232 /* LetterTextView.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */,
 				65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */,
+				6560604F24C3DB9A00565232 /* LetterCodeView.swift in Sources */,
 				65D95A4C249C541C0002AA4F /* SubscriptionState.swift in Sources */,
 				6519484524B2E38700AF3D44 /* ContactUpdate.swift in Sources */,
 			);
