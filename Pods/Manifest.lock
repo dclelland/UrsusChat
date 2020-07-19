@@ -33,7 +33,7 @@ PODS:
     - BigInt (~> 5.0)
     - MurmurHash-Swift (~> 1.0)
     - Parity (~> 2.3)
-  - UrsusSigil (1.1.0):
+  - UrsusSigil (1.2.0):
     - SwiftSVG (~> 2.0)
     - UrsusAtom (~> 1.0)
 
@@ -49,7 +49,7 @@ DEPENDENCIES:
   - SwiftDate (~> 6.1)
   - UrsusAirlock (~> 1.4)
   - UrsusAtom (~> 1.0)
-  - UrsusSigil (~> 1.1)
+  - UrsusSigil (~> 1.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -88,8 +88,8 @@ SPEC CHECKSUMS:
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
   UrsusAirlock: 41cefdd756e8deec5edd4f10ee4a007936c4dad4
   UrsusAtom: 338c4e17785d824a8d9d2a41aa9d359227bba9ba
-  UrsusSigil: 38e4e9cc80b07d8b24356d3644eba1f50472a0f7
+  UrsusSigil: 43f6f0eca0b872af6900d53a7ce4bd83e8898a7c
 
-PODFILE CHECKSUM: e5afe3846c5d7e809e6b1ebf51abe4f70f7b4e63
+PODFILE CHECKSUM: e98d6d153b1056f6e65afd55ce1614a37e9ee8a3
 
 COCOAPODS: 1.8.3

@@ -17,7 +17,7 @@ Sigils render with a transparent background.
 Ursus Sigil can be installed using Cocoapods by adding the following line to your podfile:
 
 ```ruby
-pod 'UrsusSigil', '~> 1.1'
+pod 'UrsusSigil', '~> 1.2'
 ```
 
 I can probably help set up Carthage or Swift Package Manager support if you need it.
