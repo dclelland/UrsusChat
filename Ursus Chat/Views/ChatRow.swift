@@ -16,7 +16,7 @@ struct ChatRow: View {
     var envelope: Envelope
     
     var body: some View {
-        HStack(alignment: .top, spacing: 8.0) {
+        HStack(alignment: .top, spacing: 16.0) {
             VStack(alignment: .leading) {
                 SigilView(ship: envelope.author)
             }
