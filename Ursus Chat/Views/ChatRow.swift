@@ -16,19 +16,18 @@ struct ChatRow: View {
     var envelope: Envelope
     
     var body: some View {
-        HStack(alignment: .top) {
-            SigilView(ship: envelope.author)
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
+            HStack(alignment: .center, spacing: 8.0) {
+                SigilView(ship: envelope.author)
                 Text(envelope.author.debugDescription)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+            }
+            HStack(alignment: .top, spacing: 8.0) {
+                Spacer()
+                    .frame(width: 24.0)
                 LetterView(letter: envelope.letter)
             }
-            .padding(EdgeInsets(top: 4.0, leading: 8.0, bottom: 4.0, trailing: 8.0))
-            .background(
-                RoundedRectangle(cornerRadius: 9.0, style: .continuous)
-                    .fill(Color(UIColor.systemGray4))
-            )
         }
     }
     
