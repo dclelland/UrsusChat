@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import KeyboardObserving
 import UrsusAirlock
 
 struct LoginView: View {
@@ -48,6 +49,7 @@ struct LoginView: View {
             }
             .disabled(isAuthenticating)
             .navigationBarTitle("Login")
+            .keyboardObserving()
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

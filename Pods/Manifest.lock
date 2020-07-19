@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 5.1)
   - BigInt (5.0.0)
   - Introspect (0.1.0)
+  - KeyboardObserving (0.3.0)
   - KeychainAccess (4.2.0)
   - MurmurHash-Swift (1.0.13)
   - Parity (2.3.0)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - AlamofireLogger (~> 1.0)
   - AlamofireNetworkActivityIndicator (~> 3.1)
   - Introspect (~> 0.1)
+  - KeyboardObserving (~> 0.3)
   - KeychainAccess (~> 4.2)
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
@@ -54,6 +56,7 @@ SPEC REPOS:
     - AlamofireNetworkActivityIndicator
     - BigInt
     - Introspect
+    - KeyboardObserving
     - KeychainAccess
     - MurmurHash-Swift
     - Parity
@@ -71,6 +74,7 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
   Introspect: ad32f2b7b9e7ac2c008b9dfec3d5325fbd3660fa
+  KeyboardObserving: 0e3089bfd76cd10cd49f28532450e70b16c239c3
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   MurmurHash-Swift: ea96df4ff29458af4e4b74e407992ff77b731ecc
   Parity: d2a2617bf13b982f62a89a6864207dda83f5f0f2
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   UrsusAtom: 338c4e17785d824a8d9d2a41aa9d359227bba9ba
   UrsusSigil: 38e4e9cc80b07d8b24356d3644eba1f50472a0f7
 
-PODFILE CHECKSUM: 2d4c43779ff4b76aa269a5edd1e4960e4ecc7ec1
+PODFILE CHECKSUM: 6b0ac8a98ee28c2f81ffa8d8c4f034548c08c62c
 
 COCOAPODS: 1.8.3
