@@ -27,9 +27,16 @@ struct LetterURLView: View {
     
 }
 
-enum LetterURLViewError: Error {
+enum LetterURLViewError: LocalizedError {
     
     case invalidURL(String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL(let url):
+            return "Invalid URL: \"\(url)\""
+        }
+    }
     
 }
 

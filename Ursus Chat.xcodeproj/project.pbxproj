@@ -198,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				65861B0924A9A9C300C63E07 /* AppView.swift */,
-				6560605424C3EB4800565232 /* ErrorView.swift */,
 				6560605224C3EAC400565232 /* RootView.swift */,
+				6560605424C3EB4800565232 /* ErrorView.swift */,
 				6587EF9024A3207500969E92 /* LoginView.swift */,
 				65861B0524A9A8EA00C63E07 /* ChatListView.swift */,
 				65375B6D24AC64A40008EC25 /* ChatListRow.swift */,
