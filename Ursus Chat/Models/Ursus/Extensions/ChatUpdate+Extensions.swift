@@ -75,9 +75,13 @@ extension Mailbox {
     
     var aggregatedEnvelopes: [NonEmpty<[Envelope]>] {
         return envelopes.reduce(into: []) { result, envelope in
-            if let last = result.last, last.head.author == envelope.author {
-                _ = result.popLast()
-                result.append(last + [envelope])
+            if let last = result.popLast() {
+                if last.head.author == envelope.author {
+                    result.append(last + [envelope])
+                } else {
+                    result.append(last)
+                    result.append(NonEmpty(envelope))
+                }
             } else {
                 result.append(NonEmpty(envelope))
             }
