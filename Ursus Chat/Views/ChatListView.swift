@@ -40,9 +40,9 @@ struct ChatListView: View {
                         ActionSheet(
                             title: Text("Chats"),
                             buttons: [
-                                .default(Text("New DM"), action: newDirectMessage),
                                 .default(Text("New Chat"), action: newChat),
                                 .default(Text("Join Chat"), action: joinChat),
+                                .default(Text("Direct Message"), action: directMessage),
                                 .cancel()
                             ]
                         )
@@ -84,15 +84,15 @@ extension ChatListView {
 
 extension ChatListView {
     
-    func newDirectMessage() {
-        
-    }
-    
     func newChat() {
         
     }
     
     func joinChat() {
+        
+    }
+    
+    func directMessage() {
         
     }
     
