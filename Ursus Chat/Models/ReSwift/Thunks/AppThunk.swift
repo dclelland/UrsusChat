@@ -63,6 +63,17 @@ extension AppThunk {
 
 extension AppThunk {
     
+    static func endSession() -> AppThunk {
+        return AppThunk { dispatch, getState in
+            dispatch(SessionLogoutAction())
+            dispatch(AppThunk.clearCredentials())
+        }
+    }
+    
+}
+
+extension AppThunk {
+    
     private static let credentialsKey = "Credentials"
     
     static func getCredentials() -> AppThunk {

@@ -36,7 +36,7 @@ struct ChatListView: View {
                     ActionSheet(
                         title: Text(ship.debugDescription),
                         buttons: [
-                            .destructive(Text("Logout"), action: store[SessionLogoutAction()]),
+                            .destructive(Text("Logout"), action: store[AppThunk.endSession()]),
                             .cancel()
                         ]
                     )
