@@ -23,7 +23,7 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Urbit URL")) {
+                Section(header: Text("Urbit URL"), footer: Text("The URL where your ship is hosted")) {
                     TextField("http://sampel-palnet.arvo.network", text: $url)
                         .textContentType(.URL)
                         .keyboardType(.URL)
