@@ -30,6 +30,7 @@ struct ChatView: View {
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
+                tableView.keyboardDismissMode = .onDrag
             }
             Divider()
             HStack {
