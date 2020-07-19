@@ -8,13 +8,14 @@
 
 import SwiftUI
 import Introspect
-import Toucan
 import UrsusAirlock
 import UrsusSigil
 
 struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
+    
+    @State private var showingChatActionSheet = false
     
     @State private var showingShipActionSheet = false
     
@@ -30,11 +31,22 @@ struct ChatListView: View {
             .navigationBarTitle("Chats")
             .navigationBarItems(
                 trailing: HStack(spacing: 8.0) {
-//                    Button(action: showActionSheet) {
-//                        Image(systemName: "pencil.circle.fill")
-//                            .resizable()
-//                            .frame(width: 24.0, height: 24.0)
-//                    }
+                    Button(action: showChatActionSheet) {
+                        Image(systemName: "pencil.circle.fill")
+                            .resizable()
+                            .frame(width: 24.0, height: 24.0)
+                    }
+                    .actionSheet(isPresented: $showingChatActionSheet) {
+                        ActionSheet(
+                            title: Text("Chats"),
+                            buttons: [
+                                .default(Text("New DM"), action: newDirectMessage),
+                                .default(Text("New Chat"), action: newChat),
+                                .default(Text("Join Chat"), action: joinChat),
+                                .cancel()
+                            ]
+                        )
+                    }
                     Button(action: showShipActionSheet) {
                         SigilView(ship: ship)
                     }
@@ -60,6 +72,10 @@ struct ChatListView: View {
 
 extension ChatListView {
     
+    func showChatActionSheet() {
+        showingChatActionSheet = true
+    }
+    
     func showShipActionSheet() {
         showingShipActionSheet = true
     }
@@ -67,6 +83,18 @@ extension ChatListView {
 }
 
 extension ChatListView {
+    
+    func newDirectMessage() {
+        
+    }
+    
+    func newChat() {
+        
+    }
+    
+    func joinChat() {
+        
+    }
     
     func openLandscape() {
         guard case .authenticated(let airlock, _) = store.state.session else {
