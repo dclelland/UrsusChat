@@ -8,13 +8,15 @@
 
 import SwiftUI
 import Introspect
+import Toucan
 import UrsusAirlock
+import UrsusSigil
 
 struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
-    @State private var showingActionSheet = false
+    @State private var showingShipActionSheet = false
     
     var ship: Ship
     
@@ -27,19 +29,25 @@ struct ChatListView: View {
             }
             .navigationBarTitle("Chats")
             .navigationBarItems(
-                trailing: Button(action: openSigil) {
-                    SigilView(ship: ship, color: .white, size: CGSize(width: 24.0, height: 24.0))
-//                    .padding(8.0)
-//                    .background(Circle())
-                }
-                .actionSheet(isPresented: $showingActionSheet) {
-                    ActionSheet(
-                        title: Text(ship.debugDescription),
-                        buttons: [
-                            .destructive(Text("Logout"), action: store[AppThunk.endSession()]),
-                            .cancel()
-                        ]
-                    )
+                trailing: HStack(spacing: 8.0) {
+//                    Button(action: showActionSheet) {
+//                        Image(systemName: "pencil.circle.fill")
+//                            .resizable()
+//                            .frame(width: 24.0, height: 24.0)
+//                    }
+                    Button(action: showShipActionSheet) {
+                        SigilView(ship: ship)
+                    }
+                    .actionSheet(isPresented: $showingShipActionSheet) {
+                        ActionSheet(
+                            title: Text(ship.debugDescription),
+                            buttons: [
+                                .default(Text("Open Landscape"), action: openLandscape),
+                                .destructive(Text("Logout"), action: logout),
+                                .cancel()
+                            ]
+                        )
+                    }
                 }
             )
             .introspectTableView { tableView in
@@ -52,8 +60,24 @@ struct ChatListView: View {
 
 extension ChatListView {
     
-    func openSigil() {
-        showingActionSheet = true
+    func showShipActionSheet() {
+        showingShipActionSheet = true
+    }
+    
+}
+
+extension ChatListView {
+    
+    func openLandscape() {
+        guard case .authenticated(let airlock, _) = store.state.session else {
+            return
+        }
+        
+        UIApplication.shared.open(airlock.credentials.url)
+    }
+    
+    func logout() {
+        store.dispatch(AppThunk.endSession())
     }
     
 }
