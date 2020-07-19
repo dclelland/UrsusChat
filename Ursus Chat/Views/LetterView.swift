@@ -21,12 +21,14 @@ struct LetterView: View {
             return AnyView(
                 Text(text)
                     .font(.body)
+                    .foregroundColor(.primary)
             )
         case .url(let url):
             return AnyView(
                 Button(action: openURL) {
                     Text(url)
                         .font(.body)
+                        .foregroundColor(.primary)
                         .underline()
                 }
                 .buttonStyle(PlainButtonStyle())
@@ -36,15 +38,18 @@ struct LetterView: View {
                 VStack(alignment: .leading, spacing: 4.0) {
                     Text(code.expression)
                         .font(.system(.body, design: .monospaced))
+                        .foregroundColor(.primary)
                     Divider()
                     Text(code.output.joined().joined(separator: " "))
                         .font(.system(.body, design: .monospaced))
+                        .foregroundColor(.primary)
                 }
             )
         case .me(let me):
             return AnyView(
                 Text(me)
                     .font(.body)
+                    .foregroundColor(.primary)
                     .italic()
             )
         }
