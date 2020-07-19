@@ -29,6 +29,7 @@ struct LetterView: View {
                         .font(.body)
                         .underline()
                 }
+                .buttonStyle(PlainButtonStyle())
             )
         case .code(let code):
             return AnyView(
@@ -39,7 +40,6 @@ struct LetterView: View {
                     Text(code.output.joined().joined(separator: " "))
                         .font(.system(.body, design: .monospaced))
                 }
-                .frame(idealWidth: 0.0)
             )
         case .me(let me):
             return AnyView(
