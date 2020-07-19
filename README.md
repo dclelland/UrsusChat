@@ -6,4 +6,4 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ## Todo list
 
-Tasks are managed on the [Ursus Chat kanban board](https://github.com/dclelland/UrsusChat/projects/1).
+Tasks are managed on the [UrsusChat kanban board](https://github.com/dclelland/UrsusChat/projects/1).
