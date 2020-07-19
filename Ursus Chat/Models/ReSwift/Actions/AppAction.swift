@@ -44,6 +44,10 @@ struct AppErrorAction: AppAction {
 struct AppDismissErrorAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
+        guard state.errors.isEmpty == false else {
+            return
+        }
+        
         state.errors.removeLast()
     }
     

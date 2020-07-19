@@ -13,19 +13,8 @@ struct AppView: View {
     @EnvironmentObject var store: AppStore
     
     var body: some View {
-        switch store.state.session {
-        case .unauthenticated:
-            return AnyView(
-                LoginView(isAuthenticating: false)
-            )
-        case .authenticating:
-            return AnyView(
-                LoginView(isAuthenticating: true)
-            )
-        case .authenticated(_, let ship):
-            return AnyView(
-                ChatListView(ship: ship)
-            )
+        ErrorView(error: store.state.errors.first) {
+            RootView()
         }
     }
     
