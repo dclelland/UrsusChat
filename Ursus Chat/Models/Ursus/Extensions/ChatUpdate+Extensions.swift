@@ -86,6 +86,10 @@ extension Envelope {
         }
     }
     
+    var formattedTime: String {
+        return when.toString(.time(.short))
+    }
+    
 }
 
 extension Letter {
