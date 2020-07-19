@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import KeyboardObserving
 
 struct ChatView: View {
     
@@ -43,6 +44,7 @@ struct ChatView: View {
         .introspectViewController { viewController in
             viewController.hidesBottomBarWhenPushed = true
         }
+        .keyboardObserving()
     }
     
 }
