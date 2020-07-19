@@ -6,6 +6,8 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ## Todo list
 
+Tasks are handled on the [Ursus Chat project kanban board](projects/1).
+
 ### Questions
 
 - [ ] What do we use the `Synced` data from the `chat-hook` subscription for?
