@@ -6,7 +6,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ## Todo list
 
-Tasks are handled on the [Ursus Chat project kanban board](projects/1).
+Tasks are managed on the [Ursus Chat kanban board](https://github.com/dclelland/UrsusChat/projects/1).
 
 ### Questions
 
@@ -55,5 +55,3 @@ Tasks are handled on the [Ursus Chat project kanban board](projects/1).
     - Also, different gray
 - [ ] Time should be visible when swiping to the left
 - [ ] Context menu with option to copy the letter text
-
-
