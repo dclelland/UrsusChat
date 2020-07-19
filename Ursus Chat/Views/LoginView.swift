@@ -24,7 +24,7 @@ struct LoginView: View {
         NavigationView {
             Form {
                 Section(header: Text("Urbit URL")) {
-                    TextField("sampel-palnet.arvo.network", text: $url)
+                    TextField("http://sampel-palnet.arvo.network", text: $url)
                         .textContentType(.URL)
                         .keyboardType(.URL)
                         .autocapitalization(.none)
