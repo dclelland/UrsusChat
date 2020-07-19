@@ -15,9 +15,9 @@ struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
-    @State private var showingChatActionSheet = false
-    
     @State private var showingShipActionSheet = false
+    
+    @State private var showingChatActionSheet = false
     
     var ship: Ship
     
@@ -30,36 +30,34 @@ struct ChatListView: View {
             }
             .navigationBarTitle("Chats")
             .navigationBarItems(
-                trailing: HStack(spacing: 8.0) {
-                    Button(action: showChatActionSheet) {
-                        Image(systemName: "pencil.circle.fill")
-                            .resizable()
-                            .frame(width: 24.0, height: 24.0)
-                    }
-                    .actionSheet(isPresented: $showingChatActionSheet) {
-                        ActionSheet(
-                            title: Text("Chats"),
-                            buttons: [
-                                .default(Text("New Chat"), action: newChat),
-                                .default(Text("Join Chat"), action: joinChat),
-                                .default(Text("Direct Message"), action: directMessage),
-                                .cancel()
-                            ]
-                        )
-                    }
-                    Button(action: showShipActionSheet) {
-                        SigilView(ship: ship)
-                    }
-                    .actionSheet(isPresented: $showingShipActionSheet) {
-                        ActionSheet(
-                            title: Text(ship.debugDescription),
-                            buttons: [
-                                .default(Text("Open Landscape"), action: openLandscape),
-                                .destructive(Text("Logout"), action: logout),
-                                .cancel()
-                            ]
-                        )
-                    }
+                leading: Button(action: showShipActionSheet) {
+                    SigilView(ship: ship)
+                }
+                .actionSheet(isPresented: $showingShipActionSheet) {
+                    ActionSheet(
+                        title: Text(ship.debugDescription),
+                        buttons: [
+                            .default(Text("Open Landscape"), action: openLandscape),
+                            .destructive(Text("Logout"), action: logout),
+                            .cancel()
+                        ]
+                    )
+                },
+                trailing: Button(action: showChatActionSheet) {
+                    Image(systemName: "pencil.circle")
+                        .resizable()
+                        .frame(width: 24.0, height: 24.0)
+                }
+                .actionSheet(isPresented: $showingChatActionSheet) {
+                    ActionSheet(
+                        title: Text("Chats"),
+                        buttons: [
+                            .default(Text("New Chat"), action: newChat),
+                            .default(Text("Join Chat"), action: joinChat),
+                            .default(Text("Direct Message"), action: directMessage),
+                            .cancel()
+                        ]
+                    )
                 }
             )
             .introspectTableView { tableView in
@@ -72,29 +70,17 @@ struct ChatListView: View {
 
 extension ChatListView {
     
-    func showChatActionSheet() {
-        showingChatActionSheet = true
-    }
-    
     func showShipActionSheet() {
         showingShipActionSheet = true
+    }
+    
+    func showChatActionSheet() {
+        showingChatActionSheet = true
     }
     
 }
 
 extension ChatListView {
-    
-    func newChat() {
-        
-    }
-    
-    func joinChat() {
-        
-    }
-    
-    func directMessage() {
-        
-    }
     
     func openLandscape() {
         guard case .authenticated(let airlock, _) = store.state.session else {
@@ -106,6 +92,18 @@ extension ChatListView {
     
     func logout() {
         store.dispatch(AppThunk.endSession())
+    }
+    
+    func newChat() {
+        
+    }
+    
+    func joinChat() {
+        
+    }
+    
+    func directMessage() {
+        
     }
     
 }
