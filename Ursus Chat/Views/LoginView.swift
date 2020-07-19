@@ -36,13 +36,13 @@ struct LoginView: View {
                         .keyboardType(.asciiCapable)
                 }
                 Section {
-                    Button(action: continueButtonTapped) {
+                    Button(action: startSession) {
                         Text("Continue")
                     }
-                    Button(action: bridgeButtonTapped) {
+                    Button(action: openBridge) {
                         Text("Open Bridge")
                     }
-                    Button(action: purchaseButtonTapped) {
+                    Button(action: openPurchaseID) {
                         Text("Purchase an Urbit ID")
                     }
                 }
@@ -74,7 +74,7 @@ enum LoginViewError: LocalizedError {
 
 extension LoginView {
     
-    private func continueButtonTapped() {
+    private func startSession() {
         guard let url = URL(string: url) else {
             store.dispatch(AppErrorAction(error: LoginViewError.invalidURL(self.url)))
             return
@@ -88,12 +88,20 @@ extension LoginView {
         store.dispatch(AppThunk.startSession(credentials: AirlockCredentials(url: url, code: code)))
     }
     
-    private func bridgeButtonTapped() {
-        UIApplication.shared.open(URL(string: "https://bridge.urbit.org/")!)
+    private func openBridge() {
+        UIApplication.shared.open(.bridgeURL)
     }
     
-    private func purchaseButtonTapped() {
-        UIApplication.shared.open(URL(string: "https://urbit.org/using/install/#id")!)
+    private func openPurchaseID() {
+        UIApplication.shared.open(.purchaseIDURL)
     }
+    
+}
+
+extension URL {
+    
+    static let bridgeURL = URL(string: "https://bridge.urbit.org/")!
+    
+    static let purchaseIDURL = URL(string: "https://urbit.org/using/install/#id")!
     
 }
