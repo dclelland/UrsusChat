@@ -38,6 +38,7 @@ struct ChatView: View {
                 Button(action: sendMessage) {
                     Text("Send")
                 }
+                .disabled(message.isEmpty)
             }
             .padding()
         }
