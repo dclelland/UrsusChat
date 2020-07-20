@@ -19,15 +19,24 @@ public struct PhoneticBaseParser {
 
     public enum Spacing {
         
-        case longSpacing
-        case shortSpacing
+        case long(separator: String = "-")
+        case short(separator: String = "-")
         
-        internal var dash: String {
+        internal var separator: String {
             switch self {
-            case .longSpacing:
-                return "--"
-            case .shortSpacing:
-                return "-"
+            case .long(let separator):
+                return separator
+            case .short(let separator):
+                return separator
+            }
+        }
+        
+        internal var longSeparator: String {
+            switch self {
+            case .long(let separator):
+                return separator + separator
+            case .short(let separator):
+                return separator
             }
         }
         
@@ -60,12 +69,12 @@ public struct PhoneticBaseParser {
             
             let glue: String = {
                 guard index.isMultiple(of: 8) == false else {
-                    return index == 0 ? "" : spacing.dash
+                    return index == 0 ? "" : spacing.longSeparator
                 }
                 
                 switch index.parity {
                 case .even:
-                    return "-"
+                    return spacing.separator
                 case .odd:
                     return ""
                 }

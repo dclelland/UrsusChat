@@ -53,7 +53,12 @@ public class Airlock {
 extension Airlock {
     
     @discardableResult public func loginRequest(handler: @escaping (Ship) -> Void) -> DataRequest {
-        return session.request(loginURL, method: .post, parameters: ["password": credentials.code.description], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
+        return session.request(loginURL, method: .post, parameters: ["password": credentials.code.encodableString], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
+            guard case .success = response.result else {
+                print("[Ursus] Error with login request")
+                return
+            }
+            
             guard let urbauth = response.response?.value(forHTTPHeaderField: "Set-Cookie") else {
                 print("[Ursus] Error retrieving urbauth")
                 return
@@ -156,7 +161,7 @@ extension Airlock: EventSourceDelegate {
                 pokeHandlers[response.id]?(.finished)
                 pokeHandlers[response.id] = nil
             case .error(let message):
-                pokeHandlers[response.id]?(.failure(PokeError.pokeFailure(message)))
+                pokeHandlers[response.id]?(.failure(AirlockError.pokeFailure(message)))
                 pokeHandlers[response.id] = nil
             }
         case .success(.subscribe(let response)):
@@ -164,7 +169,7 @@ extension Airlock: EventSourceDelegate {
             case .okay:
                 subscribeHandlers[response.id]?(.started)
             case .error(let message):
-                subscribeHandlers[response.id]?(.failure(SubscribeError.subscribeFailure(message)))
+                subscribeHandlers[response.id]?(.failure(AirlockError.subscribeFailure(message)))
                 subscribeHandlers[response.id] = nil
             }
         case .success(.diff(let response)):

@@ -13,10 +13,21 @@ public struct PatP: Aura {
     public var atom: BigUInt
     
     public var string: String {
-        return PhoneticBaseParser.render(syllables: syllables, spacing: .longSpacing)
+        return "~" + PhoneticBaseParser.render(syllables: syllables, spacing: .long())
+    }
+    
+    public var abbreviatedString: String {
+        switch title {
+        case .galaxy, .star, .planet:
+            return "~" + PhoneticBaseParser.render(syllables: syllables, spacing: .long())
+        case .moon:
+            return "~" + PhoneticBaseParser.render(syllables: syllables.prefix(2) + syllables.suffix(2), spacing: .long(separator: "^"))
+        case .comet:
+            return "~" + PhoneticBaseParser.render(syllables: syllables.prefix(2) + syllables.suffix(2), spacing: .long(separator: "_"))
+        }
     }
 
-    internal init(atom: BigUInt) {
+    public init(atom: BigUInt) {
         self.atom = atom
     }
     
@@ -28,29 +39,13 @@ public struct PatP: Aura {
 
 extension PatP {
     
-    public enum Title {
-        
-        case galaxy
-        case star
-        case planet
-        case moon
-        case comet
-        
+    public var encodableString: String {
+        return String(string.dropFirst(1))
     }
     
-    public var title: Title {
-        switch bitWidth {
-        case 0...8:
-            return .galaxy
-        case 9...16:
-            return .star
-        case 17...32:
-            return .planet
-        case 33...64:
-            return .moon
-        default:
-            return .comet
-        }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(encodableString)
     }
     
 }
@@ -90,18 +85,46 @@ extension PatP {
     
 }
 
-extension PatP: CustomStringConvertible {
+extension PatP {
     
-    public var description: String {
-        return string
+    public enum Title {
+        
+        case galaxy
+        case star
+        case planet
+        case moon
+        case comet
+        
     }
     
-}
-
-extension PatP: CustomDebugStringConvertible {
+    public var title: Title {
+        switch bitWidth {
+        case 0...8:
+            return .galaxy
+        case 9...16:
+            return .star
+        case 17...32:
+            return .planet
+        case 33...64:
+            return .moon
+        default:
+            return .comet
+        }
+    }
     
-    public var debugDescription: String {
-        return "~" + string
+    public var parent: PatP {
+        switch title {
+        case .galaxy:
+            return self
+        case .star:
+            return self % 0x100
+        case .planet:
+            return self % 0x10000
+        case .moon:
+            return self % 0x100000000
+        case .comet:
+            return self % 0x10000
+        }
     }
     
 }

@@ -13,7 +13,7 @@ public struct PatQ: Aura {
     public var atom: BigUInt
     
     public var string: String {
-        return PhoneticBaseParser.render(syllables: syllables, spacing: .shortSpacing)
+        return ".~" + PhoneticBaseParser.render(syllables: syllables, spacing: .short())
     }
 
     public init(atom: BigUInt) {
@@ -22,6 +22,19 @@ public struct PatQ: Aura {
     
     public init(string: String) throws {
         self.init(syllables: try PhoneticBaseParser.parse(string))
+    }
+    
+}
+
+extension PatQ {
+    
+    public var encodableString: String {
+        return String(string.dropFirst(2))
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(encodableString)
     }
     
 }
@@ -52,22 +65,6 @@ extension PatQ {
         default:
             return syllables
         }
-    }
-    
-}
-
-extension PatQ: CustomStringConvertible {
-    
-    public var description: String {
-        return string
-    }
-    
-}
-
-extension PatQ: CustomDebugStringConvertible {
-    
-    public var debugDescription: String {
-        return ".~" + string
     }
     
 }

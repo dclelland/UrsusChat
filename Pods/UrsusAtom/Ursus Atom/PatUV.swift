@@ -16,28 +16,12 @@ public struct PatUV: Aura {
         return "0v" + String(self, radix: 32, chunk: 5)
     }
 
-    internal init(atom: BigUInt) {
+    public init(atom: BigUInt) {
         self.atom = atom
     }
     
-    init(string: String) throws {
+    public init(string: String) {
         fatalError("PatUV.init(string:) is not implemented yet")
-    }
-    
-}
-
-extension PatUV: CustomStringConvertible {
-    
-    public var description: String {
-        return string
-    }
-    
-}
-
-extension PatUV: CustomDebugStringConvertible {
-    
-    public var debugDescription: String {
-        return string
     }
     
 }

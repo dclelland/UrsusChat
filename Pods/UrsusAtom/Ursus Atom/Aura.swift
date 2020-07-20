@@ -43,6 +43,14 @@ extension Aura {
 
 extension Aura {
     
+    public var description: String {
+        return rawValue
+    }
+    
+}
+
+extension Aura {
+    
     public init(integerLiteral value: Atom.IntegerLiteralType) {
         self.init(atom: Atom(integerLiteral: value))
     }
