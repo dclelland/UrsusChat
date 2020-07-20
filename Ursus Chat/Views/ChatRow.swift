@@ -23,7 +23,7 @@ struct ChatRow: View {
             }
             VStack(alignment: .leading, spacing: 8.0) {
                 HStack(alignment: .firstTextBaseline, spacing: 8.0) {
-                    Text(envelopes.head.author.debugDescription)
+                    Text(envelopes.head.author.description)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Spacer()

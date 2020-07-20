@@ -46,11 +46,11 @@ extension Chat {
     }
     
     var groupTitle: String? {
-        return contactsMetadata?.title ?? chatMetadata?.creator.debugDescription
+        return contactsMetadata?.title ?? chatMetadata?.creator.description
     }
     
     func nickname(for ship: Ship) -> String {
-        return contacts.contact(for: ship.description)?.nickname ?? ship.debugDescription
+        return contacts.contact(for: ship.description)?.nickname ?? ship.description
     }
     
 }

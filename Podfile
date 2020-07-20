@@ -12,8 +12,8 @@ target 'Ursus Chat' do
         pod 'UrsusAtom', path: '../UrsusAtom'
         pod 'UrsusSigil', path: '../UrsusSigil'
     else
-        pod 'UrsusAirlock', '~> 1.4'
-        pod 'UrsusAtom', '~> 1.0'
+        pod 'UrsusAirlock', '~> 1.5'
+        pod 'UrsusAtom', '~> 1.1'
         pod 'UrsusSigil', '~> 1.2'
     end
   

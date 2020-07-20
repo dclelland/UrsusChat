@@ -35,7 +35,7 @@ struct ChatListView: View {
                 }
                 .actionSheet(isPresented: $showingShipActionSheet) {
                     ActionSheet(
-                        title: Text(ship.debugDescription),
+                        title: Text(ship.description),
                         buttons: [
                             .default(Text("Open Landscape"), action: openLandscape),
                             .destructive(Text("Logout"), action: logout),
