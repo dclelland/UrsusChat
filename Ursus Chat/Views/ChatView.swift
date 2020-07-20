@@ -26,7 +26,10 @@ struct ChatView: View {
         VStack(spacing: 0.0) {
             List(chat.mailbox.authorAggregatedEnvelopes, id: \.head.uid) { envelopes in
                 ChatRow(envelopes: envelopes)
+                .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             }
+            .offset(x: 0.0, y: -1.0)
+            .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
@@ -43,9 +46,6 @@ struct ChatView: View {
             .padding()
         }
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
-        .introspectViewController { viewController in
-            viewController.hidesBottomBarWhenPushed = true
-        }
         .keyboardObserving()
     }
     
