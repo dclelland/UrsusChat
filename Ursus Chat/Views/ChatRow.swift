@@ -35,8 +35,8 @@ struct ChatRow: View {
                     LetterView(letter: envelope.letter)
                 }
             }
+            .padding(EdgeInsets(top: 2.0, leading: 0.0, bottom: 8.0, trailing: 0.0))
         }
-        .padding(.bottom, 8.0)
     }
     
 }
