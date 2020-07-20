@@ -46,7 +46,8 @@ struct ChatListView: View {
                 trailing: Button(action: showChatActionSheet) {
                     Image(systemName: "square.and.pencil")
                         .resizable()
-                        .frame(width: 24.0, height: 24.0)
+                        .frame(width: 22.0, height: 22.0)
+                        .font(Font.title.weight(.light))
                 }
                 .actionSheet(isPresented: $showingChatActionSheet) {
                     ActionSheet(
