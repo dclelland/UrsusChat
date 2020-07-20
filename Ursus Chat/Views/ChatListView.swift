@@ -15,6 +15,8 @@ struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
+    @State var selectedPath: String? = nil
+    
     @State private var showingShipActionSheet = false
     
     @State private var showingChatActionSheet = false
@@ -24,7 +26,7 @@ struct ChatListView: View {
     var body: some View {
         NavigationView {
             List(store.state.subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { (path, mailbox) in
-                NavigationLink(destination: ChatView(path: path)) {
+                NavigationLink(destination: ChatView(path: path), tag: path, selection: self.$selectedPath) {
                     ChatListRow(path: path)
                 }
             }
