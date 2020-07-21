@@ -22,15 +22,9 @@ struct NewChatView: View {
             Form {
                 Section(header: Text("Name")) {
                     TextField("Secret chat", text: self.$name)
-//                        .textContentType(.URL)
-//                        .keyboardType(.URL)
-//                        .autocapitalization(.none)
                 }
                 Section(header: Text("Description"), footer: Text("(Optional)")) {
                     TextField("The coolest chat", text: self.$description)
-//                        .textContentType(.URL)
-//                        .keyboardType(.URL)
-//                        .autocapitalization(.none)
                 }
                 Section {
                     Button(action: self.startChat) {
