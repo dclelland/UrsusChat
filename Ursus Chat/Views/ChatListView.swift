@@ -13,49 +13,11 @@ import UrsusSigil
 
 struct ChatListView: View {
     
-    private enum Sheet: Hashable, Identifiable {
-        
-        case newChat
-        case joinChat
-        case directMessage
-        
-        var id: Int {
-            return hashValue
-        }
-        
-    }
-    
-    private struct SheetView: View {
-        
-        var sheet: Sheet
-        
-        var body: some View {
-            switch sheet {
-            case .newChat:
-                return ModalView(dismissLabel: { Text("Cancel") }) {
-                    EmptyView()
-                    .navigationBarTitle("New Chat")
-                }
-            case .joinChat:
-                return ModalView(dismissLabel: { Text("Cancel") }) {
-                    EmptyView()
-                    .navigationBarTitle("Join Chat")
-                }
-            case .directMessage:
-                return ModalView(dismissLabel: { Text("Cancel") }) {
-                    EmptyView()
-                    .navigationBarTitle("Direct Message")
-                }
-            }
-        }
-        
-    }
-    
     @EnvironmentObject var store: AppStore
     
     @State private var selectedPath: String? = nil
     
-    @State private var selectedSheet: Sheet? = nil
+    @State private var selectedChatSheetViewMode: ChatSheetView.Mode? = nil
     
     @State private var showingShipActionSheet = false
     
@@ -107,8 +69,8 @@ struct ChatListView: View {
                 tableView.tableFooterView = UIView()
             }
         }
-        .sheet(item: $selectedSheet) { sheet in
-            SheetView(sheet: sheet)
+        .sheet(item: $selectedChatSheetViewMode) { mode in
+            ChatSheetView(mode: mode)
         }
     }
     
@@ -125,15 +87,15 @@ extension ChatListView {
     }
     
     func showNewChatView() {
-        selectedSheet = .newChat
+        selectedChatSheetViewMode = .new
     }
     
     func showJoinChatView() {
-        selectedSheet = .joinChat
+        selectedChatSheetViewMode = .join
     }
     
     func showDirectMessageView() {
-        selectedSheet = .directMessage
+        selectedChatSheetViewMode = .directMessage
     }
     
 }
