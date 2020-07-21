@@ -11,6 +11,29 @@ import Introspect
 import UrsusAirlock
 import UrsusSigil
 
+struct SheetView<Content: View>: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    let viewBuilder: () -> Content
+    
+    var body: some View {
+        NavigationView {
+            viewBuilder()
+            .navigationBarItems(
+                trailing: Button(
+                    action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    },
+                    label: {
+                        Text("Dismiss")
+                    }
+                )
+            )
+        }
+    }
+}
+
 struct ChatListView: View {
     
     private enum Sheet: Hashable, Identifiable, View {
@@ -26,11 +49,20 @@ struct ChatListView: View {
         var body: some View {
             switch self {
             case .newChat:
-                return Text("New Chat")
+                return SheetView {
+                    Text("New Chat")
+                    .navigationBarTitle("New Chat")
+                }
             case .joinChat:
-                return Text("Join Chat")
+                return SheetView {
+                    Text("Join Chat")
+                    .navigationBarTitle("Join Chat")
+                }
             case .directMessage:
-                return Text("Direct Message")
+                return SheetView {
+                    Text("Direct Message")
+                    .navigationBarTitle("Direct Message")
+                }
             }
         }
         
