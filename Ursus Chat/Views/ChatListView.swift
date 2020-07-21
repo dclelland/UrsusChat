@@ -13,19 +13,27 @@ import UrsusSigil
 
 struct ChatListView: View {
     
+    private enum Sheet: Hashable, Identifiable {
+        
+        case newChat
+        case joinChat
+        case directMessage
+        
+        var id: Int {
+            return hashValue
+        }
+        
+    }
+    
     @EnvironmentObject var store: AppStore
     
-    @State var selectedPath: String? = nil
+    @State private var selectedPath: String? = nil
+    
+    @State private var selectedSheet: Sheet? = nil
     
     @State private var showingShipActionSheet = false
     
     @State private var showingChatActionSheet = false
-    
-    @State private var showingNewChatView = false
-    
-    @State private var showingJoinChatView = false
-    
-    @State private var showingDirectMessageView = false
     
     var ship: Ship
     
@@ -73,15 +81,15 @@ struct ChatListView: View {
                 tableView.tableFooterView = UIView()
             }
         }
-        .sheet(isPresented: $showingNewChatView) {
-            Text("New Chat")
+        .sheet(item: $selectedSheet) { sheet in
+            if sheet == .newChat {
+                Text("New Chat")
+            } else if sheet == .joinChat {
+                Text("Join Chat")
+            } else if sheet == .directMessage {
+                Text("Direct Message")
+            }
         }
-//        .sheet(isPresented: $showingJoinChatView) {
-//            Text("Join Chat")
-//        }
-//        .sheet(isPresented: $showingDirectMessageView) {
-//            Text("Direct Message")
-//        }
     }
     
 }
@@ -97,15 +105,15 @@ extension ChatListView {
     }
     
     func showNewChatView() {
-        showingNewChatView = true
+        selectedSheet = .newChat
     }
     
     func showJoinChatView() {
-        showingJoinChatView = true
+        selectedSheet = .joinChat
     }
     
     func showDirectMessageView() {
-        showingDirectMessageView = true
+        selectedSheet = .directMessage
     }
     
 }
