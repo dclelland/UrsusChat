@@ -102,7 +102,7 @@ struct MailboxConfig: Decodable {
     
 }
 
-struct Envelope: Decodable {
+struct Envelope: Codable {
 
     var uid: String
     var number: Int
@@ -112,7 +112,7 @@ struct Envelope: Decodable {
     
 }
 
-enum Letter: Decodable {
+enum Letter: Codable {
     
     case text(LetterText)
     case url(LetterURL)
@@ -144,13 +144,20 @@ enum Letter: Decodable {
         }
     }
     
+    func encode(to encoder: Encoder) throws {
+        let container = try encoder.container(keyedBy: CodingKeys.self)
+        switch self {
+            
+        }
+    }
+    
 }
 
 typealias LetterText = String
 
 typealias LetterURL = String
 
-struct LetterCode: Decodable {
+struct LetterCode: Codable {
     
     var expression: String
     var output: [[String]]

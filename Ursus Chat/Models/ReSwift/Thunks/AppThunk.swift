@@ -109,3 +109,13 @@ extension AppThunk {
     }
     
 }
+
+extension AppThunk {
+    
+    static func sendMessage(path: String, letter: Letter) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            
+        }
+    }
+    
+}
