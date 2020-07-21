@@ -21,6 +21,12 @@ struct ChatListView: View {
     
     @State private var showingChatActionSheet = false
     
+    @State private var showingNewChatView = false
+    
+    @State private var showingJoinChatView = false
+    
+    @State private var showingDirectMessageView = false
+    
     var ship: Ship
     
     var body: some View {
@@ -55,9 +61,9 @@ struct ChatListView: View {
                     ActionSheet(
                         title: Text("Chats"),
                         buttons: [
-                            .default(Text("New Chat"), action: newChat),
-                            .default(Text("Join Chat"), action: joinChat),
-                            .default(Text("Direct Message"), action: directMessage),
+                            .default(Text("New Chat"), action: showNewChatView),
+                            .default(Text("Join Chat"), action: showJoinChatView),
+                            .default(Text("Direct Message"), action: showDirectMessageView),
                             .cancel()
                         ]
                     )
@@ -67,6 +73,15 @@ struct ChatListView: View {
                 tableView.tableFooterView = UIView()
             }
         }
+        .sheet(isPresented: $showingNewChatView) {
+            Text("New Chat")
+        }
+//        .sheet(isPresented: $showingJoinChatView) {
+//            Text("Join Chat")
+//        }
+//        .sheet(isPresented: $showingDirectMessageView) {
+//            Text("Direct Message")
+//        }
     }
     
 }
@@ -79,6 +94,18 @@ extension ChatListView {
     
     func showChatActionSheet() {
         showingChatActionSheet = true
+    }
+    
+    func showNewChatView() {
+        showingNewChatView = true
+    }
+    
+    func showJoinChatView() {
+        showingJoinChatView = true
+    }
+    
+    func showDirectMessageView() {
+        showingDirectMessageView = true
     }
     
 }
@@ -95,18 +122,6 @@ extension ChatListView {
     
     func logout() {
         store.dispatch(AppThunk.endSession())
-    }
-    
-    func newChat() {
-        
-    }
-    
-    func joinChat() {
-        
-    }
-    
-    func directMessage() {
-        
     }
     
 }
