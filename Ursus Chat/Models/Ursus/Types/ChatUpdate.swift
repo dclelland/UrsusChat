@@ -145,7 +145,7 @@ enum Letter: Codable {
     }
     
     func encode(to encoder: Encoder) throws {
-        var container = try encoder.container(keyedBy: CodingKeys.self)
+        var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
         case .text(let text):
             try container.encode(text, forKey: .text)
