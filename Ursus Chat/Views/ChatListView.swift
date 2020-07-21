@@ -13,7 +13,7 @@ import UrsusSigil
 
 struct ChatListView: View {
     
-    private enum Sheet: Hashable, Identifiable {
+    private enum Sheet: Hashable, Identifiable, View {
         
         case newChat
         case joinChat
@@ -21,6 +21,17 @@ struct ChatListView: View {
         
         var id: Int {
             return hashValue
+        }
+        
+        var body: some View {
+            switch self {
+            case .newChat:
+                return Text("New Chat")
+            case .joinChat:
+                return Text("Join Chat")
+            case .directMessage:
+                return Text("Direct Message")
+            }
         }
         
     }
@@ -82,13 +93,7 @@ struct ChatListView: View {
             }
         }
         .sheet(item: $selectedSheet) { sheet in
-            if sheet == .newChat {
-                Text("New Chat")
-            } else if sheet == .joinChat {
-                Text("Join Chat")
-            } else if sheet == .directMessage {
-                Text("Direct Message")
-            }
+            sheet
         }
     }
     
