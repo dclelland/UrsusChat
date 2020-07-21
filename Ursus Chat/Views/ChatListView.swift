@@ -11,32 +11,9 @@ import Introspect
 import UrsusAirlock
 import UrsusSigil
 
-struct SheetView<Content: View>: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    let viewBuilder: () -> Content
-    
-    var body: some View {
-        NavigationView {
-            viewBuilder()
-            .navigationBarItems(
-                trailing: Button(
-                    action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    },
-                    label: {
-                        Text("Dismiss")
-                    }
-                )
-            )
-        }
-    }
-}
-
 struct ChatListView: View {
     
-    private enum Sheet: Hashable, Identifiable, View {
+    private enum Sheet: Hashable, Identifiable {
         
         case newChat
         case joinChat
@@ -46,21 +23,27 @@ struct ChatListView: View {
             return hashValue
         }
         
+    }
+    
+    private struct SheetView: View {
+        
+        var sheet: Sheet
+        
         var body: some View {
-            switch self {
+            switch sheet {
             case .newChat:
-                return SheetView {
-                    Text("New Chat")
+                return ModalView(dismissLabel: { Text("Cancel") }) {
+                    EmptyView()
                     .navigationBarTitle("New Chat")
                 }
             case .joinChat:
-                return SheetView {
-                    Text("Join Chat")
+                return ModalView(dismissLabel: { Text("Cancel") }) {
+                    EmptyView()
                     .navigationBarTitle("Join Chat")
                 }
             case .directMessage:
-                return SheetView {
-                    Text("Direct Message")
+                return ModalView(dismissLabel: { Text("Cancel") }) {
+                    EmptyView()
                     .navigationBarTitle("Direct Message")
                 }
             }
@@ -125,7 +108,7 @@ struct ChatListView: View {
             }
         }
         .sheet(item: $selectedSheet) { sheet in
-            sheet
+            SheetView(sheet: sheet)
         }
     }
     
