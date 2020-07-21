@@ -10,9 +10,9 @@ import SwiftUI
 
 struct NewChatView: View {
     
-    @State var chatName: String = ""
+    @State var name: String = ""
     
-    @State var chatDescription: String = ""
+    @State var description: String = ""
     
     var isLoading: Bool = false
     
@@ -20,13 +20,13 @@ struct NewChatView: View {
         ModalView(dismissLabel: { Text("Cancel") }) {
             Form {
                 Section(header: Text("Name")) {
-                    TextField("Secret chat", text: self.$chatName)
+                    TextField("Secret chat", text: self.$name)
 //                        .textContentType(.URL)
 //                        .keyboardType(.URL)
 //                        .autocapitalization(.none)
                 }
                 Section(header: Text("Description"), footer: Text("(Optional)")) {
-                    TextField("The coolest chat", text: self.$chatName)
+                    TextField("The coolest chat", text: self.$description)
 //                        .textContentType(.URL)
 //                        .keyboardType(.URL)
 //                        .autocapitalization(.none)
@@ -46,7 +46,7 @@ struct NewChatView: View {
 
 extension NewChatView {
     
-    func startChat() {
+    private func startChat() {
         
     }
     
