@@ -10,6 +10,8 @@ import SwiftUI
 
 struct DirectMessageView: View {
     
+    var isLoading: Bool = false
+    
     var body: some View {
         ModalView(dismissLabel: { Text("Cancel") }) {
             EmptyView()
