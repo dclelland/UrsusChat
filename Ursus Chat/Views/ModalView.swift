@@ -23,6 +23,7 @@ struct ModalView<Label: View, Content: View>: View {
                 trailing: Button(action: dismiss, label: dismissLabel)
             )
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
 }
