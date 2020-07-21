@@ -24,7 +24,7 @@ struct ChatView: View {
     
     var body: some View {
         VStack(spacing: 0.0) {
-            List(chat.mailbox.authorAggregatedEnvelopes, id: \.head.uid) { envelopes in
+            List(chat.mailbox.authorAggregatedEnvelopes.reversed(), id: \.head.uid) { envelopes in
                 ChatRow(envelopes: envelopes)
                 .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             }
