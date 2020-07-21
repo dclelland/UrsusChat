@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import KeyboardObserving
 
 struct NewChatView: View {
     
@@ -39,6 +40,7 @@ struct NewChatView: View {
             }
             .disabled(self.isLoading)
             .navigationBarTitle("New Chat")
+            .keyboardObserving()
         }
     }
     

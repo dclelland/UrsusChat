@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import KeyboardObserving
 
 struct DirectMessageView: View {
     
@@ -22,14 +23,10 @@ struct DirectMessageView: View {
                         .keyboardType(.asciiCapable)
                         .autocapitalization(.none)
                 }
-                Section {
-                    Button(action: self.startDirectMessage) {
-                        Text("Start Direct Message")
-                    }
-                }
             }
             .disabled(self.isLoading)
             .navigationBarTitle("Direct Message")
+            .keyboardObserving()
         }
     }
     
