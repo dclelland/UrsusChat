@@ -145,9 +145,16 @@ enum Letter: Codable {
     }
     
     func encode(to encoder: Encoder) throws {
-        let container = try encoder.container(keyedBy: CodingKeys.self)
+        var container = try encoder.container(keyedBy: CodingKeys.self)
         switch self {
-            
+        case .text(let text):
+            try container.encode(text, forKey: .text)
+        case .url(let url):
+            try container.encode(url, forKey: .url)
+        case .code(let code):
+            try container.encode(code, forKey: .code)
+        case .me(let me):
+            try container.encode(me, forKey: .me)
         }
     }
     

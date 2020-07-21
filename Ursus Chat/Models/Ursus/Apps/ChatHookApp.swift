@@ -24,6 +24,20 @@ class ChatHookApp: AirlockApp {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
+    @discardableResult func sendMessage(path: String, letter: Letter) -> DataRequest {
+        #warning("WORK IN PROGRESS")
+//        let envelope = Envelope(
+//            uid: UUID().patUVString,
+//            number: 0,
+//            author: ship,
+//            when: Date(),
+//            letter: letter
+//        )
+        //        `chat-hook`: `{"message": {"path: "/~/~zod/mc", "envelope": {"uid": "0v3.l14pg.36jh8.mh9dl.ps65v.4lujh", "number": 1, "author: "~zod", "when": 15942876211449, "letter": {"text": "Hello world"}}}}`
+        
+        fatalError()
+    }
+    
 }
 
 extension ChatHookApp {
