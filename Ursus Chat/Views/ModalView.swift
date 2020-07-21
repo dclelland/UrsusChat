@@ -30,7 +30,7 @@ struct ModalView<Label: View, Content: View>: View {
 
 extension ModalView {
     
-    private func dismiss() {
+    func dismiss() {
         presentationMode.wrappedValue.dismiss()
     }
     
