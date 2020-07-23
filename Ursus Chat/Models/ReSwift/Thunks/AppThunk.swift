@@ -114,7 +114,22 @@ extension AppThunk {
     
     static func sendMessage(path: String, letter: Letter) -> AppThunk {
         return AppThunk { dispatch, getState in
-            #warning("WORK IN PROGRESS")
+            guard case .authenticated(let airlock, let ship) = getState()?.session else {
+                return
+            }
+            
+            airlock.chatHook(ship: ship).sendMessage(path: path, letter: letter) { event in
+                switch event {
+                case .failure(let error):
+                    dispatch(AppErrorAction(error: error))
+                case .finished:
+                    print("[AppThunk.sendMessage] Poke finished")
+                }
+            }.response { response in
+                if let error = response.error {
+                    dispatch(AppErrorAction(error: error))
+                }
+            }
         }
     }
     

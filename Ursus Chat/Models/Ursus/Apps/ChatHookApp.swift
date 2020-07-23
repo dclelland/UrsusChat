@@ -24,18 +24,21 @@ class ChatHookApp: AirlockApp {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
-    @discardableResult func sendMessage(path: String, letter: Letter) -> DataRequest {
-        #warning("WORK IN PROGRESS")
-//        let envelope = Envelope(
-//            uid: UUID().patUVString,
-//            number: 0,
-//            author: ship,
-//            when: Date(),
-//            letter: letter
-//        )
-        //        `chat-hook`: `{"message": {"path: "/~/~zod/mc", "envelope": {"uid": "0v3.l14pg.36jh8.mh9dl.ps65v.4lujh", "number": 1, "author: "~zod", "when": 15942876211449, "letter": {"text": "Hello world"}}}}`
+    @discardableResult func sendMessage(path: String, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+        let envelope = Envelope(
+            uid: UUID().patUVString,
+            number: 0,
+            author: ship, // Might be the @p encoding
+            when: Date(), // Might be the date formatting (Int...?)
+            letter: letter
+        )
         
-        fatalError()
+        let message = Message(
+            path: path,
+            envelope: envelope
+        )
+        
+        return pokeRequest(json: message, handler: handler)
     }
     
 }
@@ -61,6 +64,13 @@ extension ChatHookApp {
                 throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
             }
         }
+        
+    }
+    
+    struct Message: Encodable {
+        
+        var path: String
+        var envelope: Envelope
         
     }
     
