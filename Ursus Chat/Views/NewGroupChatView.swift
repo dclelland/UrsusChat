@@ -1,15 +1,15 @@
 //
-//  NewChatView.swift
+//  NewGroupChatView.swift
 //  Ursus Chat
 //
-//  Created by Daniel Clelland on 21/07/20.
+//  Created by Daniel Clelland on 23/07/20.
 //  Copyright © 2020 Protonome. All rights reserved.
 //
 
 import SwiftUI
 import KeyboardObserving
 
-struct NewChatView: View {
+struct NewGroupChatView: View {
     
     @State var name: String = ""
     
@@ -33,17 +33,18 @@ struct NewChatView: View {
                 }
             }
             .disabled(self.isLoading)
-            .navigationBarTitle("New Chat")
+            .navigationBarTitle("New Group Chat")
             .keyboardObserving()
         }
     }
     
 }
 
-extension NewChatView {
+extension NewGroupChatView {
     
     private func startChat() {
         
     }
     
 }
+

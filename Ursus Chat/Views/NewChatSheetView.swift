@@ -1,5 +1,5 @@
 //
-//  ChatSheetView.swift
+//  NewChatSheetView.swift
 //  Ursus Chat
 //
 //  Created by Daniel Clelland on 21/07/20.
@@ -8,12 +8,11 @@
 
 import SwiftUI
 
-struct ChatSheetView: View {
+struct NewChatSheetView: View {
     
     enum Mode: Hashable, Identifiable {
         
-        case new
-        case join
+        case groupChat
         case directMessage
         
         var id: Int {
@@ -26,17 +25,13 @@ struct ChatSheetView: View {
     
     var body: some View {
         switch mode {
-        case .new:
+        case .groupChat:
             return AnyView(
-                NewChatView()
-            )
-        case .join:
-            return AnyView(
-                JoinChatView()
+                NewGroupChatView()
             )
         case .directMessage:
             return AnyView(
-                DirectMessageView()
+                NewDirectMessageView()
             )
         }
     }

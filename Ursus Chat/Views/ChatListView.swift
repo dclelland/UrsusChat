@@ -17,11 +17,11 @@ struct ChatListView: View {
     
     @State private var selectedPath: String? = nil
     
-    @State private var selectedChatSheetViewMode: ChatSheetView.Mode? = nil
+    @State private var selectedNewChatSheetViewMode: NewChatSheetView.Mode? = nil
     
     @State private var showingShipActionSheet = false
     
-    @State private var showingChatActionSheet = false
+    @State private var showingNewChatActionSheet = false
     
     var ship: Ship
     
@@ -47,19 +47,18 @@ struct ChatListView: View {
                         ]
                     )
                 },
-                trailing: Button(action: showChatActionSheet) {
+                trailing: Button(action: showNewChatActionSheet) {
                     Image(systemName: "square.and.pencil")
                         .resizable()
                         .frame(width: 22.0, height: 22.0)
                         .font(Font.title.weight(.light))
                 }
-                .actionSheet(isPresented: $showingChatActionSheet) {
+                .actionSheet(isPresented: $showingNewChatActionSheet) {
                     ActionSheet(
                         title: Text("Chats"),
                         buttons: [
-                            .default(Text("New Chat"), action: showNewChatView),
-                            .default(Text("Join Chat"), action: showJoinChatView),
-                            .default(Text("Direct Message"), action: showDirectMessageView),
+                            .default(Text("New Group Chat"), action: showNewGroupChatView),
+                            .default(Text("New Direct Message"), action: showNewDirectMessageView),
                             .cancel()
                         ]
                     )
@@ -69,8 +68,8 @@ struct ChatListView: View {
                 tableView.tableFooterView = UIView()
             }
         }
-        .sheet(item: $selectedChatSheetViewMode) { mode in
-            ChatSheetView(mode: mode)
+        .sheet(item: $selectedNewChatSheetViewMode) { mode in
+            NewChatSheetView(mode: mode)
         }
     }
     
@@ -82,20 +81,16 @@ extension ChatListView {
         showingShipActionSheet = true
     }
     
-    func showChatActionSheet() {
-        showingChatActionSheet = true
+    func showNewChatActionSheet() {
+        showingNewChatActionSheet = true
     }
     
-    func showNewChatView() {
-        selectedChatSheetViewMode = .new
+    func showNewGroupChatView() {
+        selectedNewChatSheetViewMode = .groupChat
     }
     
-    func showJoinChatView() {
-        selectedChatSheetViewMode = .join
-    }
-    
-    func showDirectMessageView() {
-        selectedChatSheetViewMode = .directMessage
+    func showNewDirectMessageView() {
+        selectedNewChatSheetViewMode = .directMessage
     }
     
 }

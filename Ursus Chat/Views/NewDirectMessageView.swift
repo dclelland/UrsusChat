@@ -1,15 +1,15 @@
 //
-//  DirectMessageView.swift
+//  NewDirectMessageView.swift
 //  Ursus Chat
 //
-//  Created by Daniel Clelland on 21/07/20.
+//  Created by Daniel Clelland on 23/07/20.
 //  Copyright © 2020 Protonome. All rights reserved.
 //
 
 import SwiftUI
 import KeyboardObserving
 
-struct DirectMessageView: View {
+struct NewDirectMessageView: View {
     
     @State var ship: String = ""
     
@@ -25,14 +25,14 @@ struct DirectMessageView: View {
                 }
             }
             .disabled(self.isLoading)
-            .navigationBarTitle("Direct Message")
+            .navigationBarTitle("New Direct Message")
             .keyboardObserving()
         }
     }
     
 }
 
-extension DirectMessageView {
+extension NewDirectMessageView {
     
     private func startDirectMessage() {
         
