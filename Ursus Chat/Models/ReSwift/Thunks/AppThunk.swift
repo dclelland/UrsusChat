@@ -118,7 +118,8 @@ extension AppThunk {
                 return
             }
             
-            airlock.chatHook(ship: ship).sendMessage(path: path, letter: letter) { event in
+            // airlock.chatHook(ship: ship).sendMessage(path: path, letter: letter)
+            airlock.chatHook(ship: ship).sendRead(path: path) { event in
                 switch event {
                 case .failure(let error):
                     dispatch(AppErrorAction(error: error))

@@ -24,21 +24,33 @@ class ChatHookApp: AirlockApp {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
+}
+
+extension ChatHookApp {
+    
     @discardableResult func sendMessage(path: String, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
-        let envelope = Envelope(
-            uid: UUID().patUVString,
-            number: 0,
-            author: ship, // Might be the @p encoding
-            when: Date(), // Might be the date formatting (Int...?)
-            letter: letter
+        let action = ChatHookApp.Action.message(
+            Message(
+                path: path,
+                envelope: Message.Envelope(
+                    uid: UUID().patUVString,
+                    number: 0,
+                    author: ship,
+                    when: Int(Date().timeIntervalSince1970 * 1000.0), // Might be the date formatting (Int...?) // 1595467736125
+                    letter: letter
+                )
+            )
         )
-        
-        let message = Message(
-            path: path,
-            envelope: envelope
+        return pokeRequest(json: action, handler: handler)
+    }
+    
+    @discardableResult func sendRead(path: String, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+        let action = ChatHookApp.Action.read(
+            Read(
+                path: path
+            )
         )
-        
-        return pokeRequest(json: message, handler: handler)
+        return pokeRequest(json: action, handler: handler)
     }
     
 }
@@ -67,10 +79,50 @@ extension ChatHookApp {
         
     }
     
+    enum Action: Encodable {
+        
+        case message(Message)
+        case read(Read)
+        
+        enum CodingKeys: String, CodingKey {
+            
+            case message
+            case read
+            
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            switch self {
+            case .message(let message):
+                try container.encode(message, forKey: .message)
+            case .read(let read):
+                try container.encode(read, forKey: .read)
+            }
+        }
+        
+    }
+    
     struct Message: Encodable {
         
         var path: String
         var envelope: Envelope
+        
+        struct Envelope: Codable {
+
+            var uid: String
+            var number: Int
+            var author: Ship
+            var when: Int
+            var letter: Letter
+            
+        }
+        
+    }
+    
+    struct Read: Encodable {
+        
+        var path: String
         
     }
     
