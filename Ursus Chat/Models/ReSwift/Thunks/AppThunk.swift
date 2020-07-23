@@ -112,6 +112,27 @@ extension AppThunk {
 
 extension AppThunk {
     
+    static func sendRead(path: String) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            guard case .authenticated(let airlock, let ship) = getState()?.session else {
+                return
+            }
+            
+            airlock.chatStore(ship: ship).sendRead(path: path) { event in
+                switch event {
+                case .failure(let error):
+                    dispatch(AppErrorAction(error: error))
+                case .finished:
+                    print("[AppThunk.sendRead] Poke finished")
+                }
+            }.response { response in
+                if let error = response.error {
+                    dispatch(AppErrorAction(error: error))
+                }
+            }
+        }
+    }
+    
     static func sendMessage(path: String, letter: Letter) -> AppThunk {
         return AppThunk { dispatch, getState in
             guard case .authenticated(let airlock, let ship) = getState()?.session else {

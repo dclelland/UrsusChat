@@ -47,11 +47,16 @@ struct ChatView: View {
         }
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
         .keyboardObserving()
+        .onAppear(perform: sendRead)
     }
     
 }
 
 extension ChatView {
+    
+    func sendRead() {
+        store.dispatch(AppThunk.sendRead(path: path))
+    }
     
     func sendMessage() {
         store.dispatch(AppThunk.sendMessage(path: path, letter: .text(message)))
