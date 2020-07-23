@@ -44,15 +44,6 @@ extension ChatHookApp {
         return pokeRequest(json: action, handler: handler)
     }
     
-    @discardableResult func sendRead(path: String, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
-        let action = ChatHookApp.Action.read(
-            Read(
-                path: path
-            )
-        )
-        return pokeRequest(json: action, handler: handler)
-    }
-    
 }
 
 extension ChatHookApp {
@@ -82,12 +73,10 @@ extension ChatHookApp {
     enum Action: Encodable {
         
         case message(Message)
-        case read(Read)
         
         enum CodingKeys: String, CodingKey {
             
             case message
-            case read
             
         }
         
@@ -96,8 +85,6 @@ extension ChatHookApp {
             switch self {
             case .message(let message):
                 try container.encode(message, forKey: .message)
-            case .read(let read):
-                try container.encode(read, forKey: .read)
             }
         }
         
@@ -117,12 +104,6 @@ extension ChatHookApp {
             var letter: Letter
             
         }
-        
-    }
-    
-    struct Read: Encodable {
-        
-        var path: String
         
     }
     
