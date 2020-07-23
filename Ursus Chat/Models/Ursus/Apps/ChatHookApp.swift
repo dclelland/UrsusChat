@@ -35,8 +35,8 @@ extension ChatHookApp {
                 envelope: Message.Envelope(
                     uid: UUID().patUVString,
                     number: 0,
-                    author: ship,
-                    when: Int(Date().timeIntervalSince1970 * 1000.0), // Might be the date formatting (Int...?) // 1595467736125
+                    author: ship.string,
+                    when: Int(Date().timeIntervalSince1970 * 1000.0),
                     letter: letter
                 )
             )
@@ -99,7 +99,7 @@ extension ChatHookApp {
 
             var uid: String
             var number: Int
-            var author: Ship
+            var author: String
             var when: Int
             var letter: Letter
             

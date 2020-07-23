@@ -55,6 +55,7 @@ extension ChatView {
     
     func sendMessage() {
         store.dispatch(AppThunk.sendMessage(path: path, letter: .text(message)))
+        message = ""
     }
     
 }
