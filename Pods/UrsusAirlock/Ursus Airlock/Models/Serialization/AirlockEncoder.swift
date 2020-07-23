@@ -11,8 +11,19 @@ public class AirlockEncoder: JSONEncoder {
     
     public override init() {
         super.init()
-        self.dateEncodingStrategy = .millisecondsSince1970
+        self.dateEncodingStrategy = .integerMillisecondsSince1970
         self.keyEncodingStrategy = .convertToKebabCase
+    }
+    
+}
+
+extension JSONEncoder.DateEncodingStrategy {
+    
+    public static var integerMillisecondsSince1970: JSONEncoder.DateEncodingStrategy {
+        return .custom { date, encoder in
+            var container = encoder.singleValueContainer()
+            try container.encode(Int(date.timeIntervalSince1970 * 1000.0))
+        }
     }
     
 }

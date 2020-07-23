@@ -11,7 +11,7 @@ internal struct PokeRequest<JSON: Encodable>: Encodable {
     
     var action: String = "poke"
     var id: Int
-    var ship: Ship
+    var ship: Ship.Prefixless
     var app: String
     var mark: String
     var json: JSON

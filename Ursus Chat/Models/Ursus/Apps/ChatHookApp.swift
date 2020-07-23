@@ -32,11 +32,11 @@ extension ChatHookApp {
         let action = ChatHookApp.Action.message(
             Message(
                 path: path,
-                envelope: Message.Envelope(
+                envelope: Envelope(
                     uid: UUID().patUVString,
                     number: 0,
-                    author: ship.string,
-                    when: Int(Date().timeIntervalSince1970 * 1000.0),
+                    author: ship,
+                    when: Date(),
                     letter: letter
                 )
             )
@@ -94,16 +94,6 @@ extension ChatHookApp {
         
         var path: String
         var envelope: Envelope
-        
-        struct Envelope: Codable {
-
-            var uid: String
-            var number: Int
-            var author: String
-            var when: Int
-            var letter: Letter
-            
-        }
         
     }
     

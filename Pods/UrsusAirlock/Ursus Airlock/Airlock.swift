@@ -53,7 +53,7 @@ public class Airlock {
 extension Airlock {
     
     @discardableResult public func loginRequest(handler: @escaping (Ship) -> Void) -> DataRequest {
-        return session.request(loginURL, method: .post, parameters: ["password": credentials.code.encodableString], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
+        return session.request(loginURL, method: .post, parameters: ["password": Code.Prefixless(credentials.code)], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
             guard case .success = response.result else {
                 print("[Ursus] Error with login request")
                 return
@@ -103,6 +103,7 @@ extension Airlock {
     
     @discardableResult public func pokeRequest<JSON: Encodable>(ship: Ship, app: String, mark: String = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
         let id = nextRequestID
+        let ship = Ship.Prefixless(ship)
         let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
         pokeHandlers[id] = handler
         return channelRequest(request).response { [weak self] response in
@@ -114,6 +115,7 @@ extension Airlock {
     
     @discardableResult public func subscribeRequest(ship: Ship, app: String, path: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         let id = nextRequestID
+        let ship = Ship.Prefixless(ship)
         let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
         subscribeHandlers[id] = handler
         return channelRequest(request).response { [weak self] response in

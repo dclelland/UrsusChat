@@ -39,13 +39,22 @@ public struct PatP: Aura {
 
 extension PatP {
     
-    public var encodableString: String {
-        return String(string.dropFirst(1))
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encode(encodableString)
+    public struct Prefixless: Aura {
+        
+        public var atom: BigUInt
+        
+        public var string: String {
+            return String(PatP(self).string.dropFirst(1))
+        }
+
+        public init(atom: BigUInt) {
+            self.atom = atom
+        }
+        
+        public init(string: String) throws {
+            try self.init(PatP(string: string))
+        }
+        
     }
     
 }
