@@ -1,5 +1,5 @@
 //
-//  AirlockEncoder.swift
+//  AirlockJSONEncoder.swift
 //  Alamofire
 //
 //  Created by Daniel Clelland on 16/06/20.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-public class AirlockEncoder: JSONEncoder {
+internal class AirlockJSONEncoder: JSONEncoder {
     
-    public override init() {
+    override init() {
         super.init()
         self.dateEncodingStrategy = .integerMillisecondsSince1970
         self.keyEncodingStrategy = .convertToKebabCase
@@ -19,7 +19,7 @@ public class AirlockEncoder: JSONEncoder {
 
 extension JSONEncoder.DateEncodingStrategy {
     
-    public static var integerMillisecondsSince1970: JSONEncoder.DateEncodingStrategy {
+    internal static var integerMillisecondsSince1970: JSONEncoder.DateEncodingStrategy {
         return .custom { date, encoder in
             var container = encoder.singleValueContainer()
             try container.encode(Int(date.timeIntervalSince1970 * 1000.0))
@@ -30,7 +30,7 @@ extension JSONEncoder.DateEncodingStrategy {
 
 extension JSONEncoder.KeyEncodingStrategy {
     
-    public static var convertToKebabCase: JSONEncoder.KeyEncodingStrategy {
+    internal static var convertToKebabCase: JSONEncoder.KeyEncodingStrategy {
         return .custom { codingKeys -> CodingKey in
             let codingKey = codingKeys.last!
             switch codingKey.intValue {

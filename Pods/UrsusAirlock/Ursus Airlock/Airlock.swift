@@ -18,8 +18,8 @@ public class Airlock {
     private var session: Session = .default
     private var eventSource: EventSource? = nil
     
-    private var encoder = AirlockEncoder()
-    private var decoder = AirlockDecoder()
+    private var encoder = AirlockJSONEncoder()
+    private var decoder = AirlockJSONDecoder()
     
     private var pokeHandlers = [Int: (PokeEvent) -> Void]()
     private var subscribeHandlers = [Int: (SubscribeEvent<Data>) -> Void]()
@@ -52,44 +52,35 @@ public class Airlock {
 
 extension Airlock {
     
-    @discardableResult public func loginRequest(handler: @escaping (Ship) -> Void) -> DataRequest {
-        return session.request(loginURL, method: .post, parameters: ["password": Code.Prefixless(credentials.code)], encoder: URLEncodedFormParameterEncoder.default).validate().response { response in
-            guard case .success = response.result else {
-                print("[Ursus] Error with login request")
-                return
+    @discardableResult public func loginRequest(handler: @escaping (AFResult<Ship>) -> Void) -> DataRequest {
+        let parameters = ["password": Code.Prefixless(credentials.code)]
+        return session
+            .request(loginURL, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default)
+            .validate()
+            .response(responseSerializer: AirlockLoginResponseSerializer()) { response in
+                handler(response.result)
             }
-            
-            guard let urbauth = response.response?.value(forHTTPHeaderField: "Set-Cookie") else {
-                print("[Ursus] Error retrieving urbauth")
-                return
-            }
-            
-            guard let name = urbauth.split(separator: "=").first?.replacingOccurrences(of: "urbauth-", with: "") else {
-                print("[Ursus] Error decoding urbauth:", urbauth)
-                return
-            }
-            
-            guard let ship = Ship(rawValue: name) else {
-                print("[Ursus] Error decoding urbauth:", urbauth)
-                return
-            }
-            
-            handler(ship)
-        }
     }
     
     @discardableResult public func logoutRequest() -> DataRequest {
-        return session.request(logoutURL, method: .post).validate()
+        return session
+            .request(logoutURL, method: .post)
+            .validate()
     }
     
     @discardableResult public func channelRequest<Parameters: Encodable>(_ parameters: Parameters) -> DataRequest {
-        return session.request(channelURL, method: .put, parameters: [parameters], encoder: JSONParameterEncoder(encoder: encoder)).validate().response { [weak self] response in
-            self?.connectEventSourceIfDisconnected()
-        }
+        let parameters = [parameters]
+        return session
+            .request(channelURL, method: .put, parameters: parameters, encoder: JSONParameterEncoder(encoder: encoder))
+            .validate()
+            .response { [weak self] response in
+                self?.connectEventSourceIfDisconnected()
+            }
     }
     
     @discardableResult public func scryRequest(app: String, path: String) -> DataRequest {
-        return session.request(scryURL(app: app, path: path))
+        return session
+            .request(scryURL(app: app, path: path))
     }
     
 }
@@ -107,7 +98,7 @@ extension Airlock {
         let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
         pokeHandlers[id] = handler
         return channelRequest(request).response { [weak self] response in
-            if response.error != nil {
+            if case .failure = response.result {
                 self?.pokeHandlers[id] = nil
             }
         }
@@ -119,7 +110,7 @@ extension Airlock {
         let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
         subscribeHandlers[id] = handler
         return channelRequest(request).response { [weak self] response in
-            if response.error != nil {
+            if case .failure = response.result {
                 self?.subscribeHandlers[id] = nil
             }
         }
@@ -128,7 +119,7 @@ extension Airlock {
     @discardableResult public func subscribeRequest<JSON: Decodable>(ship: Ship, app: String, path: String, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
         let decoder = self.decoder
         return subscribeRequest(ship: ship, app: app, path: path) { event in
-            handler(event.map { data in
+            handler(event.tryMap { data in
                 return try decoder.decode(JSON.self, from: data)
             })
         }

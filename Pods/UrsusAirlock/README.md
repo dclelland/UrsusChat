@@ -10,9 +10,14 @@ Ursus Airlock is very much a work in progress - better documentation and a demo 
 
 ```swift
 let airlock = Airlock(url: URL(string: "http://localhost")!, code: "fipfes-fipfes-fipfes-fipfes")
-airlock.loginRequest() { ship in
-    airlock.subscribeRequest(ship: ship, app: "chat-view", path: "/primary") { event in
-        print("On subscribe event:", event)
+airlock.loginRequest() { result in
+    switch result {
+    case .success(let ship):
+        airlock.subscribeRequest(ship: ship, app: "chat-view", path: "/primary") { event in
+            print(event)
+        }
+    case .failure(let error):
+        print(error)
     }
 }
 ```
@@ -22,7 +27,7 @@ airlock.loginRequest() { ship in
 Ursus can be installed using Cocoapods by adding the following line to your podfile:
 
 ```ruby
-pod 'UrsusAirlock', '~> 1.4'
+pod 'UrsusAirlock', '~> 1.6'
 ```
 
 I can probably help set up Carthage or Swift Package Manager support if you need it.

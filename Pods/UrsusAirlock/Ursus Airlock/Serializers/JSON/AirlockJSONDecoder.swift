@@ -1,5 +1,5 @@
 //
-//  AirlockDecoder.swift
+//  AirlockJSONDecoder.swift
 //  Alamofire
 //
 //  Created by Daniel Clelland on 13/06/20.
@@ -7,16 +7,16 @@
 
 import Foundation
 
-public class AirlockDecoder: JSONDecoder {
+internal class AirlockJSONDecoder: JSONDecoder {
     
-    public override init() {
+    override init() {
         super.init()
         self.dateDecodingStrategy = .millisecondsSince1970
         self.dataDecodingStrategy = .jsonObject
         self.keyDecodingStrategy = .convertFromKebabCase
     }
     
-    public override func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
+    override func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
         userInfo[.jsonObject] = try JSONSerialization.jsonObject(with: data)
         let result = try super.decode(type, from: data)
         userInfo[.jsonObject] = nil
@@ -27,7 +27,7 @@ public class AirlockDecoder: JSONDecoder {
 
 extension JSONDecoder.DataDecodingStrategy {
     
-    public static var jsonObject: JSONDecoder.DataDecodingStrategy {
+    internal static var jsonObject: JSONDecoder.DataDecodingStrategy {
         return .custom { decoder -> Data in
             let jsonObject: Any? = decoder.codingPath.reduce(decoder.userInfo[.jsonObject]) { result, codingKey in
                 switch codingKey.intValue {
@@ -46,7 +46,7 @@ extension JSONDecoder.DataDecodingStrategy {
 
 extension JSONDecoder.KeyDecodingStrategy {
     
-    public static var convertFromKebabCase: JSONDecoder.KeyDecodingStrategy {
+    internal static var convertFromKebabCase: JSONDecoder.KeyDecodingStrategy {
         return .custom { codingKeys -> CodingKey in
             let codingKey = codingKeys.last!
             switch codingKey.intValue {

@@ -13,18 +13,36 @@ import UrsusAirlock
 
 typealias AppThunk = Thunk<AppState>
 
+//extension AppThunk {
+//
+//    static func scryClay(airlock: Airlock, ship: Ship) -> AppThunk {
+//        return AppThunk { dispatch, getState in
+//            airlock.scryRequest(app: "file-server", path: "/clay/base/hash").response { response in
+//                switch response.result {
+//                case .success(let data):
+//                    print("[scry] success:", data ?? Data())
+//                case .failure(let error):
+//                    print("[scry] failure:", error)
+//                }
+//            }
+//        }
+//    }
+//
+//}
+
 extension AppThunk {
     
     static func startSession(credentials: AirlockCredentials) -> AppThunk {
         return AppThunk { dispatch, getState in
             dispatch(SessionLoginStartAction())
             let airlock = Airlock(credentials: credentials)
-            airlock.loginRequest { ship in
-                dispatch(SessionLoginFinishAction(airlock: airlock, ship: ship))
-                dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
-                dispatch(AppThunk.setCredentials(credentials))
-            }.response { response in
-                if let error = response.error {
+            airlock.loginRequest { result in
+                switch result {
+                case .success(let ship):
+                    dispatch(SessionLoginFinishAction(airlock: airlock, ship: ship))
+                    dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
+                    dispatch(AppThunk.setCredentials(credentials))
+                case .failure(let error):
                     dispatch(SessionLoginFailureAction())
                     dispatch(AppErrorAction(error: error))
                 }
@@ -34,27 +52,17 @@ extension AppThunk {
 
     static func startSubscription(airlock: Airlock, ship: Ship) -> AppThunk {
         return AppThunk { dispatch, getState in
-            airlock.chatView(ship: ship).primary { event in
+            func handler<Value>(event: SubscribeEvent<Value>) {
                 dispatch(SubscriptionEventAction(event: event))
-            }.response { response in
-                airlock.chatHook(ship: ship).synced { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                airlock.inviteStore(ship: ship).all { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                airlock.permissionStore(ship: ship).all { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                airlock.contactView(ship: ship).primary { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                airlock.metadataStore(ship: ship).appName(app: "chat") { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
-                airlock.metadataStore(ship: ship).appName(app: "contacts") { event in
-                    dispatch(SubscriptionEventAction(event: event))
-                }
+            }
+            
+            airlock.chatView(ship: ship).primary(handler: handler).response { response in
+                airlock.chatHook(ship: ship).synced(handler: handler)
+                airlock.inviteStore(ship: ship).all(handler: handler)
+                airlock.permissionStore(ship: ship).all(handler: handler)
+                airlock.contactView(ship: ship).primary(handler: handler)
+                airlock.metadataStore(ship: ship).appName(app: "chat", handler: handler)
+                airlock.metadataStore(ship: ship).appName(app: "contacts", handler: handler)
             }
         }
     }

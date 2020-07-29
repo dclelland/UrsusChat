@@ -38,7 +38,7 @@ extension SubscribeEvent {
 
 extension SubscribeEvent {
     
-    public func map<NewValue>(_ transform: (Value) throws -> NewValue) -> SubscribeEvent<NewValue> {
+    internal func tryMap<NewValue>(_ transform: (Value) throws -> NewValue) -> SubscribeEvent<NewValue> {
         switch self {
         case .started:
             return .started
