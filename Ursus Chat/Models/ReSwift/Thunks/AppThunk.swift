@@ -56,14 +56,13 @@ extension AppThunk {
                 dispatch(SubscriptionEventAction(event: event))
             }
             
-            airlock.chatView(ship: ship).primary(handler: handler).response { response in
-                airlock.chatHook(ship: ship).synced(handler: handler)
-                airlock.inviteStore(ship: ship).all(handler: handler)
-                airlock.permissionStore(ship: ship).all(handler: handler)
-                airlock.contactView(ship: ship).primary(handler: handler)
-                airlock.metadataStore(ship: ship).appName(app: "chat", handler: handler)
-                airlock.metadataStore(ship: ship).appName(app: "contacts", handler: handler)
-            }
+            airlock.chatView(ship: ship).primary(handler: handler)
+            airlock.chatHook(ship: ship).synced(handler: handler)
+            airlock.inviteStore(ship: ship).all(handler: handler)
+            airlock.permissionStore(ship: ship).all(handler: handler)
+            airlock.contactView(ship: ship).primary(handler: handler)
+            airlock.metadataStore(ship: ship).appName(app: "chat", handler: handler)
+            airlock.metadataStore(ship: ship).appName(app: "contacts", handler: handler)
         }
     }
     
