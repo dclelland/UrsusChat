@@ -58,13 +58,13 @@ extension AppThunk {
             
             #warning("TODO: Update these subscriptions")
             
-            airlock.chatView(ship: ship).primary(handler: handler) // OK
-            airlock.chatHook(ship: ship).synced(handler: handler) // OK
-            airlock.inviteStore(ship: ship).all(handler: handler) // OK
-            airlock.permissionStore(ship: ship).all(handler: handler) // Swap for '/groups', 'group-store'
-            airlock.contactView(ship: ship).primary(handler: handler) // Has errors
-            airlock.metadataStore(ship: ship).appName(app: "chat", handler: handler) // Swap for /all
-            airlock.metadataStore(ship: ship).appName(app: "contacts", handler: handler) // Swap for /all
+            airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler) // OK
+            airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler) // OK
+            airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler) // OK
+            airlock.permissionStore(ship: ship).allSubscribeRequest(handler: handler) // Swap for '/groups', 'group-store'
+            airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler) // Has errors
+            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler) // Swap for /all
+            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler) // Swap for /all
         }
     }
     
@@ -127,7 +127,7 @@ extension AppThunk {
                 return
             }
             
-            airlock.chatStore(ship: ship).sendRead(path: path) { event in
+            airlock.chatStore(ship: ship).readPokeRequest(path: path) { event in
                 switch event {
                 case .failure(let error):
                     dispatch(AppErrorAction(error: error))
@@ -148,7 +148,7 @@ extension AppThunk {
                 return
             }
             
-            airlock.chatHook(ship: ship).sendMessage(path: path, letter: letter) { event in
+            airlock.chatHook(ship: ship).messagePokeRequest(path: path, letter: letter) { event in
                 switch event {
                 case .failure(let error):
                     dispatch(AppErrorAction(error: error))

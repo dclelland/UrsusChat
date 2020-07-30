@@ -20,15 +20,11 @@ extension Airlock {
 
 class ChatHookApp: AirlockApp {
     
-    @discardableResult func synced(handler: @escaping (SubscribeEvent<SyncedResponse>) -> Void) -> DataRequest {
+    @discardableResult func syncedSubscribeRequest(handler: @escaping (SubscribeEvent<Synced>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
-}
-
-extension ChatHookApp {
-    
-    @discardableResult func sendMessage(path: String, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+    @discardableResult func messagePokeRequest(path: String, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
         let action = ChatHookApp.Action.message(
             Message(
                 path: path,
@@ -48,7 +44,7 @@ extension ChatHookApp {
 
 extension ChatHookApp {
     
-    enum SyncedResponse: Decodable {
+    enum Synced: Decodable {
         
         case chatHookUpdate(ChatHookUpdate)
         

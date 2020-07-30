@@ -31,7 +31,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
         switch event {
         case .started:
             break
-        case .update(let value as ChatViewApp.PrimaryResponse):
+        case .update(let value as ChatViewApp.Primary):
             switch value {
             case .chatUpdate(let update):
                 switch update {
@@ -62,12 +62,12 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     }
                 }
             }
-        case .update(let value as ChatHookApp.SyncedResponse):
+        case .update(let value as ChatHookApp.Synced):
             switch value {
             case .chatHookUpdate(let update):
                 state.synced = update
             }
-        case .update(let value as InviteStoreApp.AllResponse):
+        case .update(let value as InviteStoreApp.All):
             switch value {
             case .inviteUpdate(let update):
                 switch update {
@@ -85,7 +85,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     state.invites[decline.path]?[decline.uid] = nil
                 }
             }
-        case .update(let value as PermissionStoreApp.AllResponse):
+        case .update(let value as PermissionStoreApp.All):
             switch value {
             case .permissionUpdate(let update):
                 switch update {
@@ -108,7 +108,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     }
                 }
             }
-        case .update(let value as ContactViewApp.PrimaryResponse):
+        case .update(let value as ContactViewApp.Primary):
             switch value {
             case .contactUpdate(let update):
                 switch update {
@@ -143,7 +143,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     break
                 }
             }
-        case .update(let value as MetadataStoreApp.AppNameResponse):
+        case .update(let value as MetadataStoreApp.AppName):
             switch value {
             case .metadataUpdate(let update):
                 switch update {

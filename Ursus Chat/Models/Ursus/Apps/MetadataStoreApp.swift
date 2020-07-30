@@ -20,7 +20,7 @@ extension Airlock {
 
 class MetadataStoreApp: AirlockApp {
     
-    @discardableResult func appName(app: String, handler: @escaping (SubscribeEvent<AppNameResponse>) -> Void) -> DataRequest {
+    @discardableResult func appNameSubscribeRequest(app: String, handler: @escaping (SubscribeEvent<AppName>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/app-name/\(app)", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class MetadataStoreApp: AirlockApp {
 
 extension MetadataStoreApp {
     
-    enum AppNameResponse: Decodable {
+    enum AppName: Decodable {
         
         case metadataUpdate(MetadataUpdate)
         

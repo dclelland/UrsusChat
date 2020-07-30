@@ -20,7 +20,7 @@ extension Airlock {
 
 class InviteStoreApp: AirlockApp {
     
-    @discardableResult func all(handler: @escaping (SubscribeEvent<AllResponse>) -> Void) -> DataRequest {
+    @discardableResult func allSubscribeRequest(handler: @escaping (SubscribeEvent<All>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class InviteStoreApp: AirlockApp {
 
 extension InviteStoreApp {
     
-    enum AllResponse: Decodable {
+    enum All: Decodable {
         
         case inviteUpdate(InviteUpdate)
         

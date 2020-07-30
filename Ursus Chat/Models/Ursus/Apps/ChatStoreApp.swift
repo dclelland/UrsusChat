@@ -20,7 +20,7 @@ extension Airlock {
 
 class ChatStoreApp: AirlockApp {
     
-    @discardableResult func sendRead(path: String, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+    @discardableResult func readPokeRequest(path: String, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
         let action = ChatStoreApp.Action.read(
             Read(
                 path: path

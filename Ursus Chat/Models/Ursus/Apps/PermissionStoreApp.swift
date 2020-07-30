@@ -20,7 +20,7 @@ extension Airlock {
 
 class PermissionStoreApp: AirlockApp {
     
-    @discardableResult func all(handler: @escaping (SubscribeEvent<AllResponse>) -> Void) -> DataRequest {
+    @discardableResult func allSubscribeRequest(handler: @escaping (SubscribeEvent<All>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class PermissionStoreApp: AirlockApp {
 
 extension PermissionStoreApp {
     
-    enum AllResponse: Decodable {
+    enum All: Decodable {
         
         case permissionUpdate(PermissionUpdate)
         
