@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UrsusAirlock
 
 extension Associations {
     
@@ -22,7 +23,7 @@ extension Associations {
 
 extension AppAssociations {
     
-    func association(for path: String) -> Association? {
+    func association(for path: Path) -> Association? {
         return self[path]
     }
     

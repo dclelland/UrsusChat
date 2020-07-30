@@ -11,4 +11,4 @@ import UrsusAirlock
 
 typealias ChatHookUpdate = Synced
 
-typealias Synced = [String: Ship]
+typealias Synced = [Path: Ship]

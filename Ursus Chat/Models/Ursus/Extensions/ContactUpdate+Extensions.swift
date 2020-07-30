@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UrsusAirlock
 
 extension Rolodex {
     
-    func contacts(for path: String) -> Contacts {
+    func contacts(for path: Path) -> Contacts {
         return self[path] ?? [:]
     }
     
@@ -18,7 +19,7 @@ extension Rolodex {
 
 extension Contacts {
     
-    func contact(for ship: String) -> Contact? {
+    func contact(for ship: Ship) -> Contact? {
         return self[ship]
     }
     

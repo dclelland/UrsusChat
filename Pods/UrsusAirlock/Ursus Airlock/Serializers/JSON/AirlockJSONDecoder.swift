@@ -13,7 +13,6 @@ internal class AirlockJSONDecoder: JSONDecoder {
         super.init()
         self.dateDecodingStrategy = .millisecondsSince1970
         self.dataDecodingStrategy = .jsonObject
-        self.keyDecodingStrategy = .convertFromKebabCase
     }
     
     override func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
@@ -40,49 +39,6 @@ extension JSONDecoder.DataDecodingStrategy {
             
             return try JSONSerialization.data(withJSONObject: jsonObject as Any)
         }
-    }
-    
-}
-
-extension JSONDecoder.KeyDecodingStrategy {
-    
-    internal static var convertFromKebabCase: JSONDecoder.KeyDecodingStrategy {
-        return .custom { codingKeys -> CodingKey in
-            let codingKey = codingKeys.last!
-            switch codingKey.intValue {
-            case .some(let intValue):
-                return CamelCasedCodingKey(intValue: intValue)!
-            case .none:
-                return CamelCasedCodingKey(stringValue: codingKey.stringValue)!
-            }
-        }
-    }
-    
-}
-
-private struct CamelCasedCodingKey: CodingKey {
-    
-    var stringValue: String
-    
-    var intValue: Int?
-    
-    init?(stringValue: String) {
-        self.stringValue = stringValue.convertFromKebabCase
-        self.intValue = nil
-    }
-    
-    init?(intValue: Int) {
-        self.stringValue = String(intValue)
-        self.intValue = intValue
-    }
-    
-}
-
-extension String {
-    
-    internal var convertFromKebabCase: String {
-        let pascalCase = capitalized.replacingOccurrences(of: "-", with: "")
-        return pascalCase.first?.lowercased().appending(pascalCase.dropFirst()) ?? ""
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UrsusAirlock
 
 enum InviteUpdate: Decodable {
     
@@ -54,19 +55,19 @@ typealias InviteUpdateInitial = Invites
 
 struct InviteUpdateCreate: Decodable {
     
-    var path: String
+    var path: Path
     
 }
 
 struct InviteUpdateDelete: Decodable {
     
-    var path: String
+    var path: Path
     
 }
 
 struct InviteUpdateInvite: Decodable {
     
-    var path: String
+    var path: Path
     var uid: String
     var invite: Invite
     
@@ -74,28 +75,28 @@ struct InviteUpdateInvite: Decodable {
 
 struct InviteUpdateAccepted: Decodable {
     
-    var path: String
+    var path: Path
     var uid: String
     
 }
 
 struct InviteUpdateDecline: Decodable {
     
-    var path: String
+    var path: Path
     var uid: String
     
 }
 
-typealias Invites = [String: AppInvites]
+typealias Invites = [Path: AppInvites]
 
-typealias AppInvites = [String: Invite]
+typealias AppInvites = [Path: Invite]
 
 struct Invite: Decodable {
     
-    var ship: String
-    var app: String
-    var path: String
-    var recipient: String
+    var ship: Ship
+    var app: App
+    var path: Path
+    var recipient: Ship
     var text: String
     
 }

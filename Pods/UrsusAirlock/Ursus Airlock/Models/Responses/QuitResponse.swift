@@ -12,7 +12,9 @@ internal struct QuitResponse: Decodable {
     var id: Int
     
     enum CodingKeys: String, CodingKey {
+        
         case id
+        
     }
     
 }

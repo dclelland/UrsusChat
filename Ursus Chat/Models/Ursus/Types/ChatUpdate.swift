@@ -62,31 +62,31 @@ enum ChatAction: String, Decodable {
 
 typealias ChatUpdateInitial = Inbox
 
-typealias ChatUpdateCreate = String
+typealias ChatUpdateCreate = Path
 
-typealias ChatUpdateDelete = String
+typealias ChatUpdateDelete = Path
 
 struct ChatUpdateMessage: Decodable {
     
-    var path: String
+    var path: Path
     var envelope: Envelope
     
 }
 
 struct ChatUpdateMessages: Decodable {
     
-    var path: String
+    var path: Path
     var envelopes: [Envelope]
     
 }
 
 struct ChatUpdateRead: Decodable {
     
-    var path: String
+    var path: Path
     
 }
 
-typealias Inbox = [String: Mailbox]
+typealias Inbox = [Path: Mailbox]
 
 struct Mailbox: Decodable {
     

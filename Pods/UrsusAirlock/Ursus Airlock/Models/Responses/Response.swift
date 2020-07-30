@@ -22,7 +22,9 @@ internal enum Response: Decodable {
     }
     
     enum CodingKeys: String, CodingKey {
+        
         case response
+        
     }
     
     init(from decoder: Decoder) throws {

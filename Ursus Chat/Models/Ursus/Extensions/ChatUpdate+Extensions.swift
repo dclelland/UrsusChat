@@ -13,7 +13,7 @@ import UrsusAirlock
 
 extension SubscriptionState {
     
-    func chat(for path: String) -> Chat {
+    func chat(for path: Path) -> Chat {
         let chatAssociation = associations.chat.association(for: path)
         let contactsAssociation = chatAssociation.flatMap { associations.contacts.association(for: $0.groupPath) }
         
@@ -30,7 +30,7 @@ extension SubscriptionState {
 
 struct Chat {
     
-    var path: String
+    var path: Path
     var mailbox: Mailbox
     var contacts: Contacts
     
@@ -50,14 +50,14 @@ extension Chat {
     }
     
     func nickname(for ship: Ship) -> String {
-        return contacts.contact(for: ship.description)?.nickname ?? ship.description
+        return contacts.contact(for: ship)?.nickname ?? ship.description
     }
     
 }
 
 extension Inbox {
     
-    func mailbox(for path: String) -> Mailbox {
+    func mailbox(for path: Path) -> Mailbox {
         return self[path] ?? Mailbox(config: MailboxConfig(length: 0, read: 0), envelopes: [])
     }
     

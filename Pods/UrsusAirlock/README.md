@@ -27,7 +27,7 @@ airlock.loginRequest() { result in
 Ursus can be installed using Cocoapods by adding the following line to your podfile:
 
 ```ruby
-pod 'UrsusAirlock', '~> 1.6'
+pod 'UrsusAirlock', '~> 1.7'
 ```
 
 I can probably help set up Carthage or Swift Package Manager support if you need it.

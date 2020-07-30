@@ -15,7 +15,7 @@ struct SubscriptionState: StateType {
     var inbox: Inbox = [:]
     var synced: Synced = [:]
     var invites: Invites = [:]
-    var permissions: Permissions = [:]
+    var groups: Groups = [:]
     var contacts: Rolodex = [:]
     var associations: Associations = [:]
     

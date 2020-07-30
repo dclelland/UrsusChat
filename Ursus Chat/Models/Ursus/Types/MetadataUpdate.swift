@@ -51,9 +51,17 @@ typealias MetadataUpdateUpdate = Association
 
 struct MetadataUpdateRemove: Decodable {
     
-    var groupPath: String
-    var appPath: String
-    var appName: String
+    var groupPath: Path
+    var appPath: Path
+    var appName: App
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case groupPath = "group-path"
+        case appPath = "app-path"
+        case appName = "app-name"
+        
+    }
     
 }
 
@@ -63,10 +71,19 @@ typealias AppAssociations = [String: Association]
 
 struct Association: Decodable {
 
-    var groupPath: String
-    var appName: String
-    var appPath: String
+    var groupPath: Path
+    var appPath: Path
+    var appName: App
     var metadata: Metadata
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case groupPath = "group-path"
+        case appPath = "app-path"
+        case appName = "app-name"
+        case metadata
+        
+    }
 
 }
 
@@ -77,5 +94,15 @@ struct Metadata: Decodable {
     var color: String
     var dateCreated: String
     var creator: Ship
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case title
+        case description
+        case color
+        case dateCreated = "date-created"
+        case creator
+        
+    }
 
 }

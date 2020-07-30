@@ -13,8 +13,10 @@ internal struct DiffResponse: Decodable {
     var json: Data
     
     enum CodingKeys: String, CodingKey {
+        
         case id
         case json
+        
     }
     
 }

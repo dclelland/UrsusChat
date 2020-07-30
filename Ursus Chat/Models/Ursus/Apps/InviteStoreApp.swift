@@ -34,7 +34,7 @@ extension InviteStoreApp {
         
         enum CodingKeys: String, CodingKey {
             
-            case inviteUpdate
+            case inviteUpdate = "invite-update"
             
         }
         

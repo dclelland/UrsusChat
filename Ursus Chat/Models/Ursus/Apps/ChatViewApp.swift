@@ -34,7 +34,7 @@ extension ChatViewApp {
         
         enum CodingKeys: String, CodingKey {
             
-            case chatUpdate
+            case chatUpdate = "chat-update"
             
         }
         

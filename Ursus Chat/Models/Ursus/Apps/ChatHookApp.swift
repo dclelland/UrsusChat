@@ -50,7 +50,7 @@ extension ChatHookApp {
         
         enum CodingKeys: String, CodingKey {
             
-            case chatHookUpdate
+            case chatHookUpdate = "chat-hook-update"
             
         }
         

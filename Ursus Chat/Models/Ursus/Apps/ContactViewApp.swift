@@ -34,7 +34,7 @@ extension ContactViewApp {
         
         enum CodingKeys: String, CodingKey {
             
-            case contactUpdate
+            case contactUpdate = "contact-update"
             
         }
         

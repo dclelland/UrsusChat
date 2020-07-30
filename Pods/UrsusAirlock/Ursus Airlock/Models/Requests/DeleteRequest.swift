@@ -12,7 +12,9 @@ internal struct DeleteRequest: Encodable {
     var action: String = "delete"
     
     enum CodingKeys: String, CodingKey {
+        
         case action
+        
     }
     
 }

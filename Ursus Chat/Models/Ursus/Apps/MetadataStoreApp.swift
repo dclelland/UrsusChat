@@ -34,7 +34,7 @@ extension MetadataStoreApp {
         
         enum CodingKeys: String, CodingKey {
             
-            case metadataUpdate
+            case metadataUpdate = "metadata-update"
             
         }
         

@@ -14,9 +14,11 @@ internal struct UnsubscribeRequest: Encodable {
     var subscriptionID: Int
     
     enum CodingKeys: String, CodingKey {
+        
         case action
         case id
         case subscriptionID = "subscription"
+        
     }
     
 }

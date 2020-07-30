@@ -55,45 +55,55 @@ enum ContactUpdate: Decodable {
     
 }
 
-typealias ContactUpdateInitial = Rolodex
+#warning("TODO: Fix this type; should be Rolodex")
 
-typealias ContactUpdateCreate = String
+typealias ContactUpdateInitial = [Path: [String: Contact]]
 
-typealias ContactUpdateDelete = String
+typealias ContactUpdateCreate = Path
+
+typealias ContactUpdateDelete = Path
 
 struct ContactUpdateAdd: Decodable {
     
-    var path: String
-    var ship: String
+    var path: Path
+    var ship: Ship
     var contact: Contact
     
 }
 
 struct ContactUpdateRemove: Decodable {
     
-    var path: String
-    var ship: String
+    var path: Path
+    var ship: Ship
     
 }
 
 struct ContactUpdateEdit: Decodable {
     
-    var path: String
-    var ship: String
+    var path: Path
+    var ship: Ship
     var editField: ContactEdit
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case path
+        case ship
+        case editField = "edit-field"
+        
+    }
     
 }
 
 struct ContactUpdateContacts: Decodable {
     
-    var path: String
+    var path: Path
     var contacts: Contacts
     
 }
 
-typealias Rolodex = [String: Contacts]
+typealias Rolodex = [Path: Contacts]
 
-typealias Contacts = [String: Contact]
+typealias Contacts = [Ship: Contact]
 
 struct Contact: Decodable {
     
@@ -107,9 +117,17 @@ struct Contact: Decodable {
     
 }
 
-typealias ContactAvatar = URL
+typealias ContactAvatar = String
 
 enum ContactEdit: Decodable {
+    
+    case nickname(String)
+    case email(String)
+    case phone(String)
+    case website(String)
+    case notes(String)
+    case color(String)
+    case avatar(ContactAvatar?)
     
     enum CodingKeys: String, CodingKey {
         
@@ -122,14 +140,6 @@ enum ContactEdit: Decodable {
         case avatar
         
     }
-    
-    case nickname(String)
-    case email(String)
-    case phone(String)
-    case website(String)
-    case notes(String)
-    case color(String)
-    case avatar(ContactAvatar?)
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

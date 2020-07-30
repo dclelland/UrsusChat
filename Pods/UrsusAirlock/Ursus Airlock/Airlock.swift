@@ -7,11 +7,6 @@
 
 import Foundation
 import Alamofire
-import UrsusAtom
-
-public typealias Ship = PatP
-
-public typealias Code = PatP
 
 public class Airlock {
     
@@ -71,14 +66,14 @@ extension Airlock {
     @discardableResult public func channelRequest<Parameters: Encodable>(_ parameters: Parameters) -> DataRequest {
         let parameters = [parameters]
         return session
-            .request(channelURL, method: .put, parameters: parameters, encoder: JSONParameterEncoder(encoder: encoder))
+            .request(channelURL(uid: uid), method: .put, parameters: parameters, encoder: JSONParameterEncoder(encoder: encoder))
             .validate()
             .response { [weak self] response in
                 self?.connectEventSourceIfDisconnected()
             }
     }
     
-    @discardableResult public func scryRequest(app: String, path: String) -> DataRequest {
+    @discardableResult public func scryRequest(app: App, path: Path) -> DataRequest {
         return session
             .request(scryURL(app: app, path: path))
     }
@@ -92,7 +87,7 @@ extension Airlock {
         return channelRequest(request)
     }
     
-    @discardableResult public func pokeRequest<JSON: Encodable>(ship: Ship, app: String, mark: String = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+    @discardableResult public func pokeRequest<JSON: Encodable>(ship: Ship, app: App, mark: Mark = "json", json: JSON, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
         let id = nextRequestID
         let ship = Ship.Prefixless(ship)
         let request = PokeRequest(id: id, ship: ship, app: app, mark: mark, json: json)
@@ -104,7 +99,7 @@ extension Airlock {
         }
     }
     
-    @discardableResult public func subscribeRequest(ship: Ship, app: String, path: String, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest(ship: Ship, app: App, path: Path, handler: @escaping (SubscribeEvent<Data>) -> Void) -> DataRequest {
         let id = nextRequestID
         let ship = Ship.Prefixless(ship)
         let request = SubscribeRequest(id: id, ship: ship, app: app, path: path)
@@ -116,7 +111,7 @@ extension Airlock {
         }
     }
     
-    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: Ship, app: String, path: String, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: Ship, app: App, path: Path, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
         let decoder = self.decoder
         return subscribeRequest(ship: ship, app: app, path: path) { event in
             handler(event.tryMap { data in
@@ -199,7 +194,7 @@ extension Airlock {
             return
         }
         
-        eventSource = EventSource(url: channelURL, delegate: self)
+        eventSource = EventSource(url: channelURL(uid: uid), delegate: self)
         eventSource?.connect(lastEventID: String(lastEventID))
     }
     
@@ -224,11 +219,11 @@ extension Airlock {
         return credentials.url.appendingPathComponent("/~/logout")
     }
     
-    private var channelURL: URL {
+    private func channelURL(uid: String) -> URL {
         return credentials.url.appendingPathComponent("/~/channel/\(uid)")
     }
     
-    private func scryURL(app: String, path: String) -> URL {
+    private func scryURL(app: App, path: Path) -> URL {
         return credentials.url.appendingPathComponent("/~/scry/\(app)\(path).json")
     }
     

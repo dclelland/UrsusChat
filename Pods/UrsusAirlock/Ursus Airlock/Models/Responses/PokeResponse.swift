@@ -20,9 +20,11 @@ internal struct PokeResponse: Decodable {
     var result: Result
     
     enum CodingKeys: String, CodingKey {
+        
         case id
         case okay = "ok"
         case error = "err"
+        
     }
     
     init(from decoder: Decoder) throws {
