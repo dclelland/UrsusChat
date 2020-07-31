@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UrsusAirlock
 
 enum GroupUpdate: Decodable {
     
@@ -66,197 +67,279 @@ enum GroupUpdate: Decodable {
     
 }
 
-#warning("TODO: Finish GroupUpdate types")
+typealias GroupUpdateInitial = Groups
 
-typealias GroupUpdateInitial = Data
-typealias GroupUpdateAddGroup = Data
-typealias GroupUpdateAddMembers = Data
-typealias GroupUpdateRemoveMembers = Data
-typealias GroupUpdateAddTag = Data
-typealias GroupUpdateRemoveTag = Data
-typealias GroupUpdateChangePolicy = Data
-typealias GroupUpdateRemoveGroup = Data
-typealias GroupUpdateExpose = Data
-typealias GroupUpdateInitialGroup = Data
+struct GroupUpdateAddGroup: Decodable {
+    
+    var resource: Resource
+    var policy: GroupPolicy
+    var hidden: Bool
+    
+}
 
-typealias Groups = [String: String]
+struct GroupUpdateAddMembers: Decodable {
+    
+    var resource: Resource
+    var ships: [Ship]
+    
+}
 
-//import { PatpNoSig, Path, Jug, ShipRank, Enc } from './noun';
-//
-//export const roleTags = ['janitor', 'moderator', 'admin'] as const;
-//export type RoleTags = typeof roleTags[number];
-//interface RoleTag {
-//  tag: 'admin' | 'moderator' | 'janitor';
-//}
-//
-//interface AppTag {
-//  app: string;
-//  tag: string;
-//}
-//
-//export type Tag = AppTag | RoleTag;
-//
-//export interface InvitePolicy {
-//  invite: {
-//    pending: Set<PatpNoSig>;
-//  };
-//}
-//
-//export interface OpenPolicy {
-//  open: {
-//    banned: Set<PatpNoSig>;
-//    banRanks: Set<ShipRank>;
-//  };
-//}
-//
-//export interface Resource {
-//  name: string;
-//  ship: PatpNoSig;
-//}
-//
-//export type OpenPolicyDiff =
-//  | AllowRanksDiff
-//  | BanRanksDiff
-//  | AllowShipsDiff
-//  | BanShipsDiff;
-//
-//interface AllowRanksDiff {
-//  allowRanks: ShipRank[];
-//}
-//
-//interface BanRanksDiff {
-//  banRanks: ShipRank[];
-//}
-//
-//interface AllowShipsDiff {
-//  allowShips: PatpNoSig[];
-//}
-//
-//interface BanShipsDiff {
-//  banShips: PatpNoSig[];
-//}
-//
-//export type InvitePolicyDiff = AddInvitesDiff | RemoveInvitesDiff;
-//
-//interface AddInvitesDiff {
-//  addInvites: PatpNoSig[];
-//}
-//
-//interface RemoveInvitesDiff {
-//  removeInvites: PatpNoSig[];
-//}
-//
-//interface ReplacePolicyDiff {
-//  replace: GroupPolicy;
-//}
-//
-//export type GroupPolicyDiff =
-//  | { open: OpenPolicyDiff }
-//  | { invite: InvitePolicyDiff }
-//  | ReplacePolicyDiff;
-//
-//export type GroupPolicy = OpenPolicy | InvitePolicy;
-//
-//interface TaggedShips {
-//  [tag: string]: Set<PatpNoSig>;
-//}
-//
-//export interface Tags {
-//  role: TaggedShips;
-//  [app: string]: TaggedShips;
-//}
-//
-//export interface Group {
-//  members: Set<PatpNoSig>;
-//  tags: Tags;
-//  policy: GroupPolicy;
-//  hidden: boolean;
-//}
-//
-//export type Groups = {
-//  [p in Path]: Group;
-//};
-//
-//interface GroupUpdateInitial {
-//  initial: Enc<Groups>;
-//}
-//
-//interface GroupUpdateAddGroup {
-//  addGroup: {
-//    resource: Resource;
-//    policy: Enc<GroupPolicy>;
-//    hidden: boolean;
-//  };
-//}
-//
-//interface GroupUpdateAddMembers {
-//  addMembers: {
-//    ships: PatpNoSig[];
-//    resource: Resource;
-//  };
-//}
-//
-//interface GroupUpdateRemoveMembers {
-//  removeMembers: {
-//    ships: PatpNoSig[];
-//    resource: Resource;
-//  };
-//}
-//
-//interface GroupUpdateAddTag {
-//  addTag: {
-//    tag: Tag;
-//    resource: Resource;
-//    ships: PatpNoSig[];
-//  };
-//}
-//
-//interface GroupUpdateRemoveTag {
-//  removeTag: {
-//    tag: Tag;
-//    resource: Resource;
-//    ships: PatpNoSig;
-//  };
-//}
-//
-//interface GroupUpdateChangePolicy {
-//  changePolicy: { resource: Resource; diff: GroupPolicyDiff };
-//}
-//
-//interface GroupUpdateRemoveGroup {
-//  removeGroup: {
-//    resource: Resource;
-//  };
-//}
-//
-//interface GroupUpdateExpose {
-//  expose: {
-//    resource: Resource;
-//  };
-//}
-//
-//interface GroupUpdateInitialGroup {
-//  initialGroup: {
-//    resource: Resource;
-//    group: Enc<Group>;
-//  };
-//}
-//
-//export type GroupUpdate =
-//  | GroupUpdateInitial
-//  | GroupUpdateAddGroup
-//  | GroupUpdateAddMembers
-//  | GroupUpdateRemoveMembers
-//  | GroupUpdateAddTag
-//  | GroupUpdateRemoveTag
-//  | GroupUpdateChangePolicy
-//  | GroupUpdateRemoveGroup
-//  | GroupUpdateExpose
-//  | GroupUpdateInitialGroup;
-//
-//export type GroupAction = Omit<GroupUpdate, 'initialGroup' | 'initial'>;
-//
-//export const groupBunts = {
-//  group: (): Group => ({ members: new Set(), tags: { role: {} }, hidden: false, policy: groupBunts.policy() }),
-//  policy: (): GroupPolicy => ({ open: { banned: new Set(), banRanks: new Set() } })
-//};
+struct GroupUpdateRemoveMembers: Decodable {
+    
+    var resource: Resource
+    var ships: [Ship]
+    
+}
+
+struct GroupUpdateAddTag: Decodable {
+    
+    var tag: Tag
+    var resource: Resource
+    var ships: [Ship]
+    
+}
+
+struct GroupUpdateRemoveTag: Decodable {
+    
+    var tag: Tag
+    var resource: Resource
+    var ships: [Ship]
+    
+}
+
+struct GroupUpdateChangePolicy: Decodable {
+    
+    var resource: Resource
+    var diff: GroupPolicyDiff
+    
+}
+
+struct GroupUpdateRemoveGroup: Decodable {
+    
+    var resource: Resource
+    
+}
+
+struct GroupUpdateExpose: Decodable {
+    
+    var resource: Resource
+    
+}
+
+struct GroupUpdateInitialGroup: Decodable {
+    
+    var resource: Resource
+    var group: Group
+    
+}
+
+enum ShipRank: String, Decodable {
+    
+    case czar
+    case king
+    case duke
+    case earl
+    case pawn
+    
+}
+
+typealias Groups = [Path: Group]
+
+struct Group: Decodable {
+    
+    var hidden: Bool
+    var tags: Tags
+    var members: Set<Ship>
+    var policy: GroupPolicy
+    
+}
+
+struct Resource: Decodable {
+    
+    var name: String
+    var ship: Ship
+    
+}
+
+#warning("TODO: Swap [String: TaggedShips] for [Tag: TaggedShips]; and it looks like TaggedShips can be an array *or* dictionary?")
+
+typealias Tags = [String: TaggedShips]
+
+typealias TaggedShips = Data
+
+enum Tag: Decodable {
+    
+    case appTag(AppTag)
+    case roleTag(RoleTag)
+    
+    init(from decoder: Decoder) throws {
+        switch (Result { try AppTag(from: decoder) }, Result { try RoleTag(from: decoder) }) {
+        case (.success(let appTag), .failure):
+            self = .appTag(appTag)
+        case (.failure, .success(let roleTag)):
+            self = .roleTag(roleTag)
+        default:
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self))"))
+        }
+    }
+    
+}
+
+struct AppTag: Decodable {
+    
+    var app: App
+    var tag: String
+    
+}
+
+enum RoleTag: String, Decodable {
+    
+    case admin
+    case moderator
+    case janitor
+    
+}
+
+enum GroupPolicy: Decodable {
+    
+    case open(OpenPolicy)
+    case invite(InvitePolicy)
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case open
+        case invite
+        
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        switch Set(container.allKeys) {
+        case [.open]:
+            self = .open(try container.decode(OpenPolicy.self, forKey: .open))
+        case [.invite]:
+            self = .invite(try container.decode(InvitePolicy.self, forKey: .invite))
+        default:
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+        }
+    }
+    
+}
+
+struct InvitePolicy: Decodable {
+    
+    var pending: Set<Ship>
+    
+}
+
+struct OpenPolicy: Decodable {
+    
+    var banned: Set<Ship>
+    var banRanks: Set<ShipRank>
+    
+}
+
+enum GroupPolicyDiff: Decodable {
+    
+    case open(OpenPolicyDiff)
+    case invite(InvitePolicyDiff)
+    case replace(ReplacePolicyDiff)
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case open
+        case invite
+        case replace
+        
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        switch Set(container.allKeys) {
+        case [.open]:
+            self = .open(try container.decode(OpenPolicyDiff.self, forKey: .open))
+        case [.invite]:
+            self = .invite(try container.decode(InvitePolicyDiff.self, forKey: .invite))
+        case [.replace]:
+            self = .replace(try container.decode(ReplacePolicyDiff.self, forKey: .replace))
+        default:
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+        }
+    }
+    
+}
+
+enum OpenPolicyDiff: Decodable {
+    
+    case allowRanks(AllowRanksDiff)
+    case banRanks(BanRanksDiff)
+    case allowShips(AllowShipsDiff)
+    case banShips(BanShipsDiff)
+    
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case allowRanks
+        case banRanks
+        case allowShips
+        case banShips
+        
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        switch Set(container.allKeys) {
+        case [.allowRanks]:
+            self = .allowRanks(try container.decode(AllowRanksDiff.self, forKey: .allowRanks))
+        case [.banRanks]:
+            self = .banRanks(try container.decode(BanRanksDiff.self, forKey: .banRanks))
+        case [.allowShips]:
+            self = .allowShips(try container.decode(AllowShipsDiff.self, forKey: .allowShips))
+        case [.banShips]:
+            self = .banShips(try container.decode(BanShipsDiff.self, forKey: .banShips))
+        default:
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+        }
+    }
+    
+}
+
+typealias AllowRanksDiff = [ShipRank]
+
+typealias BanRanksDiff = [ShipRank]
+
+typealias AllowShipsDiff = [Ship]
+
+typealias BanShipsDiff = [Ship]
+
+enum InvitePolicyDiff: Decodable {
+    
+    case addInvites(AddInvitesDiff)
+    case removeInvites(RemoveInvitesDiff)
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case addInvites
+        case removeInvites
+        
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        switch Set(container.allKeys) {
+        case [.addInvites]:
+            self = .addInvites(try container.decode(AddInvitesDiff.self, forKey: .addInvites))
+        case [.removeInvites]:
+            self = .removeInvites(try container.decode(RemoveInvitesDiff.self, forKey: .removeInvites))
+        default:
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+        }
+    }
+    
+}
+
+typealias AddInvitesDiff = [Ship]
+
+typealias RemoveInvitesDiff = [Ship]
+
+typealias ReplacePolicyDiff = GroupPolicy
