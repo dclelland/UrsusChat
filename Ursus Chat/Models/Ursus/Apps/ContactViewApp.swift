@@ -20,7 +20,7 @@ extension Airlock {
 
 class ContactViewApp: AirlockApp {
     
-    @discardableResult func primarySubscribeRequest(handler: @escaping (SubscribeEvent<Primary>) -> Void) -> DataRequest {
+    @discardableResult func primarySubscribeRequest(handler: @escaping (SubscribeEvent<SubscribeResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class ContactViewApp: AirlockApp {
 
 extension ContactViewApp {
     
-    enum Primary: Decodable {
+    enum SubscribeResponse: Decodable {
         
         case contactUpdate(ContactUpdate)
         

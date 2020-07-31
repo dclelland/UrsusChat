@@ -20,7 +20,7 @@ extension Airlock {
 
 class GroupStoreApp: AirlockApp {
     
-    @discardableResult func groupsSubscribeRequest(handler: @escaping (SubscribeEvent<Groups>) -> Void) -> DataRequest {
+    @discardableResult func groupsSubscribeRequest(handler: @escaping (SubscribeEvent<SubscribeResponse>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/groups", handler: handler)
     }
     
@@ -28,7 +28,7 @@ class GroupStoreApp: AirlockApp {
 
 extension GroupStoreApp {
     
-    enum Groups: Decodable {
+    enum SubscribeResponse: Decodable {
 
         case groupUpdate(GroupUpdate)
 

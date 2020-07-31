@@ -56,15 +56,13 @@ extension AppThunk {
                 dispatch(SubscriptionEventAction(event: event))
             }
             
-            #warning("TODO: Update these subscriptions")
-            
             airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
             airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
             airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
             airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
             airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
-            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler) // Swap for /all
-            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler) // Swap for /all
+            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler)
+            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler)
         }
     }
     
