@@ -86,18 +86,26 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                 }
             }
         case .update(let value as GroupStoreApp.Groups):
-            #warning("TODO: Finish groupUpdate reducer")
             switch value {
             case .groupUpdate(let update):
                 switch update {
                 case .initial(let initial):
-                    break
+                    state.groups = initial
                 case .addGroup(let addGroup):
-                    break
+                    state.groups[addGroup.resource.path] = Group(
+                        hidden: addGroup.hidden,
+                        tags: [:],
+                        members: [],
+                        policy: addGroup.policy
+                    )
                 case .addMembers(let addMembers):
-                    break
+                    for ship in addMembers.ships {
+                        state.groups[addMembers.resource.path]?.members.insert(ship)
+                    }
                 case .removeMembers(let removeMembers):
-                    break
+                    for ship in removeMembers.ships {
+                        state.groups[removeMembers.resource.path]?.members.remove(ship)
+                    }
                 case .addTag(let addTag):
                     break
                 case .removeTag(let removeTag):
@@ -105,11 +113,11 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                 case .changePolicy(let changePolicy):
                     break
                 case .removeGroup(let removeGroup):
-                    break
+                    state.groups[removeGroup.resource.path] = nil
                 case .expose(let expose):
                     break
                 case .initialGroup(let initialGroup):
-                    break
+                    state.groups[initialGroup.resource.path] = initialGroup.group
                 }
             }
         case .update(let value as ContactViewApp.Primary):

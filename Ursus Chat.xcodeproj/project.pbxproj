@@ -53,6 +53,7 @@
 		65ACC46F24B804A40014E2AE /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ACC46E24B804A40014E2AE /* LetterView.swift */; };
 		65CECE7724D2610B00D54D58 /* GroupStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7624D2610B00D54D58 /* GroupStoreApp.swift */; };
 		65CECE7924D2612400D54D58 /* GroupUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7824D2612400D54D58 /* GroupUpdate.swift */; };
+		65CECE7D24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */; };
 		65D95A4C249C541C0002AA4F /* SubscriptionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4B249C541C0002AA4F /* SubscriptionState.swift */; };
 		65D95A4F249C54480002AA4F /* SubscriptionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4E249C54480002AA4F /* SubscriptionAction.swift */; };
 		65F81BD124C95BE600C9F927 /* NewGroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */; };
@@ -112,6 +113,7 @@
 		65ACC46E24B804A40014E2AE /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		65CECE7624D2610B00D54D58 /* GroupStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStoreApp.swift; sourceTree = "<group>"; };
 		65CECE7824D2612400D54D58 /* GroupUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUpdate.swift; sourceTree = "<group>"; };
+		65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupUpdate+Extensions.swift"; sourceTree = "<group>"; };
 		65D95A4B249C541C0002AA4F /* SubscriptionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionState.swift; sourceTree = "<group>"; };
 		65D95A4E249C54480002AA4F /* SubscriptionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionAction.swift; sourceTree = "<group>"; };
 		65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupChatView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				6519485024B5746200AF3D44 /* ChatUpdate+Extensions.swift */,
 				6519485224B5746E00AF3D44 /* ContactUpdate+Extensions.swift */,
+				65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */,
 				6519485424B5747900AF3D44 /* MetadataUpdate+Extensions.swift */,
 			);
 			path = Extensions;
@@ -478,6 +481,7 @@
 				65375B7024AC64E10008EC25 /* ChatView.swift in Sources */,
 				65ACC46F24B804A40014E2AE /* LetterView.swift in Sources */,
 				65861B1524AB283000C63E07 /* AppAction.swift in Sources */,
+				65CECE7D24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift in Sources */,
 				6519485124B5746200AF3D44 /* ChatUpdate+Extensions.swift in Sources */,
 				65861B0624A9A8EA00C63E07 /* ChatListView.swift in Sources */,
 				6560605124C3DBB300565232 /* LetterMeView.swift in Sources */,
