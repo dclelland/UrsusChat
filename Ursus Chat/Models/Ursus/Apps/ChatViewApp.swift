@@ -24,6 +24,16 @@ class ChatViewApp: AirlockApp {
         return subscribeRequest(path: "/primary", handler: handler)
     }
     
+    @discardableResult func messagesRequest(path: Path, start: Int, end: Int, handler: @escaping (AFResult<ChatViewApp.SubscribeResponse>) -> Void) -> DataRequest {
+        let url = airlock.credentials.url.appendingPathComponent("/chat-view/paginate/\(start)/\(end)\(path)")
+        return airlock.session
+            .request(url)
+            .validate()
+            .responseDecodable(of: ChatViewApp.SubscribeResponse.self, decoder: airlock.decoder) { response in
+                handler(response.result)
+            }
+    }
+    
 }
 
 extension ChatViewApp {

@@ -24,7 +24,7 @@ class ChatHookApp: AirlockApp {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
-    @discardableResult func messagePokeRequest(path: String, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+    @discardableResult func messagePokeRequest(path: Path, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
         let action = ChatHookApp.Action.message(
             Message(
                 path: path,
@@ -88,7 +88,7 @@ extension ChatHookApp {
     
     struct Message: Encodable {
         
-        var path: String
+        var path: Path
         var envelope: Envelope
         
     }

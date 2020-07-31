@@ -15,7 +15,7 @@ struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
-    @State private var selectedPath: String? = nil
+    @State private var selectedPath: UrsusAirlock.Path? = nil
     
     @State private var selectedNewChatSheetViewMode: NewChatSheetView.Mode? = nil
     

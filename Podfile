@@ -7,14 +7,14 @@ development_pods = false
 
 target 'Ursus Chat' do
   
-    if development_pods
+    unless development_pods
+        pod 'UrsusAirlock', '~> 1.7.2'
+        pod 'UrsusAtom', '~> 1.2.0'
+        pod 'UrsusSigil', '~> 1.2.0'
+    else
         pod 'UrsusAirlock', path: '../UrsusAirlock'
         pod 'UrsusAtom', path: '../UrsusAtom'
         pod 'UrsusSigil', path: '../UrsusSigil'
-    else
-        pod 'UrsusAirlock', '~> 1.7.0'
-        pod 'UrsusAtom', '~> 1.2.0'
-        pod 'UrsusSigil', '~> 1.2.0'
     end
   
     pod 'AlamofireNetworkActivityIndicator', '~> 3.1'

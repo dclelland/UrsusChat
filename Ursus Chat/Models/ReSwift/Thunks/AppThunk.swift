@@ -119,7 +119,7 @@ extension AppThunk {
 
 extension AppThunk {
     
-    static func sendRead(path: String) -> AppThunk {
+    static func sendRead(path: Path) -> AppThunk {
         return AppThunk { dispatch, getState in
             guard case .authenticated(let airlock, let ship) = getState()?.session else {
                 return
@@ -140,7 +140,7 @@ extension AppThunk {
         }
     }
     
-    static func sendMessage(path: String, letter: Letter) -> AppThunk {
+    static func sendMessage(path: Path, letter: Letter) -> AppThunk {
         return AppThunk { dispatch, getState in
             guard case .authenticated(let airlock, let ship) = getState()?.session else {
                 return
@@ -155,6 +155,27 @@ extension AppThunk {
                 }
             }.response { response in
                 if let error = response.error {
+                    dispatch(AppErrorAction(error: error))
+                }
+            }
+        }
+    }
+    
+}
+
+extension AppThunk {
+    
+    static func getMessages(path: Path, start: Int, end: Int) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            guard case .authenticated(let airlock, let ship) = getState()?.session else {
+                return
+            }
+            
+            airlock.chatView(ship: ship).messagesRequest(path: path, start: start, end: end) { result in
+                switch result {
+                case .success(let response):
+                    dispatch(SubscriptionEventAction(event: .update(response)))
+                case .failure(let error):
                     dispatch(AppErrorAction(error: error))
                 }
             }

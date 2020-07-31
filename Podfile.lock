@@ -19,11 +19,11 @@ PODS:
     - ReSwift (~> 5.0)
   - SwiftDate (6.1.0)
   - SwiftSVG (2.3.2)
-  - UrsusAirlock (1.7.0):
+  - UrsusAirlock (1.7.2):
     - Alamofire (~> 5.2)
-    - UrsusAirlock/EventSource (= 1.7.0)
+    - UrsusAirlock/EventSource (= 1.7.2)
     - UrsusAtom (~> 1.2)
-  - UrsusAirlock/EventSource (1.7.0):
+  - UrsusAirlock/EventSource (1.7.2):
     - Alamofire (~> 5.2)
     - UrsusAtom (~> 1.2)
   - UrsusAtom (1.2.0):
@@ -47,7 +47,7 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - UrsusAirlock (~> 1.7.0)
+  - UrsusAirlock (~> 1.7.2)
   - UrsusAtom (~> 1.2.0)
   - UrsusSigil (~> 1.2.0)
 
@@ -86,10 +86,10 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
-  UrsusAirlock: 4cd9fbcd73bc45e0db4c714553e922352b03eb26
+  UrsusAirlock: 7bae74803a45b164e1405f687573456cdfd6f080
   UrsusAtom: b2130323deb863e2c67ced96c539848f1da6c751
   UrsusSigil: 43f6f0eca0b872af6900d53a7ce4bd83e8898a7c
 
-PODFILE CHECKSUM: 680150f4ae23b1b0ac4695b83f6d4f194f1f4a88
+PODFILE CHECKSUM: b315b75eaa7ade1e6c01008fc77927271c8ae9b5
 
 COCOAPODS: 1.8.3
