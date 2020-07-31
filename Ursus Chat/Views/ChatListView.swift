@@ -64,6 +64,7 @@ struct ChatListView: View {
                     )
                 }
             )
+            .listStyle(PlainListStyle())
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
             }

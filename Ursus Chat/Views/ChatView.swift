@@ -30,6 +30,7 @@ struct ChatView: View {
             }
             .offset(x: 0.0, y: -1.0)
             .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
+            .listStyle(PlainListStyle())
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
