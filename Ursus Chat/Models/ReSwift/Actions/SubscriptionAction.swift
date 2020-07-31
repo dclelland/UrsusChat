@@ -111,7 +111,30 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                 case .removeTag(let removeTag):
                     break
                 case .changePolicy(let changePolicy):
-                    break
+                    switch (state.groups[changePolicy.resource.path]?.policy, changePolicy.diff) {
+                    case (.open(var policy), .open(.allowRanks(let diff))):
+                        policy.banRanks = policy.banRanks.subtracting(diff)
+                        state.groups[changePolicy.resource.path]?.policy = .open(policy)
+                    case (.open(var policy), .open(.banRanks(let diff))):
+                        policy.banRanks = policy.banRanks.union(diff)
+                        state.groups[changePolicy.resource.path]?.policy = .open(policy)
+                    case (.open(var policy), .open(.allowShips(let diff))):
+                        policy.banned = policy.banned.subtracting(diff)
+                        state.groups[changePolicy.resource.path]?.policy = .open(policy)
+                    case (.open(var policy), .open(.banShips(let diff))):
+                        policy.banned = policy.banned.union(diff)
+                        state.groups[changePolicy.resource.path]?.policy = .open(policy)
+                    case (.invite(var policy), .invite(.addInvites(let diff))):
+                        policy.pending = policy.pending.union(diff)
+                        state.groups[changePolicy.resource.path]?.policy = .invite(policy)
+                    case (.invite(var policy), .invite(.removeInvites(let diff))):
+                        policy.pending = policy.pending.subtracting(diff)
+                        state.groups[changePolicy.resource.path]?.policy = .invite(policy)
+                    case (_, .replace(let diff)):
+                        state.groups[changePolicy.resource.path]?.policy = diff
+                    default:
+                        break
+                    }
                 case .removeGroup(let removeGroup):
                     state.groups[removeGroup.resource.path] = nil
                 case .expose(let expose):

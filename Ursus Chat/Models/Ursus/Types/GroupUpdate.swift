@@ -169,15 +169,15 @@ typealias TaggedShips = Data
 
 enum Tag: Decodable {
     
-    case appTag(AppTag)
-    case roleTag(RoleTag)
+    case app(AppTag)
+    case role(RoleTag)
     
     init(from decoder: Decoder) throws {
         switch (Result { try AppTag(from: decoder) }, Result { try RoleTag(from: decoder) }) {
         case (.success(let appTag), .failure):
-            self = .appTag(appTag)
+            self = .app(appTag)
         case (.failure, .success(let roleTag)):
-            self = .roleTag(roleTag)
+            self = .role(roleTag)
         default:
             throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self))"))
         }
