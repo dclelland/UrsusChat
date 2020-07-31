@@ -21,11 +21,7 @@ extension Airlock {
 class ChatStoreApp: AirlockApp {
     
     @discardableResult func readPokeRequest(path: Path, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
-        let action = ChatStoreApp.Action.read(
-            Read(
-                path: path
-            )
-        )
+        let action = ChatStoreApp.Action.read(Read(path: path))
         return pokeRequest(json: action, handler: handler)
     }
     

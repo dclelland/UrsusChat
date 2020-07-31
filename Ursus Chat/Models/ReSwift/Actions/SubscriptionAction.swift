@@ -52,6 +52,9 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                         state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
                         state.inbox[message.path]?.config.length = mailbox.config.length + 1
                     }
+                    state.pendingMessages[message.path]?.removeAll { envelope in
+                        envelope.uid == message.envelope.uid
+                    }
                 case .messages(let messages):
                     if let mailbox = state.inbox[messages.path] {
                         state.inbox[messages.path]?.envelopes = messages.envelopes + mailbox.envelopes
@@ -209,6 +212,18 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
         case .failure(let error):
             throw error
         }
+    }
+    
+}
+
+struct SubscriptionAddPendingMessageAction: SubscriptionAction {
+    
+    var path: Path
+    
+    var envelope: Envelope
+    
+    func reduce(_ state: inout SubscriptionState) throws {
+        state.pendingMessages[path, default: []].insert(envelope, at: 0)
     }
     
 }

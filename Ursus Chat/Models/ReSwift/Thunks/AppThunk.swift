@@ -146,7 +146,11 @@ extension AppThunk {
                 return
             }
             
-            airlock.chatHook(ship: ship).messagePokeRequest(path: path, letter: letter) { event in
+            let envelope = Envelope(uid: UUID().patUVString, number: 0, author: ship, when: Date(), letter: letter)
+            
+            dispatch(SubscriptionAddPendingMessageAction(path: path, envelope: envelope))
+            
+            airlock.chatHook(ship: ship).messagePokeRequest(path: path, envelope: envelope) { event in
                 switch event {
                 case .failure(let error):
                     dispatch(AppErrorAction(error: error))

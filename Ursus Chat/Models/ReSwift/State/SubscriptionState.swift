@@ -19,4 +19,6 @@ struct SubscriptionState: StateType {
     var contacts: Rolodex = [:]
     var associations: Associations = [:]
     
+    var pendingMessages: [Path: [Envelope]] = [:]
+    
 }

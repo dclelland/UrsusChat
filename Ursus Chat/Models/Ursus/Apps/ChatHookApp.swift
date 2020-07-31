@@ -24,19 +24,8 @@ class ChatHookApp: AirlockApp {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     
-    @discardableResult func messagePokeRequest(path: Path, letter: Letter, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
-        let action = ChatHookApp.Action.message(
-            Message(
-                path: path,
-                envelope: Envelope(
-                    uid: UUID().patUVString,
-                    number: 0,
-                    author: ship,
-                    when: Date(),
-                    letter: letter
-                )
-            )
-        )
+    @discardableResult func messagePokeRequest(path: Path, envelope: Envelope, handler: @escaping (PokeEvent) -> Void) -> DataRequest {
+        let action = ChatHookApp.Action.message(Message(path: path, envelope: envelope))
         return pokeRequest(json: action, handler: handler)
     }
     
