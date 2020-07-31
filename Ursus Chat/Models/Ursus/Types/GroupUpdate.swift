@@ -161,7 +161,7 @@ struct Resource: Decodable {
     
 }
 
-#warning("TODO: Swap [String: TaggedShips] for [Tag: TaggedShips]; and it looks like TaggedShips can be an array *or* dictionary?")
+#warning("TODO: Fix this type; swap [String: TaggedShips] for [Tag: TaggedShips]; it also looks like TaggedShips can be an array *or* dictionary")
 
 typealias Tags = [String: TaggedShips]
 
