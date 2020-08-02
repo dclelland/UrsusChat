@@ -31,7 +31,6 @@ struct ChatView: View {
             .offset(x: 0.0, y: -1.0)
             .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             .listStyle(PlainListStyle())
-            .onAppear(perform: getMessages)
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
@@ -50,6 +49,7 @@ struct ChatView: View {
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
         .keyboardObserving()
         .onAppear(perform: sendRead)
+        .onAppear(perform: getMessages)
     }
     
 }
@@ -103,27 +103,10 @@ extension ChatView {
 //          }
 //        }
         
-//        askForMessages(size) {
-//          const { props, state } = this;
-//
-//          if (
-//            props.envelopes.length >= props.length ||
-//            this.hasAskedForMessages ||
-//            props.length <= 0
-//          ) {
-//            return;
-//          }
-//
-//          const start =
-//            props.length - props.envelopes[props.envelopes.length - 1].number;
-//          if (start > 0) {
-//            const end = start + size < props.length ? start + size : props.length;
-//            this.hasAskedForMessages = true;
-//            props.api.chat.fetchMessages(start + 1, end, props.station);
-//          }
-//        }
-        
-        let size = 300
+        getMessages(size: 300)
+    }
+    
+    func getMessages(size: Int) {
         let mailbox = chat.mailbox
         
         guard mailbox.envelopes.count < mailbox.config.length else {
