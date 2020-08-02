@@ -37,15 +37,6 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                 switch update {
                 case .initial(let initial):
                     state.inbox = initial
-                    for (path, mailbox) in state.inbox {
-                        let summary: [Any] = [
-                            "length", mailbox.config.length,
-                            "count", mailbox.envelopes.count,
-                            "numbers", mailbox.envelopes.map(\.number)
-                        ]
-                        
-                        print("SUMMARY>", summary, path)
-                    }
                 case .create(let create):
                     state.inbox[create] = Mailbox(
                         config: MailboxConfig(

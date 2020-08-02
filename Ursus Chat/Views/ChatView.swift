@@ -123,13 +123,12 @@ extension ChatView {
 //          }
 //        }
         
+        let size = 300
         let mailbox = chat.mailbox
         
         guard mailbox.envelopes.count < mailbox.config.length else {
             return
         }
-        
-        let size = 300
         
         let start = mailbox.config.length - (mailbox.envelopes.last?.number ?? 0)
         let end = min(start + size, mailbox.config.length)

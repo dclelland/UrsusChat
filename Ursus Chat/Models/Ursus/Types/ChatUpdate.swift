@@ -77,6 +77,8 @@ struct ChatUpdateMessages: Decodable {
     
     var path: Path
     var envelopes: [Envelope]
+    var start: Int
+    var end: Int
     
 }
 
