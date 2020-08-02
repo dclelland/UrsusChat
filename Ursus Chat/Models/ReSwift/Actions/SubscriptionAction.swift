@@ -57,7 +57,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     }
                 case .messages(let messages):
                     if let mailbox = state.inbox[messages.path] {
-                        state.inbox[messages.path]?.envelopes = messages.envelopes + mailbox.envelopes
+                        state.inbox[messages.path]?.envelopes = mailbox.envelopes + messages.envelopes
                     }
                 case .read(let read):
                     if let mailbox = state.inbox[read.path] {
