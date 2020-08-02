@@ -1,6 +1,6 @@
 {
   "name": "UrsusAtom",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "summary": "A library for manipulating Urbit atoms and auras.",
   "homepage": "https://github.com/dclelland/UrsusAtom",
   "license": {
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/dclelland/UrsusAtom.git",
-    "tag": "1.2.0"
+    "tag": "1.2.1"
   },
   "swift_versions": [
     "5.1",

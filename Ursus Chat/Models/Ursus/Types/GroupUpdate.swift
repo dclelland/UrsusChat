@@ -133,16 +133,6 @@ struct GroupUpdateInitialGroup: Decodable {
     
 }
 
-enum ShipRank: String, Decodable {
-    
-    case czar
-    case king
-    case duke
-    case earl
-    case pawn
-    
-}
-
 typealias Groups = [Path: Group]
 
 struct Group: Decodable {
@@ -235,7 +225,7 @@ struct InvitePolicy: Decodable {
 struct OpenPolicy: Decodable {
     
     var banned: Set<Ship>
-    var banRanks: Set<ShipRank>
+    var banRanks: Set<Ship.Title>
     
 }
 
@@ -304,9 +294,9 @@ enum OpenPolicyDiff: Decodable {
     
 }
 
-typealias AllowRanksDiff = [ShipRank]
+typealias AllowRanksDiff = [Ship.Title]
 
-typealias BanRanksDiff = [ShipRank]
+typealias BanRanksDiff = [Ship.Title]
 
 typealias AllowShipsDiff = [Ship]
 

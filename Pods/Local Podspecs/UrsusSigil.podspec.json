@@ -1,6 +1,6 @@
 {
   "name": "UrsusSigil",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "summary": "A library for generating Urbit sigils.",
   "homepage": "https://github.com/dclelland/UrsusSigil",
   "license": {
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/dclelland/UrsusSigil.git",
-    "tag": "1.2.0"
+    "tag": "1.2.1"
   },
   "swift_versions": [
     "5.1",
@@ -27,7 +27,7 @@
       "~> 2.0"
     ],
     "UrsusAtom": [
-      "~> 1.0"
+      "~> 1.2"
     ]
   },
   "swift_version": "5.2"

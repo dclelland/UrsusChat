@@ -96,13 +96,13 @@ extension PatP {
 
 extension PatP {
     
-    public enum Title {
+    public enum Title: String, Codable {
         
-        case galaxy
-        case star
-        case planet
-        case moon
-        case comet
+        case galaxy = "czar"
+        case star = "king"
+        case planet = "duke"
+        case moon = "earl"
+        case comet = "pawn"
         
     }
     
