@@ -66,8 +66,6 @@ extension ChatView {
     }
     
     func getMessages() {
-        store.dispatch(AppThunk.getMessages(path: path, start: 0, end: 20))
-        
 //        const DEFAULT_BACKLOG_SIZE = 300;
 //        const MAX_BACKLOG_SIZE = 1000;
         
@@ -125,15 +123,18 @@ extension ChatView {
 //          }
 //        }
         
-//        fetchMessages(start: number, end: number, path: Path) {
-//          fetch(`/chat-view/paginate/${start}/${end}${path}`)
-//            .then(response => response.json())
-//            .then((json) => {
-//              this.store.handleEvent({
-//                data: json
-//              });
-//            });
-//        }
+        let mailbox = chat.mailbox
+        
+        guard mailbox.envelopes.count < mailbox.config.length else {
+            return
+        }
+        
+        let size = 300
+        
+        let start = mailbox.config.length - (mailbox.envelopes.last?.number ?? 0)
+        let end = min(start + size, mailbox.config.length)
+        
+        store.dispatch(AppThunk.getMessages(path: path, start: start + 1, end: end))
     }
     
 }
