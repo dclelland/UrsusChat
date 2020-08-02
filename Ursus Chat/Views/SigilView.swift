@@ -28,7 +28,7 @@ struct SigilView: View {
     }
     
     var body: some View {
-        Image(uiImage: Sigil(ship: ship, color: color).image(with: size))
+        Image(uiImage: Sigil(ship: ship, color: color).image(with: size, titles: Ship.allTitles))
     }
     
 }

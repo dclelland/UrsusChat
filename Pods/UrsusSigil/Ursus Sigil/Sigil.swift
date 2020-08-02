@@ -23,12 +23,24 @@ public struct Sigil {
     
 }
 
+extension Sigil.Ship {
+    
+    public static var allTitles: Set<Title> = [.galaxy, .star, .planet, .moon, .comet]
+    
+    public static var sigilTitles: Set<Title> = [.galaxy, .star, .planet]
+    
+}
+
 extension Sigil {
     
-    public func image(with size: CGSize) -> UIImage {
+    public func image(with size: CGSize, titles: Set<Ship.Title> = Ship.sigilTitles) -> UIImage {
         let symbols = self.symbols
         
         return UIGraphicsImageRenderer(size: size).image { context in
+            guard titles.contains(ship.title) else {
+                return
+            }
+            
             for (index, cell) in Sigil.grids[ship.title, default: []].enumerated() {
                 let bounds = CGRect(x: size.width * cell.minX, y: size.height * cell.minY, width: size.width * cell.width, height: size.height * cell.height)
                 symbols[index].render(into: context.cgContext, bounds: bounds, color: color)

@@ -10,7 +10,7 @@ target 'Ursus Chat' do
     unless development_pods
         pod 'UrsusAirlock', '~> 1.7.2'
         pod 'UrsusAtom', '~> 1.2.1'
-        pod 'UrsusSigil', '~> 1.2.1'
+        pod 'UrsusSigil', '~> 1.2.2'
     else
         pod 'UrsusAirlock', path: '../UrsusAirlock'
         pod 'UrsusAtom', path: '../UrsusAtom'
