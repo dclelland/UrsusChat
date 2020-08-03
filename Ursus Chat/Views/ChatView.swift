@@ -70,8 +70,7 @@ extension ChatView {
         let maximumBacklogSize = 1000
         
         let mailbox = chat.mailbox
-        let unread = mailbox.config.length - mailbox.config.read
-        let unreadUnloaded = unread - mailbox.envelopes.count
+        let unreadUnloaded = mailbox.unread - mailbox.envelopes.count
         let excessUnread: Bool = unreadUnloaded > maximumBacklogSize
         
         if (!excessUnread && unreadUnloaded + 20 > defaultBacklogSize) {
