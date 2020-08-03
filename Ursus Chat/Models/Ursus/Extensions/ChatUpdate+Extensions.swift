@@ -22,7 +22,8 @@ extension SubscriptionState {
             mailbox: inbox.mailbox(for: path),
             contacts: contactsAssociation.flatMap { contacts.contacts(for: $0.groupPath) } ?? [:],
             chatMetadata: chatAssociation?.metadata,
-            contactsMetadata: contactsAssociation?.metadata
+            contactsMetadata: contactsAssociation?.metadata,
+            pendingMessages: pendingMessages[path, default: []]
         )
     }
     
@@ -36,6 +37,8 @@ struct Chat {
     
     var chatMetadata: Metadata?
     var contactsMetadata: Metadata?
+    
+    var pendingMessages: [Envelope]
     
 }
 
@@ -58,7 +61,7 @@ extension Chat {
 extension Inbox {
     
     func mailbox(for path: Path) -> Mailbox {
-        return self[path] ?? Mailbox(config: MailboxConfig(length: 0, read: 0), envelopes: [])
+        return self[path, default: Mailbox(config: MailboxConfig(length: 0, read: 0), envelopes: [])]
     }
     
 }
@@ -71,6 +74,16 @@ extension Mailbox {
     
     var unread: Int {
         return config.length - config.read
+    }
+    
+    var unloaded: Int {
+        return config.length - envelopes.count
+    }
+    
+    func rangeOfNextPage(size: Int) -> ClosedRange<Int> {
+        let start = config.length - (envelopes.last?.number ?? 0)
+        let end = min(start + size, config.length)
+        return (start + 1)...end
     }
     
 //    var dateAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
@@ -101,20 +114,6 @@ extension Mailbox {
                 result.append(NonEmpty(envelope))
             }
         }
-    }
-    
-}
-
-extension Mailbox {
-    
-    var unloaded: Int {
-        return config.length - envelopes.count
-    }
-    
-    func rangeOfNextPage(size: Int) -> ClosedRange<Int> {
-        let start = config.length - (envelopes.last?.number ?? 0)
-        let end = min(start + size, config.length)
-        return (start + 1)...end
     }
     
 }

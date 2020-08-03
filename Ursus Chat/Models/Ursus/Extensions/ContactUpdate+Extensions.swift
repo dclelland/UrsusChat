@@ -12,7 +12,7 @@ import UrsusAirlock
 extension Rolodex {
     
     func contacts(for path: Path) -> Contacts {
-        return self[path] ?? [:]
+        return self[path, default: [:]]
     }
     
 }

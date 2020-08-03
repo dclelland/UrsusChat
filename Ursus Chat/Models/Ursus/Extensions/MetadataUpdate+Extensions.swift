@@ -12,11 +12,11 @@ import UrsusAirlock
 extension Associations {
     
     var chat: AppAssociations {
-        return self["chat"] ?? [:]
+        return self["chat", default: [:]]
     }
     
     var contacts: AppAssociations {
-        return self["contacts"] ?? [:]
+        return self["contacts", default: [:]]
     }
     
 }
