@@ -13,7 +13,7 @@ func createLoggerMiddleware<State>() -> Middleware<State> {
     return { dispatch, getState in
         return { next in
             return { action in
-                print("> \(type(of: action))")
+                print("> \(action)")
                 next(action)
             }
         }
