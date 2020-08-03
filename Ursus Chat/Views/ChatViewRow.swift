@@ -19,13 +19,17 @@ enum ChatViewRowModel: Hashable, Identifiable {
     func hash(into hasher: inout Hasher) {
         switch self {
         case .loadingIndicator(let unloaded, let loading):
+            hasher.combine("loadingIndicator")
             hasher.combine(unloaded)
             hasher.combine(loading)
         case .readIndicator(let unread):
+            hasher.combine("readIndicator")
             hasher.combine(unread)
         case .dateIndicator(let date):
+            hasher.combine("dateIndicator")
             hasher.combine(date)
         case .envelopes(let envelopes, let pending):
+            hasher.combine("envelopes")
             hasher.combine(envelopes)
             hasher.combine(pending)
         }

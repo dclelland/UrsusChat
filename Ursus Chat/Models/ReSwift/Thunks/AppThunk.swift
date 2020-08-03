@@ -159,6 +159,7 @@ extension AppThunk {
                 }
             }.response { response in
                 if let error = response.error {
+                    dispatch(SubscriptionRemovePendingMessageAction(path: path, envelope: envelope))
                     dispatch(AppErrorAction(error: error))
                 }
             }
@@ -182,6 +183,7 @@ extension AppThunk {
                 case .success(let response):
                     dispatch(SubscriptionEventAction(event: .update(response)))
                 case .failure(let error):
+                    dispatch(SubscriptionRemoveLoadingMessagesAction(path: path))
                     dispatch(AppErrorAction(error: error))
                 }
             }

@@ -14,7 +14,7 @@ struct ChatLoadingIndicatorRow: View {
     
     var loading: Bool
     
-    #warning("TODO: Render loading state")
+    #warning("TODO: Swap for ProgressView in iOS 14")
     
     var body: some View {
         Text("Loading Indicator Row: \(unloaded), \(loading ? "loading" : "ready")")

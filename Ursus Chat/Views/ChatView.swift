@@ -11,13 +11,51 @@ import SwiftUI
 import KeyboardObserving
 import NonEmpty
 
+extension Mailbox {
+    
+//    var dateAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
+//        return envelopes.reduce(into: []) { result, envelope in
+//            if let last = result.popLast() {
+//                if last.head.when.compare(toDate: envelope.when, granularity: .day) == .orderedSame {
+//                    result.append(last + [envelope])
+//                } else {
+//                    result.append(last)
+//                    result.append(NonEmpty(envelope))
+//                }
+//            } else {
+//                result.append(NonEmpty(envelope))
+//            }
+//        }
+//    }
+    
+    var authorAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
+        return envelopes.reversed().reduce(into: []) { result, envelope in
+            if let last = result.popLast() {
+                if last.head.author == envelope.author {
+                    result.append(last + [envelope])
+                } else {
+                    result.append(last)
+                    result.append(NonEmpty(envelope))
+                }
+            } else {
+                result.append(NonEmpty(envelope))
+            }
+        }
+    }
+    
+}
+
 struct ChatViewModel {
     
     var rows: [ChatViewRowModel]
     
     init(chat: Chat) {
-        #warning("TODO: Populate view model")
-        self.rows = []
+        #warning("TODO: Add date indicator")
+        #warning("TODO: Add read indicator")
+        #warning("TODO: Add pending messages")
+        self.rows = chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
+            return .envelopes(envelopes: envelopes)
+        }
     }
     
 }
@@ -37,6 +75,8 @@ struct ChatView: View {
     var viewModel: ChatViewModel {
         return ChatViewModel(chat: chat)
     }
+    
+    #warning("TODO: Swap for LazyVStack when iOS 14 is ready; this will stop .onAppear from being called immediately")
     
     var body: some View {
         VStack(spacing: 0.0) {

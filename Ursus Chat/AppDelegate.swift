@@ -14,7 +14,7 @@ import SwiftDate
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NetworkActivityLogManager.shared.level = .verbose
+        NetworkActivityLogManager.shared.level = .simple
         NetworkActivityIndicatorManager.shared.isEnabled = true
         SwiftDate.defaultRegion = .current
         AppStore.shared.dispatch(AppLaunchAction())

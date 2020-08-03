@@ -53,7 +53,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                         state.inbox[message.path]?.config.length = mailbox.config.length + 1
                     }
                     state.pendingMessages[message.path]?.removeAll { envelope in
-                        envelope.uid == message.envelope.uid
+                        envelope == message.envelope
                     }
                 case .messages(let messages):
                     if let mailbox = state.inbox[messages.path] {
@@ -229,12 +229,36 @@ struct SubscriptionAddPendingMessageAction: SubscriptionAction {
     
 }
 
+struct SubscriptionRemovePendingMessageAction: SubscriptionAction {
+    
+    var path: Path
+    
+    var envelope: Envelope
+    
+    func reduce(_ state: inout SubscriptionState) throws {
+        state.pendingMessages[path]?.removeAll { envelope in
+            envelope == self.envelope
+        }
+    }
+    
+}
+
 struct SubscriptionAddLoadingMessagesAction: SubscriptionAction {
     
     var path: Path
     
     func reduce(_ state: inout SubscriptionState) throws {
         state.loadingMessages[path] = true
+    }
+    
+}
+
+struct SubscriptionRemoveLoadingMessagesAction: SubscriptionAction {
+    
+    var path: Path
+    
+    func reduce(_ state: inout SubscriptionState) throws {
+        state.loadingMessages[path] = nil
     }
     
 }

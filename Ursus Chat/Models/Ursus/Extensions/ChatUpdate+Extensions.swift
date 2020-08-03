@@ -88,36 +88,6 @@ extension Mailbox {
         return (start + 1)...end
     }
     
-//    var dateAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
-//        return envelopes.reduce(into: []) { result, envelope in
-//            if let last = result.popLast() {
-//                if last.head.when.compare(toDate: envelope.when, granularity: .day) == .orderedSame {
-//                    result.append(last + [envelope])
-//                } else {
-//                    result.append(last)
-//                    result.append(NonEmpty(envelope))
-//                }
-//            } else {
-//                result.append(NonEmpty(envelope))
-//            }
-//        }
-//    }
-    
-    var authorAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
-        return envelopes.reversed().reduce(into: []) { result, envelope in
-            if let last = result.popLast() {
-                if last.head.author == envelope.author {
-                    result.append(last + [envelope])
-                } else {
-                    result.append(last)
-                    result.append(NonEmpty(envelope))
-                }
-            } else {
-                result.append(NonEmpty(envelope))
-            }
-        }
-    }
-    
 }
 
 extension Envelope: Hashable {
