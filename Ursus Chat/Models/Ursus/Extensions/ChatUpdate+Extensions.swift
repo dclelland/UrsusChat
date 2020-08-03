@@ -107,8 +107,8 @@ extension Mailbox {
 
 extension Mailbox {
     
-    var hasNextPage: Bool {
-        return envelopes.count < config.length
+    var unloaded: Int {
+        return config.length - envelopes.count
     }
     
     func rangeOfNextPage(size: Int) -> ClosedRange<Int> {

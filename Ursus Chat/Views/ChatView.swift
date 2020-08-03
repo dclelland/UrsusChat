@@ -25,7 +25,12 @@ struct ChatView: View {
     var body: some View {
         VStack(spacing: 0.0) {
             List(chat.mailbox.authorAggregatedEnvelopes.reversed(), id: \.head.uid) { envelopes in
-                ChatRow(envelopes: envelopes)
+                #warning("This is bad, swap for a loading indicator")
+                ChatRow(envelopes: envelopes).onAppear {
+                    if envelopes.head.uid == self.chat.mailbox.envelopes.last?.uid {
+                        self.getMessages()
+                    }
+                }
                 .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             }
             .offset(x: 0.0, y: -1.0)
@@ -82,7 +87,7 @@ extension ChatView {
     
     func getMessages(size: Int) {
         let mailbox = chat.mailbox
-        if mailbox.hasNextPage {
+        if mailbox.unloaded > 0 {
             store.dispatch(AppThunk.getMessages(path: path, range: mailbox.rangeOfNextPage(size: size)))
         }
     }
