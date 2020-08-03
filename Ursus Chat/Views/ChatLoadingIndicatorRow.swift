@@ -17,7 +17,7 @@ struct ChatLoadingIndicatorRow: View {
     #warning("TODO: Render loading state")
     
     var body: some View {
-        Text("Loading Indicator Row")
+        Text("Loading Indicator Row: \(unloaded), \(loading ? "loading" : "ready")")
     }
     
 }

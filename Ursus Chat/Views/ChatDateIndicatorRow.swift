@@ -16,7 +16,7 @@ struct ChatDateIndicatorRow: View {
     #warning("TODO: Render date")
     
     var body: some View {
-        Text("Date Indicator Row")
+        Text("Date Indicator Row: \(date)")
     }
     
 }

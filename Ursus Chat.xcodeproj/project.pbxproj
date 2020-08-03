@@ -30,6 +30,7 @@
 		65375B7024AC64E10008EC25 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B6F24AC64E10008EC25 /* ChatView.swift */; };
 		65375B7424AC672E0008EC25 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B7324AC672E0008EC25 /* SessionState.swift */; };
 		65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */; };
+		6541C59524D7EF8300328A86 /* ChatViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541C59424D7EF8300328A86 /* ChatViewRow.swift */; };
 		6550E55D24C92558007BEF13 /* ChatStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6550E55C24C92558007BEF13 /* ChatStoreApp.swift */; };
 		655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */; };
 		655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB312249ACD2600A591B9 /* ContactViewApp.swift */; };
@@ -93,6 +94,7 @@
 		65375B6F24AC64E10008EC25 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		65375B7324AC672E0008EC25 /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		65375B8024ADD8FD0008EC25 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		6541C59424D7EF8300328A86 /* ChatViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewRow.swift; sourceTree = "<group>"; };
 		6550E55C24C92558007BEF13 /* ChatStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreApp.swift; sourceTree = "<group>"; };
 		655DB30E249ABF6A00A591B9 /* ChatHookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHookApp.swift; sourceTree = "<group>"; };
 		655DB312249ACD2600A591B9 /* ContactViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewApp.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */,
 				65F81BD224C95BF000C9F927 /* NewDirectMessageView.swift */,
 				65375B6F24AC64E10008EC25 /* ChatView.swift */,
+				6541C59424D7EF8300328A86 /* ChatViewRow.swift */,
 				6523679B24D7AEC000A853EB /* ChatLoadingIndicatorRow.swift */,
 				6523679D24D7AECB00A853EB /* ChatReadIndicatorRow.swift */,
 				6523679F24D7AED600A853EB /* ChatDateIndicatorRow.swift */,
@@ -484,6 +487,7 @@
 				65375B7424AC672E0008EC25 /* SessionState.swift in Sources */,
 				6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */,
 				6519485324B5746E00AF3D44 /* ContactUpdate+Extensions.swift in Sources */,
+				6541C59524D7EF8300328A86 /* ChatViewRow.swift in Sources */,
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6519484124B2DD3700AF3D44 /* InviteUpdate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,

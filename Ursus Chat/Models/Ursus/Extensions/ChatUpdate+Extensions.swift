@@ -120,6 +120,18 @@ extension Mailbox {
     
 }
 
+extension Envelope: Hashable {
+    
+    static func == (lhs: Envelope, rhs: Envelope) -> Bool {
+        return lhs.uid == rhs.uid
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
+    }
+    
+}
+
 extension Envelope {
     
     var formattedDate: String {

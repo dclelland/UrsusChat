@@ -11,24 +11,14 @@ import SwiftUI
 import KeyboardObserving
 import NonEmpty
 
-#warning("TODO: Implement view model")
-
 struct ChatViewModel {
     
-    var cells: [ChatViewModelCell]
+    var rows: [ChatViewRowModel]
     
     init(chat: Chat) {
-        self.cells = []
+        #warning("TODO: Populate view model")
+        self.rows = []
     }
-    
-}
-
-enum ChatViewModelCell {
-    
-    case loadingIndicator(unloaded: Int, loading: Bool)
-    case readIndicator(unread: Int)
-    case dateIndicator(date: Date)
-    case envelopes(envelopes: NonEmpty<[Envelope]>, pending: [Envelope] = [])
     
 }
 
@@ -44,16 +34,25 @@ struct ChatView: View {
         return store.state.subscription.chat(for: path)
     }
     
+    var viewModel: ChatViewModel {
+        return ChatViewModel(chat: chat)
+    }
+    
     var body: some View {
         VStack(spacing: 0.0) {
-            List(chat.mailbox.authorAggregatedEnvelopes.reversed(), id: \.head.uid) { envelopes in
-                #warning("This is bad, swap for a loading indicator")
-                ChatEnvelopesRow(envelopes: envelopes).onAppear {
-                    if envelopes.head.uid == self.chat.mailbox.envelopes.last?.uid {
+            List(viewModel.rows.reversed()) { row in
+                ChatViewRow(viewModel: row)
+                .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
+                .onAppear {
+                    switch row {
+                    case .loadingIndicator(let unloaded, false) where unloaded > 0:
                         self.getMessages()
+                    case .readIndicator:
+                        self.sendRead()
+                    default:
+                        break
                     }
                 }
-                .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             }
             .offset(x: 0.0, y: -1.0)
             .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
@@ -75,8 +74,6 @@ struct ChatView: View {
         }
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
         .keyboardObserving()
-        .onAppear(perform: sendRead)
-        .onAppear(perform: getMessages)
     }
     
 }
@@ -108,10 +105,7 @@ extension ChatView {
     }
     
     func getMessages(size: Int) {
-        let mailbox = chat.mailbox
-        if mailbox.unloaded > 0 {
-            store.dispatch(AppThunk.getMessages(path: path, range: mailbox.rangeOfNextPage(size: size)))
-        }
+        store.dispatch(AppThunk.getMessages(path: path, range: chat.mailbox.rangeOfNextPage(size: size)))
     }
     
 }
