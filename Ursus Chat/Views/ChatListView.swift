@@ -36,6 +36,7 @@ struct ChatListView: View {
             .navigationBarItems(
                 leading: Button(action: showShipActionSheet) {
                     SigilView(ship: ship)
+                        .frame(width: 24.0, height: 24.0)
                 }
                 .actionSheet(isPresented: $showingShipActionSheet) {
                     ActionSheet(

@@ -19,16 +19,16 @@ struct SigilView: View {
     
     var color: UIColor
     
-    var size: CGSize
-    
     init(ship: Ship, color: UIColor = .label, size: CGSize = CGSize(width: 24.0, height: 24.0)) {
         self.ship = ship
         self.color = color
-        self.size = size
     }
     
     var body: some View {
-        Image(uiImage: Sigil(ship: ship, color: color).image(with: size, titles: Ship.allTitles))
+        GeometryReader { geometry in
+            Image(uiImage: Sigil(ship: self.ship, color: self.color).image(with: geometry.size, titles: Ship.allTitles))
+        }
+        .aspectRatio(1.0, contentMode: .fit)
     }
     
 }

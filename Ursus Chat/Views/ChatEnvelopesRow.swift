@@ -21,6 +21,7 @@ struct ChatEnvelopesRow: View {
         HStack(alignment: .top, spacing: 16.0) {
             VStack(alignment: .leading) {
                 SigilView(ship: envelopes.head.author)
+                    .frame(width: 24.0, height: 24.0)
             }
             VStack(alignment: .leading, spacing: 8.0) {
                 HStack(alignment: .firstTextBaseline, spacing: 8.0) {
