@@ -63,7 +63,11 @@ struct ChatViewModel {
         
         self.rows.append(
             contentsOf: chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
-                return .envelopes(envelopes: envelopes)
+                return .envelopes(
+                    envelopes: envelopes.map { envelope in
+                        return ChatEnvelope(envelope: envelope, state: .sent)
+                    }
+                )
             }
         )
     }

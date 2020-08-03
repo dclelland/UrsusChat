@@ -14,7 +14,7 @@ enum ChatViewRowModel: Hashable, Identifiable {
     case loadingIndicator(loading: Bool)
     case readIndicator(unread: Int)
     case dateIndicator(date: Date)
-    case envelopes(envelopes: NonEmpty<[Envelope]>, pending: [Envelope] = [])
+    case envelopes(envelopes: NonEmpty<[ChatEnvelope]>)
     
     func hash(into hasher: inout Hasher) {
         switch self {
@@ -27,10 +27,9 @@ enum ChatViewRowModel: Hashable, Identifiable {
         case .dateIndicator(let date):
             hasher.combine("dateIndicator")
             hasher.combine(date)
-        case .envelopes(let envelopes, let pending):
+        case .envelopes(let envelopes):
             hasher.combine("envelopes")
             hasher.combine(envelopes)
-            hasher.combine(pending)
         }
     }
     
@@ -58,9 +57,9 @@ struct ChatViewRow: View {
             return AnyView(
                 ChatDateIndicatorRow(date: date)
             )
-        case .envelopes(let envelopes, let pending):
+        case .envelopes(let envelopes):
             return AnyView(
-                ChatEnvelopesRow(envelopes: envelopes, pending: pending)
+                ChatEnvelopesRow(envelopes: envelopes)
             )
         }
     }
