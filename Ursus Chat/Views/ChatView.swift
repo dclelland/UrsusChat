@@ -53,7 +53,7 @@ struct ChatViewModel {
         #warning("TODO: Add date indicator")
         #warning("TODO: Add read indicator")
         #warning("TODO: Add pending messages")
-        self.rows = chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
+        self.rows = [.loadingIndicator(unloaded: chat.mailbox.unloaded, loading: chat.loadingMessages)] + chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
             return .envelopes(envelopes: envelopes)
         }
     }
@@ -97,6 +97,7 @@ struct ChatView: View {
             .offset(x: 0.0, y: -1.0)
             .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             .listStyle(PlainListStyle())
+            .animation(nil)
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
