@@ -1,20 +1,21 @@
 //
-//  ChatRow.swift
+//  ChatEnvelopesRow.swift
 //  Ursus Chat
 //
-//  Created by Daniel Clelland on 6/07/20.
+//  Created by Daniel Clelland on 3/08/20.
 //  Copyright © 2020 Protonome. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 import NonEmpty
 
-struct ChatRow: View {
-    
-    @EnvironmentObject var store: AppStore
+struct ChatEnvelopesRow: View {
     
     var envelopes: NonEmpty<[Envelope]>
+    
+    var pending: [Envelope] = []
+    
+    #warning("TODO: Render pending envelopes")
     
     var body: some View {
         HStack(alignment: .top, spacing: 16.0) {

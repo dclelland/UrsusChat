@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6519483024B2BB0300AF3D44 /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519482F24B2BB0300AF3D44 /* ChatRow.swift */; };
 		6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */; };
 		6519483F24B2DC0600AF3D44 /* ChatHookUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */; };
 		6519484124B2DD3700AF3D44 /* InviteUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519484024B2DD3700AF3D44 /* InviteUpdate.swift */; };
@@ -23,6 +22,10 @@
 		6520F61E24977D4800F3D56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61C24977D4800F3D56C /* LaunchScreen.storyboard */; };
 		6520F61F24977D4800F3D56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6520F61D24977D4800F3D56C /* Assets.xcassets */; };
 		6520F62C2498558700F3D56C /* ChatViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520F62B2498558700F3D56C /* ChatViewApp.swift */; };
+		6523679C24D7AEC000A853EB /* ChatLoadingIndicatorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523679B24D7AEC000A853EB /* ChatLoadingIndicatorRow.swift */; };
+		6523679E24D7AECB00A853EB /* ChatReadIndicatorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523679D24D7AECB00A853EB /* ChatReadIndicatorRow.swift */; };
+		652367A024D7AED600A853EB /* ChatDateIndicatorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523679F24D7AED600A853EB /* ChatDateIndicatorRow.swift */; };
+		652367A224D7AF3A00A853EB /* ChatEnvelopesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652367A124D7AF3A00A853EB /* ChatEnvelopesRow.swift */; };
 		65375B6E24AC64A40008EC25 /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B6D24AC64A40008EC25 /* ChatListRow.swift */; };
 		65375B7024AC64E10008EC25 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B6F24AC64E10008EC25 /* ChatView.swift */; };
 		65375B7424AC672E0008EC25 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65375B7324AC672E0008EC25 /* SessionState.swift */; };
@@ -64,7 +67,6 @@
 /* Begin PBXFileReference section */
 		0E3DFD6F02BCAD5AB567AACC /* Pods_Ursus_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ursus_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		187913B75E5ECFC67997EDA1 /* Pods-Ursus Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ursus Chat.release.xcconfig"; path = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat.release.xcconfig"; sourceTree = "<group>"; };
-		6519482F24B2BB0300AF3D44 /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
 		6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUpdate.swift; sourceTree = "<group>"; };
 		6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHookUpdate.swift; sourceTree = "<group>"; };
 		6519484024B2DD3700AF3D44 /* InviteUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUpdate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,10 @@
 		6520F62124977D6500F3D56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6520F6222498227600F3D56C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6520F62B2498558700F3D56C /* ChatViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewApp.swift; sourceTree = "<group>"; };
+		6523679B24D7AEC000A853EB /* ChatLoadingIndicatorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLoadingIndicatorRow.swift; sourceTree = "<group>"; };
+		6523679D24D7AECB00A853EB /* ChatReadIndicatorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReadIndicatorRow.swift; sourceTree = "<group>"; };
+		6523679F24D7AED600A853EB /* ChatDateIndicatorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDateIndicatorRow.swift; sourceTree = "<group>"; };
+		652367A124D7AF3A00A853EB /* ChatEnvelopesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEnvelopesRow.swift; sourceTree = "<group>"; };
 		65375B6D24AC64A40008EC25 /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
 		65375B6F24AC64E10008EC25 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		65375B7324AC672E0008EC25 /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
@@ -213,7 +219,10 @@
 				65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */,
 				65F81BD224C95BF000C9F927 /* NewDirectMessageView.swift */,
 				65375B6F24AC64E10008EC25 /* ChatView.swift */,
-				6519482F24B2BB0300AF3D44 /* ChatRow.swift */,
+				6523679B24D7AEC000A853EB /* ChatLoadingIndicatorRow.swift */,
+				6523679D24D7AECB00A853EB /* ChatReadIndicatorRow.swift */,
+				6523679F24D7AED600A853EB /* ChatDateIndicatorRow.swift */,
+				652367A124D7AF3A00A853EB /* ChatEnvelopesRow.swift */,
 				65A8726324C2A57200650EBA /* SigilView.swift */,
 				65ACC46E24B804A40014E2AE /* LetterView.swift */,
 				6560604A24C3DB8400565232 /* LetterTextView.swift */,
@@ -494,9 +503,9 @@
 				6519483F24B2DC0600AF3D44 /* ChatHookUpdate.swift in Sources */,
 				6587EF8B24A30D6E00969E92 /* LoggerMiddleware.swift in Sources */,
 				655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */,
+				652367A024D7AED600A853EB /* ChatDateIndicatorRow.swift in Sources */,
 				65375B6E24AC64A40008EC25 /* ChatListRow.swift in Sources */,
 				6560606124C6928900565232 /* ModalView.swift in Sources */,
-				6519483024B2BB0300AF3D44 /* ChatRow.swift in Sources */,
 				65CECE7724D2610B00D54D58 /* GroupStoreApp.swift in Sources */,
 				65861B1124AB277500C63E07 /* AppState.swift in Sources */,
 				6519485524B5747900AF3D44 /* MetadataUpdate+Extensions.swift in Sources */,
@@ -506,9 +515,11 @@
 				65861AFE24A97BE100C63E07 /* AppStore.swift in Sources */,
 				6560604D24C3DB8F00565232 /* LetterURLView.swift in Sources */,
 				6560605524C3EB4800565232 /* ErrorView.swift in Sources */,
+				6523679E24D7AECB00A853EB /* ChatReadIndicatorRow.swift in Sources */,
 				655DB30F249ABF6A00A591B9 /* ChatHookApp.swift in Sources */,
 				65861B0A24A9A9C300C63E07 /* AppView.swift in Sources */,
 				6560605324C3EAC400565232 /* RootView.swift in Sources */,
+				6523679C24D7AEC000A853EB /* ChatLoadingIndicatorRow.swift in Sources */,
 				6520F62C2498558700F3D56C /* ChatViewApp.swift in Sources */,
 				65F81BD324C95BF000C9F927 /* NewDirectMessageView.swift in Sources */,
 				6519484724B2EB5600AF3D44 /* MetadataUpdate.swift in Sources */,
@@ -516,6 +527,7 @@
 				6560604B24C3DB8400565232 /* LetterTextView.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */,
 				65375B8124ADD8FD0008EC25 /* Sequence+Extensions.swift in Sources */,
+				652367A224D7AF3A00A853EB /* ChatEnvelopesRow.swift in Sources */,
 				6560604F24C3DB9A00565232 /* LetterCodeView.swift in Sources */,
 				65D95A4C249C541C0002AA4F /* SubscriptionState.swift in Sources */,
 				6519484524B2E38700AF3D44 /* ContactUpdate.swift in Sources */,

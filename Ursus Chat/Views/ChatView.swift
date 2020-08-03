@@ -17,6 +17,10 @@ struct ChatViewModel {
     
     var cells: [ChatViewModelCell]
     
+    init(chat: Chat) {
+        self.cells = []
+    }
+    
 }
 
 enum ChatViewModelCell {
@@ -24,7 +28,7 @@ enum ChatViewModelCell {
     case loadingIndicator(unloaded: Int, loading: Bool)
     case readIndicator(unread: Int)
     case dateIndicator(date: Date)
-    case envelopes(NonEmpty<[Envelope]>, pending: [Envelope] = [])
+    case envelopes(envelopes: NonEmpty<[Envelope]>, pending: [Envelope] = [])
     
 }
 
@@ -44,7 +48,7 @@ struct ChatView: View {
         VStack(spacing: 0.0) {
             List(chat.mailbox.authorAggregatedEnvelopes.reversed(), id: \.head.uid) { envelopes in
                 #warning("This is bad, swap for a loading indicator")
-                ChatRow(envelopes: envelopes).onAppear {
+                ChatEnvelopesRow(envelopes: envelopes).onAppear {
                     if envelopes.head.uid == self.chat.mailbox.envelopes.last?.uid {
                         self.getMessages()
                     }
