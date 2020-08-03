@@ -23,7 +23,8 @@ extension SubscriptionState {
             contacts: contactsAssociation.flatMap { contacts.contacts(for: $0.groupPath) } ?? [:],
             chatMetadata: chatAssociation?.metadata,
             contactsMetadata: contactsAssociation?.metadata,
-            pendingMessages: pendingMessages[path, default: []]
+            pendingMessages: pendingMessages[path, default: []],
+            loadingMessages: loadingMessages[path, default: false]
         )
     }
     
@@ -39,6 +40,7 @@ struct Chat {
     var contactsMetadata: Metadata?
     
     var pendingMessages: [Envelope]
+    var loadingMessages: Bool
     
 }
 

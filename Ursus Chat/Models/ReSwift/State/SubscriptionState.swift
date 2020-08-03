@@ -20,5 +20,6 @@ struct SubscriptionState: StateType {
     var associations: Associations = [:]
     
     var pendingMessages: [Path: [Envelope]] = [:]
+    var loadingMessages: [Path: Bool] = [:]
     
 }

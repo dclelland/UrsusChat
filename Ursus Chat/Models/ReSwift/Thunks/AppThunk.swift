@@ -175,6 +175,8 @@ extension AppThunk {
                 return
             }
             
+            dispatch(SubscriptionAddLoadingMessagesAction(path: path))
+            
             airlock.chatView(ship: ship).messagesRequest(path: path, start: range.lowerBound, end: range.upperBound) { result in
                 switch result {
                 case .success(let response):

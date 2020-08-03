@@ -59,6 +59,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     if let mailbox = state.inbox[messages.path] {
                         state.inbox[messages.path]?.envelopes = mailbox.envelopes + messages.envelopes
                     }
+                    state.loadingMessages[messages.path] = nil
                 case .read(let read):
                     if let mailbox = state.inbox[read.path] {
                         state.inbox[read.path]?.config.read = mailbox.config.length
@@ -224,6 +225,16 @@ struct SubscriptionAddPendingMessageAction: SubscriptionAction {
     
     func reduce(_ state: inout SubscriptionState) throws {
         state.pendingMessages[path, default: []].insert(envelope, at: 0)
+    }
+    
+}
+
+struct SubscriptionAddLoadingMessagesAction: SubscriptionAction {
+    
+    var path: Path
+    
+    func reduce(_ state: inout SubscriptionState) throws {
+        state.loadingMessages[path] = true
     }
     
 }
