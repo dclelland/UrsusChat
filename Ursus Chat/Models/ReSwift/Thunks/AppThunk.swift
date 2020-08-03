@@ -153,6 +153,7 @@ extension AppThunk {
             airlock.chatHook(ship: ship).messagePokeRequest(path: path, envelope: envelope) { event in
                 switch event {
                 case .failure(let error):
+                    dispatch(SubscriptionRemovePendingMessageAction(path: path, envelope: envelope))
                     dispatch(AppErrorAction(error: error))
                 case .finished:
                     print("[AppThunk.sendMessage] Poke finished")
