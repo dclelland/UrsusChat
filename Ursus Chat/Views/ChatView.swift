@@ -9,6 +9,24 @@
 import Foundation
 import SwiftUI
 import KeyboardObserving
+import NonEmpty
+
+#warning("TODO: Implement view model")
+
+struct ChatViewModel {
+    
+    var cells: [ChatViewModelCell]
+    
+}
+
+enum ChatViewModelCell {
+    
+    case loadingIndicator(unloaded: Int, loading: Bool)
+    case readIndicator(unread: Int)
+    case dateIndicator(date: Date)
+    case envelopes(NonEmpty<[Envelope]>, pending: [Envelope] = [])
+    
+}
 
 struct ChatView: View {
     
