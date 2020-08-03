@@ -128,6 +128,7 @@ struct ChatView: View {
             .padding()
         }
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
+        .onAppear(perform: sendRead)
         .keyboardObserving()
     }
     
