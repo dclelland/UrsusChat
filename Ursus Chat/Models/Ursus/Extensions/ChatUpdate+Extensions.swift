@@ -105,6 +105,20 @@ extension Mailbox {
     
 }
 
+extension Mailbox {
+    
+    var hasNextPage: Bool {
+        return envelopes.count < config.length
+    }
+    
+    func rangeOfNextPage(size: Int) -> ClosedRange<Int> {
+        let start = config.length - (envelopes.last?.number ?? 0)
+        let end = min(start + size, config.length)
+        return (start + 1)...end
+    }
+    
+}
+
 extension Envelope {
     
     var formattedDate: String {

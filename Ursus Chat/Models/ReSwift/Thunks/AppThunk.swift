@@ -169,13 +169,13 @@ extension AppThunk {
 
 extension AppThunk {
     
-    static func getMessages(path: Path, start: Int, end: Int) -> AppThunk {
+    static func getMessages(path: Path, range: ClosedRange<Int>) -> AppThunk {
         return AppThunk { dispatch, getState in
             guard case .authenticated(let airlock, let ship) = getState()?.session else {
                 return
             }
             
-            airlock.chatView(ship: ship).messagesRequest(path: path, start: start, end: end) { result in
+            airlock.chatView(ship: ship).messagesRequest(path: path, start: range.lowerBound, end: range.upperBound) { result in
                 switch result {
                 case .success(let response):
                     dispatch(SubscriptionEventAction(event: .update(response)))

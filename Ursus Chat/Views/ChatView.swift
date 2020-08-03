@@ -66,57 +66,26 @@ extension ChatView {
     }
     
     func getMessages() {
-//        const DEFAULT_BACKLOG_SIZE = 300;
-//        const MAX_BACKLOG_SIZE = 1000;
+        let defaultBacklogSize = 300
+        let maximumBacklogSize = 1000
         
-//        receivedNewChat() {
-//          const { props } = this;
-//          this.hasAskedForMessages = false;
-//
-//          this.unreadMarker = null;
-//          this.scrolledToMarker = false;
-//
-//          this.setState({ read: props.read });
-//
-//          const unread = props.length - props.read;
-//          const unreadUnloaded = unread - props.envelopes.length;
-//          const excessUnread = unreadUnloaded > MAX_BACKLOG_SIZE;
-//
-//          if (!excessUnread && unreadUnloaded + 20 > DEFAULT_BACKLOG_SIZE) {
-//            this.askForMessages(unreadUnloaded + 20);
-//          } else {
-//            this.askForMessages(DEFAULT_BACKLOG_SIZE);
-//          }
-//
-//          if (excessUnread || props.read === props.length) {
-//            this.scrolledToMarker = true;
-//            this.setState(
-//              {
-//                scrollLocked: false,
-//              },
-//              () => {
-//                this.scrollToBottom();
-//              }
-//            );
-//          } else {
-//            this.setState({ scrollLocked: true, numPages: Math.ceil(unread / 100) });
-//          }
-//        }
+        let mailbox = chat.mailbox
+        let unread = mailbox.config.length - mailbox.config.read
+        let unreadUnloaded = unread - mailbox.envelopes.count
+        let excessUnread: Bool = unreadUnloaded > maximumBacklogSize
         
-        getMessages(size: 300)
+        if (!excessUnread && unreadUnloaded + 20 > defaultBacklogSize) {
+            getMessages(size: unreadUnloaded + 20)
+        } else {
+            getMessages(size: defaultBacklogSize)
+        }
     }
     
     func getMessages(size: Int) {
         let mailbox = chat.mailbox
-        
-        guard mailbox.envelopes.count < mailbox.config.length else {
-            return
+        if mailbox.hasNextPage {
+            store.dispatch(AppThunk.getMessages(path: path, range: mailbox.rangeOfNextPage(size: size)))
         }
-        
-        let start = mailbox.config.length - (mailbox.envelopes.last?.number ?? 0)
-        let end = min(start + size, mailbox.config.length)
-        
-        store.dispatch(AppThunk.getMessages(path: path, start: start + 1, end: end))
     }
     
 }
