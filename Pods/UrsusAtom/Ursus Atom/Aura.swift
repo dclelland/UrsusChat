@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal protocol Aura: UnsignedInteger, RawRepresentable, Codable, ExpressibleByStringLiteral {
+public protocol Aura: UnsignedInteger, RawRepresentable, Codable, ExpressibleByStringLiteral {
     
     associatedtype Atom: UnsignedInteger
     

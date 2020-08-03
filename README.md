@@ -8,6 +8,12 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 Tasks are managed on the [UrsusChat kanban board](https://github.com/dclelland/UrsusChat/projects/1).
 
+## Installation
+
+1. Install Xcode (version 11.5 at time of writing)
+2. Open `Ursus Chat.xcworkspace`
+3. Build
+
 ## Dependencies:
 
 Internal
