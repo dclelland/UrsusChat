@@ -10,14 +10,14 @@ import SwiftUI
 
 struct ChatLoadingIndicatorRow: View {
     
-    var unloaded: Int
+    #warning("TODO: After iOS 14, swap for a ProgressView")
     
     var loading: Bool
     
-    #warning("TODO: Swap for ProgressView in iOS 14")
-    
     var body: some View {
-        Text("Loading Indicator Row: \(unloaded), \(loading ? "loading" : "ready")")
+        Text("Loading...")
+            .font(.subheadline)
+            .foregroundColor(.secondary)
     }
     
 }

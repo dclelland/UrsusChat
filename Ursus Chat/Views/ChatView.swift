@@ -53,9 +53,19 @@ struct ChatViewModel {
         #warning("TODO: Add date indicator")
         #warning("TODO: Add read indicator")
         #warning("TODO: Add pending messages")
-        self.rows = [.loadingIndicator(unloaded: chat.mailbox.unloaded, loading: chat.loadingMessages)] + chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
-            return .envelopes(envelopes: envelopes)
+        self.rows = []
+        
+        if chat.mailbox.unloaded > 0 {
+            self.rows.append(
+                .loadingIndicator(loading: chat.loadingMessages)
+            )
         }
+        
+        self.rows.append(
+            contentsOf: chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
+                return .envelopes(envelopes: envelopes)
+            }
+        )
     }
     
 }
@@ -85,7 +95,7 @@ struct ChatView: View {
                 .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
                 .onAppear {
                     switch row {
-                    case .loadingIndicator(let unloaded, false) where unloaded > 0:
+                    case .loadingIndicator(false):
                         self.getMessages()
                     case .readIndicator:
                         self.sendRead()

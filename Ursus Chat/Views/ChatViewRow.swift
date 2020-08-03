@@ -11,16 +11,15 @@ import NonEmpty
 
 enum ChatViewRowModel: Hashable, Identifiable {
     
-    case loadingIndicator(unloaded: Int, loading: Bool)
+    case loadingIndicator(loading: Bool)
     case readIndicator(unread: Int)
     case dateIndicator(date: Date)
     case envelopes(envelopes: NonEmpty<[Envelope]>, pending: [Envelope] = [])
     
     func hash(into hasher: inout Hasher) {
         switch self {
-        case .loadingIndicator(let unloaded, let loading):
+        case .loadingIndicator(let loading):
             hasher.combine("loadingIndicator")
-            hasher.combine(unloaded)
             hasher.combine(loading)
         case .readIndicator(let unread):
             hasher.combine("readIndicator")
@@ -47,9 +46,9 @@ struct ChatViewRow: View {
     
     var body: some View {
         switch viewModel {
-        case .loadingIndicator(let unloaded, let loading):
+        case .loadingIndicator(let loading):
             return AnyView(
-                ChatLoadingIndicatorRow(unloaded: unloaded, loading: loading)
+                ChatLoadingIndicatorRow(loading: loading)
             )
         case .readIndicator(let unread):
             return AnyView(
