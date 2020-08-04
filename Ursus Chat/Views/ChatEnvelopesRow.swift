@@ -21,11 +21,6 @@ struct ChatEnvelopesRowModel: Hashable {
     var envelope: Envelope
     var state: State
     
-    init(envelope: Envelope, state: State = .sent) {
-        self.envelope = envelope
-        self.state = state
-    }
-    
 }
 
 struct ChatEnvelopesRow: View {

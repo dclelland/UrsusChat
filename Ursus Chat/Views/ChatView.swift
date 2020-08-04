@@ -37,7 +37,6 @@ struct ChatViewModel {
     init(chat: Chat) {
         #warning("TODO: Add date indicator")
         #warning("TODO: Add read indicator")
-        #warning("TODO: Add pending messages")
         self.rows = []
         
         if chat.mailbox.unloaded > 0 {
@@ -46,24 +45,26 @@ struct ChatViewModel {
             )
         }
         
+        let rows = chat.pendingMessages.map { envelope in
+            return ChatEnvelopesRowModel(envelope: envelope, state: .pending)
+        } + chat.mailbox.envelopes.map { envelope in
+            return ChatEnvelopesRowModel(envelope: envelope, state: .sent)
+        }
+        
         self.rows.append(
-            contentsOf: chat.mailbox.envelopes.reversed().reduce(into: []) { result, envelope in
+            contentsOf: rows.reversed().reduce(into: []) { result, row in
                 if let last = result.popLast() {
-                    if last.head.author == envelope.author {
-                        result.append(last + [envelope])
+                    if last.head.envelope.author == row.envelope.author {
+                        result.append(last + [row])
                     } else {
                         result.append(last)
-                        result.append(NonEmpty(envelope))
+                        result.append(NonEmpty(row))
                     }
                 } else {
-                    result.append(NonEmpty(envelope))
+                    result.append(NonEmpty(row))
                 }
-            }.map { (envelopes: NonEmpty<[Envelope]>) in
-                return .envelopes(
-                    viewModel: envelopes.map { envelope in
-                        return ChatEnvelopesRowModel(envelope: envelope)
-                    }
-                )
+            }.map { row in
+                return .envelopes(viewModel: row)
             }
         )
     }
