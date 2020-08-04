@@ -45,26 +45,23 @@ struct ChatViewModel {
             )
         }
         
-        let rows = chat.pendingMessages.map { envelope in
+        let envelopeRowModels = chat.pendingMessages.map { envelope in
             return ChatEnvelopesRowModel(envelope: envelope, state: .pending)
         } + chat.mailbox.envelopes.map { envelope in
             return ChatEnvelopesRowModel(envelope: envelope, state: .sent)
         }
         
         self.rows.append(
-            contentsOf: rows.reversed().reduce(into: []) { result, row in
-                if let last = result.popLast() {
-                    if last.head.envelope.author == row.envelope.author {
-                        result.append(last + [row])
-                    } else {
-                        result.append(last)
-                        result.append(NonEmpty(row))
-                    }
-                } else {
-                    result.append(NonEmpty(row))
+            contentsOf: envelopeRowModels.reversed().reduce(into: [ChatViewRowModel]()) { result, envelopeRowModel in
+                switch result.popLast() {
+                case .some(.envelopes(let previousEnvelopeRowModel)) where previousEnvelopeRowModel.head.envelope.author == envelopeRowModel.envelope.author:
+                    result.append(.envelopes(viewModel: previousEnvelopeRowModel + [envelopeRowModel]))
+                case .some(let rowModel):
+                    result.append(rowModel)
+                    result.append(.envelopes(viewModel: NonEmpty(envelopeRowModel)))
+                case .none:
+                    result.append(.envelopes(viewModel: NonEmpty(envelopeRowModel)))
                 }
-            }.map { row in
-                return .envelopes(viewModel: row)
             }
         )
     }
