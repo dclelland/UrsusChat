@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+#warning("TODO: After iOS 14, swap this for TextEditor")
+
 struct DynamicHeightTextField: UIViewRepresentable {
     
     @Binding var text: String
