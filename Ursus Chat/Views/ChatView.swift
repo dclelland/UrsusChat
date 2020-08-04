@@ -12,31 +12,11 @@ import SwiftDate
 import KeyboardObserving
 import NonEmpty
 
-extension Mailbox {
-    
-//    var dateAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
-//        return envelopes.reduce(into: []) { result, envelope in
-//            if let last = result.popLast() {
-//                if last.head.when.compare(toDate: envelope.when, granularity: .day) == .orderedSame {
-//                    result.append(last + [envelope])
-//                } else {
-//                    result.append(last)
-//                    result.append(NonEmpty(envelope))
-//                }
-//            } else {
-//                result.append(NonEmpty(envelope))
-//            }
-//        }
-//    }
-    
-}
-
 struct ChatViewModel {
     
     var rows: [ChatViewRowModel]
     
     init(chat: Chat) {
-        #warning("TODO: Add read indicator")
         self.rows = []
         
         if chat.mailbox.unloaded > 0 {
@@ -52,7 +32,8 @@ struct ChatViewModel {
         }
         
         self.rows.append(
-            contentsOf: envelopeRowModels.reversed().reduce(into: [ChatViewRowModel]()) { result, envelopeRowModel in
+            contentsOf: envelopeRowModels.enumerated().reversed().reduce(into: [ChatViewRowModel]()) { result, element in
+                let (index, envelopeRowModel) = element
                 switch result.popLast() {
                 case .some(.envelopes(let previousEnvelopeRowModel)) where previousEnvelopeRowModel.head.envelope.when.compare(toDate: envelopeRowModel.envelope.when, granularity: .day) != .orderedSame:
                     result.append(.envelopes(viewModel: previousEnvelopeRowModel))
@@ -66,6 +47,9 @@ struct ChatViewModel {
                 case .none:
                     result.append(.dateIndicator(date: envelopeRowModel.envelope.when))
                     result.append(.envelopes(viewModel: NonEmpty(envelopeRowModel)))
+                }
+                if chat.mailbox.unread > 0 && index == chat.mailbox.unread {
+                    result.append(.readIndicator(unread: chat.mailbox.unread))
                 }
             }
         )
@@ -90,6 +74,7 @@ struct ChatView: View {
     }
     
     #warning("TODO: Swap for LazyVStack when iOS 14 is ready; this will stop .onAppear from being called immediately")
+    #warning("TODO: Reinstantiate sendRead calls")
     
     var body: some View {
         VStack(spacing: 0.0) {
@@ -100,8 +85,8 @@ struct ChatView: View {
                     switch row {
                     case .loadingIndicator(false):
                         self.getMessages()
-                    case .readIndicator:
-                        self.sendRead()
+//                    case .readIndicator:
+//                        self.sendRead()
                     default:
                         break
                     }
@@ -127,7 +112,7 @@ struct ChatView: View {
             .padding()
         }
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
-        .onAppear(perform: sendRead)
+//        .onAppear(perform: sendRead)
         .keyboardObserving()
     }
     

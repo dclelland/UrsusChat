@@ -13,7 +13,16 @@ struct ChatReadIndicatorRow: View {
     var unread: Int
     
     var body: some View {
-        Text("Read Indicator Row: \(unread)")
+        Text("\(unread) Unread Messages")
+            .font(.subheadline)
+            .foregroundColor(Color(UIColor.systemBackground))
+            .padding(.vertical, 2.0)
+            .padding(.horizontal, 8.0)
+            .background(
+                RoundedRectangle(cornerRadius: 12.0, style: .continuous)
+                    .fill(Color(UIColor.systemGray2))
+            )
+            .frame(maxWidth: .infinity, alignment: .center)
     }
     
 }
