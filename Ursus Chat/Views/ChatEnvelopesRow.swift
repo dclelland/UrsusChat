@@ -9,41 +9,46 @@
 import SwiftUI
 import NonEmpty
 
-struct ChatEnvelope: Hashable {
+struct ChatEnvelopesRowModel: Hashable {
     
     enum State {
         
-        case sent
         case pending
+        case sent
         
     }
     
     var envelope: Envelope
     var state: State
     
+    init(envelope: Envelope, state: State = .sent) {
+        self.envelope = envelope
+        self.state = state
+    }
+    
 }
 
 struct ChatEnvelopesRow: View {
     
-    var envelopes: NonEmpty<[ChatEnvelope]>
+    var viewModel: NonEmpty<[ChatEnvelopesRowModel]>
     
     var body: some View {
         HStack(alignment: .top, spacing: 16.0) {
             VStack(alignment: .leading) {
-                SigilView(ship: envelopes.head.envelope.author)
+                SigilView(ship: viewModel.head.envelope.author)
                     .frame(width: 24.0, height: 24.0)
             }
             VStack(alignment: .leading, spacing: 8.0) {
                 HStack(alignment: .firstTextBaseline, spacing: 8.0) {
-                    Text(envelopes.head.envelope.author.description)
+                    Text(viewModel.head.envelope.author.description)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Spacer()
-                    Text(envelopes.head.envelope.formattedTime)
+                    Text(viewModel.head.envelope.formattedTime)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                ForEach(envelopes, id: \.envelope.uid) { envelope in
+                ForEach(viewModel, id: \.envelope.uid) { envelope in
                     LetterView(letter: envelope.envelope.letter)
                         .opacity(envelope.state == .pending ? 0.5 : 1.0)
                 }

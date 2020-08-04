@@ -28,21 +28,6 @@ extension Mailbox {
 //        }
 //    }
     
-    var authorAggregatedEnvelopes: [NonEmpty<[Envelope]>] {
-        return envelopes.reversed().reduce(into: []) { result, envelope in
-            if let last = result.popLast() {
-                if last.head.author == envelope.author {
-                    result.append(last + [envelope])
-                } else {
-                    result.append(last)
-                    result.append(NonEmpty(envelope))
-                }
-            } else {
-                result.append(NonEmpty(envelope))
-            }
-        }
-    }
-    
 }
 
 struct ChatViewModel {
@@ -62,10 +47,21 @@ struct ChatViewModel {
         }
         
         self.rows.append(
-            contentsOf: chat.mailbox.authorAggregatedEnvelopes.map { envelopes in
+            contentsOf: chat.mailbox.envelopes.reversed().reduce(into: []) { result, envelope in
+                if let last = result.popLast() {
+                    if last.head.author == envelope.author {
+                        result.append(last + [envelope])
+                    } else {
+                        result.append(last)
+                        result.append(NonEmpty(envelope))
+                    }
+                } else {
+                    result.append(NonEmpty(envelope))
+                }
+            }.map { (envelopes: NonEmpty<[Envelope]>) in
                 return .envelopes(
-                    envelopes: envelopes.map { envelope in
-                        return ChatEnvelope(envelope: envelope, state: .sent)
+                    viewModel: envelopes.map { envelope in
+                        return ChatEnvelopesRowModel(envelope: envelope)
                     }
                 )
             }
