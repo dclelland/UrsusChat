@@ -11,17 +11,32 @@ import KeyboardObserving
 
 struct NewDirectMessageView: View {
     
-    @State var ship: String = ""
+    @State var name: String = ""
+    
+    @State var description: String = ""
+    
+    @State var ships: String = ""
     
     var isLoading: Bool = false
     
     var body: some View {
         ModalView(dismissLabel: { Text("Cancel") }) {
             Form {
-                Section(header: Text("Ship name")) {
-                    TextField("~sampel-palnet", text: self.$ship)
+                Section(header: Text("Name (Optional)")) {
+                    TextField("The Passage", text: self.$name)
+                }
+                Section(header: Text("Description (Optional)")) {
+                    TextField("The most beautiful direct message", text: self.$description)
+                }
+                Section(header: Text("Select Ships"), footer: Text("Selected ships will be invited to the direct message")) {
+                    TextField("Search for ships", text: self.$ships)
                         .keyboardType(.asciiCapable)
                         .autocapitalization(.none)
+                }
+                Section {
+                    Button(action: self.createNewDirectMessage) {
+                        Text("Create New Direct Message")
+                    }
                 }
             }
             .disabled(self.isLoading)
@@ -34,7 +49,7 @@ struct NewDirectMessageView: View {
 
 extension NewDirectMessageView {
     
-    private func startDirectMessage() {
+    private func createNewDirectMessage() {
         
     }
     

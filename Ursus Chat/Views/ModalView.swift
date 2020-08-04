@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ModalView<Label: View, Content: View>: View {
     
+    #warning("TODO: Fix viewBuilder scope capturing; should calls in there be calls to self?")
+    
     @Environment(\.presentationMode) var presentationMode
     
     var dismissLabel: () -> Label

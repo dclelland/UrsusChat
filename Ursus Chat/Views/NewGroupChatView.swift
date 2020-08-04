@@ -15,6 +15,8 @@ struct NewGroupChatView: View {
     
     @State var description: String = ""
     
+    @State var group: String = ""
+    
     var isLoading: Bool = false
     
     var body: some View {
@@ -23,12 +25,17 @@ struct NewGroupChatView: View {
                 Section(header: Text("Name")) {
                     TextField("Secret chat", text: self.$name)
                 }
-                Section(header: Text("Description"), footer: Text("(Optional)")) {
+                Section(header: Text("Description (Optional)")) {
                     TextField("The coolest chat", text: self.$description)
                 }
+                Section(header: Text("Select Group"), footer: Text("Chat will be added to selected group")) {
+                    TextField("Search for existing groups", text: self.$group)
+                        .keyboardType(.asciiCapable)
+                        .autocapitalization(.none)
+                }
                 Section {
-                    Button(action: self.startChat) {
-                        Text("Start Chat")
+                    Button(action: self.startNewGroupChat) {
+                        Text("Create New Group Chat")
                     }
                 }
             }
@@ -42,7 +49,7 @@ struct NewGroupChatView: View {
 
 extension NewGroupChatView {
     
-    private func startChat() {
+    private func startNewGroupChat() {
         
     }
     
