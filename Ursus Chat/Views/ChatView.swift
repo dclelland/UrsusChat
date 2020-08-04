@@ -74,7 +74,7 @@ struct ChatView: View {
     }
     
     #warning("TODO: Swap for LazyVStack when iOS 14 is ready; this will stop .onAppear from being called immediately")
-    #warning("TODO: Reinstantiate sendRead calls")
+    #warning("TODO: Send read call on read indicator appearance")
     
     var body: some View {
         VStack(spacing: 0.0) {
@@ -82,13 +82,13 @@ struct ChatView: View {
                 ChatViewRow(viewModel: row)
                 .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
                 .onAppear {
-                    switch row {
-                    case .loadingIndicator(false):
+                    if case .loadingIndicator(false) = row {
                         self.getMessages()
-//                    case .readIndicator:
-//                        self.sendRead()
-                    default:
-                        break
+                    }
+                }
+                .onTapGesture {
+                    if case .readIndicator = row {
+                        self.sendRead()
                     }
                 }
             }
@@ -112,7 +112,6 @@ struct ChatView: View {
             .padding()
         }
         .navigationBarTitle(Text(chat.chatTitle), displayMode: .inline)
-//        .onAppear(perform: sendRead)
         .keyboardObserving()
     }
     
