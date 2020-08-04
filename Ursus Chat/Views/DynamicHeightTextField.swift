@@ -23,9 +23,13 @@ struct DynamicHeightTextField: UIViewRepresentable {
         textView.isUserInteractionEnabled = true
         
         textView.text = text
+        textView.font = .preferredFont(forTextStyle: .body)
+        textView.textContainerInset = .zero
+        textView.textContainer.lineFragmentPadding = 0.0
         textView.backgroundColor = UIColor.clear
         
         context.coordinator.textView = textView
+        
         textView.delegate = context.coordinator
         textView.layoutManager.delegate = context.coordinator
 
@@ -57,10 +61,6 @@ class Coordinator: NSObject, UITextViewDelegate, NSLayoutManagerDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if (text == "\n") {
-//            textView.resignFirstResponder()
-//            return false
-//        }
         return true
     }
     
@@ -69,7 +69,9 @@ class Coordinator: NSObject, UITextViewDelegate, NSLayoutManagerDelegate {
             guard let textView = self?.textView else {
                 return
             }
+            
             let size = textView.sizeThatFits(textView.bounds.size)
+            
             if self?.dynamicHeightTextField.height != size.height {
                 self?.dynamicHeightTextField.height = size.height
             }
