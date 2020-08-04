@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftDate
 import KeyboardObserving
 import NonEmpty
 
@@ -35,7 +36,6 @@ struct ChatViewModel {
     var rows: [ChatViewRowModel]
     
     init(chat: Chat) {
-        #warning("TODO: Add date indicator")
         #warning("TODO: Add read indicator")
         self.rows = []
         
@@ -54,6 +54,10 @@ struct ChatViewModel {
         self.rows.append(
             contentsOf: envelopeRowModels.reversed().reduce(into: [ChatViewRowModel]()) { result, envelopeRowModel in
                 switch result.popLast() {
+                case .some(.envelopes(let previousEnvelopeRowModel)) where previousEnvelopeRowModel.head.envelope.when.compare(toDate: envelopeRowModel.envelope.when, granularity: .day) != .orderedSame:
+                    result.append(.envelopes(viewModel: previousEnvelopeRowModel))
+                    result.append(.dateIndicator(date: envelopeRowModel.envelope.when))
+                    result.append(.envelopes(viewModel: NonEmpty(envelopeRowModel)))
                 case .some(.envelopes(let previousEnvelopeRowModel)) where previousEnvelopeRowModel.head.envelope.author == envelopeRowModel.envelope.author:
                     result.append(.envelopes(viewModel: previousEnvelopeRowModel + [envelopeRowModel]))
                 case .some(let rowModel):
