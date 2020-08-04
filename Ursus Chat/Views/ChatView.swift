@@ -61,6 +61,12 @@ struct ChatView: View {
     
     @State var message: String = ""
     
+    @State var messageHeight: CGFloat = 0
+    
+    var messageTextFieldHeight: CGFloat {
+        return min(max(messageHeight, 30.0), 70.0)
+    }
+    
     var path: String
     
     var chat: Chat {
@@ -101,7 +107,13 @@ struct ChatView: View {
             }
             Divider()
             HStack {
-                TextField("Message...", text: $message)
+                if message.isEmpty {
+                    Text("Message...")
+                        .foregroundColor(Color(UIColor.placeholderText))
+                }
+                DynamicHeightTextField(text: $message, height: $messageHeight)
+                    .frame(height: messageTextFieldHeight)
+//                DynamicHeightTextField("Message...", text: $message)
                 Button(action: sendMessage) {
                     Text("Send")
                 }
