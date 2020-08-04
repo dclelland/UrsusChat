@@ -64,6 +64,7 @@ struct ChatViewModel {
                     result.append(rowModel)
                     result.append(.envelopes(viewModel: NonEmpty(envelopeRowModel)))
                 case .none:
+                    result.append(.dateIndicator(date: envelopeRowModel.envelope.when))
                     result.append(.envelopes(viewModel: NonEmpty(envelopeRowModel)))
                 }
             }

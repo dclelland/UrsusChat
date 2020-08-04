@@ -12,8 +12,6 @@ struct ChatReadIndicatorRow: View {
     
     var unread: Int
     
-    #warning("TODO: Render read indicator")
-    
     var body: some View {
         Text("Read Indicator Row: \(unread)")
     }

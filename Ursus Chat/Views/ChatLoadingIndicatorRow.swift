@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ChatLoadingIndicatorRow: View {
     
-    #warning("TODO: After iOS 14, swap for a ProgressView")
-    
     var loading: Bool
     
     var body: some View {
