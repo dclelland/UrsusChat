@@ -33,10 +33,11 @@ struct NewGroupChatView: View {
                         .keyboardType(.asciiCapable)
                         .autocapitalization(.none)
                 }
-                Section {
+                Section(footer: Text("Disabled for now").foregroundColor(.red)) {
                     Button(action: self.startNewGroupChat) {
                         Text("Create New Group Chat")
                     }
+                    .disabled(true)
                 }
             }
             .disabled(self.isLoading)

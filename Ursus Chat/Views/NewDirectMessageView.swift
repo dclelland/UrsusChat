@@ -33,10 +33,11 @@ struct NewDirectMessageView: View {
                         .keyboardType(.asciiCapable)
                         .autocapitalization(.none)
                 }
-                Section {
+                Section(footer: Text("Disabled for now").foregroundColor(.red)) {
                     Button(action: self.createNewDirectMessage) {
                         Text("Create New Direct Message")
                     }
+                    .disabled(true)
                 }
             }
             .disabled(self.isLoading)
