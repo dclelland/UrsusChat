@@ -16,6 +16,7 @@ struct ChatLoadingIndicatorRow: View {
         Text("Loading...")
             .font(.subheadline)
             .foregroundColor(.secondary)
+            .frame(maxWidth: .infinity, alignment: .center)
     }
     
 }

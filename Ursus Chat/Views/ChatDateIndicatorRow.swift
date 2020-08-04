@@ -17,6 +17,7 @@ struct ChatDateIndicatorRow: View {
         Text(date.formattedDateWithToday)
             .font(.subheadline)
             .foregroundColor(.secondary)
+            .frame(maxWidth: .infinity, alignment: .center)
     }
     
 }
