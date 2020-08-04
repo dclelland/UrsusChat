@@ -107,9 +107,15 @@ struct ChatView: View {
             }
             Divider()
             HStack(alignment: .top) {
-                DynamicHeightTextField(text: $message, height: $messageHeight)
-                    .overlay(Text("Message...").foregroundColor(Color(UIColor.placeholderText)).opacity(message.isEmpty ? 1.0 : 0.0).allowsHitTesting(false), alignment: .topLeading)
-                    .frame(height: messageTextFieldHeight)
+                ZStack(alignment: .topLeading) {
+                    DynamicHeightTextField(text: $message, height: $messageHeight)
+                    if message.isEmpty {
+                        Text("Message...")
+                            .foregroundColor(.secondary)
+                            .allowsHitTesting(false)
+                    }
+                }
+                .frame(height: messageTextFieldHeight)
                 Button(action: sendMessage) {
                     Text("Send")
                 }
