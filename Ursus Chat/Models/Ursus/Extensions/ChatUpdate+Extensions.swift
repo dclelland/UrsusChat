@@ -102,24 +102,6 @@ extension Envelope: Hashable {
     
 }
 
-extension Envelope {
-    
-    var formattedDate: String {
-        if when.compare(.isToday) {
-            return when.toString(.time(.short))
-        } else if when.compare(toDate: Date() - 7.days, granularity: .day) != .orderedAscending {
-            return when.weekdayName(.default)
-        } else {
-            return when.toString(.date(.short))
-        }
-    }
-    
-    var formattedTime: String {
-        return when.toString(.time(.short))
-    }
-    
-}
-
 extension Letter {
     
     var text: String {
@@ -133,6 +115,34 @@ extension Letter {
         case .me(let narrative):
             return narrative
         }
+    }
+    
+}
+
+extension Date {
+    
+    var formattedDateWithToday: String {
+        if compare(.isToday) {
+            return "Today"
+        } else if compare(toDate: Date() - 7.days, granularity: .day) != .orderedAscending {
+            return weekdayName(.default)
+        } else {
+            return toString(.date(.short))
+        }
+    }
+    
+    var formattedDate: String {
+        if compare(.isToday) {
+            return toString(.time(.short))
+        } else if compare(toDate: Date() - 7.days, granularity: .day) != .orderedAscending {
+            return weekdayName(.default)
+        } else {
+            return toString(.date(.short))
+        }
+    }
+    
+    var formattedTime: String {
+        return toString(.time(.short))
     }
     
 }

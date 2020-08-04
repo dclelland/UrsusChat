@@ -39,7 +39,7 @@ struct ChatEnvelopesRow: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Spacer()
-                    Text(viewModel.head.envelope.formattedTime)
+                    Text(viewModel.head.envelope.when.formattedTime)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }

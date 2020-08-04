@@ -13,10 +13,11 @@ struct ChatDateIndicatorRow: View {
     
     var date: Date
     
-    #warning("TODO: Render date")
-    
     var body: some View {
-        Text("Date Indicator Row: \(date)")
+        Text(date.formattedDateWithToday)
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+            .multilineTextAlignment(.trailing)
     }
     
 }

@@ -47,7 +47,7 @@ struct ChatListRow: View {
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 8.0) {
-                Text(chat.mailbox.envelopes.first?.formattedDate ?? "")
+                Text(chat.mailbox.envelopes.first?.when.formattedDate ?? "")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 Text(String(chat.mailbox.unread))
