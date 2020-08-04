@@ -84,6 +84,7 @@ struct ChatView: View {
         VStack(spacing: 0.0) {
             List(viewModel.rows.reversed()) { row in
                 ChatViewRow(viewModel: row)
+                .animation(nil)
                 .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
                 .onAppear {
                     if case .loadingIndicator(false) = row {
@@ -96,10 +97,10 @@ struct ChatView: View {
                     }
                 }
             }
+            .animation(nil)
             .offset(x: 0.0, y: -1.0)
             .scaleEffect(x: 1.0, y: -1.0, anchor: .center)
             .listStyle(PlainListStyle())
-            .animation(nil)
             .introspectTableView { tableView in
                 tableView.tableFooterView = UIView()
                 tableView.separatorStyle = .none
