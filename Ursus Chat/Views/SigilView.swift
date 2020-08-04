@@ -6,7 +6,6 @@
 //  Copyright © 2020 Protonome. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 import UrsusAirlock
 import UrsusSigil
