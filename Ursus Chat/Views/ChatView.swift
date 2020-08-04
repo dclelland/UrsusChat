@@ -106,7 +106,7 @@ struct ChatView: View {
                 tableView.keyboardDismissMode = .onDrag
             }
             Divider()
-            HStack {
+            HStack(alignment: .top) {
 //                if message.isEmpty {
 //                    Text("Message...")
 //                        .foregroundColor(Color(UIColor.placeholderText))
