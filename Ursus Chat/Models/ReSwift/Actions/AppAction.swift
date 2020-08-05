@@ -23,6 +23,30 @@ struct AppLaunchAction: AppAction {
     
 }
 
+struct AppBackgroundAction: AppAction {
+    
+    func reduce(_ state: inout AppState) throws {
+        guard case .authenticated(let airlock, _) = state.session else {
+            return
+        }
+        
+        #warning("TODO: Pause airlock")
+    }
+    
+}
+
+struct AppForegroundAction: AppAction {
+    
+    func reduce(_ state: inout AppState) throws {
+        guard case .authenticated(let airlock, _) = state.session else {
+            return
+        }
+        
+        #warning("TODO: Resume airlock")
+    }
+    
+}
+
 struct AppTerminateAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
