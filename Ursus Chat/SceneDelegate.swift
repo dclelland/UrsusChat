@@ -23,7 +23,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = UIHostingController(rootView: AppView().environmentObject(AppStore.shared))
         self.window?.makeKeyAndVisible()
         
+        AppStore.shared.dispatch(AppConnectAction())
         AppStore.shared.dispatch(AppThunk.getCredentials())
+    }
+    
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        AppStore.shared.dispatch(AppBackgroundAction())
+    }
+    
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        AppStore.shared.dispatch(AppForegroundAction())
+    }
+    
+    func sceneDidDisconnect(_ scene: UIScene) {
+        AppStore.shared.dispatch(AppDisconnectAction())
     }
 
 }

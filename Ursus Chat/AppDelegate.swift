@@ -17,20 +17,7 @@ import SwiftDate
         NetworkActivityLogManager.shared.level = .verbose
         NetworkActivityIndicatorManager.shared.isEnabled = true
         SwiftDate.defaultRegion = .current
-        AppStore.shared.dispatch(AppLaunchAction())
         return true
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        AppStore.shared.dispatch(AppBackgroundAction())
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        AppStore.shared.dispatch(AppForegroundAction())
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        AppStore.shared.dispatch(AppTerminateAction())
     }
 
 }

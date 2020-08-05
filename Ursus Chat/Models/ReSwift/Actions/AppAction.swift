@@ -15,7 +15,7 @@ protocol AppAction: Action {
     
 }
 
-struct AppLaunchAction: AppAction {
+struct AppConnectAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
         
@@ -30,7 +30,7 @@ struct AppBackgroundAction: AppAction {
             return
         }
         
-        #warning("TODO: Pause airlock")
+        airlock.disconnect()
     }
     
 }
@@ -42,12 +42,12 @@ struct AppForegroundAction: AppAction {
             return
         }
         
-        #warning("TODO: Resume airlock")
+        airlock.connect()
     }
     
 }
 
-struct AppTerminateAction: AppAction {
+struct AppDisconnectAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
         state.session = .unauthenticated
