@@ -91,8 +91,7 @@ extension AppThunk {
             
             dispatch(ConnectionStartAction())
             
-            #warning("TODO: Can we remove this flag somehow?")
-            var hasSentConnectionSuccessAction: Bool = false
+            var alreadyDispatchedConnectionSuccessAction: Bool = false
             
             airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
             airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
@@ -104,9 +103,9 @@ extension AppThunk {
             airlock.connect().responseStream { stream in
                 switch stream.event {
                 case .stream:
-                    if hasSentConnectionSuccessAction == false {
+                    if alreadyDispatchedConnectionSuccessAction == false {
                         dispatch(ConnectionSuccessAction())
-                        hasSentConnectionSuccessAction = true
+                        alreadyDispatchedConnectionSuccessAction = true
                     }
                 case .complete(let completion):
                     if let error = completion.error {
