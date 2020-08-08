@@ -354,8 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				65861B0F24AB273700C63E07 /* Store */,
-				65861B0D24AB272C00C63E07 /* State */,
 				6519484824B3D83000AF3D44 /* Thunks */,
+				65861B0D24AB272C00C63E07 /* State */,
 				65861B0E24AB273200C63E07 /* Actions */,
 				65861B0B24AB270100C63E07 /* Middleware */,
 			);
