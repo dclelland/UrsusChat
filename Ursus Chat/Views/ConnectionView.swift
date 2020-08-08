@@ -25,7 +25,7 @@ struct ConnectionView: View {
                 Text("Reconnecting...")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .center)
+//                    .frame(maxWidth: .infinity, alignment: .center)
             )
         case .disconnected(let error):
             return AnyView(
@@ -33,7 +33,7 @@ struct ConnectionView: View {
                     Text("Disconnected: \(error.localizedDescription)")
                         .font(.subheadline)
                         .foregroundColor(.red)
-                        .frame(maxWidth: .infinity, alignment: .center)
+//                        .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .buttonStyle(PlainButtonStyle())
             )

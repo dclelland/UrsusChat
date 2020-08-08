@@ -47,8 +47,6 @@ struct ChatListView: View {
                         title: Text(ship.description),
                         buttons: [
                             .default(Text("Open Landscape"), action: openLandscape),
-                            .default(Text("Start Subscription"), action: startSubscription),
-                            .default(Text("Stop Subscription"), action: stopSubscription),
                             .destructive(Text("Logout"), action: logout),
                             .cancel()
                         ]
@@ -111,24 +109,6 @@ extension ChatListView {
         }
         
         UIApplication.shared.open(airlock.credentials.url)
-    }
-    
-    #warning("TODO: Remove these")
-    
-    func startSubscription() {
-        guard case .authenticated(let airlock, let ship) = store.state.session else {
-            return
-        }
-
-        store.dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
-    }
-    
-    func stopSubscription() {
-        guard case .authenticated(let airlock, _) = store.state.session else {
-            return
-        }
-
-        store.dispatch(AppThunk.stopSubscription(airlock: airlock))
     }
     
     func logout() {

@@ -91,6 +91,7 @@ extension AppThunk {
             
             dispatch(ConnectionStartAction())
             
+            #warning("TODO: Can we remove this flag somehow?")
             var hasSentConnectionSuccessAction: Bool = false
             
             airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
@@ -108,7 +109,6 @@ extension AppThunk {
                         hasSentConnectionSuccessAction = true
                     }
                 case .complete(let completion):
-                    print("STREAM COMPLETION>", completion)
                     if let error = completion.error {
                         dispatch(ConnectionFailureAction(error: error))
                     }
