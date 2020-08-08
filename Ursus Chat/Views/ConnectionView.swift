@@ -11,6 +11,8 @@ import SwiftUI
 struct ConnectionView: View {
     
     @EnvironmentObject var store: AppStore
+
+    #warning("TODO: Say something like 'reconnect' in the button")
     
     var body: some View {
         switch store.state.connection {
@@ -27,7 +29,6 @@ struct ConnectionView: View {
             )
         case .disconnected(let error):
             return AnyView(
-                #warning("TODO: Say something like 'reconnect' in this button")
                 Button(action: reconnect) {
                     Text("Disconnected: \(error.localizedDescription)")
                         .font(.subheadline)
