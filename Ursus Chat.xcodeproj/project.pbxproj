@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2E818E90828CCBBA7FCE50 /* Pods_Ursus_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E01A543491FBB9FB3DCF9F /* Pods_Ursus_Chat.framework */; };
 		6519483324B2BFBB00AF3D44 /* ChatUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */; };
 		6519483F24B2DC0600AF3D44 /* ChatHookUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */; };
 		6519484124B2DD3700AF3D44 /* InviteUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519484024B2DD3700AF3D44 /* InviteUpdate.swift */; };
@@ -63,12 +64,11 @@
 		65D95A4F249C54480002AA4F /* SubscriptionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4E249C54480002AA4F /* SubscriptionAction.swift */; };
 		65F81BD124C95BE600C9F927 /* NewGroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */; };
 		65F81BD324C95BF000C9F927 /* NewDirectMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F81BD224C95BF000C9F927 /* NewDirectMessageView.swift */; };
-		716018D52080F70735928445 /* Pods_Ursus_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3DFD6F02BCAD5AB567AACC /* Pods_Ursus_Chat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E3DFD6F02BCAD5AB567AACC /* Pods_Ursus_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ursus_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		187913B75E5ECFC67997EDA1 /* Pods-Ursus Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ursus Chat.release.xcconfig"; path = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat.release.xcconfig"; sourceTree = "<group>"; };
+		0145F634913F70559E6A195F /* Pods-Ursus Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ursus Chat.debug.xcconfig"; path = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		39E01A543491FBB9FB3DCF9F /* Pods_Ursus_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ursus_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6519483224B2BFBB00AF3D44 /* ChatUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUpdate.swift; sourceTree = "<group>"; };
 		6519483E24B2DC0600AF3D44 /* ChatHookUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHookUpdate.swift; sourceTree = "<group>"; };
 		6519484024B2DD3700AF3D44 /* InviteUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUpdate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		65D95A4E249C54480002AA4F /* SubscriptionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionAction.swift; sourceTree = "<group>"; };
 		65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupChatView.swift; sourceTree = "<group>"; };
 		65F81BD224C95BF000C9F927 /* NewDirectMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDirectMessageView.swift; sourceTree = "<group>"; };
-		728689548FB14A448B5929C7 /* Pods-Ursus Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ursus Chat.debug.xcconfig"; path = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		66C7EAEAC1972E5E9829F8DD /* Pods-Ursus Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ursus Chat.release.xcconfig"; path = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +136,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716018D52080F70735928445 /* Pods_Ursus_Chat.framework in Frameworks */,
+				1A2E818E90828CCBBA7FCE50 /* Pods_Ursus_Chat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026000CAF400CE30D1DFD4CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39E01A543491FBB9FB3DCF9F /* Pods_Ursus_Chat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6519483124B2BFAC00AF3D44 /* Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +190,7 @@
 				6520F60024977BFE00F3D56C /* Ursus Chat */,
 				6520F5FF24977BFE00F3D56C /* Products */,
 				F2AD118C4EB54D6C5C0488E9 /* Pods */,
-				6A27F2E30774587E768B2312 /* Frameworks */,
+				026000CAF400CE30D1DFD4CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,19 +362,11 @@
 			path = ReSwift;
 			sourceTree = "<group>";
 		};
-		6A27F2E30774587E768B2312 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0E3DFD6F02BCAD5AB567AACC /* Pods_Ursus_Chat.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F2AD118C4EB54D6C5C0488E9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				728689548FB14A448B5929C7 /* Pods-Ursus Chat.debug.xcconfig */,
-				187913B75E5ECFC67997EDA1 /* Pods-Ursus Chat.release.xcconfig */,
+				0145F634913F70559E6A195F /* Pods-Ursus Chat.debug.xcconfig */,
+				66C7EAEAC1972E5E9829F8DD /* Pods-Ursus Chat.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -378,11 +378,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6520F61224977C0500F3D56C /* Build configuration list for PBXNativeTarget "Ursus Chat" */;
 			buildPhases = (
-				B4D8AB608A0DB01401100473 /* [CP] Check Pods Manifest.lock */,
+				CA06ED14B47080F587E1E166 /* [CP] Check Pods Manifest.lock */,
 				6520F5FA24977BFE00F3D56C /* Sources */,
 				6520F5FB24977BFE00F3D56C /* Frameworks */,
 				6520F5FC24977BFE00F3D56C /* Resources */,
-				E68C3244FD37290C75716525 /* [CP] Embed Pods Frameworks */,
+				FE7D839C013C30B0F895C2FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -439,7 +439,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B4D8AB608A0DB01401100473 /* [CP] Check Pods Manifest.lock */ = {
+		CA06ED14B47080F587E1E166 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -461,7 +461,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E68C3244FD37290C75716525 /* [CP] Embed Pods Frameworks */ = {
+		FE7D839C013C30B0F895C2FE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -661,7 +661,7 @@
 		};
 		6520F61324977C0500F3D56C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 728689548FB14A448B5929C7 /* Pods-Ursus Chat.debug.xcconfig */;
+			baseConfigurationReference = 0145F634913F70559E6A195F /* Pods-Ursus Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -685,7 +685,7 @@
 		};
 		6520F61424977C0500F3D56C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 187913B75E5ECFC67997EDA1 /* Pods-Ursus Chat.release.xcconfig */;
+			baseConfigurationReference = 66C7EAEAC1972E5E9829F8DD /* Pods-Ursus Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

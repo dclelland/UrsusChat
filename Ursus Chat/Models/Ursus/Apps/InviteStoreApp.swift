@@ -20,7 +20,7 @@ extension Airlock {
 
 class InviteStoreApp: AirlockApp {
     
-    @discardableResult func allSubscribeRequest(handler: @escaping (SubscribeEvent<SubscribeResponse>) -> Void) -> DataRequest {
+    @discardableResult func allSubscribeRequest(handler: @escaping (SubscribeEvent<Result<SubscribeResponse, Error>>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/all", handler: handler)
     }
     

@@ -65,9 +65,9 @@ struct MetadataUpdateRemove: Decodable {
     
 }
 
-typealias Associations = [String: AppAssociations]
+typealias Associations = [App: AppAssociations]
 
-typealias AppAssociations = [String: Association]
+typealias AppAssociations = [Path: Association]
 
 struct Association: Decodable {
 

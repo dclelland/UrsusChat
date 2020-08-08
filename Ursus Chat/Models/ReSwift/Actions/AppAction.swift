@@ -15,38 +15,6 @@ protocol AppAction: Action {
     
 }
 
-struct AppConnectAction: AppAction {
-    
-    func reduce(_ state: inout AppState) throws {
-        
-    }
-    
-}
-
-struct AppBackgroundAction: AppAction {
-    
-    func reduce(_ state: inout AppState) throws {
-        guard case .authenticated(let airlock, _) = state.session else {
-            return
-        }
-        
-        airlock.disconnect()
-    }
-    
-}
-
-struct AppForegroundAction: AppAction {
-    
-    func reduce(_ state: inout AppState) throws {
-        guard case .authenticated(let airlock, _) = state.session else {
-            return
-        }
-        
-        airlock.connect()
-    }
-    
-}
-
 struct AppDisconnectAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {

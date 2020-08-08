@@ -13,72 +13,6 @@ import UrsusAirlock
 
 typealias AppThunk = Thunk<AppState>
 
-//extension AppThunk {
-//
-//    static func scryClay(airlock: Airlock, ship: Ship) -> AppThunk {
-//        return AppThunk { dispatch, getState in
-//            airlock.scryRequest(app: "file-server", path: "/clay/base/hash").response { response in
-//                switch response.result {
-//                case .success(let data):
-//                    print("[scry] success:", data ?? Data())
-//                case .failure(let error):
-//                    print("[scry] failure:", error)
-//                }
-//            }
-//        }
-//    }
-//
-//}
-
-extension AppThunk {
-    
-    static func startSession(credentials: AirlockCredentials) -> AppThunk {
-        return AppThunk { dispatch, getState in
-            dispatch(SessionLoginStartAction())
-            let airlock = Airlock(credentials: credentials)
-            airlock.loginRequest { result in
-                switch result {
-                case .success(let ship):
-                    dispatch(SessionLoginFinishAction(airlock: airlock, ship: ship))
-                    dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
-                    dispatch(AppThunk.setCredentials(credentials))
-                case .failure(let error):
-                    dispatch(SessionLoginFailureAction())
-                    dispatch(AppErrorAction(error: error))
-                }
-            }
-        }
-    }
-
-    static func startSubscription(airlock: Airlock, ship: Ship) -> AppThunk {
-        return AppThunk { dispatch, getState in
-            func handler<Value>(event: SubscribeEvent<Value>) {
-                dispatch(SubscriptionEventAction(event: event))
-            }
-            
-            airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
-            airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
-            airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
-            airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
-            airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
-            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler)
-            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler)
-        }
-    }
-    
-}
-
-extension AppThunk {
-    
-    static func endSession() -> AppThunk {
-        return AppThunk { dispatch, getState in
-            dispatch(SessionLogoutAction())
-            dispatch(AppThunk.clearCredentials())
-        }
-    }
-    
-}
-
 extension AppThunk {
     
     private static let credentialsKey = "Credentials"
@@ -112,6 +46,67 @@ extension AppThunk {
             } catch let error {
                 dispatch(AppErrorAction(error: error))
             }
+        }
+    }
+    
+}
+
+extension AppThunk {
+    
+    static func startSession(credentials: AirlockCredentials) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            dispatch(SessionLoginStartAction())
+            let airlock = Airlock(credentials: credentials)
+            airlock.loginRequest { result in
+                switch result {
+                case .success(let ship):
+                    dispatch(SessionLoginFinishAction(airlock: airlock, ship: ship))
+                    dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
+                    dispatch(AppThunk.setCredentials(credentials))
+                case .failure(let error):
+                    dispatch(SessionLoginFailureAction())
+                    dispatch(AppErrorAction(error: error))
+                }
+            }
+        }
+    }
+    
+    static func stopSession(airlock: Airlock) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            dispatch(SessionLogoutAction())
+            dispatch(AppThunk.stopSubscription(airlock: airlock))
+            dispatch(AppThunk.clearCredentials())
+        }
+    }
+    
+}
+
+extension AppThunk {
+
+    static func startSubscription(airlock: Airlock, ship: Ship) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            func handler<Value>(event: SubscribeEvent<Result<Value, Error>>) {
+                dispatch(SubscriptionEventAction(event: event))
+            }
+            
+            airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
+            airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
+            airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
+            airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
+            airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
+            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler)
+            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler)
+            airlock.connect().responseStream { stream in
+                if let error = stream.completion?.error {
+                    dispatch(SubscriptionErrorAction(error: error))
+                }
+            }
+        }
+    }
+    
+    static func stopSubscription(airlock: Airlock) -> AppThunk {
+        return AppThunk { dispatch, getState in
+            airlock.disconnect()
         }
     }
     
@@ -182,7 +177,7 @@ extension AppThunk {
             airlock.chatView(ship: ship).messagesRequest(path: path, start: range.lowerBound, end: range.upperBound) { result in
                 switch result {
                 case .success(let response):
-                    dispatch(SubscriptionEventAction(event: .update(response)))
+                    dispatch(SubscriptionEventAction(event: .update(.success(response))))
                 case .failure(let error):
                     dispatch(SubscriptionRemoveLoadingMessagesAction(path: path))
                     dispatch(AppErrorAction(error: error))

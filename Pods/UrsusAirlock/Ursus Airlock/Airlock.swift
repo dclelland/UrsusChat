@@ -7,13 +7,11 @@
 
 import Foundation
 import Alamofire
+import AlamofireEventSource
 
 public class Airlock {
     
-    private var pokeHandlers = [Int: (PokeEvent) -> Void]()
-    private var subscribeHandlers = [Int: (SubscribeEvent<Data>) -> Void]()
-    
-    private var eventSource: EventSource? = nil
+    private var eventSource: DataStreamRequest? = nil
     private var eventSourceUID: String = Airlock.uid()
     
     private var eventID: Int = 0
@@ -22,6 +20,9 @@ public class Airlock {
         requestID += 1
         return requestID
     }
+    
+    private var pokeHandlers = [Int: (PokeEvent) -> Void]()
+    private var subscribeHandlers = [Int: (SubscribeEvent<Data>) -> Void]()
     
     public var credentials: AirlockCredentials
     
@@ -39,6 +40,29 @@ public class Airlock {
     
     deinit {
         deleteRequest()
+    }
+    
+}
+
+extension Airlock {
+    
+    @discardableResult public func connect() -> DataStreamRequest {
+        eventSource = eventSource ?? session.eventSourceRequest(channelURL(uid: eventSourceUID), method: .put, lastEventID: String(eventID))
+            .validate()
+            .responseDecodableEventSource(using: DecodableEventSourceSerializer<Response>(decoder: decoder)) { [weak self] eventSource in
+                switch eventSource.event {
+                case .message(let message):
+                    self?.eventSource(didReceiveMessage: message)
+                case .complete(let completion):
+                    self?.eventSource(didReceiveCompletion: completion)
+                }
+            }
+        
+        return eventSource!
+    }
+    
+    public func disconnect() {
+        eventSource?.cancel()
     }
     
 }
@@ -66,14 +90,12 @@ extension Airlock {
         return session
             .request(channelURL(uid: eventSourceUID), method: .put, parameters: parameters, encoder: JSONParameterEncoder(encoder: encoder))
             .validate()
-            .response { [weak self] response in
-                self?.connectEventSourceIfDisconnected()
-            }
     }
     
     @discardableResult public func scryRequest(app: App, path: Path) -> DataRequest {
         return session
             .request(scryURL(app: app, path: path))
+            .validate()
     }
     
 }
@@ -109,11 +131,11 @@ extension Airlock {
         }
     }
     
-    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: Ship, app: App, path: Path, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest<JSON: Decodable>(ship: Ship, app: App, path: Path, handler: @escaping (SubscribeEvent<Result<JSON, Error>>) -> Void) -> DataRequest {
         let decoder = self.decoder
         return subscribeRequest(ship: ship, app: app, path: path) { event in
-            handler(event.tryMap { data in
-                return try decoder.decode(JSON.self, from: data)
+            handler(event.map { data in
+                return Result(catching: { try decoder.decode(JSON.self, from: data) })
             })
         }
     }
@@ -131,77 +153,53 @@ extension Airlock {
     
 }
 
-extension Airlock: EventSourceDelegate {
+extension Airlock {
     
-    public func eventSource(_ eventSource: EventSource, didReceiveMessage message: EventSourceMessage) {
+    private func eventSource(didReceiveMessage message: DecodableEventSourceMessage<Response>) {
         if let id = message.id.flatMap(Int.init) {
             eventID = id
             ackRequest(eventID: id)
         }
         
-        if let data = message.data?.data(using: .utf8) {
-            switch Result(catching: { try decoder.decode(Response.self, from: data) }) {
-            case .success(.poke(let response)):
+        if let data = message.data {
+            switch data {
+            case .poke(let response):
                 switch response.result {
                 case .okay:
                     pokeHandlers[response.id]?(.finished)
                     pokeHandlers[response.id] = nil
                 case .error(let message):
-                    pokeHandlers[response.id]?(.failure(AirlockError.pokeFailure(message)))
+                    pokeHandlers[response.id]?(.failure(.pokeFailure(message)))
                     pokeHandlers[response.id] = nil
                 }
-            case .success(.subscribe(let response)):
+            case .subscribe(let response):
                 switch response.result {
                 case .okay:
                     subscribeHandlers[response.id]?(.started)
                 case .error(let message):
-                    subscribeHandlers[response.id]?(.failure(AirlockError.subscribeFailure(message)))
+                    subscribeHandlers[response.id]?(.failure(.subscribeFailure(message)))
                     subscribeHandlers[response.id] = nil
                 }
-            case .success(.diff(let response)):
+            case .diff(let response):
                 subscribeHandlers[response.id]?(.update(response.json))
-            case .success(.quit(let response)):
+            case .quit(let response):
                 subscribeHandlers[response.id]?(.finished)
                 subscribeHandlers[response.id] = nil
-            case .failure(let error):
-                print("[Ursus] Error decoding message:", message, error)
             }
         }
     }
     
-    public func eventSource(_ eventSource: EventSource, didCompleteWithError error: EventSourceError) {
-        pokeHandlers.values.forEach { handler in
-            handler(.failure(error))
-        }
-        pokeHandlers.removeAll()
+    private func eventSource(didReceiveCompletion completion: DataStreamRequest.Completion) {
+        deleteRequest()
         
-        subscribeHandlers.values.forEach { handler in
-            handler(.failure(error))
-        }
-        subscribeHandlers.removeAll()
-        
-        resetEventSource()
-    }
-    
-}
-
-extension Airlock {
-    
-    private func connectEventSourceIfDisconnected() {
-        guard eventSource == nil else {
-            return
-        }
-        
-        eventSource = EventSource(url: channelURL(uid: eventSourceUID), delegate: self)
-        eventSource?.connect(lastEventID: String(eventID))
-    }
-    
-    private func resetEventSource() {
         eventSource = nil
         eventSourceUID = Airlock.uid()
-        
+
         eventID = 0
         requestID = 0
+        
+        pokeHandlers.removeAll()
+        subscribeHandlers.removeAll()
     }
     
 }

@@ -25,13 +25,13 @@ enum SubscriptionActionError: Error {
 
 struct SubscriptionEventAction<Value>: SubscriptionAction {
     
-    var event: SubscribeEvent<Value>
+    var event: SubscribeEvent<Result<Value, Error>>
     
     func reduce(_ state: inout SubscriptionState) throws {
         switch event {
         case .started:
             break
-        case .update(let value as ChatViewApp.SubscribeResponse):
+        case .update(.success(let value as ChatViewApp.SubscribeResponse)):
             switch value {
             case .chatUpdate(let update):
                 switch update {
@@ -66,12 +66,12 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     }
                 }
             }
-        case .update(let value as ChatHookApp.SubscribeResponse):
+        case .update(.success(let value as ChatHookApp.SubscribeResponse)):
             switch value {
             case .chatHookUpdate(let update):
                 state.synced = update
             }
-        case .update(let value as InviteStoreApp.SubscribeResponse):
+        case .update(.success(let value as InviteStoreApp.SubscribeResponse)):
             switch value {
             case .inviteUpdate(let update):
                 switch update {
@@ -89,7 +89,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     state.invites[decline.path]?[decline.uid] = nil
                 }
             }
-        case .update(let value as GroupStoreApp.SubscribeResponse):
+        case .update(.success(let value as GroupStoreApp.SubscribeResponse)):
             switch value {
             case .groupUpdate(let update):
                 switch update {
@@ -147,7 +147,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     state.groups[initialGroup.resource.path] = initialGroup.group
                 }
             }
-        case .update(let value as ContactViewApp.SubscribeResponse):
+        case .update(.success(let value as ContactViewApp.SubscribeResponse)):
             switch value {
             case .contactUpdate(let update):
                 switch update {
@@ -190,7 +190,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     break
                 }
             }
-        case .update(let value as MetadataStoreApp.SubscribeResponse):
+        case .update(.success(let value as MetadataStoreApp.SubscribeResponse)):
             switch value {
             case .metadataUpdate(let update):
                 switch update {
@@ -206,8 +206,10 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     state.associations[remove.appName]?[remove.appPath] = nil
                 }
             }
-        case .update(let value):
+        case .update(.success(let value)):
             throw SubscriptionActionError.unhandledEventUpdate(value)
+        case .update(.failure(let error)):
+            throw error
         case .finished:
             break
         case .failure(let error):
@@ -259,6 +261,28 @@ struct SubscriptionRemoveLoadingMessagesAction: SubscriptionAction {
     
     func reduce(_ state: inout SubscriptionState) throws {
         state.loadingMessages[path] = nil
+    }
+    
+}
+
+struct SubscriptionErrorAction: AppAction {
+    
+    var error: Error
+    
+    func reduce(_ state: inout AppState) throws {
+        state.subscription.errors.append(error)
+    }
+    
+}
+
+struct SubscriptionDismissErrorAction: AppAction {
+    
+    func reduce(_ state: inout AppState) throws {
+        guard state.errors.isEmpty == false else {
+            return
+        }
+        
+        state.subscription.errors.removeLast()
     }
     
 }

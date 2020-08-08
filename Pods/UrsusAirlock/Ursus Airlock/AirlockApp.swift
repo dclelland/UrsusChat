@@ -52,7 +52,7 @@ extension AirlockApp {
         return airlock.subscribeRequest(ship: ship, app: app, path: path, handler: handler)
     }
     
-    @discardableResult public func subscribeRequest<JSON: Decodable>(path: Path, handler: @escaping (SubscribeEvent<JSON>) -> Void) -> DataRequest {
+    @discardableResult public func subscribeRequest<JSON: Decodable>(path: Path, handler: @escaping (SubscribeEvent<Result<JSON, Error>>) -> Void) -> DataRequest {
         return airlock.subscribeRequest(ship: ship, app: app, path: path, handler: handler)
     }
     

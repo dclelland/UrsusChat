@@ -22,4 +22,6 @@ struct SubscriptionState: StateType {
     var pendingMessages: [Path: [Envelope]] = [:]
     var loadingMessages: [Path: Bool] = [:]
     
+    var errors: [Error] = []
+    
 }

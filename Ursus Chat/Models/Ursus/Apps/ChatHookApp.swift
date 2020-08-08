@@ -20,7 +20,7 @@ extension Airlock {
 
 class ChatHookApp: AirlockApp {
     
-    @discardableResult func syncedSubscribeRequest(handler: @escaping (SubscribeEvent<SubscribeResponse>) -> Void) -> DataRequest {
+    @discardableResult func syncedSubscribeRequest(handler: @escaping (SubscribeEvent<Result<SubscribeResponse, Error>>) -> Void) -> DataRequest {
         return subscribeRequest(path: "/synced", handler: handler)
     }
     

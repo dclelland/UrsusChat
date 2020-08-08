@@ -7,10 +7,16 @@
 
 import Foundation
 
+public enum PokeError: Error {
+    
+    case pokeFailure(String)
+    
+}
+
 public enum PokeEvent {
     
     case finished
-    case failure(Error)
+    case failure(PokeError)
     
 }
 

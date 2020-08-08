@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.2.2)
+  - AlamofireEventSource (1.2.0):
+    - Alamofire (~> 5.0)
   - AlamofireLogger (1.0.1):
     - Alamofire (~> 5.0)
   - AlamofireNetworkActivityIndicator (3.1.0):
@@ -19,12 +21,9 @@ PODS:
     - ReSwift (~> 5.0)
   - SwiftDate (6.1.0)
   - SwiftSVG (2.3.2)
-  - UrsusAirlock (1.7.2):
+  - UrsusAirlock (1.8.0):
     - Alamofire (~> 5.2)
-    - UrsusAirlock/EventSource (= 1.7.2)
-    - UrsusAtom (~> 1.2)
-  - UrsusAirlock/EventSource (1.7.2):
-    - Alamofire (~> 5.2)
+    - AlamofireEventSource (~> 1.2)
     - UrsusAtom (~> 1.2)
   - UrsusAtom (1.2.2):
     - BigInt (~> 5.0)
@@ -47,13 +46,14 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - UrsusAirlock (from `../UrsusAirlock`)
-  - UrsusAtom (from `../UrsusAtom`)
-  - UrsusSigil (from `../UrsusSigil`)
+  - UrsusAirlock (~> 1.8.0)
+  - UrsusAtom (~> 1.2.2)
+  - UrsusSigil (~> 1.2.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AlamofireEventSource
     - AlamofireLogger
     - AlamofireNetworkActivityIndicator
     - BigInt
@@ -67,17 +67,13 @@ SPEC REPOS:
     - ReSwiftThunk
     - SwiftDate
     - SwiftSVG
-
-EXTERNAL SOURCES:
-  UrsusAirlock:
-    :path: "../UrsusAirlock"
-  UrsusAtom:
-    :path: "../UrsusAtom"
-  UrsusSigil:
-    :path: "../UrsusSigil"
+    - UrsusAirlock
+    - UrsusAtom
+    - UrsusSigil
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AlamofireEventSource: 45a2dc28bab5e7b5cd5cffc79f36e943673c4eb1
   AlamofireLogger: 7f4bde032340dad1f6b50c97ef3e6a3acf24e708
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
@@ -91,10 +87,10 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
-  UrsusAirlock: 7bae74803a45b164e1405f687573456cdfd6f080
+  UrsusAirlock: f7e5644c1ab62d49fe228d19babc168bf8d96119
   UrsusAtom: 0bfccff234a827885c40a115609a63281da47459
   UrsusSigil: 5355932dd236465d7f590cdc400f1f375795c906
 
-PODFILE CHECKSUM: 2b1e779bcfc8c20654dc5a836aa792b57c99bf11
+PODFILE CHECKSUM: 58865865bcad1cac842fcd2a01291fbe0785567c
 
 COCOAPODS: 1.8.3

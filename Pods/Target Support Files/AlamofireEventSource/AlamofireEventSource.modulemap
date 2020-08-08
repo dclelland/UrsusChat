@@ -1,0 +1,6 @@
+framework module AlamofireEventSource {
+  umbrella header "AlamofireEventSource-umbrella.h"
+
+  export *
+  module * { export * }
+}

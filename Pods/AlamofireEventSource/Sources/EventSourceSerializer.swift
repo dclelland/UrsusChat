@@ -1,27 +1,29 @@
 //
-//  EventSourceParser.swift
-//  EventSource
+//  EventSourceSerializer.swift
+//  AlamofireEventSource
 //
-//  Created by Andres on 30/05/2019.
-//  Copyright © 2019 inaka. All rights reserved.
+//  Created by Daniel Clelland on 7/08/20.
 //
 
 import Foundation
+import Alamofire
 
-internal class EventSourceParser {
+public class EventSourceSerializer: DataStreamSerializer {
     
-    private let delimiter: Data = "\n\n".data(using: .utf8)!
+    public static let doubleNewlineDelimiter = "\n\n".data(using: .utf8)!
+    
+    public let delimiter: Data
     
     private var buffer = Data()
-
-    internal func append(data: Data) -> [EventSourceMessage] {
+    
+    public init(delimiter: Data = doubleNewlineDelimiter) {
+        self.delimiter = delimiter
+    }
+    
+    public func serialize(_ data: Data) throws -> [EventSourceMessage] {
         buffer.append(data)
         return extractMessagesFromBuffer().compactMap(EventSourceMessage.init(parsing:))
     }
-    
-}
-
-extension EventSourceParser {
 
     private func extractMessagesFromBuffer() -> [String] {
         var messages = [String]()
