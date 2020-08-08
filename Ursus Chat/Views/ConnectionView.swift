@@ -8,11 +8,12 @@
 
 import SwiftUI
 
+#warning("TODO: Display this as a table view header")
+#warning("TODO: Say something like 'reconnect' in the button")
+
 struct ConnectionView: View {
     
     @EnvironmentObject var store: AppStore
-
-    #warning("TODO: Say something like 'reconnect' in the button")
     
     var body: some View {
         switch store.state.connection {

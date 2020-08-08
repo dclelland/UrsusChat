@@ -28,7 +28,6 @@ struct ChatListView: View {
     var body: some View {
         NavigationView {
             List {
-                #warning("TODO: Display this as a table view header")
                 ConnectionView()
                 ForEach(store.state.subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { (path, mailbox) in
                     NavigationLink(destination: ChatView(path: path), tag: path, selection: self.$selectedPath) {
