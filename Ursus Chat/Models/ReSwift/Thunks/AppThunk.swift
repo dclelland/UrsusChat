@@ -91,6 +91,8 @@ extension AppThunk {
             
             dispatch(ConnectionStartAction())
             
+            var hasSentConnectionSuccessAction: Bool = false
+            
             airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
             airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
             airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
@@ -101,8 +103,10 @@ extension AppThunk {
             airlock.connect().responseStream { stream in
                 switch stream.event {
                 case .stream:
-                    #warning("TODO: Don't fire `ConnectionSuccessAction` each time")
-                    dispatch(ConnectionSuccessAction())
+                    if hasSentConnectionSuccessAction == false {
+                        dispatch(ConnectionSuccessAction())
+                        hasSentConnectionSuccessAction = true
+                    }
                 case .complete(let completion):
                     print("STREAM COMPLETION>", completion)
                     if let error = completion.error {
