@@ -8,7 +8,6 @@
 
 import Foundation
 import ReSwift
-import ReSwiftThunk
 import UrsusAirlock
 
 protocol SubscriptionAction: Action {
@@ -262,28 +261,6 @@ struct SubscriptionRemoveLoadingMessagesAction: SubscriptionAction {
     
     func reduce(_ state: inout SubscriptionState) throws {
         state.loadingMessages[path] = nil
-    }
-    
-}
-
-struct SubscriptionErrorAction: AppAction {
-    
-    var error: Error
-    
-    func reduce(_ state: inout AppState) throws {
-        state.subscription.errors.append(error)
-    }
-    
-}
-
-struct SubscriptionDismissErrorAction: AppAction {
-    
-    func reduce(_ state: inout AppState) throws {
-        guard state.errors.isEmpty == false else {
-            return
-        }
-        
-        state.subscription.errors.removeLast()
     }
     
 }

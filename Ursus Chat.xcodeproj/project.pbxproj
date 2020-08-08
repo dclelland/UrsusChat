@@ -60,6 +60,9 @@
 		65CECE7724D2610B00D54D58 /* GroupStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7624D2610B00D54D58 /* GroupStoreApp.swift */; };
 		65CECE7924D2612400D54D58 /* GroupUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7824D2612400D54D58 /* GroupUpdate.swift */; };
 		65CECE7D24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */; };
+		65D7804F24DE951E001D7224 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7804E24DE951E001D7224 /* ConnectionState.swift */; };
+		65D7805124DE9560001D7224 /* ConnectionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7805024DE9560001D7224 /* ConnectionAction.swift */; };
+		65D7805324DE9811001D7224 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7805224DE9811001D7224 /* ConnectionView.swift */; };
 		65D95A4C249C541C0002AA4F /* SubscriptionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4B249C541C0002AA4F /* SubscriptionState.swift */; };
 		65D95A4F249C54480002AA4F /* SubscriptionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D95A4E249C54480002AA4F /* SubscriptionAction.swift */; };
 		65F81BD124C95BE600C9F927 /* NewGroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */; };
@@ -124,6 +127,9 @@
 		65CECE7624D2610B00D54D58 /* GroupStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStoreApp.swift; sourceTree = "<group>"; };
 		65CECE7824D2612400D54D58 /* GroupUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUpdate.swift; sourceTree = "<group>"; };
 		65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupUpdate+Extensions.swift"; sourceTree = "<group>"; };
+		65D7804E24DE951E001D7224 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		65D7805024DE9560001D7224 /* ConnectionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionAction.swift; sourceTree = "<group>"; };
+		65D7805224DE9811001D7224 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		65D95A4B249C541C0002AA4F /* SubscriptionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionState.swift; sourceTree = "<group>"; };
 		65D95A4E249C54480002AA4F /* SubscriptionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionAction.swift; sourceTree = "<group>"; };
 		65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupChatView.swift; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 				6587EF9024A3207500969E92 /* LoginView.swift */,
 				65861B0524A9A8EA00C63E07 /* ChatListView.swift */,
 				65375B6D24AC64A40008EC25 /* ChatListRow.swift */,
+				65D7805224DE9811001D7224 /* ConnectionView.swift */,
 				6560606824C697BB00565232 /* NewChatSheetView.swift */,
 				65F81BD024C95BE600C9F927 /* NewGroupChatView.swift */,
 				65F81BD224C95BF000C9F927 /* NewDirectMessageView.swift */,
@@ -327,6 +334,7 @@
 			children = (
 				65861B1024AB277500C63E07 /* AppState.swift */,
 				65375B7324AC672E0008EC25 /* SessionState.swift */,
+				65D7804E24DE951E001D7224 /* ConnectionState.swift */,
 				65D95A4B249C541C0002AA4F /* SubscriptionState.swift */,
 			);
 			path = State;
@@ -337,6 +345,7 @@
 			children = (
 				65861B1424AB283000C63E07 /* AppAction.swift */,
 				65861B1624AB283E00C63E07 /* SessionAction.swift */,
+				65D7805024DE9560001D7224 /* ConnectionAction.swift */,
 				65D95A4E249C54480002AA4F /* SubscriptionAction.swift */,
 			);
 			path = Actions;
@@ -511,10 +520,12 @@
 				6587EF8B24A30D6E00969E92 /* LoggerMiddleware.swift in Sources */,
 				655DB313249ACD2600A591B9 /* ContactViewApp.swift in Sources */,
 				652367A024D7AED600A853EB /* ChatDateIndicatorRow.swift in Sources */,
+				65D7804F24DE951E001D7224 /* ConnectionState.swift in Sources */,
 				65375B6E24AC64A40008EC25 /* ChatListRow.swift in Sources */,
 				6560606124C6928900565232 /* ModalView.swift in Sources */,
 				65CECE7724D2610B00D54D58 /* GroupStoreApp.swift in Sources */,
 				65861B1124AB277500C63E07 /* AppState.swift in Sources */,
+				65D7805324DE9811001D7224 /* ConnectionView.swift in Sources */,
 				6519485524B5747900AF3D44 /* MetadataUpdate+Extensions.swift in Sources */,
 				65D95A4F249C54480002AA4F /* SubscriptionAction.swift in Sources */,
 				6519484C24B3E5F300AF3D44 /* Keychain+Extensions.swift in Sources */,
@@ -531,6 +542,7 @@
 				6520F62C2498558700F3D56C /* ChatViewApp.swift in Sources */,
 				65F81BD324C95BF000C9F927 /* NewDirectMessageView.swift in Sources */,
 				6519484724B2EB5600AF3D44 /* MetadataUpdate.swift in Sources */,
+				65D7805124DE9560001D7224 /* ConnectionAction.swift in Sources */,
 				655DB31B249ADDA800A591B9 /* InviteStoreApp.swift in Sources */,
 				6560604B24C3DB8400565232 /* LetterTextView.swift in Sources */,
 				655DB315249ACD7E00A591B9 /* MetadataStoreApp.swift in Sources */,

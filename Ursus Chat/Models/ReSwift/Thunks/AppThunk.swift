@@ -89,6 +89,8 @@ extension AppThunk {
                 dispatch(SubscriptionEventAction(event: event))
             }
             
+            dispatch(ConnectionStartAction())
+            
             airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
             airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
             airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
@@ -97,8 +99,15 @@ extension AppThunk {
             airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler)
             airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler)
             airlock.connect().responseStream { stream in
-                if let error = stream.completion?.error {
-                    dispatch(SubscriptionErrorAction(error: error))
+                switch stream.event {
+                case .stream:
+                    #warning("TODO: Don't fire `ConnectionSuccessAction` each time")
+                    dispatch(ConnectionSuccessAction())
+                case .complete(let completion):
+                    print("STREAM COMPLETION>", completion)
+                    if let error = completion.error {
+                        dispatch(ConnectionFailureAction(error: error))
+                    }
                 }
             }
         }

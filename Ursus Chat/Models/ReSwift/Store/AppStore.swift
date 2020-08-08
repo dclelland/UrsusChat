@@ -41,6 +41,8 @@ let appReducer: Reducer<AppState> = { action, state in
             try action.reduce(&state)
         case let action as SessionAction:
             try action.reduce(&state.session)
+        case let action as ConnectionAction:
+            try action.reduce(&state.connection)
         case let action as SubscriptionAction:
             try action.reduce(&state.subscription)
         default:

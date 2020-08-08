@@ -12,6 +12,7 @@ import ReSwift
 struct AppState: StateType {
     
     var session: SessionState = SessionState()
+    var connection: ConnectionState = ConnectionState()
     var subscription: SubscriptionState = SubscriptionState()
     var errors: [Error] = []
     

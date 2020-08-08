@@ -27,9 +27,13 @@ struct ChatListView: View {
     
     var body: some View {
         NavigationView {
-            List(store.state.subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { (path, mailbox) in
-                NavigationLink(destination: ChatView(path: path), tag: path, selection: self.$selectedPath) {
-                    ChatListRow(path: path)
+            List {
+                #warning("TODO: Display this as a table view header")
+                ConnectionView()
+                ForEach(store.state.subscription.inbox.sorted(by: \.value.when).reversed(), id: \.key) { (path, mailbox) in
+                    NavigationLink(destination: ChatView(path: path), tag: path, selection: self.$selectedPath) {
+                        ChatListRow(path: path)
+                    }
                 }
             }
             .navigationBarTitle("Chats")
@@ -43,8 +47,8 @@ struct ChatListView: View {
                         title: Text(ship.description),
                         buttons: [
                             .default(Text("Open Landscape"), action: openLandscape),
-//                            .default(Text("Start Subscription"), action: startSubscription),
-//                            .default(Text("Stop Subscription"), action: stopSubscription),
+                            .default(Text("Start Subscription"), action: startSubscription),
+                            .default(Text("Stop Subscription"), action: stopSubscription),
                             .destructive(Text("Logout"), action: logout),
                             .cancel()
                         ]
@@ -109,21 +113,23 @@ extension ChatListView {
         UIApplication.shared.open(airlock.credentials.url)
     }
     
-//    func startSubscription() {
-//        guard case .authenticated(let airlock, let ship) = store.state.session else {
-//            return
-//        }
-//
-//        store.dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
-//    }
+    #warning("TODO: Remove these")
     
-//    func stopSubscription() {
-//        guard case .authenticated(let airlock, _) = store.state.session else {
-//            return
-//        }
-//
-//        store.dispatch(AppThunk.stopSubscription(airlock: airlock))
-//    }
+    func startSubscription() {
+        guard case .authenticated(let airlock, let ship) = store.state.session else {
+            return
+        }
+
+        store.dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
+    }
+    
+    func stopSubscription() {
+        guard case .authenticated(let airlock, _) = store.state.session else {
+            return
+        }
+
+        store.dispatch(AppThunk.stopSubscription(airlock: airlock))
+    }
     
     func logout() {
         guard case .authenticated(let airlock, _) = store.state.session else {
