@@ -195,6 +195,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             case .metadataUpdate(let update):
                 switch update {
                 case .initial(let initial):
+                    #warning("TODO: This action should be idempotent; but be careful, the responses for \"app\" and \"contacts\" come in as separate `.initial` updates")
                     for association in initial.values {
                         state.associations[association.appName, default: [:]][association.appPath] = association
                     }
