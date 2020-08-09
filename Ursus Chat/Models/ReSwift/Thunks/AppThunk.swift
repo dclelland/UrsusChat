@@ -73,9 +73,8 @@ extension AppThunk {
     
     static func stopSession(airlock: Airlock) -> AppThunk {
         return AppThunk { dispatch, getState in
-            dispatch(SessionLogoutAction())
-            dispatch(AppThunk.stopSubscription(airlock: airlock))
             dispatch(AppThunk.clearCredentials())
+            dispatch(AppDisconnectAction())
         }
     }
     
@@ -113,12 +112,6 @@ extension AppThunk {
                     }
                 }
             }
-        }
-    }
-    
-    static func stopSubscription(airlock: Airlock) -> AppThunk {
-        return AppThunk { dispatch, getState in
-            airlock.disconnect()
         }
     }
     

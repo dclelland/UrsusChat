@@ -18,7 +18,7 @@ protocol AppAction: Action {
 struct AppDisconnectAction: AppAction {
     
     func reduce(_ state: inout AppState) throws {
-        state.session = .unauthenticated
+        state = AppState()
     }
     
 }

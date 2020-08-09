@@ -43,11 +43,3 @@ struct SessionLoginFinishAction: SessionAction {
     }
     
 }
-
-struct SessionLogoutAction: SessionAction {
-    
-    func reduce(_ state: inout SessionState) throws {
-        state = .unauthenticated
-    }
-    
-}
