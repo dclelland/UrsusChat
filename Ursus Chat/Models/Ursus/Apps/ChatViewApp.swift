@@ -29,7 +29,7 @@ class ChatViewApp: AirlockApp {
         return airlock.session
             .request(url)
             .validate()
-            .responseDecodable(of: ChatViewApp.SubscribeResponse.self, decoder: airlock.decoder) { response in
+            .responseDecodable(of: ChatViewApp.SubscribeResponse.self, decoder: AirlockJSONDecoder()) { response in
                 handler(response.result)
             }
     }

@@ -7,9 +7,9 @@
 
 import Foundation
 
-internal class AirlockJSONEncoder: JSONEncoder {
+public class AirlockJSONEncoder: JSONEncoder {
     
-    override init() {
+    public override init() {
         super.init()
         self.dateEncodingStrategy = .integerMillisecondsSince1970
     }
