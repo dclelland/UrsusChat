@@ -9,7 +9,6 @@
 import SwiftUI
 
 #warning("TODO: Display this as a table view header")
-#warning("TODO: Say something like 'reconnect' in the button")
 
 struct ConnectionView: View {
     
@@ -26,15 +25,15 @@ struct ConnectionView: View {
                 Text("Reconnecting...")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-//                    .frame(maxWidth: .infinity, alignment: .center)
+                    .frame(maxWidth: .infinity, alignment: .center)
             )
-        case .disconnected(let error):
+        case .disconnected:
             return AnyView(
                 Button(action: reconnect) {
-                    Text("Disconnected: \(error.localizedDescription)")
+                    Text("Reconnect ↻")
                         .font(.subheadline)
                         .foregroundColor(.red)
-//                        .frame(maxWidth: .infinity, alignment: .center)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .buttonStyle(PlainButtonStyle())
             )
