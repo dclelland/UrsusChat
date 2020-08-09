@@ -13,21 +13,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    var store: AppStore = .shared
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else {
             return
         }
         
-        self.window = UIWindow(windowScene: windowScene)
-        self.window?.tintColor = UIColor(named: "Tint")
-        self.window?.rootViewController = UIHostingController(rootView: AppView().environmentObject(AppStore.shared))
-        self.window?.makeKeyAndVisible()
+        store.dispatch(AppThunk.getCredentials())
         
-        AppStore.shared.dispatch(AppThunk.getCredentials())
+        window = UIWindow(windowScene: windowScene)
+        window?.tintColor = UIColor(named: "Tint")
+        window?.rootViewController = UIHostingController(rootView: AppView().environmentObject(store))
+        window?.makeKeyAndVisible()
+    }
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        guard case .authenticated(let airlock, let ship) = store.state.session, case .disconnected = store.state.connection else {
+            return
+        }
+        
+        store.dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
-        AppStore.shared.dispatch(AppDisconnectAction())
+        store.dispatch(AppDisconnectAction())
     }
 
 }

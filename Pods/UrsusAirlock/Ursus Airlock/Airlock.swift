@@ -24,18 +24,19 @@ public class Airlock {
     private var pokeHandlers = [Int: (PokeEvent) -> Void]()
     private var subscribeHandlers = [Int: (SubscribeEvent<Data>) -> Void]()
     
+    public var session: Session
     public var credentials: AirlockCredentials
     
-    public var session: Session = .default
     public var encoder: JSONEncoder = AirlockJSONEncoder()
     public var decoder: JSONDecoder = AirlockJSONDecoder()
     
-    public init(credentials: AirlockCredentials) {
+    public init(session: Session = .default, credentials: AirlockCredentials) {
+        self.session = session
         self.credentials = credentials
     }
     
-    public convenience init(url: URL, code: Code) {
-        self.init(credentials: AirlockCredentials(url: url, code: code))
+    public convenience init(session: Session = .default, url: URL, code: Code) {
+        self.init(session: session, credentials: AirlockCredentials(url: url, code: code))
     }
     
     deinit {
