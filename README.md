@@ -10,7 +10,7 @@ Tasks are managed on the [UrsusChat kanban board](https://github.com/dclelland/U
 
 ## Installation
 
-1. Install Xcode (version 11.5 at time of writing)
+1. [Install Xcode](https://apps.apple.com/us/app/xcode/id497799835) (version 11.5 at time of writing)
 2. Open `Ursus Chat.xcworkspace`
 3. Build
 
