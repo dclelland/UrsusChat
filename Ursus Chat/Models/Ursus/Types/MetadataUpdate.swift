@@ -20,7 +20,7 @@ enum MetadataUpdate: Decodable {
         
         case initial = "associations"
         case add
-        case update
+        case update = "update-metadata"
         case remove
         
     }
