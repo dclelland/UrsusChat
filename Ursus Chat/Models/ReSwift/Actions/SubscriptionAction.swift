@@ -109,9 +109,9 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     for ship in removeMembers.ships {
                         state.groups[removeMembers.resource.path]?.members.remove(ship)
                     }
-                case .addTag(let addTag):
+                case .addTag:
                     break
-                case .removeTag(let removeTag):
+                case .removeTag:
                     break
                 case .changePolicy(let changePolicy):
                     switch (state.groups[changePolicy.resource.path]?.policy, changePolicy.diff) {
@@ -140,7 +140,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     }
                 case .removeGroup(let removeGroup):
                     state.groups[removeGroup.resource.path] = nil
-                case .expose(let expose):
+                case .expose:
                     break
                 case .initialGroup(let initialGroup):
                     state.groups[initialGroup.resource.path] = initialGroup.group
@@ -185,7 +185,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     case .avatar(let avatar):
                         state.contacts[edit.path]?[edit.ship]?.avatar = avatar
                     }
-                case .contacts(let contacts):
+                case .contacts:
                     break
                 }
             }
