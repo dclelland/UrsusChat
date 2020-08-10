@@ -97,8 +97,7 @@ extension AppThunk {
             airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
             airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
             airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
-            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "chat", handler: handler)
-            airlock.metadataStore(ship: ship).appNameSubscribeRequest(app: "contacts", handler: handler)
+            airlock.metadataStore(ship: ship).allSubscribeRequest(handler: handler)
             airlock.connect().responseStream { stream in
                 switch stream.event {
                 case .stream:

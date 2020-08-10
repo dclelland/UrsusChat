@@ -15,6 +15,14 @@ extension Associations {
         return self["chat", default: [:]]
     }
     
+    var publish: AppAssociations {
+        return self["publish", default: [:]]
+    }
+    
+    var link: AppAssociations {
+        return self["link", default: [:]]
+    }
+    
     var contacts: AppAssociations {
         return self["contacts", default: [:]]
     }

@@ -37,7 +37,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                 case .initial(let initial):
                     state.inbox = initial
                 case .create(let create):
-                    state.inbox[create] = Mailbox(
+                    state.inbox[create.path] = Mailbox(
                         config: MailboxConfig(
                             length: 0,
                             read: 0
@@ -45,7 +45,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                         envelopes: []
                     )
                 case .delete(let delete):
-                    state.inbox[delete] = nil
+                    state.inbox[delete.path] = nil
                 case .message(let message):
                     if let mailbox = state.inbox[message.path] {
                         state.inbox[message.path]?.envelopes = [message.envelope] + mailbox.envelopes
@@ -194,7 +194,6 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             case .metadataUpdate(let update):
                 switch update {
                 case .initial(let initial):
-                    #warning("TODO: This action should be idempotent; but be careful, the responses for \"app\" and \"contacts\" come in as separate `.initial` updates")
                     for association in initial.values {
                         state.associations[association.appName, default: [:]][association.appPath] = association
                     }
