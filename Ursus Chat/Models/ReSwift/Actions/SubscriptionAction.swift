@@ -194,6 +194,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             case .metadataUpdate(let update):
                 switch update {
                 case .initial(let initial):
+                    state.associations = [:]
                     for association in initial.values {
                         state.associations[association.appName, default: [:]][association.appPath] = association
                     }
