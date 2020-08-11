@@ -18,7 +18,7 @@ At the interface level, the project is at an "MVP" stage - a user can sign in an
 
 I've opted to develop the interface layer in SwiftUI, as it's much faster for me to build interfaces in SwiftUI than UIKit.
 
-Unfortunately this decision may have been a little premature; as it stands SwiftUI implementation in the iOS 13 SDK has a few missing features and showstopper bugs - which are luckily resolved in the iOS 14 beta. So rather than trying to juggle different iOS versions, for now I'll just hang fire until iOS 14 drops, likely in September 2020 (about a month away at time of writing).
+Unfortunately this decision may have been a little premature; as it stands SwiftUI implementation in the iOS 13 SDK has a few missing features and showstopper bugs - which are luckily resolved in the iOS 14 beta. So rather than trying to juggle different iOS versions, for now I'll just hang fire until iOS 14 drops, likely in September 2020.
 
 #### TestFlight
 
