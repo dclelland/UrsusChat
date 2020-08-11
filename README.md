@@ -34,9 +34,9 @@ Tasks are managed on the [UrsusChat kanban board](https://github.com/dclelland/U
 2. Open `Ursus Chat.xcworkspace`
 3. Build
 
-You may possibly need to: Open Xcode, navigate to *Targets → Signing & Capabilities*, select your development team, and change the bundle identifier.
+You may possibly need to: Open Xcode, navigate to *Targets* → *Signing & Capabilities*, select your development team, and change the bundle identifier.
 
-In addition to this, you will likely also need to open *Settings → General → Device Management* on your device, and trust the certificate used to code sign your app.
+In addition to this, you will likely also need to open *Settings* → *General* → *Device Management* on your device, and trust the certificate used to code sign your app.
 
 ## Dependencies:
 
