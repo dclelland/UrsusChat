@@ -7,9 +7,18 @@
 
 import Foundation
 
-internal enum AirlockLoginResponseSerializerError: Error {
+internal enum AirlockLoginResponseSerializerError: LocalizedError {
     
     case missingAuthenticationHeader
     case invalidAuthenticationHeader(String)
+    
+    public var errorDescription: String? {
+        switch self {
+        case .missingAuthenticationHeader:
+            return "Login response missing authentication header"
+        case .invalidAuthenticationHeader:
+            return "Login response returned invalid authentication header"
+        }
+    }
     
 }

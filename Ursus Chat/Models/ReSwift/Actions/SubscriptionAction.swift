@@ -16,9 +16,16 @@ protocol SubscriptionAction: Action {
     
 }
 
-enum SubscriptionActionError: Error {
+enum SubscriptionActionError: LocalizedError {
     
     case unhandledEventUpdate(Any)
+    
+    var errorDescription: String? {
+        switch self {
+        case .unhandledEventUpdate(let value):
+            return "Unhandled event update: \(type(of: value))"
+        }
+    }
     
 }
 

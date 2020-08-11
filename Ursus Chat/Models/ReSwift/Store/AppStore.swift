@@ -27,9 +27,16 @@ class AppStore: ObservableStore<AppState> {
     
 }
 
-enum AppStoreError: Error {
+enum AppStoreError: LocalizedError {
     
     case unhandledAction(Action)
+    
+    var errorDescription: String? {
+        switch self {
+        case .unhandledAction(let action):
+            return "Unhandled action: \(type(of: action))"
+        }
+    }
     
 }
 

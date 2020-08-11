@@ -7,9 +7,16 @@
 
 import Foundation
 
-public enum PokeError: Error {
+public enum PokeError: LocalizedError {
     
     case pokeFailure(String)
+    
+    public var errorDescription: String? {
+        switch self {
+        case .pokeFailure(let string):
+            return "Poke failure: \(string)"
+        }
+    }
     
 }
 

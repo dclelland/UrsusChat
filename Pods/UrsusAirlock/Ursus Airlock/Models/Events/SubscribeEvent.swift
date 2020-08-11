@@ -7,9 +7,16 @@
 
 import Foundation
 
-public enum SubscribeError: Error {
+public enum SubscribeError: LocalizedError {
     
     case subscribeFailure(String)
+    
+    public var errorDescription: String? {
+        switch self {
+        case .subscribeFailure(let string):
+            return "Subscribe failure: \(string)"
+        }
+    }
     
 }
 

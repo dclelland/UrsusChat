@@ -21,14 +21,14 @@ PODS:
     - ReSwift (~> 5.0)
   - SwiftDate (6.1.0)
   - SwiftSVG (2.3.2)
-  - UrsusAirlock (1.8.2):
+  - UrsusAirlock (1.8.3):
     - Alamofire (~> 5.2)
     - AlamofireEventSource (~> 1.2)
     - UrsusAtom (~> 1.2)
-  - UrsusAtom (1.2.2):
+  - UrsusAtom (1.2.3):
     - BigInt (~> 5.0)
-    - UrsusAtom/PhoneticBase (= 1.2.2)
-  - UrsusAtom/PhoneticBase (1.2.2):
+    - UrsusAtom/PhoneticBase (= 1.2.3)
+  - UrsusAtom/PhoneticBase (1.2.3):
     - BigInt (~> 5.0)
     - MurmurHash-Swift (~> 1.0)
     - Parity (~> 2.3)
@@ -46,8 +46,8 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - UrsusAirlock (~> 1.8.2)
-  - UrsusAtom (~> 1.2.2)
+  - UrsusAirlock (~> 1.8.3)
+  - UrsusAtom (~> 1.2.3)
   - UrsusSigil (~> 1.2.2)
 
 SPEC REPOS:
@@ -87,10 +87,10 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
-  UrsusAirlock: 64899319ddde0fe8ee661d036452ae2164f16a18
-  UrsusAtom: 0bfccff234a827885c40a115609a63281da47459
+  UrsusAirlock: 6a1ffa50a78d4f19e8392bf8d7aa7ff1bbcc2162
+  UrsusAtom: a9cb6086d359c74ac81b91ca230feef56c8cd1c8
   UrsusSigil: 5355932dd236465d7f590cdc400f1f375795c906
 
-PODFILE CHECKSUM: fb52b3c7bdab9ebe572921b7f593f3a891da6d3c
+PODFILE CHECKSUM: b8ae90e729c22bd4c2a3dc357aa834c93c1f3280
 
 COCOAPODS: 1.8.3

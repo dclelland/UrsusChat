@@ -39,6 +39,8 @@ Things that would make this codebase nicer:
 
 - [ ] Should the new `%logout` endpoint clear the `urbauth` cookie?
 - [ ] Pass IDs back through to the event handlers so unsubscribe requests can be made.
+- [ ] Event source request should initially `.put` to create a new channel before `.get` to retrieve the existing channel; have tried this but `%eyre` returns a 400 error code.
+- [ ] Login and channel requests could use state enums to maintain `LoginState` and `ChannelState`; if user is not authenticated or the channel is not connected, then requests should be chained together.
 - [ ] Test `UnsubscribeRequest`, `DeleteRequest` properly.
 - [ ] Better documentation/examples.
 
