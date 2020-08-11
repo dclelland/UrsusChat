@@ -12,17 +12,17 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 #### 11 August 2020
 
-The network level components are complete - the airlock library is implemented, with authentication, pokes and subscribes working smoothly. At the app level, I use a redux/unidirectional data flow pattern, and types and reducers for managing the client-side store are complete.
+The network level components are complete - the airlock library is implemented, with authentication, pokes and subscribes working smoothly. Channel disconnection/reconnection is handled gracefully. At the app level, I use a redux/unidirectional data flow pattern, and types and reducers for managing the client-side store are complete.
 
 At the interface level, the project is at an "MVP" stage - a user can sign in and post messages, but it's still rough around the edges, and there's a long laundry list of features that need to be built in order to get the project "feature complete".
 
 I've opted to develop the interface layer in SwiftUI, as it's much faster for me to build interfaces in SwiftUI than UIKit.
 
-Unfortunately this decision may have been a little premature; as it stands SwiftUI implementation in the iOS 13 SDK has a few showstopper bugs and missing feature - which are luckily resolved in the iOS 14 beta. So rather than trying to juggle different iOS versions, for now I'm taking a break until iOS 14 drops, likely in September 2020 (about a month away at time of writing).
+Unfortunately this decision may have been a little premature; as it stands SwiftUI implementation in the iOS 13 SDK has a few missing features and showstopper bugs - which are luckily resolved in the iOS 14 beta. So rather than trying to juggle different iOS versions, for now I'll just hang fire until iOS 14 drops, likely in September 2020.
 
 #### TestFlight
 
-In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite. Unfortunately you will need to supply your Apple ID email address - if uncomfortable with that, perhaps you can install Xcode in order to build the project.
+In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite, and join the `~lanrus-rinfep/ursus` group for discussion. Unfortunately you will need to supply your Apple ID email address - if uncomfortable with that, perhaps you can install Xcode in order to build the project.
 
 ## Todo list
 
