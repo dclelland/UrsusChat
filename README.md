@@ -6,7 +6,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Screenshots
 
-![Login view](/Screenshots/IMG_8933.PNG?raw=true) ![Chat list view](/Screenshots/IMG_8933.PNG?raw=true) ![Chat view](/Screenshots/IMG_8933.PNG?raw=true)
+![Login view](/Screenshots/IMG_8933.PNG?raw=true | width=120) ![Chat list view](/Screenshots/IMG_8934.PNG?raw=true | width=120) ![Chat view](/Screenshots/IMG_8935.PNG?raw=true | width=120)
 
 ### Current status
 
