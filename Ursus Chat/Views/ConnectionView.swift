@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-#warning("TODO: Display this as a table view header")
-
 struct ConnectionView: View {
     
     @EnvironmentObject var store: AppStore
