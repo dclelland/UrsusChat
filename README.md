@@ -22,7 +22,7 @@ Unfortunately this decision may have been a little premature; as it stands Swift
 
 #### TestFlight
 
-In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite. Unfortunately you will need to supply your Apple ID email address - if uncomfortable with that, perhaps you can install Xcode in order to build the project.
+In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite, and join the `~lanrus-rinfep/ursus` group for discussion. Unfortunately you will need to supply your Apple ID email address - if uncomfortable with that, perhaps you can install Xcode in order to build the project.
 
 ## Todo list
 
