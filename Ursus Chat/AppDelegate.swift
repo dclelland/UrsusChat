@@ -10,7 +10,6 @@ import UIKit
 import AlamofireLogger
 import AlamofireNetworkActivityIndicator
 import SwiftDate
-import UrsusAtom
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
