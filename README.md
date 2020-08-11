@@ -4,7 +4,13 @@ An Urbit chat application for iOS.
 
 Work in progress; first project using my [UrsusAirlock](https://github.com/dclelland/UrsusAirlock) HTTP/`%eyre` client library.
 
-### Current status (as of 11 August 2020)
+### Screenshots
+
+![Login view](/Screenshots/IMG_8933.PNG?raw=true) ![Chat list view](/Screenshots/IMG_8933.PNG?raw=true) ![Chat view](/Screenshots/IMG_8933.PNG?raw=true)
+
+### Current status
+
+**11 August 2020**
 
 The network level components are complete - the airlock library is implemented, with authentication, pokes and subscribes working smoothly. At the app level, I use a redux/unidirectional data flow pattern, and types and reducers for managing the client-side store are complete.
 
@@ -14,7 +20,9 @@ I've opted to develop the interface layer in SwiftUI, as it's much faster for me
 
 Unfortunately this decision may have been a little premature; as it stands SwiftUI implementation in the iOS 13 SDK has a few showstopper bugs and missing feature - which are luckily resolved in the iOS 14 beta. So rather than trying to juggle different iOS versions, for now I'm taking a break until iOS 14 drops, likely in September 2020 (about a month away at time of writing).
 
-In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to contact me (details in profile) for an invite.
+### TestFlight
+
+In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite.  
 
 ## Todo list
 
