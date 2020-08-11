@@ -107,6 +107,7 @@ struct ChatView: View {
                 tableView.keyboardDismissMode = .onDrag
             }
             Divider()
+                .edgesIgnoringSafeArea(.horizontal)
             HStack(alignment: .top) {
                 ZStack(alignment: .topLeading) {
                     if message.isEmpty {
