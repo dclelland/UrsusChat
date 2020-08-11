@@ -6,7 +6,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Screenshots
 
-<img src="/Screenshots/IMG_8933.PNG" width="120"><img src="/Screenshots/IMG_8934.PNG" width="120"><img src="/Screenshots/IMG_8935.PNG" width="120">
+<img src="/Screenshots/IMG_8933.PNG" width="200"> <img src="/Screenshots/IMG_8934.PNG" width="200"> <img src="/Screenshots/IMG_8935.PNG" width="200">
 
 ### Current status
 
