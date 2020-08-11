@@ -12,7 +12,7 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 #### 11 August 2020
 
-The network level components are complete - the airlock library is implemented, with authentication, pokes and subscribes working smoothly. At the app level, I use a redux/unidirectional data flow pattern, and types and reducers for managing the client-side store are complete.
+The network level components are complete - the airlock library is implemented, with authentication, pokes and subscribes working smoothly. Channel disconnection/reconnection is handled gracefully. At the app level, I use a redux/unidirectional data flow pattern, and types and reducers for managing the client-side store are complete.
 
 At the interface level, the project is at an "MVP" stage - a user can sign in and post messages, but it's still rough around the edges, and there's a long laundry list of features that need to be built in order to get the project "feature complete".
 
