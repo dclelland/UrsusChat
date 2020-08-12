@@ -65,7 +65,7 @@ enum LoginViewError: LocalizedError {
         case .invalidURL(let url):
             return "Invalid URL: \"\(url)\""
         case .invalidCode:
-            return "Invalid Access Key"
+            return "Invalid access key"
         }
     }
     
