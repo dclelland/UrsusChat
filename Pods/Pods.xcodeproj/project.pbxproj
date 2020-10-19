@@ -3247,7 +3247,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KeyboardObserving/KeyboardObserving-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KeyboardObserving/KeyboardObserving-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3282,7 +3281,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AlamofireLogger/AlamofireLogger-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AlamofireLogger/AlamofireLogger-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3318,7 +3316,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UrsusSigil/UrsusSigil-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UrsusSigil/UrsusSigil-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3353,7 +3350,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3388,7 +3384,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KeychainAccess/KeychainAccess-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KeychainAccess/KeychainAccess-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3422,7 +3417,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Parity/Parity-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Parity/Parity-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3457,7 +3451,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AlamofireEventSource/AlamofireEventSource-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AlamofireEventSource/AlamofireEventSource-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3492,7 +3485,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftSVG/SwiftSVG-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftSVG/SwiftSVG-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3527,7 +3519,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AlamofireEventSource/AlamofireEventSource-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AlamofireEventSource/AlamofireEventSource-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3562,7 +3553,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UrsusSigil/UrsusSigil-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UrsusSigil/UrsusSigil-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3597,7 +3587,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReSwiftThunk/ReSwiftThunk-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReSwiftThunk/ReSwiftThunk-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3633,7 +3622,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3668,7 +3656,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UrsusAirlock/UrsusAirlock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UrsusAirlock/UrsusAirlock-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3702,7 +3689,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Parity/Parity-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Parity/Parity-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3737,7 +3723,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftSVG/SwiftSVG-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftSVG/SwiftSVG-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3772,7 +3757,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BigInt/BigInt-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BigInt/BigInt-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3808,7 +3792,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KeyboardObserving/KeyboardObserving-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KeyboardObserving/KeyboardObserving-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3843,7 +3826,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftDate/SwiftDate-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftDate/SwiftDate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3878,7 +3860,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BigInt/BigInt-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BigInt/BigInt-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3913,7 +3894,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MurmurHash-Swift/MurmurHash-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MurmurHash-Swift/MurmurHash-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3948,7 +3928,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReSwift/ReSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3983,7 +3962,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/NonEmpty/NonEmpty-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/NonEmpty/NonEmpty-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4019,7 +3997,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4054,7 +4031,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UrsusAtom/UrsusAtom-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UrsusAtom/UrsusAtom-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4088,7 +4064,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KeychainAccess/KeychainAccess-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KeychainAccess/KeychainAccess-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4123,7 +4098,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReSwift/ReSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4158,7 +4132,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4196,7 +4169,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4232,7 +4204,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AlamofireLogger/AlamofireLogger-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AlamofireLogger/AlamofireLogger-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4267,7 +4238,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MurmurHash-Swift/MurmurHash-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MurmurHash-Swift/MurmurHash-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4302,7 +4272,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UrsusAirlock/UrsusAirlock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UrsusAirlock/UrsusAirlock-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4338,7 +4307,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4373,7 +4341,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/NonEmpty/NonEmpty-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/NonEmpty/NonEmpty-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4408,7 +4375,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Ursus Chat/Pods-Ursus Chat-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4445,7 +4411,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UrsusAtom/UrsusAtom-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UrsusAtom/UrsusAtom-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4541,7 +4506,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReSwiftThunk/ReSwiftThunk-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReSwiftThunk/ReSwiftThunk-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4576,7 +4540,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4675,7 +4638,6 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftDate/SwiftDate-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftDate/SwiftDate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
