@@ -1,16 +1,16 @@
 PODS:
-  - Alamofire (5.2.2)
+  - Alamofire (5.3.0)
   - AlamofireEventSource (1.2.0):
     - Alamofire (~> 5.0)
   - AlamofireLogger (1.0.1):
     - Alamofire (~> 5.0)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
-  - BigInt (5.0.0)
+  - BigInt (5.2.0)
   - Introspect (0.1.0)
   - KeyboardObserving (0.3.0)
-  - KeychainAccess (4.2.0)
-  - MurmurHash-Swift (1.0.13)
+  - KeychainAccess (4.2.1)
+  - MurmurHash-Swift (1.1.0)
   - NonEmpty (0.2.2)
   - Parity (2.3.0)
   - ReSwift (5.0.0)
@@ -19,7 +19,7 @@ PODS:
     - ReSwiftThunk/Core (= 1.2.0)
   - ReSwiftThunk/Core (1.2.0):
     - ReSwift (~> 5.0)
-  - SwiftDate (6.1.0)
+  - SwiftDate (6.2.0)
   - SwiftSVG (2.3.2)
   - UrsusAirlock (1.8.3):
     - Alamofire (~> 5.2)
@@ -46,9 +46,9 @@ DEPENDENCIES:
   - ReSwift (~> 5.0)
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
-  - UrsusAirlock (~> 1.8.3)
-  - UrsusAtom (~> 1.2.3)
-  - UrsusSigil (~> 1.2.2)
+  - UrsusAirlock (from `../UrsusAirlock`)
+  - UrsusAtom (from `../UrsusAtom`)
+  - UrsusSigil (from `../UrsusSigil`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -67,30 +67,35 @@ SPEC REPOS:
     - ReSwiftThunk
     - SwiftDate
     - SwiftSVG
-    - UrsusAirlock
-    - UrsusAtom
-    - UrsusSigil
+
+EXTERNAL SOURCES:
+  UrsusAirlock:
+    :path: "../UrsusAirlock"
+  UrsusAtom:
+    :path: "../UrsusAtom"
+  UrsusSigil:
+    :path: "../UrsusSigil"
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   AlamofireEventSource: 45a2dc28bab5e7b5cd5cffc79f36e943673c4eb1
   AlamofireLogger: 7f4bde032340dad1f6b50c97ef3e6a3acf24e708
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
-  BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
+  BigInt: f668a80089607f521586bbe29513d708491ef2f7
   Introspect: ad32f2b7b9e7ac2c008b9dfec3d5325fbd3660fa
   KeyboardObserving: 0e3089bfd76cd10cd49f28532450e70b16c239c3
-  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
-  MurmurHash-Swift: ea96df4ff29458af4e4b74e407992ff77b731ecc
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  MurmurHash-Swift: 66f4ad692f9bf23abb611c7142192b6ed2b09917
   NonEmpty: efbc7019959feceee98ac2fc0e47f3ad24f900f0
   Parity: d2a2617bf13b982f62a89a6864207dda83f5f0f2
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
-  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
   UrsusAirlock: 6a1ffa50a78d4f19e8392bf8d7aa7ff1bbcc2162
   UrsusAtom: a9cb6086d359c74ac81b91ca230feef56c8cd1c8
   UrsusSigil: 5355932dd236465d7f590cdc400f1f375795c906
 
-PODFILE CHECKSUM: 59d6b3351358a0d5697865e3ac081cb3f9cd6e95
+PODFILE CHECKSUM: dbab066ffd34086711b1c17543d76d5976edf9eb
 
 COCOAPODS: 1.9.3

@@ -9,5 +9,4 @@
 import Foundation
 
 public struct MurmurHash3 {
-	
 }

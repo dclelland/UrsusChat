@@ -12,8 +12,6 @@
 
 **MurmurHash** framework in Swift.  
 A framework includes MurmurHash3's x86_32/x86_128/x64_128 functions.  
-  
-[Documentation](https://daisuke-t-jp.github.io/MurmurHash-Swift/)
 
 
 # Requirements
@@ -44,19 +42,18 @@ import PackageDescription
 
 let package = Package(
     name: "YOUR_PACKAGE_NAME",
-    targets: [],
     dependencies: [
         // Swift 4.2
         .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", .exact("1.0.11"))
-        
+    
         // Swift 5.0
         .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", from: "1.0.12")
-    ]
+    ],
     targets: [
         .target(
             name: "YOUR_TARGET_NAME",
             dependencies: ["MurmurHash-Swift"]),
-	]
+    ]
 )
 ```
 
