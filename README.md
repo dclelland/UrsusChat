@@ -10,15 +10,15 @@ Work in progress; first project using my [UrsusAirlock](https://github.com/dclel
 
 ### Current status
 
-#### 11 August 2020
+#### 23 October 2020
+
+Am currently spinning this project back up after a two-month break.
 
 The network level components are complete - the airlock library is implemented, with authentication, pokes and subscribes working smoothly. Channel disconnection/reconnection is handled gracefully. At the app level, I use a redux/unidirectional data flow pattern, and types and reducers for managing the client-side store are complete.
 
-At the interface level, the project is at an "MVP" stage - a user can sign in and post messages, but it's still rough around the edges, and there's a long laundry list of features that need to be built in order to get the project "feature complete".
+At the interface level, the project is at an "MVP" stage - a user can sign in and post messages, but it's still rough around the edges, and there's a long laundry list of features that need to be built in order to get the project "feature complete". Top priority is getting a graph-store adaptor working in Ursus Airlock.
 
 I've opted to develop the interface layer in SwiftUI, as it's much faster for me to build interfaces in SwiftUI than UIKit.
-
-Unfortunately this decision may have been a little premature; as it stands SwiftUI implementation in the iOS 13 SDK has a few missing features and showstopper bugs - which are luckily resolved in the iOS 14 beta. So rather than trying to juggle different iOS versions, for now I'll just hang fire until iOS 14 drops, likely in September 2020.
 
 #### TestFlight
 
