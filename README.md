@@ -22,7 +22,7 @@ I've opted to develop the interface layer in SwiftUI, as it's much faster for me
 
 #### TestFlight
 
-In the meantime I'm running a TestFlight with an iOS 13-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite, and join the `~lanrus-rinfep/ursus` group for discussion. ~~Unfortunately you will need to supply your Apple ID email address - if uncomfortable with that, perhaps you can install Xcode in order to build the project.~~ Update: Can confirm that installing via the invite link should not reveal your identity to me.
+I'm running a TestFlight with an iOS 14-compatible build - feel free to DM me at `~lanrus-rinfep` for an invite, and join the `~lanrus-rinfep/ursus` group for discussion. ~~Unfortunately you will need to supply your Apple ID email address - if uncomfortable with that, perhaps you can install Xcode in order to build the project.~~ Update: Can confirm that installing via the invite link should not reveal your identity to me.
 
 ## Todo list
 
