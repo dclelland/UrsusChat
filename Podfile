@@ -8,7 +8,7 @@ development_pods = true
 target 'Ursus Chat' do
   
     unless development_pods
-        pod 'UrsusAirlock', '~> 1.8.3'
+        pod 'UrsusAirlock', '~> 1.9.0'
         pod 'UrsusAtom', '~> 1.2.3'
         pod 'UrsusSigil', '~> 1.2.2'
     else
@@ -17,7 +17,6 @@ target 'Ursus Chat' do
         pod 'UrsusSigil', path: '../UrsusSigil'
     end
     
-    pod 'AlamofireNetworkActivityIndicator', '~> 3.1'
     pod 'AlamofireLogger', '~> 1.0'
     pod 'Introspect', '~> 0.1'
     pod 'KeyboardObserving', '~> 0.3'
