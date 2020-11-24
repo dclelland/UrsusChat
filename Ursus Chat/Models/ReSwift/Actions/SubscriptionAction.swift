@@ -213,6 +213,9 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     state.associations[remove.appName]?[remove.appPath] = nil
                 }
             }
+        case .update(.success(let value as GraphStoreApp.SubscribeResponse)):
+            #warning("TODO: Finish graph store reducer")
+            break
         case .update(.success(let value)):
             throw SubscriptionActionError.unhandledEventUpdate(value)
         case .update(.failure(let error)):

@@ -20,6 +20,8 @@ extension Airlock {
 
 class GraphHookApp: AirlockApp {
     
+    #warning("TODO: Finish GraphHookApp")
+    
 //    private hookAction(ship: Patp, action: any): Promise<any> {
 //      return this.action('graph-push-hook', 'graph-update', action);
 //    }

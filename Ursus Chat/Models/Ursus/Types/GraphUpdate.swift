@@ -49,21 +49,31 @@ enum GraphUpdate: Decodable {
 
 struct GraphUpdateKeys: Decodable {
     
+    #warning("TODO: Finish GraphUpdateKeys")
+    
 }
 
 struct GraphUpdateAddGraph: Decodable {
+    
+    #warning("TODO: Finish GraphUpdateAddGraph")
     
 }
 
 struct GraphUpdateRemoveGraph: Decodable {
     
+    #warning("TODO: Finish GraphUpdateRemoveGraph")
+    
 }
 
 struct GraphUpdateAddNodes: Decodable {
     
+    #warning("TODO: Finish GraphUpdateAddNodes")
+    
 }
 
 struct GraphUpdateRemoveNodes: Decodable {
+    
+    #warning("TODO: Finish GraphUpdateRemoveNodes")
     
 }
 

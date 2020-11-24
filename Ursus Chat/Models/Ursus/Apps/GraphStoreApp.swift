@@ -24,6 +24,8 @@ class GraphStoreApp: AirlockApp {
         return subscribeRequest(path: "/keys", handler: handler)
     }
     
+    #warning("TODO: Finish GraphStoreApp")
+    
 //    private storeAction(action: any): Promise<any> {
 //      return this.action('graph-store', 'graph-update', action)
 //    }

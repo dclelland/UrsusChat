@@ -20,6 +20,8 @@ extension Airlock {
 
 class GraphViewApp: AirlockApp {
     
+    #warning("TODO: Finish GraphViewApp")
+    
 //    private viewAction(threadName: string, action: any) {
 //      return this.spider('graph-view-action', 'json', threadName, action);
 //    }
