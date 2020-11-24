@@ -51,7 +51,12 @@ typealias GraphUpdateKeys = [Resource]
 
 struct GraphUpdateAddGraph: Decodable {
     
-    #warning("TODO: Finish GraphUpdateAddGraph")
+    #warning("TODO: Finish GraphUpdateAddGraph; review `graph` type")
+    
+    var graph: [Graph]
+    var resource: Resource
+    var mark: Mark
+    var overwrite: Bool
     
 }
 
@@ -187,7 +192,7 @@ struct GraphNode: Decodable {
     
 }
 
-#warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts; also see: https://github.com/lukaskubanek/OrderedDictionary")
+#warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts; also see: https://github.com/lukaskubanek/OrderedDictionary; perhaps add a basic atom (`@`) type to UrsusAtom")
 
 typealias Graph = [Int: GraphNode]
 
