@@ -184,7 +184,7 @@ struct GraphNode: Decodable {
     
 }
 
-#warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts")
+#warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts; also see: https://github.com/lukaskubanek/OrderedDictionary")
 
 typealias Graph = [Int: GraphNode]
 
