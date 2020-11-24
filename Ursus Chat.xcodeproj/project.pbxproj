@@ -57,6 +57,7 @@
 		6587EF9124A3207500969E92 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587EF9024A3207500969E92 /* LoginView.swift */; };
 		65A8726424C2A57300650EBA /* SigilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8726324C2A57200650EBA /* SigilView.swift */; };
 		65ACC46F24B804A40014E2AE /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ACC46E24B804A40014E2AE /* LetterView.swift */; };
+		65B463B025675BD6007CC799 /* GraphUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B463AF25675BD6007CC799 /* GraphUpdate.swift */; };
 		65CECE7724D2610B00D54D58 /* GroupStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7624D2610B00D54D58 /* GroupStoreApp.swift */; };
 		65CECE7924D2612400D54D58 /* GroupUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7824D2612400D54D58 /* GroupUpdate.swift */; };
 		65CECE7D24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */; };
@@ -123,6 +124,7 @@
 		6587EF9024A3207500969E92 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		65A8726324C2A57200650EBA /* SigilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigilView.swift; sourceTree = "<group>"; };
 		65ACC46E24B804A40014E2AE /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
+		65B463AF25675BD6007CC799 /* GraphUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUpdate.swift; sourceTree = "<group>"; };
 		65CECE7624D2610B00D54D58 /* GroupStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStoreApp.swift; sourceTree = "<group>"; };
 		65CECE7824D2612400D54D58 /* GroupUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUpdate.swift; sourceTree = "<group>"; };
 		65CECE7C24D3C3AB00D54D58 /* GroupUpdate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupUpdate+Extensions.swift"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				65D95A4D249C543D0002AA4F /* ReSwift */,
+				65D96B2B256C8A5B0000D5AF /* Graph */,
 				6520F62A2498557600F3D56C /* Ursus */,
 			);
 			path = Models;
@@ -361,6 +364,14 @@
 				65861B0B24AB270100C63E07 /* Middleware */,
 			);
 			path = ReSwift;
+			sourceTree = "<group>";
+		};
+		65D96B2B256C8A5B0000D5AF /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				65B463AF25675BD6007CC799 /* GraphUpdate.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		BF3C9ACEDEE7879AF0724A7A /* Frameworks */ = {
@@ -503,6 +514,7 @@
 				6520F60224977BFE00F3D56C /* AppDelegate.swift in Sources */,
 				6519484124B2DD3700AF3D44 /* InviteUpdate.swift in Sources */,
 				6520F60424977BFE00F3D56C /* SceneDelegate.swift in Sources */,
+				65B463B025675BD6007CC799 /* GraphUpdate.swift in Sources */,
 				65375B7024AC64E10008EC25 /* ChatView.swift in Sources */,
 				65ACC46F24B804A40014E2AE /* LetterView.swift in Sources */,
 				65861B1524AB283000C63E07 /* AppAction.swift in Sources */,
