@@ -19,6 +19,9 @@ struct SubscriptionState: StateType {
     var contacts: Rolodex = [:]
     var associations: Associations = [:]
     
+    var graphs: Graphs = [:]
+    var graphKeys: Set<String> = []
+    
     var pendingMessages: [Path: [Envelope]] = [:]
     var loadingMessages: [Path: Bool] = [:]
     
