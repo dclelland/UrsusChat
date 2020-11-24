@@ -144,13 +144,6 @@ struct Group: Decodable {
     
 }
 
-struct Resource: Decodable {
-    
-    var name: String
-    var ship: Ship
-    
-}
-
 #warning("TODO: Fix this type; swap [String: TaggedShips] for [Tag: TaggedShips]; it also looks like TaggedShips can be an array *or* dictionary")
 
 typealias Tags = [String: TaggedShips]

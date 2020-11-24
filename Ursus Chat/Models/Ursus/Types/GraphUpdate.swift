@@ -11,7 +11,7 @@ import UrsusAirlock
 
 enum GraphUpdate: Decodable {
     
-    case keys([GraphUpdateKeys])
+    case keys(GraphUpdateKeys)
     case addGraph(GraphUpdateAddGraph)
     case removeGraph(GraphUpdateRemoveGraph)
     case addNodes(GraphUpdateAddNodes)
@@ -31,7 +31,7 @@ enum GraphUpdate: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         switch Set(container.allKeys) {
         case [.keys]:
-            self = .keys(try container.decode([GraphUpdateKeys].self, forKey: .keys))
+            self = .keys(try container.decode(GraphUpdateKeys.self, forKey: .keys))
         case [.addGraph]:
             self = .addGraph(try container.decode(GraphUpdateAddGraph.self, forKey: .addGraph))
         case [.removeGraph]:
@@ -47,12 +47,7 @@ enum GraphUpdate: Decodable {
     
 }
 
-struct GraphUpdateKeys: Decodable {
-    
-    var name: String
-    var ship: Ship.Prefixless
-    
-}
+typealias GraphUpdateKeys = [Resource]
 
 struct GraphUpdateAddGraph: Decodable {
     
@@ -77,6 +72,7 @@ struct GraphUpdateRemoveNodes: Decodable {
     #warning("TODO: Finish GraphUpdateRemoveNodes")
     
 }
+
 
 /* ---------------------------------- */
 
@@ -174,6 +170,13 @@ struct Post: Decodable {
         case timeSent = "time-sent"
         
     }
+    
+}
+
+struct Resource: Decodable {
+    
+    var ship: Ship
+    var name: String
     
 }
 

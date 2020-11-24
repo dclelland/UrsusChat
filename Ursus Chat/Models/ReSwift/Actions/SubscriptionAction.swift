@@ -217,12 +217,14 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             switch value {
             case .graphUpdate(let update):
                 switch update {
-                case .keys(let keys):
+                case .keys(let resources):
+                    #warning("TODO: Is the Ship.Prefixless conversion necessary here?")
                     state.graphKeys = Set(
-                        keys.map { resource in
-                            return "\(resource.ship)/\(resource.name)"
+                        resources.map { resource in
+                            return "\(Ship.Prefixless(resource.ship))/\(resource.name)"
                         }
                     )
+                    print(state.graphKeys)
                 case .addGraph(let addGraph):
                     #warning("TODO: Finish graph store reducer (addGraph)")
                     
