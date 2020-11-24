@@ -9,6 +9,66 @@
 import Foundation
 import UrsusAirlock
 
+enum GraphUpdate: Decodable {
+    
+    case keys(GraphUpdateKeys)
+    case addGraph(GraphUpdateAddGraph)
+    case removeGraph(GraphUpdateRemoveGraph)
+    case addNodes(GraphUpdateAddNodes)
+    case removeNodes(GraphUpdateRemoveNodes)
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case keys
+        case addGraph = "add-graph"
+        case removeGraph = "remove-graph"
+        case addNodes = "add-nodes"
+        case removeNodes = "remove-nodes"
+        
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        switch Set(container.allKeys) {
+        case [.keys]:
+            self = .keys(try container.decode(GraphUpdateKeys.self, forKey: .keys))
+        case [.addGraph]:
+            self = .addGraph(try container.decode(GraphUpdateAddGraph.self, forKey: .addGraph))
+        case [.removeGraph]:
+            self = .removeGraph(try container.decode(GraphUpdateRemoveGraph.self, forKey: .removeGraph))
+        case [.addNodes]:
+            self = .addNodes(try container.decode(GraphUpdateAddNodes.self, forKey: .addNodes))
+        case [.removeNodes]:
+            self = .removeNodes(try container.decode(GraphUpdateRemoveNodes.self, forKey: .removeNodes))
+        default:
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+        }
+    }
+    
+}
+
+struct GraphUpdateKeys: Decodable {
+    
+}
+
+struct GraphUpdateAddGraph: Decodable {
+    
+}
+
+struct GraphUpdateRemoveGraph: Decodable {
+    
+}
+
+struct GraphUpdateAddNodes: Decodable {
+    
+}
+
+struct GraphUpdateRemoveNodes: Decodable {
+    
+}
+
+/* ---------------------------------- */
+
 struct TextContent: Decodable {
     
     var text: String

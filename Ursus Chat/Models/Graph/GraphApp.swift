@@ -176,6 +176,32 @@ class GraphHookApp: AirlockApp {
 
 class GraphStoreApp: AirlockApp {
     
+    @discardableResult func keysSubscribeRequest(handler: @escaping (SubscribeEvent<Result<SubscribeResponse, Error>>) -> Void) -> DataRequest {
+        return subscribeRequest(path: "/keys", handler: handler)
+    }
+    
+    enum SubscribeResponse: Decodable {
+        
+        case graphUpdate(GraphUpdate)
+        
+        enum CodingKeys: String, CodingKey {
+            
+            case graphUpdate = "graph-update"
+            
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            switch Set(container.allKeys) {
+            case [.graphUpdate]:
+                self = .graphUpdate(try container.decode(GraphUpdate.self, forKey: .graphUpdate))
+            default:
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Failed to decode \(type(of: self)); available keys: \(container.allKeys)"))
+            }
+        }
+        
+    }
+    
 //    private storeAction(action: any): Promise<any> {
 //      return this.action('graph-store', 'graph-update', action)
 //    }

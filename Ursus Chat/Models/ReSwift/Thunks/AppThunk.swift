@@ -98,6 +98,7 @@ extension AppThunk {
             airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
             airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
             airlock.metadataStore(ship: ship).allSubscribeRequest(handler: handler)
+            airlock.graphStore(ship: ship).keysSubscribeRequest(handler: handler)
             airlock.connect().responseStream { stream in
                 switch stream.event {
                 case .stream:
