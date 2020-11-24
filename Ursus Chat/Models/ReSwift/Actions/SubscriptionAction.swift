@@ -218,19 +218,11 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             case .graphUpdate(let update):
                 switch update {
                 case .keys(let keys):
-                    #warning("TODO: Finish graph store reducer (keys)")
-                    
-//                    const keys = (json, state) => {
-//                      const data = _.get(json, 'keys', false);
-//                      if (data) {
-//                        state.graphKeys = new Set(data.map((res) => {
-//                          let resource = res.ship + '/' + res.name;
-//                          return resource;
-//                        }));
-//                      }
-//                    };
-                    
-                    break
+                    state.graphKeys = Set(
+                        keys.map { resource in
+                            return "\(resource.ship)/\(resource.name)"
+                        }
+                    )
                 case .addGraph(let addGraph):
                     #warning("TODO: Finish graph store reducer (addGraph)")
                     
