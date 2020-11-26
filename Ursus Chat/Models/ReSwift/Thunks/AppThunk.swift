@@ -92,13 +92,14 @@ extension AppThunk {
             
             var alreadyDispatchedConnectionSuccessAction: Bool = false
             
-            airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
-            airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
-            airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
-            airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
-            airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
-            airlock.metadataStore(ship: ship).allSubscribeRequest(handler: handler)
+//            airlock.chatView(ship: ship).primarySubscribeRequest(handler: handler)
+//            airlock.chatHook(ship: ship).syncedSubscribeRequest(handler: handler)
+//            airlock.inviteStore(ship: ship).allSubscribeRequest(handler: handler)
+//            airlock.groupStore(ship: ship).groupsSubscribeRequest(handler: handler)
+//            airlock.contactView(ship: ship).primarySubscribeRequest(handler: handler)
+//            airlock.metadataStore(ship: ship).allSubscribeRequest(handler: handler)
             airlock.graphStore(ship: ship).keysSubscribeRequest(handler: handler)
+            airlock.graphStore(ship: ship).updatesSubscribeRequest(handler: handler)
             airlock.connect().responseStream { stream in
                 switch stream.event {
                 case .stream:

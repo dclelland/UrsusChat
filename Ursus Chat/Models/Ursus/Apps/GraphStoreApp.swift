@@ -24,6 +24,10 @@ class GraphStoreApp: AirlockApp {
         return subscribeRequest(path: "/keys", handler: handler)
     }
     
+    @discardableResult func updatesSubscribeRequest(handler: @escaping (SubscribeEvent<Result<SubscribeResponse, Error>>) -> Void) -> DataRequest {
+        return subscribeRequest(path: "/updates", handler: handler)
+    }
+    
     #warning("TODO: Finish GraphStoreApp")
     
 //    private storeAction(action: any): Promise<any> {
@@ -40,64 +44,30 @@ class GraphStoreApp: AirlockApp {
 //      });
 //    }
     
-//    getKeys() {
-//      return this.scry<any>('graph-store', '/keys')
-//        .then((keys) => {
-//          this.store.handleEvent({
-//            data: keys
-//          });
-//        });
-//    }
-
-//    getTags() {
-//      return this.scry<any>('graph-store', '/tags')
-//        .then((tags) => {
-//          this.store.handleEvent({
-//            data: tags
-//          });
-//        });
-//    }
-
-//    getTagQueries() {
-//      return this.scry<any>('graph-store', '/tag-queries')
-//        .then((tagQueries) => {
-//          this.store.handleEvent({
-//            data: tagQueries
-//          });
-//        });
-//    }
-
-//    getGraph(ship: string, resource: string) {
-//      return this.scry<any>('graph-store', `/graph/${ship}/${resource}`)
-//        .then((graph) => {
-//          this.store.handleEvent({
-//            data: graph
-//          });
-//        });
-//    }
-
-//    getGraphSubset(ship: string, resource: string, start: string, end: string) {
-//      return this.scry<any>(
-//        'graph-store',
-//        `/graph-subset/${ship}/${resource}/${end}/${start}`
-//      ).then((subset) => {
-//        this.store.handleEvent({
-//          data: subset
-//        });
-//      });
-//    }
-
-//    getNode(ship: string, resource: string, index: string) {
+    func getKeys() -> DataRequest {
+        return scryRequest(path: "/keys")
+    }
+    
+    func getTags() -> DataRequest {
+        return scryRequest(path: "/tags")
+    }
+    
+    func getTagQueries() -> DataRequest {
+        return scryRequest(path: "/tag-queries")
+    }
+    
+    func getGraph(ship: Ship, resource: String) -> DataRequest {
+        return scryRequest(path: "/graph/${ship}/${resource}")
+    }
+    
+    func getGraphSubset(ship: Ship, resource: String, start: String, end: String) -> DataRequest {
+        return scryRequest(path: "/graph-subset/${ship}/${resource}/${end}/${start}")
+    }
+    
+    func getNode(ship: Ship, resource: String, index: String) -> DataRequest {
 //      const idx = index.split('/').map(numToUd).join('/');
-//      return this.scry<any>(
-//        'graph-store',
-//        `/node/${ship}/${resource}${idx}`
-//      ).then((node) => {
-//        this.store.handleEvent({
-//          data: node
-//        });
-//      });
-//    }
+        return scryRequest(path: "/node/${ship}/${resource}${idx}")
+    }
     
 }
 
