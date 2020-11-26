@@ -92,7 +92,7 @@ struct GraphUpdateAddNodes: Decodable {
     
     #warning("TODO: Finish GraphUpdateAddNodes; review `nodes` type; is the index a big int...?")
     
-    var nodes: [(String, GraphNode)]
+    var nodes: [(Index, GraphNode)]
     var resource: Resource
     
     enum CodingKeys: String, CodingKey {
@@ -121,7 +121,7 @@ struct GraphUpdateRemoveNodes: Decodable {
     
     #warning("TODO: Finish GraphUpdateRemoveNodes: should indices get split?")
     
-    var indices: [String]
+    var indices: [Index]
     var resource: Resource
     
 }
@@ -150,6 +150,7 @@ struct CodeContent: Decodable {
 
 struct ReferenceContent: Decodable {
     
+    #warning("This type is more complex")
     var uid: String
     
 }
@@ -205,9 +206,11 @@ struct Post: Decodable {
     
     var author: Ship
     var contents: [Content]
+    #warning("This type is an atom")
     var hash: String?
-    var index: String
+    var index: Index
 //    var pending: Bool?
+    #warning("This type is more complex")
     var signatures: [String]
     var timeSent: Date
     
@@ -264,10 +267,13 @@ struct GraphNode: Decodable {
     
 }
 
+#warning("Index needs a special parser; should parse to a list of atoms")
+typealias Index = String
+
 #warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts; also see: https://github.com/lukaskubanek/OrderedDictionary; perhaps add a basic atom (`@`) type to UrsusAtom")
 
-typealias Graph = [(String, GraphNode)]
+typealias Graph = [(Index, GraphNode)]
 
 #warning("Review this ('export type Graphs = { [rid: string]: Graph };')")
 
-typealias Graphs = [String: Graph]
+typealias Graphs = [Index: Graph]
