@@ -233,6 +233,10 @@ struct Resource: Decodable {
     var ship: Ship
     var name: String
     
+    var description: String {
+        return "\(Ship.Prefixless(ship))/\(name)"
+    }
+    
 }
 
 struct GraphNode: Decodable {

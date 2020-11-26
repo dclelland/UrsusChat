@@ -221,7 +221,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     #warning("TODO: Is the Ship.Prefixless conversion necessary here?")
                     state.graphKeys = Set(
                         resources.map { resource in
-                            return "\(Ship.Prefixless(resource.ship))/\(resource.name)"
+                            return resource.description
                         }
                     )
                     print(state.graphKeys)

@@ -56,17 +56,17 @@ class GraphStoreApp: AirlockApp {
         return scryRequest(path: "/tag-queries")
     }
     
-    func getGraph(ship: Ship, resource: String) -> DataRequest {
-        return scryRequest(path: "/graph/${ship}/${resource}")
+    func getGraph(ship: Ship, resource: Resource) -> DataRequest {
+        return scryRequest(path: "/graph/\(Ship.Prefixless(ship))/\(resource.description)")
     }
     
-    func getGraphSubset(ship: Ship, resource: String, start: String, end: String) -> DataRequest {
-        return scryRequest(path: "/graph-subset/${ship}/${resource}/${end}/${start}")
+    func getGraphSubset(ship: Ship, resource: Resource, start: String, end: String) -> DataRequest {
+        return scryRequest(path: "/graph-subset/\(Ship.Prefixless(ship))/\(resource.description)/\(end)/\(start)")
     }
     
-    func getNode(ship: Ship, resource: String, index: String) -> DataRequest {
+    func getNode(ship: Ship, resource: Resource, index: Index) -> DataRequest {
 //      const idx = index.split('/').map(numToUd).join('/');
-        return scryRequest(path: "/node/${ship}/${resource}${idx}")
+        return scryRequest(path: "/node/\(Ship.Prefixless(ship))/\(resource.description)\(index)")
     }
     
 }
