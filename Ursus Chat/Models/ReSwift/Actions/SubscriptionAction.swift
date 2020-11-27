@@ -218,13 +218,11 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
             case .graphUpdate(let update):
                 switch update {
                 case .keys(let resources):
-                    #warning("TODO: Is the Ship.Prefixless conversion necessary here?")
                     state.graphKeys = Set(
                         resources.map { resource in
                             return resource.description
                         }
                     )
-                    print(state.graphKeys)
                 case .addGraph(let addGraph):
                     #warning("TODO: Finish graph store reducer (addGraph)")
                     
@@ -287,19 +285,7 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
                     
                     break
                 case .removeGraph(let removeGraph):
-                    #warning("TODO: Finish graph store reducer (removeGraph)")
-                    
-//                    const removeGraph = (json, state) => {
-//                      const data = _.get(json, 'remove-graph', false);
-//                      if (data) {
-//                        if (!('graphs' in state)) {
-//                          state.graphs = {};
-//                        }
-//                        let resource = data.ship + '/' + data.name;
-//                        delete state.graphs[resource];
-//                      }
-//                    };
-                    
+                    state.graphs[removeGraph.description] = nil
                     break
                 case .addNodes(let addNodes):
                     #warning("TODO: Finish graph store reducer (addNodes)")

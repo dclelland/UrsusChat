@@ -274,10 +274,10 @@ struct GraphNode: Decodable {
 #warning("Index needs a special parser; should parse to a list of atoms")
 typealias Index = String
 
-#warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts; also see: https://github.com/lukaskubanek/OrderedDictionary; perhaps add a basic atom (`@`) type to UrsusAtom")
+#warning("This might need a full-blown custom collection type, see: https://github.com/urbit/urbit/blob/master/pkg/interface/src/logic/lib/BigIntOrderedMap.ts; also see: https://github.com/lukaskubanek/OrderedDictionary; perhaps add a basic atom (`@`) type to UrsusAtom; also need to confirm an array of arrays (containing an index and a graph node) is the correct format")
 
 typealias Graph = [(Index, GraphNode)]
 
 #warning("Review this ('export type Graphs = { [rid: string]: Graph };')")
 
-typealias Graphs = [Index: Graph]
+typealias Graphs = [String: Graph]
