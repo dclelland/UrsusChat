@@ -9,7 +9,8 @@
 import Foundation
 import NonEmpty
 import SwiftDate
-import UrsusAirlock
+import UrsusHTTP
+import UrsusAPI
 
 extension SubscriptionState {
     
@@ -92,11 +93,11 @@ extension Mailbox {
 
 extension Envelope: Hashable {
     
-    static func == (lhs: Envelope, rhs: Envelope) -> Bool {
+    public static func == (lhs: Envelope, rhs: Envelope) -> Bool {
         return lhs.uid == rhs.uid
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(uid)
     }
     

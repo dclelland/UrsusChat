@@ -8,14 +8,14 @@
 
 import SwiftUI
 import Introspect
-import UrsusAirlock
+import UrsusHTTP
 import UrsusSigil
 
 struct ChatListView: View {
     
 //    struct Destination: View {
 //
-//        var selectedPath: UrsusAirlock.Path? = nil
+//        var selectedPath: UrsusHTTP.Path? = nil
 //
 //        var body: some View {
 //            if let path = selectedPath {
@@ -33,7 +33,7 @@ struct ChatListView: View {
     
     @EnvironmentObject var store: AppStore
     
-    @State private var selectedPath: UrsusAirlock.Path? = nil
+    @State private var selectedPath: UrsusHTTP.Path? = nil
     
 //    @State private var selectedPathIsActive: Bool = false
     
@@ -141,19 +141,19 @@ extension ChatListView {
 extension ChatListView {
     
     func openLandscape() {
-        guard case .authenticated(let airlock, _) = store.state.session else {
+        guard case .authenticated(let client, _) = store.state.session else {
             return
         }
         
-        UIApplication.shared.open(airlock.credentials.url)
+        UIApplication.shared.open(client.credentials.url)
     }
     
     func logout() {
-        guard case .authenticated(let airlock, _) = store.state.session else {
+        guard case .authenticated(let client, _) = store.state.session else {
             return
         }
         
-        store.dispatch(AppThunk.stopSession(airlock: airlock))
+        store.dispatch(AppThunk.stopSession(client: client))
     }
     
 }

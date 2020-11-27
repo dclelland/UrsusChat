@@ -9,6 +9,7 @@
 import SwiftUI
 import KeyboardObserving
 import NonEmpty
+import UrsusAPI
 
 struct ChatViewModel {
     

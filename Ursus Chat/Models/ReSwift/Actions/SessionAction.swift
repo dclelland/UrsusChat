@@ -8,7 +8,7 @@
 
 import Foundation
 import ReSwift
-import UrsusAirlock
+import UrsusHTTP
 
 protocol SessionAction: Action {
     
@@ -34,12 +34,12 @@ struct SessionLoginFailureAction: SessionAction {
 
 struct SessionLoginFinishAction: SessionAction {
     
-    var airlock: Airlock
+    var client: Client
     
     var ship: Ship
     
     func reduce(_ state: inout SessionState) throws {
-        state = .authenticated(airlock: airlock, ship: ship)
+        state = .authenticated(client: client, ship: ship)
     }
     
 }

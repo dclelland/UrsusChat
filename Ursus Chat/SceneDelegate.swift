@@ -30,11 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneWillEnterForeground(_ scene: UIScene) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
-            guard case .authenticated(let airlock, let ship) = self.store.state.session, case .disconnected = self.store.state.connection else {
+            guard case .authenticated(let client, let ship) = self.store.state.session, case .disconnected = self.store.state.connection else {
                 return
             }
             
-            self.store.dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
+            self.store.dispatch(AppThunk.startSubscription(client: client, ship: ship))
         }
     }
     

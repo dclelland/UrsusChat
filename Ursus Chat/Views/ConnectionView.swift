@@ -43,11 +43,11 @@ struct ConnectionView: View {
 extension ConnectionView {
     
     func reconnect() {
-        guard case .authenticated(let airlock, let ship) = store.state.session else {
+        guard case .authenticated(let client, let ship) = store.state.session else {
             return
         }
 
-        store.dispatch(AppThunk.startSubscription(airlock: airlock, ship: ship))
+        store.dispatch(AppThunk.startSubscription(client: client, ship: ship))
     }
     
 }

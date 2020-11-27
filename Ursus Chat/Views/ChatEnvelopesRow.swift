@@ -8,6 +8,7 @@
 
 import SwiftUI
 import NonEmpty
+import UrsusAPI
 
 struct ChatEnvelopesRowModel: Hashable {
     

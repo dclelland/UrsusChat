@@ -1,0 +1,6 @@
+framework module UrsusHTTP {
+  umbrella header "UrsusHTTP-umbrella.h"
+
+  export *
+  module * { export * }
+}

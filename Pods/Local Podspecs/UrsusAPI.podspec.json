@@ -21,10 +21,10 @@
     "ios": "13.0",
     "osx": "10.15"
   },
-  "source_files": "Ursus API/**/*.swift",
+  "source_files": "Sources/UrsusAPI/**/*.swift",
   "dependencies": {
-    "UrsusAirlock": [
-      "~> 1.9"
+    "UrsusHTTP": [
+      "~> 1.10"
     ]
   },
   "swift_version": "5.2"

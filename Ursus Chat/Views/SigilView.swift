@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import UrsusAirlock
+import UrsusHTTP
 import UrsusSigil
 
 struct SigilView: View {

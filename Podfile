@@ -8,14 +8,14 @@ development_pods = true
 target 'Ursus Chat' do
   
     unless development_pods
-        pod 'UrsusAirlock', '~> 1.9.0'
         pod 'UrsusAPI', '~> 0.1.0'
-        pod 'UrsusAtom', '~> 1.2.3'
+        pod 'UrsusAtom', '~> 1.2.4'
+        pod 'UrsusHTTP', '~> 1.10.0'
         pod 'UrsusSigil', '~> 1.2.2'
     else
-        pod 'UrsusAirlock', path: '../UrsusAirlock'
         pod 'UrsusAPI', path: '../UrsusAPI'
         pod 'UrsusAtom', path: '../UrsusAtom'
+        pod 'UrsusHTTP', path: '../UrsusHTTP'
         pod 'UrsusSigil', path: '../UrsusSigil'
     end
     

@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import UrsusAirlock
+import UrsusHTTP
+import UrsusAPI
 
 extension Associations {
     

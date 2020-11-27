@@ -8,7 +8,7 @@
 
 import SwiftUI
 import KeyboardObserving
-import UrsusAirlock
+import UrsusHTTP
 
 struct LoginView: View {
     
@@ -84,7 +84,7 @@ extension LoginView {
             return
         }
         
-        store.dispatch(AppThunk.startSession(credentials: AirlockCredentials(url: url, code: code)))
+        store.dispatch(AppThunk.startSession(credentials: Credentials(url: url, code: code)))
     }
     
     private func openBridge() {

@@ -8,10 +8,12 @@
 
 import Foundation
 import ReSwift
-import UrsusAirlock
+import UrsusHTTP
 import UrsusAPI
 
-struct SubscriptionState: StateType {
+#warning("TODO: Eventually find a better solution than this protocol soup")
+
+struct SubscriptionState: StateType, ChatHookState, ChatViewState, ContactViewState, GraphStoreState, GroupStoreState, InviteStoreState, MetadataStoreState {
     
     var inbox: Inbox = [:]
     var synced: Synced = [:]

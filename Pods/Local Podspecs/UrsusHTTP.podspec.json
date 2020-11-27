@@ -1,8 +1,8 @@
 {
-  "name": "UrsusAirlock",
-  "version": "1.9.0",
+  "name": "UrsusHTTP",
+  "version": "1.10.1",
   "summary": "An Urbit HTTP/`%eyre` client for iOS/macOS.",
-  "homepage": "https://github.com/dclelland/UrsusAirlock",
+  "homepage": "https://github.com/dclelland/UrsusHTTP",
   "license": {
     "type": "MIT"
   },
@@ -10,8 +10,8 @@
     "Daniel Clelland": "daniel.clelland@gmail.com"
   },
   "source": {
-    "git": "https://github.com/dclelland/UrsusAirlock.git",
-    "tag": "1.9.0"
+    "git": "https://github.com/dclelland/UrsusHTTP.git",
+    "tag": "1.10.1"
   },
   "swift_versions": [
     "5.1",
@@ -21,7 +21,7 @@
     "ios": "13.0",
     "osx": "10.15"
   },
-  "source_files": "Ursus Airlock/**/*.swift",
+  "source_files": "Sources/UrsusHTTP/**/*.swift",
   "dependencies": {
     "Alamofire": [
       "~> 5.2"

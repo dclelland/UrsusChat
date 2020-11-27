@@ -1,6 +1,6 @@
 {
   "name": "UrsusSigil",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "summary": "A library for generating Urbit sigils.",
   "homepage": "https://github.com/dclelland/UrsusSigil",
   "license": {
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/dclelland/UrsusSigil.git",
-    "tag": "1.2.2"
+    "tag": "1.2.3"
   },
   "swift_versions": [
     "5.1",
@@ -20,8 +20,8 @@
   "platforms": {
     "ios": "13.0"
   },
-  "source_files": "Ursus Sigil/**/*.swift",
-  "resources": "Ursus Sigil/Resources/**/*",
+  "source_files": "Sources/UrsusSigil/**/*.swift",
+  "resources": "Sources/UrsusSigil/Resources/**/*",
   "dependencies": {
     "SwiftSVG": [
       "~> 2.0"

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UrsusAPI
 
 struct LetterView: View {
     

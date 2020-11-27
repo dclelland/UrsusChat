@@ -1,6 +1,6 @@
 {
   "name": "UrsusAtom",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "summary": "A library for manipulating Urbit atoms and auras.",
   "homepage": "https://github.com/dclelland/UrsusAtom",
   "license": {
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/dclelland/UrsusAtom.git",
-    "tag": "1.2.3"
+    "tag": "1.2.4"
   },
   "swift_versions": [
     "5.1",
@@ -21,7 +21,7 @@
     "ios": "13.0",
     "osx": "10.15"
   },
-  "source_files": "Ursus Atom/**/*.swift",
+  "source_files": "Sources/UrsusAtom/**/*.swift",
   "dependencies": {
     "BigInt": [
       "~> 5.0"
@@ -30,7 +30,7 @@
   "subspecs": [
     {
       "name": "PhoneticBase",
-      "source_files": "Ursus Phonetic Base/**/*.swift",
+      "source_files": "Sources/UrsusPhoneticBase/**/*.swift",
       "dependencies": {
         "MurmurHash-Swift": [
           "~> 1.0"

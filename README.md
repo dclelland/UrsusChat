@@ -2,7 +2,7 @@
 
 An Urbit chat application for iOS.
 
-Work in progress; first project using my [UrsusAirlock](https://github.com/dclelland/UrsusAirlock) HTTP/`%eyre` client library.
+Work in progress; first project using my [UrsusHTTP](https://github.com/dclelland/UrsusHTTP) HTTP/`%eyre` client library.
 
 ### Screenshots
 
@@ -42,8 +42,9 @@ In addition to this, you will likely also need to open *Settings* → *General* 
 
 Internal
 
-- [UrsusAirlock](https://github.com/dclelland/UrsusAirlock)
+- [UrsusAPI](https://github.com/dclelland/UrsusAPI)
 - [UrsusAtom](https://github.com/dclelland/UrsusAtom)
+- [UrsusHTTP](https://github.com/dclelland/UrsusHTTP)
 - [UrsusSigil](https://github.com/dclelland/UrsusSigil)
 
 External
