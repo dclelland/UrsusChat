@@ -23,6 +23,8 @@ PODS:
     - Alamofire (~> 5.2)
     - AlamofireEventSource (~> 1.2)
     - UrsusAtom (~> 1.2)
+  - UrsusAPI (0.1.0):
+    - UrsusAirlock (~> 1.9)
   - UrsusAtom (1.2.3):
     - BigInt (~> 5.0)
     - UrsusAtom/PhoneticBase (= 1.2.3)
@@ -44,6 +46,7 @@ DEPENDENCIES:
   - ReSwiftThunk (~> 1.2)
   - SwiftDate (~> 6.1)
   - UrsusAirlock (from `../UrsusAirlock`)
+  - UrsusAPI (from `../UrsusAPI`)
   - UrsusAtom (from `../UrsusAtom`)
   - UrsusSigil (from `../UrsusSigil`)
 
@@ -67,6 +70,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   UrsusAirlock:
     :path: "../UrsusAirlock"
+  UrsusAPI:
+    :path: "../UrsusAPI"
   UrsusAtom:
     :path: "../UrsusAtom"
   UrsusSigil:
@@ -88,9 +93,10 @@ SPEC CHECKSUMS:
   SwiftDate: ec6c0e173627a3ae6dd1671888a7f175956ebb94
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
   UrsusAirlock: 059b90b000db77fb51c8bf6c767963cdb624c135
+  UrsusAPI: 92f3ee6fd42678847f39280e22a39146ca95560c
   UrsusAtom: a9cb6086d359c74ac81b91ca230feef56c8cd1c8
   UrsusSigil: 5355932dd236465d7f590cdc400f1f375795c906
 
-PODFILE CHECKSUM: 00d336349e06857a76c32788448b1fb0e12b17e5
+PODFILE CHECKSUM: 1932ccf2ecc74d85769293bf4e016a2aafda53be
 
 COCOAPODS: 1.9.3
