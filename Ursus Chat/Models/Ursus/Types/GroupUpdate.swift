@@ -8,6 +8,7 @@
 
 import Foundation
 import UrsusAirlock
+import UrsusAPI
 
 enum GroupUpdate: Decodable {
     

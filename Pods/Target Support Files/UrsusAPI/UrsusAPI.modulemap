@@ -1,0 +1,6 @@
+framework module UrsusAPI {
+  umbrella header "UrsusAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}

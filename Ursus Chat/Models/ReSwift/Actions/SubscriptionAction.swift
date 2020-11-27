@@ -9,6 +9,7 @@
 import Foundation
 import ReSwift
 import UrsusAirlock
+import UrsusAPI
 
 protocol SubscriptionAction: Action {
     
