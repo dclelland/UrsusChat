@@ -38,20 +38,20 @@ struct SubscriptionEventAction<Value>: SubscriptionAction {
         switch event {
         case .started:
             break
-        case .update(.success(let response as ChatViewAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(state, response)
-        case .update(.success(let response as ChatHookAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(&state, response)
-        case .update(.success(let response as InviteStoreAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(&state, response)
-        case .update(.success(let response as GroupStoreAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(&state, response)
-        case .update(.success(let response as ContactViewAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(&state, response)
-        case .update(.success(let response as MetadataStoreAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(&state, response)
-        case .update(.success(let response as GraphStoreAgent.SubscribeResponse)):
-            try UrsusAPI.reduce(&state, response)
+//        case .update(.success(let response as ChatViewAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(state, response)
+//        case .update(.success(let response as ChatHookAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(&state, response)
+//        case .update(.success(let response as InviteStoreAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(&state, response)
+//        case .update(.success(let response as GroupStoreAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(&state, response)
+//        case .update(.success(let response as ContactViewAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(&state, response)
+//        case .update(.success(let response as MetadataStoreAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(&state, response)
+//        case .update(.success(let response as GraphStoreAgent.SubscribeResponse)):
+//            try UrsusAPI.reduce(&state, response)
         case .update(.success(let value)):
             throw SubscriptionActionError.unhandledEventUpdate(value)
         case .update(.failure(let error)):

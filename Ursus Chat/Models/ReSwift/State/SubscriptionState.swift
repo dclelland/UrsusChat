@@ -11,9 +11,7 @@ import ReSwift
 import UrsusHTTP
 import UrsusAPI
 
-#warning("TODO: Eventually find a better solution than this protocol soup")
-
-struct SubscriptionState: StateType, ChatHookState, ChatViewState, ContactViewState, GraphStoreState, GroupStoreState, InviteStoreState, MetadataStoreState {
+struct SubscriptionState: StateType {
     
     var inbox: Inbox = [:]
     var synced: Synced = [:]
